@@ -1,0 +1,219 @@
+2016/02/05 15:16:42 [notice] 363#0: using the "epoll" event method
+2016/02/05 15:16:42 [notice] 363#0: using the "epoll" event method
+2016/02/05 15:16:42 [notice] 363#0: start worker processes
+2016/02/05 15:16:42 [notice] 363#0: start worker processes
+2016/02/05 15:16:42 [notice] 363#0: start worker process 4979
+2016/02/05 15:16:42 [notice] 363#0: start worker process 4979
+2016/02/05 15:16:42 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 15:16:42 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 15:16:42 [notice] 363#0: worker process 3377 exited with code 0
+2016/02/05 15:16:42 [notice] 363#0: worker process 3377 exited with code 0
+2016/02/05 15:16:42 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 15:16:42 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 15:16:56 [error] 4979#0: *51 directory index of "/var/www/kambread.ru/frontend/web/" is forbidden, client: 192.168.1.1, server: localhost, request: "GET / HTTP/1.1", host: "85.174.63.230"
+2016/02/05 15:16:56 [error] 4979#0: *51 directory index of "/var/www/kambread.ru/frontend/web/" is forbidden, client: 192.168.1.1, server: localhost, request: "GET / HTTP/1.1", host: "85.174.63.230"
+2016/02/05 15:16:56 [error] 4979#0: *51 directory index of "/var/www/kambread.ru/frontend/web/" is forbidden, client: 192.168.1.1, server: localhost, request: "GET / HTTP/1.1", host: "85.174.63.230"
+2016/02/05 15:17:00 [error] 4979#0: *51 directory index of "/var/www/kambread.ru/frontend/web/" is forbidden, client: 192.168.1.1, server: localhost, request: "GET / HTTP/1.1", host: "85.174.63.230"
+2016/02/05 15:17:00 [error] 4979#0: *51 directory index of "/var/www/kambread.ru/frontend/web/" is forbidden, client: 192.168.1.1, server: localhost, request: "GET / HTTP/1.1", host: "85.174.63.230"
+2016/02/05 15:17:00 [error] 4979#0: *51 directory index of "/var/www/kambread.ru/frontend/web/" is forbidden, client: 192.168.1.1, server: localhost, request: "GET / HTTP/1.1", host: "85.174.63.230"
+2016/02/05 15:17:01 [error] 4979#0: *51 directory index of "/var/www/kambread.ru/frontend/web/" is forbidden, client: 192.168.1.1, server: localhost, request: "GET / HTTP/1.1", host: "85.174.63.230"
+2016/02/05 15:17:01 [error] 4979#0: *51 directory index of "/var/www/kambread.ru/frontend/web/" is forbidden, client: 192.168.1.1, server: localhost, request: "GET / HTTP/1.1", host: "85.174.63.230"
+2016/02/05 15:17:01 [error] 4979#0: *51 directory index of "/var/www/kambread.ru/frontend/web/" is forbidden, client: 192.168.1.1, server: localhost, request: "GET / HTTP/1.1", host: "85.174.63.230"
+2016/02/05 15:17:32 [info] 4979#0: *51 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:20:24 [info] 4979#0: *54 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:20:31 [info] 4979#0: *56 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:20:32 [info] 4979#0: *52 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:20:32 [info] 4979#0: *55 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:20:32 [info] 4979#0: *57 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:21:29 [warn] 4979#0: *60 an upstream response is buffered to a temporary file /var/lib/nginx/fastcgi/1/00/0000000001 while reading upstream, client: 192.168.1.1, server: localhost, request: "GET /index.php?r=site%2Fcontact HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "85.174.63.230", referrer: "http://85.174.63.230/index.php?r=site%2Fabout"
+2016/02/05 15:21:29 [warn] 4979#0: *60 an upstream response is buffered to a temporary file /var/lib/nginx/fastcgi/1/00/0000000001 while reading upstream, client: 192.168.1.1, server: localhost, request: "GET /index.php?r=site%2Fcontact HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "85.174.63.230", referrer: "http://85.174.63.230/index.php?r=site%2Fabout"
+2016/02/05 15:22:19 [info] 4979#0: *64 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:22:19 [info] 4979#0: *68 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:22:19 [info] 4979#0: *66 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:22:19 [info] 4979#0: *67 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:22:27 [info] 4979#0: *62 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:22:27 [info] 4979#0: *71 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:22:38 [info] 4979#0: *73 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:22:38 [info] 4979#0: *60 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:22:38 [info] 4979#0: *72 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:22:38 [info] 4979#0: *63 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:23:38 [info] 4979#0: *85 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:23:38 [info] 4979#0: *84 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:23:38 [info] 4979#0: *83 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:23:38 [info] 4979#0: *82 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:23:38 [info] 4979#0: *81 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:23:38 [info] 4979#0: *80 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:23:38 [info] 4979#0: *78 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:24:12 [info] 4979#0: *88 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:24:14 [info] 4979#0: *89 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:24:41 [info] 4979#0: *92 client closed connection while waiting for request, client: 85.173.206.4, server: 0.0.0.0:80
+2016/02/05 15:24:41 [info] 4979#0: *93 client closed connection while waiting for request, client: 85.173.206.4, server: 0.0.0.0:8080
+2016/02/05 15:24:41 [info] 4979#0: *95 client 85.173.206.4 closed keepalive connection
+2016/02/05 15:24:41 [info] 4979#0: *94 client 85.173.206.4 closed keepalive connection
+2016/02/05 15:24:41 [error] 4979#0: *96 "/var/www/kambread.ru/frontend/web/HNAP1/index.html" is not found (2: No such file or directory), client: 85.173.206.4, server: localhost, request: "GET /HNAP1/ HTTP/1.1", host: "85.174.63.230:8080", referrer: "http://85.174.63.230:8080/"
+2016/02/05 15:24:41 [error] 4979#0: *96 "/var/www/kambread.ru/frontend/web/HNAP1/index.html" is not found (2: No such file or directory), client: 85.173.206.4, server: localhost, request: "GET /HNAP1/ HTTP/1.1", host: "85.174.63.230:8080", referrer: "http://85.174.63.230:8080/"
+2016/02/05 15:24:41 [error] 4979#0: *96 "/var/www/kambread.ru/frontend/web/HNAP1/index.html" is not found (2: No such file or directory), client: 85.173.206.4, server: localhost, request: "GET /HNAP1/ HTTP/1.1", host: "85.174.63.230:8080", referrer: "http://85.174.63.230:8080/"
+2016/02/05 15:24:41 [info] 4979#0: *96 client 85.173.206.4 closed keepalive connection
+2016/02/05 15:24:41 [info] 4979#0: *97 client 85.173.206.4 closed keepalive connection
+2016/02/05 15:27:10 [info] 4979#0: *99 client 5.39.222.159 closed keepalive connection
+2016/02/05 15:34:26 [error] 4979#0: *101 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(/var/www/kambread.ru/frontend/web/vendor/yiisoft/yii2/requirements/YiiRequirementChecker.php): failed to open stream: No such file or directory in /var/www/kambread.ru/frontend/web/requirements.php on line 23
+PHP message: PHP Fatal error:  require_once(): Failed opening required '/var/www/kambread.ru/frontend/web/vendor/yiisoft/yii2/requirements/YiiRequirementChecker.php' (include_path='.:') in /var/www/kambread.ru/frontend/web/requirements.php on line 23" while reading response header from upstream, client: 192.168.1.1, server: localhost, request: "GET /requirements.php HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "85.174.63.230"
+2016/02/05 15:34:26 [error] 4979#0: *101 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(/var/www/kambread.ru/frontend/web/vendor/yiisoft/yii2/requirements/YiiRequirementChecker.php): failed to open stream: No such file or directory in /var/www/kambread.ru/frontend/web/requirements.php on line 23
+PHP message: PHP Fatal error:  require_once(): Failed opening required '/var/www/kambread.ru/frontend/web/vendor/yiisoft/yii2/requirements/YiiRequirementChecker.php' (include_path='.:') in /var/www/kambread.ru/frontend/web/requirements.php on line 23" while reading response header from upstream, client: 192.168.1.1, server: localhost, request: "GET /requirements.php HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "85.174.63.230"
+2016/02/05 15:34:26 [error] 4979#0: *101 FastCGI sent in stderr: "PHP message: PHP Warning:  require_once(/var/www/kambread.ru/frontend/web/vendor/yiisoft/yii2/requirements/YiiRequirementChecker.php): failed to open stream: No such file or directory in /var/www/kambread.ru/frontend/web/requirements.php on line 23
+PHP message: PHP Fatal error:  require_once(): Failed opening required '/var/www/kambread.ru/frontend/web/vendor/yiisoft/yii2/requirements/YiiRequirementChecker.php' (include_path='.:') in /var/www/kambread.ru/frontend/web/requirements.php on line 23" while reading response header from upstream, client: 192.168.1.1, server: localhost, request: "GET /requirements.php HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "85.174.63.230"
+2016/02/05 15:35:19 [info] 4979#0: *108 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:35:20 [info] 4979#0: *101 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:35:20 [info] 4979#0: *109 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:35:20 [info] 4979#0: *107 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:35:20 [info] 4979#0: *106 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:35:51 [notice] 363#0: signal 1 (SIGHUP) received, reconfiguring
+2016/02/05 15:35:51 [notice] 363#0: signal 1 (SIGHUP) received, reconfiguring
+2016/02/05 15:35:51 [notice] 363#0: reconfiguring
+2016/02/05 15:35:51 [notice] 363#0: reconfiguring
+2016/02/05 15:35:51 [notice] 363#0: using the "epoll" event method
+2016/02/05 15:35:51 [notice] 363#0: using the "epoll" event method
+2016/02/05 15:35:51 [notice] 363#0: start worker processes
+2016/02/05 15:35:51 [notice] 363#0: start worker processes
+2016/02/05 15:35:51 [notice] 363#0: start worker process 5727
+2016/02/05 15:35:51 [notice] 363#0: start worker process 5727
+2016/02/05 15:35:51 [notice] 4979#0: gracefully shutting down
+2016/02/05 15:35:51 [notice] 4979#0: gracefully shutting down
+2016/02/05 15:35:51 [notice] 4979#0: exiting
+2016/02/05 15:35:51 [notice] 4979#0: exiting
+2016/02/05 15:35:51 [notice] 4979#0: exit
+2016/02/05 15:35:51 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 15:35:51 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 15:35:51 [notice] 363#0: worker process 4979 exited with code 0
+2016/02/05 15:35:51 [notice] 363#0: worker process 4979 exited with code 0
+2016/02/05 15:35:51 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 15:35:51 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 15:36:31 [info] 5727#0: *114 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:36:31 [info] 5727#0: *112 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:36:31 [info] 5727#0: *116 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:36:39 [info] 5727#0: *115 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:36:42 [info] 5727#0: *117 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:37:12 [info] 5727#0: *124 client closed connection while waiting for request, client: 85.173.206.4, server: 0.0.0.0:80
+2016/02/05 15:37:12 [info] 5727#0: *125 client 85.173.206.4 closed keepalive connection
+2016/02/05 15:37:12 [info] 5727#0: *126 client 85.173.206.4 closed keepalive connection
+2016/02/05 15:38:13 [notice] 363#0: signal 1 (SIGHUP) received, reconfiguring
+2016/02/05 15:38:13 [notice] 363#0: signal 1 (SIGHUP) received, reconfiguring
+2016/02/05 15:38:13 [notice] 363#0: reconfiguring
+2016/02/05 15:38:13 [notice] 363#0: reconfiguring
+2016/02/05 15:38:13 [notice] 363#0: using the "epoll" event method
+2016/02/05 15:38:13 [notice] 363#0: using the "epoll" event method
+2016/02/05 15:38:13 [notice] 363#0: start worker processes
+2016/02/05 15:38:13 [notice] 363#0: start worker processes
+2016/02/05 15:38:13 [notice] 363#0: start worker process 5928
+2016/02/05 15:38:13 [notice] 363#0: start worker process 5928
+2016/02/05 15:38:13 [notice] 5727#0: gracefully shutting down
+2016/02/05 15:38:13 [notice] 5727#0: gracefully shutting down
+2016/02/05 15:38:13 [notice] 5727#0: exiting
+2016/02/05 15:38:13 [notice] 5727#0: exiting
+2016/02/05 15:38:13 [notice] 5727#0: exit
+2016/02/05 15:38:13 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 15:38:13 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 15:38:13 [notice] 363#0: worker process 5727 exited with code 0
+2016/02/05 15:38:13 [notice] 363#0: worker process 5727 exited with code 0
+2016/02/05 15:38:13 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 15:38:13 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 15:38:21 [info] 5928#0: *135 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 192.168.1.1, server: localhost, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "85.174.63.230", referrer: "http://85.174.63.230/index.php?r=site%2Fsignup"
+2016/02/05 15:38:21 [info] 5928#0: *131 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 192.168.1.1, server: localhost, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "85.174.63.230", referrer: "http://85.174.63.230/index.php?r=site%2Fsignup"
+2016/02/05 15:38:21 [info] 5928#0: *128 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 192.168.1.1, server: localhost, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "85.174.63.230", referrer: "http://85.174.63.230/index.php?r=site%2Fsignup"
+2016/02/05 15:38:21 [info] 5928#0: *133 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 192.168.1.1, server: localhost, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "85.174.63.230", referrer: "http://85.174.63.230/index.php?r=site%2Fsignup"
+2016/02/05 15:38:21 [info] 5928#0: *132 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 192.168.1.1, server: localhost, request: "GET /index.php HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "85.174.63.230", referrer: "http://85.174.63.230/index.php?r=site%2Fsignup"
+2016/02/05 15:38:21 [info] 5928#0: *145 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:21 [info] 5928#0: *147 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:21 [info] 5928#0: *149 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:21 [info] 5928#0: *151 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:21 [info] 5928#0: *153 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:21 [info] 5928#0: *155 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:22 [info] 5928#0: *157 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:22 [info] 5928#0: *159 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:22 [info] 5928#0: *161 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:22 [info] 5928#0: *163 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:22 [info] 5928#0: *165 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:53 [info] 5928#0: *169 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:56 [info] 5928#0: *170 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:56 [info] 5928#0: *167 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:38:56 [info] 5928#0: *171 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:39:01 [info] 5928#0: *172 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:41:00 [notice] 363#0: signal 1 (SIGHUP) received, reconfiguring
+2016/02/05 15:41:00 [notice] 363#0: signal 1 (SIGHUP) received, reconfiguring
+2016/02/05 15:41:00 [notice] 363#0: reconfiguring
+2016/02/05 15:41:00 [notice] 363#0: reconfiguring
+2016/02/05 15:41:00 [notice] 363#0: using the "epoll" event method
+2016/02/05 15:41:00 [notice] 363#0: using the "epoll" event method
+2016/02/05 15:41:00 [notice] 363#0: start worker processes
+2016/02/05 15:41:00 [notice] 363#0: start worker processes
+2016/02/05 15:41:00 [notice] 363#0: start worker process 5960
+2016/02/05 15:41:00 [notice] 363#0: start worker process 5960
+2016/02/05 15:41:00 [notice] 5928#0: gracefully shutting down
+2016/02/05 15:41:00 [notice] 5928#0: gracefully shutting down
+2016/02/05 15:41:00 [notice] 5928#0: exiting
+2016/02/05 15:41:00 [notice] 5928#0: exiting
+2016/02/05 15:41:00 [notice] 5928#0: exit
+2016/02/05 15:41:00 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 15:41:00 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 15:41:00 [notice] 363#0: worker process 5928 exited with code 0
+2016/02/05 15:41:00 [notice] 363#0: worker process 5928 exited with code 0
+2016/02/05 15:41:00 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 15:41:00 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 15:42:17 [info] 5960#0: *181 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:42:26 [info] 5960#0: *184 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:42:26 [info] 5960#0: *179 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:42:26 [info] 5960#0: *182 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:42:30 [info] 5960#0: *183 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:43:01 [info] 5960#0: *192 client 192.168.1.1 closed keepalive connection
+2016/02/05 15:43:01 [info] 5960#0: *193 client 192.168.1.1 closed keepalive connection
+2016/02/05 16:20:36 [info] 5960#0: *196 client closed connection while waiting for request, client: 82.118.236.26, server: 0.0.0.0:8080
+2016/02/05 16:20:36 [info] 5960#0: *197 client closed connection while waiting for request, client: 82.118.236.26, server: 0.0.0.0:80
+2016/02/05 16:20:37 [info] 5960#0: *198 client 82.118.236.26 closed keepalive connection
+2016/02/05 16:20:37 [info] 5960#0: *199 client 82.118.236.26 closed keepalive connection
+2016/02/05 16:38:41 [info] 5960#0: *200 client sent invalid method while reading client request line, client: 169.229.3.91, server: localhost, request: "ôöYp+j@>¸ÔfeÔ	ò5¯≠0Jf“êî˛ 25∞q•Ω©∂\$rî∂C¨ÏƒË›øEÄü√±•°˜"
+2016/02/05 17:27:31 [notice] 363#0: signal 1 (SIGHUP) received, reconfiguring
+2016/02/05 17:27:31 [notice] 363#0: signal 1 (SIGHUP) received, reconfiguring
+2016/02/05 17:27:31 [notice] 363#0: reconfiguring
+2016/02/05 17:27:31 [notice] 363#0: reconfiguring
+2016/02/05 17:27:31 [notice] 363#0: using the "epoll" event method
+2016/02/05 17:27:31 [notice] 363#0: using the "epoll" event method
+2016/02/05 17:27:31 [notice] 363#0: start worker processes
+2016/02/05 17:27:31 [notice] 363#0: start worker processes
+2016/02/05 17:27:31 [notice] 363#0: start worker process 6646
+2016/02/05 17:27:31 [notice] 363#0: start worker process 6646
+2016/02/05 17:27:31 [notice] 5960#0: gracefully shutting down
+2016/02/05 17:27:31 [notice] 5960#0: gracefully shutting down
+2016/02/05 17:27:31 [notice] 5960#0: exiting
+2016/02/05 17:27:31 [notice] 5960#0: exiting
+2016/02/05 17:27:31 [notice] 5960#0: exit
+2016/02/05 17:27:31 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 17:27:31 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 17:27:31 [notice] 363#0: worker process 5960 exited with code 0
+2016/02/05 17:27:31 [notice] 363#0: worker process 5960 exited with code 0
+2016/02/05 17:27:31 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 17:27:31 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 17:30:49 [notice] 363#0: signal 1 (SIGHUP) received, reconfiguring
+2016/02/05 17:30:49 [notice] 363#0: signal 1 (SIGHUP) received, reconfiguring
+2016/02/05 17:30:49 [notice] 363#0: reconfiguring
+2016/02/05 17:30:49 [notice] 363#0: reconfiguring
+2016/02/05 17:30:49 [notice] 363#0: using the "epoll" event method
+2016/02/05 17:30:49 [notice] 363#0: using the "epoll" event method
+2016/02/05 17:30:49 [notice] 363#0: start worker processes
+2016/02/05 17:30:49 [notice] 363#0: start worker processes
+2016/02/05 17:30:49 [notice] 363#0: start worker process 6817
+2016/02/05 17:30:49 [notice] 363#0: start worker process 6817
+2016/02/05 17:30:49 [notice] 6646#0: gracefully shutting down
+2016/02/05 17:30:49 [notice] 6646#0: gracefully shutting down
+2016/02/05 17:30:49 [notice] 6646#0: exiting
+2016/02/05 17:30:49 [notice] 6646#0: exiting
+2016/02/05 17:30:49 [notice] 6646#0: exit
+2016/02/05 17:30:49 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 17:30:49 [notice] 363#0: signal 17 (SIGCHLD) received
+2016/02/05 17:30:49 [notice] 363#0: worker process 6646 exited with code 0
+2016/02/05 17:30:49 [notice] 363#0: worker process 6646 exited with code 0
+2016/02/05 17:30:49 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 17:30:49 [notice] 363#0: signal 29 (SIGIO) received
+2016/02/05 17:31:52 [info] 6817#0: *265 client closed connection while waiting for request, client: 91.226.212.39, server: 0.0.0.0:8080
+2016/02/05 17:31:52 [info] 6817#0: *266 client closed connection while waiting for request, client: 91.226.212.39, server: 0.0.0.0:80
+2016/02/05 17:31:52 [info] 6817#0: *267 client 91.226.212.39 closed keepalive connection
+2016/02/05 17:31:52 [info] 6817#0: *268 client 91.226.212.39 closed keepalive connection
