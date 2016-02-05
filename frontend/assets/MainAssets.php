@@ -1,7 +1,6 @@
 <?
 namespace frontend\assets;
 
-
 use yii\web\AssetBundle;
 use yii\web\View;
 
@@ -11,16 +10,20 @@ class MainAsset extends  AssetBundle{
     public $baseUrl = '@web';
 
     public $css = [
-        'css/style.css',
-        'css/bootstrap.min.css',
-        'css/lightbox.css',
+        'source/style.css',
+        'source/owl-carousel/owl.carousel.css',
+        'source/owl-carousel/owl.theme.css',
+        'source/slitslider/css/style.css',
+        'source/slitslider/css/custom.css'
     ];
 
     public $js = [
-        'js/bootstrap.min.js',
-        'js/jquery.countTo.js',
-        'js/jquery.waypoints.min.js',
-        'js/lightbox.min.js',
+        'source/script.js',
+        'source/owl-carousel/owl.carousel.js',
+        'source/slitslider/js/modernizr.custom.79639.js',
+        'source/slitslider/js/jquery.ba-cond.min.js',
+        'source/slitslider/js/jquery.slitslider.js',
+        'source/js/google_analytics_auto.js'
     ];
 
     public $depends = [
@@ -32,6 +35,4 @@ class MainAsset extends  AssetBundle{
     public $jsOptions = [
         'position' =>  View::POS_HEAD,
     ];
-
-
 }

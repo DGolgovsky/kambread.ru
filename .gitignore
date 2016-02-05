@@ -1,5 +1,6 @@
 # server logs
 /logs
+/frontend/web/index.html
 
 # yii console command
 /yii
