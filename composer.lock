@@ -209,7 +209,8 @@
             },
             "license": [
                 "MIT"
-            ]
+            ],
+            "time": "2015-12-31 08:33:51"
         },
         {
             "name": "cebe/markdown",
