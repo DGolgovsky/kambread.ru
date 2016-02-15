@@ -4247,3 +4247,18 @@ PHP message: PHP Fatal error:  require_once(): Failed opening required '/var/www
 2016/02/15 10:00:37 [info] 29543#0: *2029 client 192.168.1.1 closed keepalive connection
 2016/02/15 10:00:37 [info] 29543#0: *2033 client 192.168.1.1 closed keepalive connection
 2016/02/15 10:00:37 [info] 29543#0: *2031 client 192.168.1.1 closed keepalive connection
+2016/02/15 10:08:12 [info] 29543#0: *2035 client 192.168.1.1 closed keepalive connection
+2016/02/15 10:08:12 [info] 29543#0: *2037 client 192.168.1.1 closed keepalive connection
+2016/02/15 10:08:12 [info] 29543#0: *2042 client 192.168.1.1 closed keepalive connection
+2016/02/15 10:08:17 [info] 29543#0: *2038 client 192.168.1.1 closed keepalive connection
+2016/02/15 10:10:17 [error] 29543#0: *2051 FastCGI sent in stderr: "PHP message: PHP Warning:  file_put_contents(/var/www/kambread.ru/frontend/runtime/debug/56c179d98bd3c.data): failed to open stream: Permission denied in /var/www/kambread.ru/vendor/yiisoft/yii2-debug/LogTarget.php on line 57
+PHP message: PHP Warning:  touch(): Utime failed: Permission denied in /var/www/kambread.ru/vendor/yiisoft/yii2-debug/LogTarget.php on line 75" while reading upstream, client: 192.168.1.1, server: localhost, request: "GET /main HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "kambread.ru"
+2016/02/15 10:10:17 [error] 29543#0: *2051 FastCGI sent in stderr: "PHP message: PHP Warning:  file_put_contents(/var/www/kambread.ru/frontend/runtime/debug/56c179d98bd3c.data): failed to open stream: Permission denied in /var/www/kambread.ru/vendor/yiisoft/yii2-debug/LogTarget.php on line 57
+PHP message: PHP Warning:  touch(): Utime failed: Permission denied in /var/www/kambread.ru/vendor/yiisoft/yii2-debug/LogTarget.php on line 75" while reading upstream, client: 192.168.1.1, server: localhost, request: "GET /main HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "kambread.ru"
+2016/02/15 10:10:17 [error] 29543#0: *2051 FastCGI sent in stderr: "PHP message: PHP Warning:  file_put_contents(/var/www/kambread.ru/frontend/runtime/debug/56c179d98bd3c.data): failed to open stream: Permission denied in /var/www/kambread.ru/vendor/yiisoft/yii2-debug/LogTarget.php on line 57
+PHP message: PHP Warning:  touch(): Utime failed: Permission denied in /var/www/kambread.ru/vendor/yiisoft/yii2-debug/LogTarget.php on line 75" while reading upstream, client: 192.168.1.1, server: localhost, request: "GET /main HTTP/1.1", upstream: "fastcgi://unix:/run/php-fpm/php-fpm.sock:", host: "kambread.ru"
+2016/02/15 10:10:41 [info] 29543#0: *2045 client 192.168.1.1 closed keepalive connection
+2016/02/15 10:10:54 [info] 29543#0: *2047 client 192.168.1.1 closed keepalive connection
+2016/02/15 10:10:54 [info] 29543#0: *2050 client 192.168.1.1 closed keepalive connection
+2016/02/15 10:10:54 [info] 29543#0: *2048 client 192.168.1.1 closed keepalive connection
+2016/02/15 10:10:55 [info] 29543#0: *2051 client 192.168.1.1 closed keepalive connection
