@@ -1,5 +1,6 @@
 <?php
 return [
+    'name' => 'Kambread site',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
         'cache' => [
