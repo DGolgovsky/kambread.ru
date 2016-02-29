@@ -1,6 +1,6 @@
 <?php
 return [
-    'name' => 'Kambread site',
+    'name' => 'ОАО Камышинский хлебокомбинат',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
         'cache' => [

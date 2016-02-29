@@ -22,7 +22,6 @@ return [
     ],
 
     'components' => [
-
         'mail' => [
             'class'            => 'zyx\phpmailer\Mailer',
             'viewPath'         => '@common/mail',
@@ -34,7 +33,7 @@ return [
                 'smtpsecure' => 'ssl',
                 'smtpauth'   => true,
                 'username'   => 'support@kambread.ru',
-                'password'   => '',
+                'password'   => 'MySMTPpassword',
             ],
         ],
 
