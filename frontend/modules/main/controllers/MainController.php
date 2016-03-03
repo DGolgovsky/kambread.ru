@@ -5,8 +5,8 @@ use frontend\models\Image;
 
 class MainController extends \yii\web\Controller
 {
-    public function actionIndex()
+	public function actionIndex()
     {
-        return $this->render('index');
+    	return $this->render('index');
     }
 }

@@ -25,7 +25,7 @@ class DefaultController extends Controller
 
     }
 
-    public function actionEvent(){
+    public function actionEvent() {
 
         $component = \Yii::$app->common; //new Common();
         $component->on(Common::EVENT_NOTIFY,[$component,'notifyAdmin']);
@@ -34,21 +34,18 @@ class DefaultController extends Controller
 
     }
 
-    public function actionPath(){
-        // @yii
-        // @app
-        //@runtime
-        //@webroot
-        //@web
-        //@vendor
-        //@bower
-        //@npm
+    public function actionPath() {
+        // @yii - framework path
+        // @app - back/front
+        // @runtime - back/front runtime
+        // @webroot - front/back/web
+        // @web - url to web folder
+        // @vendor
+        // @bower
+        // @npm
         // @frontend
         // @backend
 
-        print \Yii::getAlias('@test');
-
-
-
+        print \Yii::getAlias('@debugPath');
     }
 }
