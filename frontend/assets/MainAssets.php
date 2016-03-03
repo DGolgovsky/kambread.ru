@@ -33,6 +33,6 @@ class MainAsset extends  AssetBundle{
     ];
 
     public $jsOptions = [
-        'position' =>  View::POS_HEAD,
+        'position' =>  View::POS_END,
     ];
 }
