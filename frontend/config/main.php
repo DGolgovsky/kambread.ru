@@ -6,8 +6,6 @@ $params = array_merge(
     require(__DIR__ . '/params-local.php')
 );
 
-Yii::setAlias('@debugPath', '@web');
-
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
