@@ -4,35 +4,36 @@ use yii\bootstrap\Nav;
 \frontend\assets\MainAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <title><?=$this->title ?> </title>
-        <meta charset="<?= Yii::$app->charset ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <?=Html::csrfMetaTags() ?>
-        <?php $this->head() ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        <?= $this->title ?>
+    </title>
+    <meta charset="<?= Yii::$app->charset ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <?= yii\helpers\Html::csrfMetaTags() ?>
+    <?php $this->head() ?>
 </head>
 
 <body>
-<?php $this->beginBody() ?>
-
-<!-- Header Starts -->
-<div class="navbar-wrapper">
-    <div class="navbar-inverse" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <!-- Nav Starts -->
-            <div class="navbar-collapse  collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html" >Home</a></li>
+    <?php $this->beginBody() ?>
+    <!-- Header Starts -->
+    <div class="navbar-wrapper">
+        <div class="navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Nav Starts -->
+                <div class="navbar-collapse  collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="index.html" >Home</a></li>
                     <li><a href="about.html" >About</a></li>
                     <li><a href="agents.html" >Agents</a></li>
                     <li><a href="blog.html" >Blog</a></li>
