@@ -22,6 +22,17 @@ return [
     ],
 
     'components' => [
+        'cache' => [
+            'class' => 'yii\caching\MemCache',
+            'servers' => [
+                [
+                    'host' => 'kambread.ru',
+                    'port' => 11211,
+                    'weight' => 60,
+                ],
+            ],
+        ],
+
         'mail' => [
             'class'            => 'zyx\phpmailer\Mailer',
             'viewPath'         => '@common/mail',
