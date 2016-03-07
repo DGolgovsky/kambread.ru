@@ -18,9 +18,9 @@ class MainController extends \yii\web\Controller
 				'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
-            /*'test' => [
+            'test' => [
                 'class' => 'frontend\actions\TestAction',
-            ]*/
+            ],
         ];
     }
 
@@ -50,10 +50,17 @@ class MainController extends \yii\web\Controller
     {
     	$model = new ContactForm();
     	if($model->load(\Yii::$app->request->post()) && $model->validate()) {
-            $body = " <div>Body: <b> ".$model->body." </b></div>";
-            $body .= " <div>Email: <b> ".$model->email." </b></div>";
+			$body = " <div>Сообщение от: <b> ".$model->name." </b></div>";
+			$body .= " <div>Email: <b> ".$model->email." </b></div>";
+			$body .= " <div>Текст: <b> ".$model->body." </b></div>";
 
-            \Yii::$app->common->sendMail($model->subject,$body);
+
+            \Yii::$app->common->sendMail(
+				$model->name,
+				$model->email,
+				$model->subject,
+				$body
+			);
 
             print "Send success";
             die;

@@ -39,12 +39,14 @@ return [
             'useFileTransport' => false,
             'config'           => [
                 'mailer'     => 'smtp',
-                'host'       => 'smtp.kambread.ru',
+                'host'       => 'smtp.mail.ru',
                 'port'       => '465',
                 'smtpsecure' => 'ssl',
                 'smtpauth'   => true,
-                'username'   => 'support@kambread.ru',
-                'password'   => 'MySMTPpassword',
+                'username'   => 'web.notify@kambread.ru',
+                'password'   => '^axJH6g9olGX',
+                'ishtml'     => true,
+                'charset'    => 'UTF-8',
             ],
         ],
 

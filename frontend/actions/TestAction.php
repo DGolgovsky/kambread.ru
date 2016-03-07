@@ -1,4 +1,4 @@
-<?
+<?php
 namespace frontend\actions;
 
 use yii\base\Action;
