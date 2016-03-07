@@ -32,6 +32,8 @@ class MainController extends \yii\web\Controller
     public function actionRegister()
     {
     	$model = new SignupForm;
+		// 1st: $model = new SignupForm(['scenario' => 'short_u_e_p']);
+		// 2nd: $model->scenario = 'short_u_e_p'; // валидация по сценарию
 
     	if(\Yii::$app->request->isAjax && \Yii::$app->request->isPost) {
     		\Yii::$app->response->format = Response::FORMAT_JSON;

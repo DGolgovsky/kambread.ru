@@ -35,7 +35,17 @@ class SignupForm extends Model
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
             ['repassword', 'compare', 'compareAttribute' => 'password'],
+            /*['type', 'frontend\validators\TypeAdvertValidator'],*/
         ];
+    }
+
+    public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+        $scenarios['short_u_e'] = ['username', 'email'];
+        $scenarios['short_u_e_p'] = ['username', 'email', 'password'];
+        $scenarios['short_e_p'] = ['email', 'password'];
+        return $scenarios;
     }
 
     /**
