@@ -12,6 +12,7 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
     'components' => [
+        'db' => require(dirname(__DIR__)."/../common/config/db.php"),
         'log' => [
             'targets' => [
                 [

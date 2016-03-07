@@ -1,6 +1,7 @@
 <?php
 namespace app\modules\main\controllers;
 
+use common\models\LoginForm;
 use frontend\models\ContactForm;
 use frontend\models\Image;
 use frontend\models\SignupForm;
@@ -29,24 +30,26 @@ class MainController extends \yii\web\Controller
     	return $this->render('index');
     }
 
-    public function actionRegister()
-    {
-    	$model = new SignupForm;
+	public function actionRegister()
+	{
+		$model = new SignupForm();
 		// 1st: $model = new SignupForm(['scenario' => 'short_u_e_p']);
 		// 2nd: $model->scenario = 'short_u_e_p'; // валидация по сценарию
 
-    	if(\Yii::$app->request->isAjax && \Yii::$app->request->isPost) {
-    		\Yii::$app->response->format = Response::FORMAT_JSON;
-    		return ActiveForm::validate($model);
-    	}
+		if(\Yii::$app->request->isAjax && \Yii::$app->request->isPost){
+			if($model->load(\Yii::$app->request->post())) {
+				\Yii::$app->response->format = Response::FORMAT_JSON;
+				return ActiveForm::validate($model);
+			}
+		}
 
-    	if($model->load(\Yii::$app->request->post()) && $model->signup()) {
-    		print_r($model->getAttributes());
-    		die;
-    	}
+		if($model->load(\Yii::$app->request->post()) && $model->signup()){
 
-    	return $this->render('register', ['model' => $model]);
-    }
+			\Yii::$app->session->setFlash('success', 'Register Success');
+		}
+
+		return $this->render("register",['model' => $model]);
+	}
 
     public function actionContact()
     {
