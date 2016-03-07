@@ -1,50 +1,41 @@
-<?
+<?php
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
-
-\frontend\assets\MainAsset::register($this);
+use frontend\assets\MainAsset;/*::register($this); ?>*/
+MainAsset::register($this);
 ?>
 
-<?
-$this->beginPage();
-?>
-
+<?php $this->beginPage(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <?= Html::csrfMetaTags() ?>
-
-    <?php $this->head() ?>
+  <meta charset="<?= Yii::$app->charset ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <?= Html::csrfMetaTags() ?>
+  <?php $this->head() ?>
 </head>
+
 <body>
-<? $this->beginBody(); ?>
-
-<!-- Header Starts -->
-<? echo $this->render("//common/head") ?>
-<!-- #Header Starts -->
-
-<div class="inside-banner">
+  <?php $this->beginBody(); ?>
+  <!-- Header Starts -->
+  <?php echo $this->render("//common/header") ?>
+  <!-- #Header Starts -->
+  <div class="inside-banner">
     <div class="container">
-        <span class="pull-right"><a href="#">Home</a> / <?=$this->title ?></span>
-        <h2><?=$this->title ?></h2>
+      <span class="pull-right"><a href="#">Home</a> / <?=$this->title ?></span>
+      <h2><?=$this->title ?></h2>
     </div>
-</div>
+  </div>
+  <!-- banner -->
 
-<!-- banner -->
-
-<!-- banner -->
-<div class="container">
+  <!-- banner -->
+  <div class="container">
     <div class="spacer">
-        <?=$content ?>
+      <?=$content ?>
     </div>
-</div>
-
-<? echo $this->render("//common/footer") ?>
-
-<? $this->endBody(); ?>
+  </div>
+  <?php echo $this->render("//common/footer") ?>
+  <?php $this->endBody(); ?>
 </body>
 </html>
-
-<? $this->endPage(); ?>
+<?php $this->endPage(); ?>
