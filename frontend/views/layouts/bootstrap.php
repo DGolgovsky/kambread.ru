@@ -17,9 +17,9 @@ MainAsset::register($this);
   </head>
   <body>
     <?php $this->beginBody() ?>
-    <? if(Yii::$app->session->hasFlash('success')): ?>
+    <?php if(Yii::$app->session->hasFlash('success')): ?>
       <?=Yii::$app->session->getFlash('success') ?>
-    <? endif; ?>
+    <?php endif; ?>
     <?= $this->render("//common/header") ?>
     <?= $content ?>
     <?= $this->render("//common/footer") ?>
