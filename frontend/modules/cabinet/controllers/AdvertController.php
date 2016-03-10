@@ -12,22 +12,12 @@ use yii\filters\VerbFilter;
 /**
  * AdvertController implements the CRUD actions for Advert model.
  */
-class AdvertController extends Controller
+class AdvertController extends AuthController
 {
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+     public $layout = 'inner';
 
     /**
      * Lists all Advert models.

@@ -17,7 +17,7 @@ return [
             'class' => 'app\modules\main\Module',
         ],
         'cabinet' => [
-            'class' => 'app\modules\cabinetModule',
+            'class' => 'app\modules\cabinet\Module',
         ],
         'gii' => [
             'class' => 'yii\gii\Module',
