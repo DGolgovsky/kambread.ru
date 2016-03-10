@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace common\models;
 
 /**
  * This is the ActiveQuery class for [[Advert]].
