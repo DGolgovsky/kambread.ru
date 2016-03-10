@@ -5,6 +5,7 @@ namespace app\modules\cabinet\controllers;
 use Yii;
 use common\models\Advert;
 use common\models\search\AdvertSearch;
+use common\controllers\AuthController;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
