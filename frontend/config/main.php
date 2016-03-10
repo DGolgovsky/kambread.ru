@@ -16,6 +16,9 @@ return [
         'main' => [
             'class' => 'app\modules\main\Module',
         ],
+        'cabinet' => [
+            'class' => 'app\modules\cabinetModule',
+        ],
         'gii' => [
             'class' => 'yii\gii\Module',
             'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.95', '192.168.0.39'] // adjust this to your needs
