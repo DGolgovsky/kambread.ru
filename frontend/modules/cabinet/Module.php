@@ -1,16 +1,16 @@
 <?php
 
-namespace app\modules;
+namespace app\modules\cabinet;
 
 /**
  * cabinet module definition class
  */
-class cabinetModule extends \yii\base\Module
+class Module extends \yii\base\Module
 {
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'app\modules\controllers';
+    public $controllerNamespace = 'app\modules\cabinet\controllers';
 
     /**
      * @inheritdoc
