@@ -41,4 +41,8 @@ class DefaultController extends Controller
 
     // print \Yii::getAlias('@debugPath');
   }
+  public function actionLoginData() {
+    print \Yii::$app->user->id;
+    print \Yii::$app->user->identity->username;
+  }
 }
