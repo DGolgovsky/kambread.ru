@@ -9,7 +9,7 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'debug'],
     'controllerNamespace' => 'frontend\controllers',
     'defaultRoute' => 'main',
     'modules' => [
@@ -19,6 +19,9 @@ return [
         'gii' => [
             'class' => 'yii\gii\Module',
             'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.95', '192.168.0.39'] // adjust this to your needs
+        ],
+        'debug' => [
+            'class' => 'yii\debug\Module',
         ],
     ],
 

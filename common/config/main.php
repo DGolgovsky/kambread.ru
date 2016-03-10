@@ -8,10 +8,20 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
-            'enablePrettyUrl' => true,
+            // Hide index.php
             'showScriptName' => false,
+            // Use pretty URLs
+            'enablePrettyUrl' => true,
+            'rules' => [
+//              '<alias:contact|about>' => 'site/<alias>',
+//              '<alias:product>/<id:\w+>' => 'site/<alias>',
+//              '<controller:\w+>/<id:\w+>' => '<controller>',
+//              '<controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>',
+//              '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+            ],
         ],
     ],
 ];
