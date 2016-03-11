@@ -107,7 +107,7 @@ class Advert extends \yii\db\ActiveRecord
 		$this->fk_agent = Yii::$app->user->identity->id;
 	}
 
-	public function afterSave(){
+	public function afterSave() {
 		Yii::$app->locator->cache->set('id',$this->idadvert);
 	}
 

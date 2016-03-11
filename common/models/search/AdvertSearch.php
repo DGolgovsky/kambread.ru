@@ -1,6 +1,6 @@
 <?php
 
-namespace common\models\search;
+namespace common\models\Search;
 
 use Yii;
 use yii\base\Model;
@@ -18,7 +18,7 @@ class AdvertSearch extends Advert
     public function rules()
     {
         return [
-            [['id', 'price', 'fk_agent_detail', 'bedroom', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'recommend', 'created_at', 'updated_at'], 'integer'],
+            [['idadvert', 'price', 'fk_agent', 'bedroom', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'recommend', 'created_at', 'updated_at'], 'integer'],
             [['address', 'general_image', 'description', 'location', 'type'], 'safe'],
         ];
     }
@@ -43,8 +43,6 @@ class AdvertSearch extends Advert
     {
         $query = Advert::find();
 
-        // add conditions that should always apply here
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -57,11 +55,10 @@ class AdvertSearch extends Advert
             return $dataProvider;
         }
 
-        // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
+            'idadvert' => $this->idadvert,
             'price' => $this->price,
-            'fk_agent_detail' => $this->fk_agent_detail,
+            'fk_agent' => $this->fk_agent,
             'bedroom' => $this->bedroom,
             'livingroom' => $this->livingroom,
             'parking' => $this->parking,
