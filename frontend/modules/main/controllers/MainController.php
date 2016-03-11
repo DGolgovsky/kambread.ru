@@ -26,7 +26,7 @@ class MainController extends \yii\web\Controller
 	}
 
 	public function actionIndex()
-	{
+	{    	
 		return $this->render('index');
 	}
 
@@ -42,10 +42,12 @@ class MainController extends \yii\web\Controller
 				return ActiveForm::validate($model);
 			}
 		}
+
 		if($model->load(\Yii::$app->request->post()) && $model->signup()){
 
 			\Yii::$app->session->setFlash('success', 'Register Success');
 		}
+
 		return $this->render("register",['model' => $model]);
 	}
 
@@ -56,11 +58,11 @@ class MainController extends \yii\web\Controller
 		if($model->load(\Yii::$app->request->post()) && $model->login()) {
 			$this->goBack();
 		}
+
 		return $this->render("login", ['model' => $model]);
 	}
 
-	public function actionLogout()
-	{
+	public function actionLogout() {
 		\Yii::$app->user->logout();
 		return $this->goHome();
 	}
