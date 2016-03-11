@@ -5,7 +5,7 @@ namespace app\modules\cabinet\controllers;
 use common\controllers\AuthController;
 use Yii;
 use common\models\Advert;
-use common\models\Search\AdvertSearch;
+use common\models\search\AdvertSearch;
 use yii\helpers\BaseFileHelper;
 use yii\helpers\Url;
 use yii\web\Controller;
