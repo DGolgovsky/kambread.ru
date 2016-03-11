@@ -26,7 +26,7 @@ class m160310_135133_tbl_advert extends Migration
                     recommend smallint DEFAULT NULL,
                     created_at int NOT NULL,
                     updated_at int NOT NULL
-                );
+                ); ALTER TABLE advert ALTER COLUMN idadvert SET DEFAULT NEXTVAL('advert_id_seq');
         ");
     }
     

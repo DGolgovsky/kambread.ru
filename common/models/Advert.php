@@ -72,7 +72,7 @@ class Advert extends \yii\db\ActiveRecord
 	public function attributeLabels()
 	{
 		return [
-			'idadvert' => 'Idadvert',
+			'idadvert' => 'IDadvert',
 			'price' => 'Price',
 			'address' => 'Address',
 			'fk_agent' => 'Fk Agent Detail',
