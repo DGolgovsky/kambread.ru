@@ -1,25 +1,25 @@
 <?php
 
+use yii\db\Schema;
 use yii\db\Migration;
 
 class m160310_135504_tbl_subscribe extends Migration
 {
     public function up()
     {
-$this->execute("
-        CREATE TABLE IF NOT EXISTS `subscribe` (
-  `idsubscribe` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(50) DEFAULT NULL,
-  `date_subscribe` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`idsubscribe`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+        $this->execute("
+                CREATE TABLE IF NOT EXISTS subscribe (
+                    idsubscribe INT NOT NULL,
+                    email varchar(50) DEFAULT NULL,
+                    date_subscribe timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                    CONSTRAINT production UNIQUE(idsubscribe)
+                );
         ");
     }
-
+    
     public function down()
     {
-	$this->dropTable("subscribe");
-
+        $this->dropTable("subscribe");
         return false;
     }
 
