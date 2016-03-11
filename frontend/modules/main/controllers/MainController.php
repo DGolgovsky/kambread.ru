@@ -17,18 +17,18 @@ class MainController extends \yii\web\Controller
 		return [
 			'captcha' => [
 				'class' => 'yii\captcha\CaptchaAction',
-								'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-						],
-						'test' => [
-								'class' => 'frontend\actions\TestAction',
-						],
-				];
-		}
+				'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
+			],
+			'test' => [
+				'class' => 'frontend\actions\TestAction',
+			],
+		];
+	}
 
 	public function actionIndex()
-		{    	
-			return $this->render('index');
-		}
+	{
+		return $this->render('index');
+	}
 
 	public function actionRegister()
 	{
@@ -42,26 +42,25 @@ class MainController extends \yii\web\Controller
 				return ActiveForm::validate($model);
 			}
 		}
-
 		if($model->load(\Yii::$app->request->post()) && $model->signup()){
 
 			\Yii::$app->session->setFlash('success', 'Register Success');
 		}
-
 		return $this->render("register",['model' => $model]);
 	}
 
-	public function actionLogin() {
+	public function actionLogin()
+	{
 		$model = new LoginForm;
 
 		if($model->load(\Yii::$app->request->post()) && $model->login()) {
 			$this->goBack();
 		}
-
 		return $this->render("login", ['model' => $model]);
 	}
 
-	public function actionLogout() {
+	public function actionLogout()
+	{
 		\Yii::$app->user->logout();
 		return $this->goHome();
 	}
@@ -73,19 +72,15 @@ class MainController extends \yii\web\Controller
 			$body = " <div>Сообщение от: <b> ".$model->name." </b></div>";
 			$body .= " <div>Email: <b> ".$model->email." </b></div>";
 			$body .= " <div>Текст: <b> ".$model->body." </b></div>";
-
-
-						\Yii::$app->common->sendMail(
+			\Yii::$app->common->sendMail(
 				$model->name,
 				$model->email,
 				$model->subject,
 				$body
 			);
-
-						print "Send success";
-						die;
-				}
-
-				return $this->render("contact", ['model' => $model]);
+			print "Send success";
+			die;
 		}
+		return $this->render("contact", ['model' => $model]);
+	}
 }

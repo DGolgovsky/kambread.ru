@@ -33,7 +33,7 @@ return [
             'class' => 'yii\caching\MemCache',
             'servers' => [
                 [
-                    'host' => 'kambread.ru',
+                    'host' => '85.174.63.230',
                     'port' => 11211,
                     'weight' => 60,
                 ],
