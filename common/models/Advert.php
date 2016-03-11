@@ -3,11 +3,12 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "advert".
  *
- * @property integer $id
+ * @property integer $idadvert
  * @property integer $price
  * @property string $address
  * @property integer $fk_agent_detail
@@ -24,64 +25,98 @@ use Yii;
  * @property integer $recommend
  * @property integer $created_at
  * @property integer $updated_at
- */
+**/
+
 class Advert extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return 'advert';
-    }
+	/**
+	 * @inheritdoc
+	 */
+	public static function tableName()
+	{
+		return 'advert';
+	}
 
-    /**
-     * @inheritdoc
-     */
-    public function rules()
-    {
-        return [
-            [['price', 'fk_agent_detail', 'bedroom', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'recommend', 'created_at', 'updated_at'], 'integer'],
-            [['description'], 'string'],
-            [['address'], 'string', 'max' => 255],
-            [['general_image'], 'string', 'max' => 200],
-            [['location'], 'string', 'max' => 30],
-            [['type'], 'string', 'max' => 50],
-        ];
-    }
+	public function behaviors()
+	{
+		return [
+			TimestampBehavior::className(),
+		];
+	}
 
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'price' => 'Price',
-            'address' => 'Address',
-            'fk_agent_detail' => 'Fk Agent Detail',
-            'bedroom' => 'Bedroom',
-            'livingroom' => 'Livingroom',
-            'parking' => 'Parking',
-            'kitchen' => 'Kitchen',
-            'general_image' => 'General Image',
-            'description' => 'Description',
-            'location' => 'Location',
-            'hot' => 'Hot',
-            'sold' => 'Sold',
-            'type' => 'Type',
-            'recommend' => 'Recommend',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-        ];
-    }
+	public function scenarios(){
+		$scenarios = parent::scenarios();
+		$scenarios['step2'] = ['general_image'];
 
-    /**
-     * @inheritdoc
-     * @return AdvertQuery the active query used by this AR class.
-     */
-    public static function find()
-    {
-        return new AdvertQuery(get_called_class());
-    }
+		return $scenarios;
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function rules()
+	{
+		return [
+			[['price'], 'required'],
+			[['price', 'fk_agent', 'bedroom', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'type', 'recommend'], 'integer'],
+			[['description'], 'string'],
+			[['address'], 'string', 'max' => 255],
+			[['location'], 'string', 'max' => 50],
+			//['general_image', 'file', 'extensions' => ['jpg','png','gif']]
+		];
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function attributeLabels()
+	{
+		return [
+			'idadvert' => 'Idadvert',
+			'price' => 'Price',
+			'address' => 'Address',
+			'fk_agent' => 'Fk Agent Detail',
+			'bedroom' => 'Bedroom',
+			'livingroom' => 'Livingroom',
+			'parking' => 'Parking',
+			'kitchen' => 'Kitchen',
+			'general_image' => 'General Image',
+			'description' => 'Description',
+			'location' => 'Location',
+			'hot' => 'Hot',
+			'sold' => 'Sold',
+			'type' => 'Type',
+			'recommend' => 'Recommend',
+			'created_at' => 'Created At',
+			'updated_at' => 'Updated At',
+		];
+	}
+
+	public function getUser(){
+		return $this->hasOne(User::className(),['id' => 'fk_agent']);
+	}
+
+	//beforeValidate
+	//afterValidate
+	//beforeSave
+	//afterSave
+	//beforeFind
+	//afterFind
+
+	public function afterValidate(){
+		$this->fk_agent = Yii::$app->user->identity->id;
+	}
+
+	public function afterSave(){
+		Yii::$app->locator->cache->set('id',$this->idadvert);
+	}
+
+	/**
+	 * @inheritdoc
+	 * @return AdvertQuery the active query used by this AR class.
+	 */
+	public static function find()
+	{
+		return new AdvertQuery(get_called_class());
+	}
 }
