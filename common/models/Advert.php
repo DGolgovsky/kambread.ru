@@ -11,7 +11,7 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $idadvert
  * @property integer $price
  * @property string $address
- * @property integer $fk_agent_detail
+ * @property integer $fk_agent
  * @property integer $bedroom
  * @property integer $livingroom
  * @property integer $parking
@@ -44,7 +44,8 @@ class Advert extends \yii\db\ActiveRecord
 		];
 	}
 
-	public function scenarios(){
+	public function scenarios()
+	{
 		$scenarios = parent::scenarios();
 		$scenarios['step2'] = ['general_image'];
 
@@ -58,8 +59,8 @@ class Advert extends \yii\db\ActiveRecord
 	{
 		return [
 			[['price'], 'required'],
-			[['price', 'fk_agent', 'bedroom', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'type', 'recommend'], 'integer'],
-			[['description'], 'string'],
+			[['price', 'fk_agent', 'bedroom', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'recommend'], 'integer'],
+			[['description', 'type'], 'string'],
 			[['address'], 'string', 'max' => 255],
 			[['location'], 'string', 'max' => 50],
 			//['general_image', 'file', 'extensions' => ['jpg','png','gif']]
@@ -72,7 +73,7 @@ class Advert extends \yii\db\ActiveRecord
 	public function attributeLabels()
 	{
 		return [
-			'idadvert' => 'IDadvert',
+			'idadvert' => 'Idadvert',
 			'price' => 'Price',
 			'address' => 'Address',
 			'fk_agent' => 'Fk Agent Detail',
@@ -92,7 +93,8 @@ class Advert extends \yii\db\ActiveRecord
 		];
 	}
 
-	public function getUser(){
+	public function getUser()
+    {
 		return $this->hasOne(User::className(),['id' => 'fk_agent']);
 	}
 
@@ -103,13 +105,15 @@ class Advert extends \yii\db\ActiveRecord
 	//beforeFind
 	//afterFind
 
-	public function afterValidate(){
+	public function afterValidate()
+    {
 		$this->fk_agent = Yii::$app->user->identity->id;
 	}
 
-	public function afterSave() {
-		Yii::$app->locator->cache->set('id',$this->idadvert);
-	}
+    public function afterSave($insert, $changedAttributes)
+    {
+        Yii::$app->locator->cache->set('id', $this->idadvert);
+    }
 
 	/**
 	 * @inheritdoc

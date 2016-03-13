@@ -9,6 +9,7 @@ use common\models\Advert;
 
 /**
  * AdvertSearch represents the model behind the search form about `common\models\Advert`.
+ * @property mixed fk_agent
  */
 class AdvertSearch extends Advert
 {

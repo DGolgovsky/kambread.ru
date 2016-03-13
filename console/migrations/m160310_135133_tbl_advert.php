@@ -12,7 +12,7 @@ class m160310_135133_tbl_advert extends Migration
                     idadvert INT NOT NULL CONSTRAINT firstkey PRIMARY KEY,
                     price INT DEFAULT NULL,
                     address varchar(255) DEFAULT NULL,
-                    fk_agent_detail INT DEFAULT NULL,
+                    fk_agent INT DEFAULT NULL,
                     bedroom smallint DEFAULT NULL,
                     livingroom smallint DEFAULT NULL,
                     parking smallint DEFAULT NULL,

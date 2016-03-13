@@ -51,7 +51,8 @@ class AdvertController extends AuthController
 		]);
 	}
 
-	public function actionFileUploadGeneral(){
+	public function actionFileUploadGeneral()
+    {
 
 		if(Yii::$app->request->isPost){
 			$id = Yii::$app->request->post("advert_id");
@@ -85,7 +86,8 @@ class AdvertController extends AuthController
 	}
 
 
-	public function actionFileUploadImages(){
+	public function actionFileUploadImages()
+    {
 		if(Yii::$app->request->isPost){
 			$id = Yii::$app->request->post("advert_id");
 			$path = Yii::getAlias("@frontend/web/uploads/adverts/".$id);
@@ -140,14 +142,13 @@ class AdvertController extends AuthController
 	{
 		$model = $this->findModel($id);
 
-
-		if ($model->load(Yii::$app->request->post()) && $model->save()) {
-			return $this->redirect(['step2']);
-		} else {
-			return $this->render('update', [
-				'model' => $model,
-			]);
-		}
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['step2']);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
 	}
 
 	public function actionStep2()

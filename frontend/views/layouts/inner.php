@@ -15,6 +15,17 @@ MainAsset::register($this);
   </head>
   <body>
     <?php $this->beginBody(); ?>
+    <?php if(Yii::$app->session->hasFlash('success')): ?>
+    <?php
+      $success = Yii::$app->session->getFlash('success');
+      echo \yii\bootstrap\Alert::widget([
+          'options' => [
+              'class' => 'alert-info'
+          ],
+          'body' => $success
+      ])
+    ?>
+    <?php endif; ?>
     <!-- Header Starts -->
     <?php echo $this->render("//common/header") ?>
     <!-- #Header Starts -->
