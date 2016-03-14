@@ -1,7 +1,7 @@
 <?php
-  if(Yii::$app->user->isGuest) {
-    echo \frontend\widgets\Login::widget();
-  }
+if(Yii::$app->user->isGuest) {
+  echo \frontend\widgets\Login::widget();
+}
 ?>
 
 <div class="footer">
@@ -21,12 +21,7 @@
         <h4>Newsletter</h4>
         <p>Get notified about the latest properties in our marketplace.</p>
 
-        <?php echo \yii\helpers\Html::beginForm('','post', ['class' => 'form-inline']) ?>
-        <?php echo \yii\helpers\Html::textInput('search', '', ['class' => 'form-control', 'placeholder' => 'Enter Your email address']) ?>
-
-        <?php echo \yii\helpers\Html::submitButton('Notify Me!', ['class' => 'btn btn-success']) ?>
-
-        <?php echo \yii\helpers\Html::endForm() ?>
+        <?php echo \frontend\widgets\SubscribeWidget::widget() ?>
       </div>
 
       <div class="col-lg-3 col-sm-3">
@@ -45,7 +40,6 @@
           <span class="glyphicon glyphicon-earphone"></span> (123) 456-7890</p>
       </div>
     </div>
-    <p class="copyright">Copyright 2013. All rights reserved.	</p>
-
-
-  </div></div>
+    <p class="copyright">Copyright 2016. All rights reserved.	</p>
+  </div>
+</div>
