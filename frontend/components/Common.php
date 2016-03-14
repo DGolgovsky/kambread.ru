@@ -2,6 +2,7 @@
 namespace frontend\components;
 
 use yii\base\Component;
+use yii\helpers\Url;
 
 class Common extends Component
 {
@@ -38,7 +39,7 @@ class Common extends Component
 		return $image;
 	}
 
-	public static function substr($text, $start=0, $end=50) {
+	public static function substr($text,$start=0,$end=50) {
 		return mb_substr($text,$start,$end);
 	}
 }
