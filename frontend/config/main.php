@@ -13,6 +13,9 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'defaultRoute' => 'main',
     'modules' => [
+        'debug' => [
+            'class' => 'yii\debug\Module',
+        ],
         'main' => [
             'class' => 'app\modules\main\Module',
         ],
@@ -22,9 +25,6 @@ return [
         'gii' => [
             'class' => 'yii\gii\Module',
             'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.95', '192.168.0.39'] // adjust this to your needs
-        ],
-        'debug' => [
-            'class' => 'yii\debug\Module',
         ],
     ],
 
@@ -39,7 +39,6 @@ return [
                 ],
             ],
         ],
-
         'mail' => [
             'class'            => 'zyx\phpmailer\Mailer',
             'viewPath'         => '@common/mail',
@@ -56,11 +55,9 @@ return [
                 'charset'    => 'UTF-8',
             ],
         ],
-
         'common' => [
             'class' => 'frontend\components\Common',
         ],
-
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
