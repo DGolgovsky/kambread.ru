@@ -52,6 +52,6 @@ class Common extends Component
 	}
 
 	public static function getType($row) {
-		return ($row['sold']) ? 'Sold' : 'New';
+		return ($row['sold']) ? 'Sold' : 'New'; // return title
 	}
 }
