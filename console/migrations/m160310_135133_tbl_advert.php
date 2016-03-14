@@ -9,7 +9,7 @@ class m160310_135133_tbl_advert extends Migration
     {
         $this->execute("
                 CREATE TABLE IF NOT EXISTS advert (
-                    idadvert INT NOT NULL CONSTRAINT firstkey PRIMARY KEY,
+                    idadvert INT PRIMARY KEY DEFAULT NEXTVAL('advert_id_seq'),
                     price INT DEFAULT NULL,
                     address varchar(255) DEFAULT NULL,
                     fk_agent INT DEFAULT NULL,
