@@ -13,7 +13,7 @@ class m160310_135133_tbl_advert extends Migration
 			// http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
 			$tableOptions = '';
 		}
-		if (Yii::app()->db->schema->getTable($tableName, true)===null) {
+		
 		$this->createTable('{{%advert}}', [
 			'idadvert' => $this->primaryKey(),
 			'price' => $this->integer(),
@@ -33,7 +33,6 @@ class m160310_135133_tbl_advert extends Migration
 			'created_at' => $this->integer()->notNull(),
 			'updated_at' => $this->integer()->notNull(),
 		], $tableOptions);
-		}
 	}
 
 	public function down()

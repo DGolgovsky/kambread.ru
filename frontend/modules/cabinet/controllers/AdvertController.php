@@ -2,8 +2,8 @@
 
 namespace app\modules\cabinet\controllers;
 
-use common\controllers\AuthController;
 use Yii;
+use common\controllers\AuthController;
 use common\models\Advert;
 use common\models\search\AdvertSearch;
 use yii\helpers\BaseFileHelper;
@@ -52,9 +52,9 @@ class AdvertController extends AuthController
 	}
 
 	public function actionFileUploadGeneral()
-    {
+	{
 
-		if(Yii::$app->request->isPost){
+		if(Yii::$app->request->isPost) {
 			$id = Yii::$app->request->post("advert_id");
 			$path = Yii::getAlias("@frontend/web/uploads/adverts/".$id."/general");
 			BaseFileHelper::createDirectory($path);
@@ -81,13 +81,11 @@ class AdvertController extends AuthController
 				->save($new_name, ['quality' => 100]);
 
 			return true;
-
 		}
 	}
 
-
 	public function actionFileUploadImages()
-    {
+	{
 		if(Yii::$app->request->isPost){
 			$id = Yii::$app->request->post("advert_id");
 			$path = Yii::getAlias("@frontend/web/uploads/adverts/".$id);
@@ -110,7 +108,6 @@ class AdvertController extends AuthController
 
 			sleep(1);
 			return true;
-
 		}
 	}
 
@@ -142,13 +139,13 @@ class AdvertController extends AuthController
 	{
 		$model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['step2']);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			return $this->redirect(['step2']);
+		} else {
+			return $this->render('update', [
+				'model' => $model,
+			]);
+		}
 	}
 
 	public function actionStep2()

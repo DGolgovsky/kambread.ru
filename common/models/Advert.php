@@ -59,8 +59,8 @@ class Advert extends \yii\db\ActiveRecord
 	{
 		return [
 			[['price'], 'required'],
-			[['price', 'fk_agent', 'bedroom', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'recommend'], 'integer'],
-			[['description', 'type'], 'string'],
+			[['price', 'fk_agent', 'bedroom', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'type', 'recommend'], 'integer'],
+			[['description'], 'string'],
 			[['address'], 'string', 'max' => 255],
 			[['location'], 'string', 'max' => 50],
 			//['general_image', 'file', 'extensions' => ['jpg','png','gif']]
@@ -94,7 +94,7 @@ class Advert extends \yii\db\ActiveRecord
 	}
 
 	public function getUser()
-    {
+	{
 		return $this->hasOne(User::className(),['id' => 'fk_agent']);
 	}
 
@@ -106,14 +106,14 @@ class Advert extends \yii\db\ActiveRecord
 	//afterFind
 
 	public function afterValidate()
-    {
+	{
 		$this->fk_agent = Yii::$app->user->identity->id;
 	}
 
-    public function afterSave($insert, $changedAttributes)
-    {
-        Yii::$app->locator->cache->set('id', $this->idadvert);
-    }
+	public function afterSave($insert, $changedAttributes)
+	{
+		Yii::$app->locator->cache->set('id', $this->idadvert);
+	}
 
 	/**
 	 * @inheritdoc

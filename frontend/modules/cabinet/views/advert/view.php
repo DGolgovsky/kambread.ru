@@ -11,41 +11,38 @@ $this->params['breadcrumbs'][] = ['label' => 'Adverts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="advert-view">
+	<h1><?= Html::encode($this->title) ?></h1>
+	<p>
+		<?= Html::a('Update', ['update', 'id' => $model->idadvert], ['class' => 'btn btn-primary']) ?>
+		<?= Html::a('Delete', ['delete', 'id' => $model->idadvert], [
+			'class' => 'btn btn-danger',
+			'data' => [
+				'confirm' => 'Are you sure you want to delete this item?',
+				'method' => 'post',
+			],
+		]) ?>
+	</p>
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->idadvert], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->idadvert], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'idadvert',
-            'price',
-            'address',
-            'fk_agent',
-            'bedroom',
-            'livingroom',
-            'parking',
-            'kitchen',
-            'general_image',
-            'description:ntext',
-            'location',
-            'hot',
-            'sold',
-            'type',
-            'recommend',
-            'created_at',
-            'updated_at',
-        ],
-    ]) ?>
-
+	<?= DetailView::widget([
+		'model' => $model,
+		'attributes' => [
+			'idadvert',
+			'price',
+			'address',
+			'fk_agent',
+			'bedroom',
+			'livingroom',
+			'parking',
+			'kitchen',
+			'general_image',
+			'description:ntext',
+			'location',
+			'hot',
+			'sold',
+			'type',
+			'recommend',
+			'created_at',
+			'updated_at',
+		],
+	]) ?>
 </div>
