@@ -14,7 +14,7 @@ $config = yii\helpers\ArrayHelper::merge(
 );
 
 $service = new yii\di\ServiceLocator();
-$service->set("cache", 'yii\caching\FileCache');
+$service->set("cache",'common\cache\Base64Cache');
 
 $application = new yii\web\Application($config);
 $application->set('locator', $service);
