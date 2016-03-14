@@ -6,48 +6,37 @@
 			?>
 			<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 				<div class="sl-slide-inner">
-					<div class="bg-img" style="background-image: url('<?=\frontend\components\Common::getImageAdvert($row)[0] ?>')")"></div>
-				<h2><a href="#"><?=\frontend\components\Common::getTitleAdvert($row) ?></a></h2>
-				<blockquote>
-					<p class="location"><span class="glyphicon glyphicon-map-marker"></span> <?=$row['address'] ?></p>
-					<p><?=\frontend\components\Common::substr($row['description']) ?></p>
-					<cite>$ <?=$row['price'] ?></cite>
-				</blockquote>
+					<div class="bg-img" style="background-image: url('<?=\frontend\components\Common::getImageAdvert($row)[0] ?>')"></div>
+					<h2><a href="#"><?=\frontend\components\Common::getTitleAdvert($row) ?></a></h2>
+					<blockquote>
+						<p class="location"><span class="glyphicon glyphicon-map-marker"></span> <?=$row['address'] ?></p>
+						<p><?=\frontend\components\Common::substr($row['description']) ?></p>
+						<cite>$ <?=$row['price'] ?></cite>
+					</blockquote>
+				</div>
+				<?php
+					endforeach;
+				?>
 			</div>
 		</div>
-
-		<?php
-		endforeach;
-		?>
-
-	</div><!-- /sl-slider -->
-
-
-
-	<nav id="nav-dots" class="nav-dots">
-		<?php
-		if($count_general >= 1):
-			?>
-			<span class="nav-dot-current"></span>
+		<!-- /sl-slider -->
+		<nav id="nav-dots" class="nav-dots">
+			<?php if($count_general >= 1): ?>
+				<span class="nav-dot-current"></span>
+			<?php endif; ?>
 			<?php
-		endif;
-		?>
-
-		<?php
-		if($count_general > 1):
-			foreach(range(2,$count_general) as $line):
-				?>
-				<span></span>
-				<?php
-			endforeach;
-		endif;
-		?>
-	</nav>
-
-</div><!-- /slider-wrapper -->
+				if($count_general > 1):
+				foreach(range(2,$count_general) as $line):
+			?>
+			<span></span>
+			<?php
+				endforeach;
+				endif;
+			?>
+		</nav>
+	</div>
+	<!-- /slider-wrapper -->
 </div>
-
-
 
 <div class="banner-search">
 	<div class="container">

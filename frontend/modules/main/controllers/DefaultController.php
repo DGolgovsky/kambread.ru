@@ -49,18 +49,13 @@ class DefaultController extends Controller
 
     }
 
-    public function actionCacheTest(){
+    public function actionCacheTest() {
+		$locator = \Yii::$app->locator;
+		$locator->cache->set('test',1);
+		print   $locator->cache->get('test');
+	}
 
-        $locator = \Yii::$app->locator;
-        $locator->cache->set('test',1);
-
-        print   $locator->cache->get('test');
-
-
-    }
-
-    public function actionLoginData(){
-
-        print \Yii::$app->user->identity->username;
-    }
+	public function actionLoginData() {
+		print \Yii::$app->user->identity->username;
+	}
 }
