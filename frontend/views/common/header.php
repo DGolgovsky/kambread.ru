@@ -1,3 +1,6 @@
+<?php
+use yii\bootstrap\Nav;
+?>
 <!-- Header Starts -->
 <div class="navbar-wrapper">
   <div class="navbar-inverse" role="navigation">
@@ -12,13 +15,17 @@
       </div>
       <!-- Nav Starts -->
       <div class="navbar-collapse  collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="index.html" >Home</a></li>
-          <li><a href="about.html" >About</a></li>
-          <li><a href="agents.html" >Agents</a></li>
-          <li><a href="blog.html" >Blog</a></li>
-          <li><a href="contact.html" >Contact</a></li>
-        </ul>
+        <?php
+          $menuItems = [
+            ['label' => 'Home', 'url' => '#'],
+            ['label' => 'About', 'url' => '#'],
+            ['label' => 'Contact', 'url' => '#'],
+          ];
+          echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' => $menuItems,
+          ]);
+        ?>
       </div>
       <!-- #Nav Ends -->
     </div>
@@ -29,11 +36,17 @@
   <!-- Header Starts -->
   <div class="header">
     <a href="index.html" ><img src="/images/logo.png"  alt="Realestate"></a>
-    <ul class="pull-right">
-      <li><a href="buysalerent.html" >Buy</a></li>
-      <li><a href="buysalerent.html" >Sale</a></li>
-      <li><a href="buysalerent.html" >Rent</a></li>
-    </ul>
+    <?php
+      $menuItems = [
+        ['label' => 'Buy', 'url' => '#'],
+        ['label' => 'Sale', 'url' => '#'],
+        ['label' => 'Rent', 'url' => '#'],
+      ];
+      echo Nav::widget([
+        'options' => ['class' => 'pull-right'],
+        'items' => $menuItems,
+      ]);
+    ?>
   </div>
   <!-- #Header Starts -->
 </div>
