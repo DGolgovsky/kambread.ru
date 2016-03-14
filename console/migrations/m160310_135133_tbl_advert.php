@@ -7,43 +7,35 @@ class m160310_135133_tbl_advert extends Migration
 {
     public function up()
     {
-        $this->execute("
-                CREATE TABLE IF NOT EXISTS advert (
-                    idadvert INT PRIMARY KEY DEFAULT NEXTVAL('advert_id_seq'),
-                    price INT DEFAULT NULL,
-                    address varchar(255) DEFAULT NULL,
-                    fk_agent INT DEFAULT NULL,
-                    bedroom smallint DEFAULT NULL,
-                    livingroom smallint DEFAULT NULL,
-                    parking smallint DEFAULT NULL,
-                    kitchen smallint DEFAULT NULL,
-                    general_image varchar(200) DEFAULT NULL,
-                    description text,
-                    location varchar(30) DEFAULT NULL,
-                    hot smallint DEFAULT NULL,
-                    sold smallint DEFAULT NULL,
-                    type varchar(50) DEFAULT NULL,
-                    recommend smallint DEFAULT NULL,
-                    created_at int NOT NULL,
-                    updated_at int NOT NULL
-                ); ALTER TABLE advert ALTER COLUMN idadvert SET DEFAULT NEXTVAL('advert_id_seq');
-        ");
+        $tableOptions = null;
+        if ($this->db->driverName === 'pgsql') {
+            // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
+            $tableOptions = '';
+        }
+
+        $this->createTable('{{%advert}}', [
+            'idadvert' => $this->primaryKey(),
+            'price' => $this->integer(),
+            'address' => $this->string(255),
+            'fk_agent' => $this->integer()->notNull(),
+            'bedroom' => $this->smallInteger(),
+            'livingroom' => $this->smallInteger(),
+            'parking' => $this->smallInteger(),
+            'kitchen' => $this->smallInteger(),
+            'general_image' => $this->string(255),
+            'description' => $this->string(),
+            'location' => $this->string(32),
+            'hot' => $this->smallInteger(),
+            'sold' => $this->smallInteger(),
+            'type' => $this->smallInteger(),
+            'recommend' => $this->smallInteger(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
+        ], $tableOptions);
     }
-    
+
     public function down()
     {
-        $this->dropTable("advert");
-        return false;
+        $this->dropTable('{{%advert}}');
     }
-
-    /*
-    // Use safeUp/safeDown to run migration code within a transaction
-    public function safeUp()
-    {
-    }
-
-    public function safeDown()
-    {
-    }
-    */
 }
