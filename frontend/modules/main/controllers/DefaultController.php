@@ -11,7 +11,7 @@ class DefaultController extends Controller
 	public function actionIndex() {
 		$this->layout = "bootstrap";
 		$query = new Query();
-		$command = $query->from('advert')->orderBy('idadvert desc')->limit(5);
+		$command = $query->from('advert')->groupBy('idadvert')->orderBy('idadvert desc')->limit(5);
 		$result_general = $command->all();
 		$count_general = $command->count();
 		
