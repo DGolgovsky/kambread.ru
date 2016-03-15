@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
-use frontend\assets\MainAsset;/*::register($this); ?>*/
+use frontend\assets\MainAsset;
 MainAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -12,7 +12,7 @@ MainAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode('ОАО "Камышинский хлебокомбинат"') ?></title>
+    <title><?= Html::encode($this->name/*'ОАО "Камышинский хлебокомбинат"'*/) ?></title>
     <?php $this->head() ?>
   </head>
   <body>

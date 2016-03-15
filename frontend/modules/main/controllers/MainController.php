@@ -63,7 +63,8 @@ class MainController extends \yii\web\Controller
 		return $this->render("login", ['model' => $model]);
 	}
 
-	public function actionLogout() {
+	public function actionLogout()
+	{
 		\Yii::$app->user->logout();
 		return $this->goHome();
 	}

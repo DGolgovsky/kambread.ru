@@ -1,5 +1,5 @@
 <?php
-	use yii\helpers\Html;
+use yii\helpers\Html;
 ?>
 
 <div id="slider" class="sl-slider-wrapper">
@@ -47,8 +47,6 @@
 
 </div><!-- /slider-wrapper -->
 </div>
-
-
 
 <div class="banner-search">
 	<div class="container">
