@@ -9,6 +9,8 @@ use yii\web\Response;
 
 class Login extends Widget
 {
+    // init function as constructor
+
     public function run()
     {
         $model = new LoginForm();

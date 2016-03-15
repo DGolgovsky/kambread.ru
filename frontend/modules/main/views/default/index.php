@@ -168,7 +168,7 @@ use yii\helpers\Html;
 									<div class="col-lg-8">
 										<h5><a href="" ><?=\frontend\components\Common::getTitleAdvert($rec) ?></a></h5>
 										<p class="price">$<?=$rec['price'] ?></p>
-										<a href=""  class="more">More Detail</a> </div>
+										<a href=""  class="more">Подробнее</a> </div>
 								</div>
 							</div>
 							<?php
