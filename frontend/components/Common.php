@@ -12,17 +12,6 @@ class Common extends Component
 
 	public function sendMail($event, $name, $email, $subject, $body)
 	{
-		/* zyx-phpmailer
-		if(Yii::$app->mail->compose()
-			->setFrom(['web.notify@kambread.ru' => 'Web notification'])
-			->addReplyTo($email, $name)
-			->setTo([Yii::$app->params['adminEmail'] => $event])
-			->setSubject($subject)
-			->setTextBody($body)
-			->send()) {
-
-		}
-		*/
 		$message = Yii::$app->mailer->compose();
         $message->setFrom(['web.notify@kambread.ru' => $name]);
 		$message->setTo(Yii::$app->params['adminEmail'])
