@@ -24,11 +24,7 @@ class Common extends Component
 		}
 		*/
 		$message = Yii::$app->mailer->compose();
-		if (Yii::$app->user->isGuest) {
-			$message->setFrom(['web.notify@kambread.ru' => 'Web notification']);
-		} else {
-			$message->setFrom(Yii::$app->user->identity->email);
-		}
+        $message->setFrom(['web.notify@kambread.ru' => 'Web notification']);
 		$message->setTo(Yii::$app->params['adminEmail'])
 			->setSubject($subject)
 			->setReplyTo($email)

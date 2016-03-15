@@ -63,7 +63,7 @@ return [
                 'host' => 'smtp.mail.ru',
                 'username' => 'web.notify@kambread.ru',
                 'password' => '^axJH6g9olGX',
-                'port' => '465',
+                'port' => '587',
                 'encryption' => 'tls',
             ],
         ],
