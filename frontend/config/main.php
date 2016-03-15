@@ -9,8 +9,8 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['debug', 'log'],
     'controllerNamespace' => 'frontend\controllers',
+    'bootstrap' => ['log'],
     'defaultRoute' => 'main',
     'components' => [
         'cache' => [
