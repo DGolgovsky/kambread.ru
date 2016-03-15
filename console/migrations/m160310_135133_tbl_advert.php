@@ -39,5 +39,6 @@ class m160310_135133_tbl_advert extends Migration
 	public function down()
 	{
 		$this->dropTable('{{%advert}}');
+		return false;
 	}
 }

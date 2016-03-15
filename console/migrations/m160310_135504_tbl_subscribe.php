@@ -26,5 +26,6 @@ class m160310_135504_tbl_subscribe extends Migration
     public function down()
     {
         $this->dropTable('{{%subscribe}}');
+        return false;
     }
 }
