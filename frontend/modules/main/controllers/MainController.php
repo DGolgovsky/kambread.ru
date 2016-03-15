@@ -115,7 +115,7 @@ class MainController extends \yii\web\Controller
 
 		if(Yii::$app->request->isPost) {
 			if ($model_feedback->load(Yii::$app->request->post()) && $model_feedback->validate()) {
-				Yii::$app->common->sendMail($model_feedback->name, $model_feedback->email, "По ".$model->id,$model_feedback->text);
+				Yii::$app->common->sendMail($model_feedback->name, $model_feedback->email, "По ".$model->idadvert,$model_feedback->text);
 			}
 		}
 
