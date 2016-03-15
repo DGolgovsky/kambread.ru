@@ -12,6 +12,7 @@ return [
     'bootstrap' => ['debug', 'log'],
     'controllerNamespace' => 'frontend\controllers',
     'defaultRoute' => 'main',
+    /*
     'modules' => [
         'debug' => [
             'class' => 'yii\debug\Module',
@@ -27,7 +28,7 @@ return [
             'allowedIPs' => ['127.0.0.1', '::1', '192.168.0.95', '192.168.0.39'] // adjust this to your needs
         ],
     ],
-
+    */
     'components' => [
         'cache' => [
             'class' => 'yii\caching\MemCache',
@@ -54,7 +55,7 @@ return [
                 'ishtml'     => true,
                 'charset'    => 'UTF-8',
             ],
-        ],*/
+        ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
@@ -66,7 +67,7 @@ return [
                 'port' => '587',
                 'encryption' => 'tls',
             ],
-        ],
+        ],*/
         'common' => [
             'class' => 'frontend\components\Common',
         ],
