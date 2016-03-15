@@ -24,10 +24,16 @@ class AdvertController extends AuthController
 
 	public $layout = "inner";
 
+	public function init()
+	{
+		Yii::$app->view->registerJsFile('http://maps.googleapis.com/maps/api/js?sensor=false',['position' => \yii\web\View::POS_HEAD]);
+	}
+
 	/**
 	 * Lists all Advert models.
 	 * @return mixed
 	 */
+
 	public function actionIndex()
 	{
 		$searchModel = new AdvertSearch();
@@ -44,6 +50,7 @@ class AdvertController extends AuthController
 	 * @param integer $id
 	 * @return mixed
 	 */
+
 	public function actionView($id)
 	{
 		return $this->render('view', [
@@ -53,7 +60,6 @@ class AdvertController extends AuthController
 
 	public function actionFileUploadGeneral()
 	{
-
 		if(Yii::$app->request->isPost) {
 			$id = Yii::$app->request->post("advert_id");
 			$path = Yii::getAlias("@frontend/web/uploads/adverts/".$id."/general");
@@ -135,6 +141,7 @@ class AdvertController extends AuthController
 	 * @param integer $id
 	 * @return mixed
 	 */
+
 	public function actionUpdate($id)
 	{
 		$model = $this->findModel($id);
@@ -187,6 +194,7 @@ class AdvertController extends AuthController
 	 * @param integer $id
 	 * @return mixed
 	 */
+
 	public function actionDelete($id)
 	{
 		$this->findModel($id)->delete();
@@ -201,6 +209,7 @@ class AdvertController extends AuthController
 	 * @return Advert the loaded model
 	 * @throws NotFoundHttpException if the model cannot be found
 	 */
+
 	protected function findModel($id)
 	{
 		if (($model = Advert::findOne($id)) !== null) {
