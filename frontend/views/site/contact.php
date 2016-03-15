@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'verifyCode')->widget(\yii\captcha\Captcha::className(), [
                     'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                    'captchaAction' => \yii\helpers\Url::to(['main/captcha'])
+                    'captchaAction' => \yii\helpers\Url::to(['site/captcha'])
                 ]) ?>
 
                 <div class="form-group">
