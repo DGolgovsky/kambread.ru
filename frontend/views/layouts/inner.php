@@ -31,7 +31,7 @@ MainAsset::register($this);
     <!-- #Header Starts -->
     <div class="inside-banner">
       <div class="container">
-        <span class="pull-right"><a href="#">Home</a> / <?=$this->title ?></span>
+        <span class="pull-right"><a href="/">Home</a> / <?=$this->title ?></span>
         <h2><?=$this->title ?></h2>
       </div>
     </div>

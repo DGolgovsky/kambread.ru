@@ -3,14 +3,19 @@ namespace app\modules\main\controllers;
 
 use common\models\Advert;
 use common\models\LoginForm;
+use frontend\components\Common;
 use frontend\filters\FilterAdvert;
 use frontend\models\ContactForm;
 use frontend\models\Image;
 use frontend\models\SignupForm;
 use Yii;
 use yii\base\DynamicModel;
+use yii\data\Pagination;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
+use dosamigos\google\maps\LatLng;
+use dosamigos\google\maps\Map;
+use dosamigos\google\maps\overlays\Marker;
 
 class MainController extends \yii\web\Controller
 {
@@ -37,6 +42,35 @@ class MainController extends \yii\web\Controller
 				'class' => FilterAdvert::className(),
 			]
 		];
+	}
+
+	public function actionFind($propert='',$price='',$apartment = '')
+	{
+		$this->layout = 'sell';
+
+		$query = Advert::find();
+		$query->filterWhere(['like', 'address', $propert])
+			->orFilterWhere(['like', 'description', $propert])
+			->andFilterWhere(['type' => $apartment]);
+
+		if($price) {
+			$prices = explode("-",$price);
+
+			if(isset($prices[0]) && isset($prices[1])) {
+				$query->andWhere(['between', 'price', $prices[0], $prices[1]]);
+			} else {
+				$query->andWhere(['>=', 'price', $prices[0]]);
+			}
+		}
+
+		$countQuery = clone $query;
+		$pages = new Pagination(['totalCount' => $countQuery->count()]);
+		$pages->setPageSize(10);
+
+		$model = $query->offset($pages->offset)->limit($pages->limit)->all();
+
+		$request = \Yii::$app->request;
+		return $this->render("find", ['model' => $model, 'pages' => $pages, 'request' => $request]);
 	}
 
 	public function actionIndex()
@@ -129,12 +163,29 @@ class MainController extends \yii\web\Controller
 			$current_user['username'] = Yii::$app->user->identity->username;
 		}
 
+		$coords = str_replace(['(',')'],'',$model->location);
+		$coords = explode(',',$coords);
+
+		$coord = new LatLng(['lat' => $coords[0], 'lng' => $coords[1]]);
+		$map = new Map([
+			'center' => $coord,
+			'zoom' => 16,
+		]);
+
+		$marker = new Marker([
+			'position' => $coord,
+			'title' => Common::getTitleAdvert($model),
+		]);
+
+		$map->addOverlay($marker);
+
 		return $this->render('view_advert',[
 			'model' => $model,
 			'model_feedback' => $model_feedback,
 			'user' => $user,
 			'images' =>$images,
-			'current_user' => $current_user
+			'current_user' => $current_user,
+			'map' => $map
 		]);
 	}
 }

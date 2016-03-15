@@ -17,7 +17,7 @@ use yii\bootstrap\Nav;
       <div class="navbar-collapse  collapse">
         <?php
           $menuItems = [
-            ['label' => 'Home', 'url' => '#'],
+            ['label' => 'Home', 'url' => '/'],
             ['label' => 'About', 'url' => '#'],
             ['label' => 'Contact', 'url' => '#'],
           ];
