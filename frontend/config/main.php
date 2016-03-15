@@ -39,7 +39,7 @@ return [
                 ],
             ],
         ],
-        'mail' => [
+        /*'mail' => [
             'class'            => 'zyx\phpmailer\Mailer',
             'viewPath'         => '@common/mail',
             'useFileTransport' => false,
@@ -53,6 +53,18 @@ return [
                 'password'   => '^axJH6g9olGX',
                 'ishtml'     => true,
                 'charset'    => 'UTF-8',
+            ],
+        ],*/
+        'mail' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'viewPath' => '@common/mail',
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.mail.ru',
+                'username' => 'web.notify@kambread.ru',
+                'password' => '^axJH6g9olGX',
+                'port' => '465',
+                'encryption' => 'tls',
             ],
         ],
         'common' => [

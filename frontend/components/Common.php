@@ -12,12 +12,20 @@ class Common extends Component
 
 	public function sendMail($event, $name, $email, $subject, $body)
 	{
+		/* zyx-phpmailer
 		if(Yii::$app->mail->compose()
 			->setFrom(['web.notify@kambread.ru' => 'Web notification'])
 			->addReplyTo($email, $name)
 			->setTo([Yii::$app->params['adminEmail'] => $event])
 			->setSubject($subject)
 			->setTextBody($body)
+			->send()) {
+		*/
+		if(Yii::$app->mailer->compose()
+			->setFrom(['web.notify@kambread.ru' => 'Web notification'])
+			->setSubject($subject)
+			->setReplyTo($email)
+			->setTo([Yii::$app->params['adminEmail'] => $event])
 			->send()) {
 			$this->trigger(self::EVENT_NOTIFY);
 			return true;
