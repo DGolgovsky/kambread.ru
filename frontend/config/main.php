@@ -55,7 +55,7 @@ return [
                 'charset'    => 'UTF-8',
             ],
         ],*/
-        'mail' => [
+        'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
             'transport' => [

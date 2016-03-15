@@ -20,16 +20,23 @@ class Common extends Component
 			->setSubject($subject)
 			->setTextBody($body)
 			->send()) {
+
+		}
 		*/
-		if(Yii::$app->mailer->compose()
-			->setFrom(['web.notify@kambread.ru' => 'Web notification'])
+		$message = Yii::$app->mailer->compose();
+		if (Yii::$app->user->isGuest) {
+			$message->setFrom(['web.notify@kambread.ru' => 'Web notification']);
+		} else {
+			$message->setFrom(Yii::$app->user->identity->email);
+		}
+		$message->setTo(Yii::$app->params['adminEmail'])
 			->setSubject($subject)
 			->setReplyTo($email)
 			->setTo([Yii::$app->params['adminEmail'] => $event])
-			->send()) {
-			$this->trigger(self::EVENT_NOTIFY);
-			return true;
-		}
+			->setTextBody($body)
+			->send();
+		$this->trigger(self::EVENT_NOTIFY);
+		return true;
 	}
 
 	public function notifyAdmin($event)
