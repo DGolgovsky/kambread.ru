@@ -113,10 +113,7 @@ use yii\helpers\Html;
 					</div>
 					<h4><a href="" ><?=\frontend\components\Common::getTitleAdvert($row) ?></a></h4>
 					<p class="price">Price: $<?=$row['price'] ?></p>
-
-					// Circles on preview
 					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?=$row['bedroom'] ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?=$row['livingroom'] ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking"><?=$row['parking'] ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen"><?=$row['kitchen'] ?></span> </div>
-					//
 					<a class="btn btn-primary" href="" >View Details</a>
 				</div>
 

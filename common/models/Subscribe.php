@@ -29,6 +29,9 @@ class Subscribe extends \yii\db\ActiveRecord
         return [
             [['date_subscribe'], 'safe'],
             [['email'], 'string', 'max' => 50],
+            ['email', 'required'],
+            ['email', 'email'],
+            ['email', 'unique'],
         ];
     }
 
@@ -38,7 +41,7 @@ class Subscribe extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'idsubscribe' => 'Idsubscribe',
             'email' => 'Email',
             'date_subscribe' => 'Date Subscribe',
         ];
