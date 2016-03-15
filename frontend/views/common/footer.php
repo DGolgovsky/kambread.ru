@@ -1,8 +1,6 @@
 <?php
-use frontend\widgets\Login;
-
 if(Yii::$app->user->isGuest) {
-  echo Login::widget();
+  echo \frontend\widgets\Login::widget();
 }
 ?>
 
@@ -23,7 +21,7 @@ if(Yii::$app->user->isGuest) {
         <h4>Newsletter</h4>
         <p>Get notified about the latest properties in our marketplace.</p>
 
-        <?php echo SubscribeWidget::widget() ?>
+        <?php echo \frontend\widgets\SubscribeWidget::widget() ?>
       </div>
 
       <div class="col-lg-3 col-sm-3">
