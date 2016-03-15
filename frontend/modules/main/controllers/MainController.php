@@ -98,7 +98,7 @@ class MainController extends \yii\web\Controller
 				$body
 			);
 			Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-			die;
+			//die;
 		}
 		return $this->render("contact", ['model' => $model]);
 	}
