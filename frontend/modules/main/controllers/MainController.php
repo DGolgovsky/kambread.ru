@@ -91,12 +91,13 @@ class MainController extends \yii\web\Controller
 			$body .= " <div>Email: <b> ".$model->email." </b></div>";
 			$body .= " <div>Текст: <b> ".$model->body." </b></div>";
 			Yii::$app->common->sendMail(
+				'Feedback',
 				$model->name,
 				$model->email,
 				$model->subject,
 				$body
 			);
-			print "Send success";
+			Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
 			die;
 		}
 		return $this->render("contact", ['model' => $model]);

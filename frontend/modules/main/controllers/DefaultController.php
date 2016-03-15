@@ -8,7 +8,8 @@ use yii\db\Query;
 
 class DefaultController extends Controller
 {
-	public function actionIndex() {
+	public function actionIndex()
+	{
 		$this->layout = "bootstrap";
 		$query = new Query();
 		$query_advert = $query->from('advert')->groupBy('idadvert')->orderBy('idadvert desc');
@@ -30,7 +31,8 @@ class DefaultController extends Controller
 		]);
 	}
 	
-	public function actionService() {
+	public function actionService()
+	{
 		$locator = \Yii::$app->locator;
 		$cache = $locator->cache;
 		$cache->set("test",1);
@@ -38,14 +40,16 @@ class DefaultController extends Controller
 		print $cache->get("test");
 	}
 	
-	public function actionEvent() {
+	public function actionEvent()
+	{
 		$component = \Yii::$app->common; //new Common();
 		$component->on(Common::EVENT_NOTIFY,[$component,'notifyAdmin']);
-		$component->sendMail("tech@kambread.ru","Уведомление","Текст уведомления");
+		$component->sendMail("Notify admin",$component->name,$component->subject,$component->body);
 		$component->off(Common::EVENT_NOTIFY,[$component,'notifyAdmin']);
 	}
 	
-	public function actionPath() {
+	public function actionPath()
+	{
 		// @yii
         // @app
         //@runtime
@@ -61,13 +65,15 @@ class DefaultController extends Controller
 
     }
 
-    public function actionCacheTest() {
+    public function actionCacheTest()
+	{
 		$locator = \Yii::$app->locator;
 		$locator->cache->set('test',1);
-		print   $locator->cache->get('test');
+		print $locator->cache->get('test');
 	}
 
-	public function actionLoginData() {
+	public function actionLoginData()
+	{
 		print \Yii::$app->user->identity->username;
 	}
 }
