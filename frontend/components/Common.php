@@ -24,12 +24,12 @@ class Common extends Component
 		}
 		*/
 		$message = Yii::$app->mailer->compose();
-        $message->setFrom(['web.notify@kambread.ru' => 'Web notification']);
+        $message->setFrom(['web.notify@kambread.ru' => $name]);
 		$message->setTo(Yii::$app->params['adminEmail'])
 			->setSubject($subject)
 			->setReplyTo($email)
 			->setTo([Yii::$app->params['adminEmail'] => $event])
-			->setTextBody($body)
+			->setHtmlBody($body)
 			->send();
 		$this->trigger(self::EVENT_NOTIFY);
 		return true;
@@ -38,7 +38,7 @@ class Common extends Component
 	public function notifyAdmin($event)
 	{
 		Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-		return $this->refresh();
+		//return $this->refresh();
 	}
 
 	public static function getTitleAdvert($data)
