@@ -40,6 +40,8 @@ use yii\helpers\Html;
     endif;
     ?>
 </nav>
+</div><!-- /slider-wrapper -->
+</div>
 
 <div class="banner-search">
     <div class="container">
