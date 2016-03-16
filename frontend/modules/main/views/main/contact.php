@@ -1,3 +1,8 @@
+<?php
+$this->title = 'Contact';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+
 <div class="row contact">
     <div class="col-lg-6 col-sm-6">
         <?php

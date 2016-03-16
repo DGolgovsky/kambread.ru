@@ -1,3 +1,7 @@
+<?php
+$this->title = 'Register';
+$this->params['breadcrumbs'][] = $this->title;
+?>
 <div class="container">
 	<div class="spacer">
 		<div class="row register">

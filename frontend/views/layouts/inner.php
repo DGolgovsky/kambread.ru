@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use frontend\assets\MainAsset;/*::register($this); ?>*/
+//use yii\bootstrap\Nav;
+use frontend\assets\MainAsset;
 MainAsset::register($this);
 ?>
 <?php $this->beginPage(); ?>

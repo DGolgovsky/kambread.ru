@@ -1,7 +1,10 @@
 <?php
 use yii\helpers\Html;
 ?>
-
+<?php
+$this->title = 'Search';
+$this->params['breadcrumbs'][] = $this->title;
+?>
 <div class="properties-listing spacer">
 
     <div class="row">

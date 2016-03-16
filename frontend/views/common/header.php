@@ -1,6 +1,5 @@
 <?php
 use yii\bootstrap\Nav;
-$this->title = 'Камышинский хлебокомбинат';
 ?>
 <!-- Header Starts -->
 <div class="navbar-wrapper">
@@ -20,7 +19,7 @@ $this->title = 'Камышинский хлебокомбинат';
           $menuItems = [
             ['label' => 'Home', 'url' => '/'],
             ['label' => 'About', 'url' => '#'],
-            ['label' => 'Contact', 'url' => '#'],
+            ['label' => 'Contact', 'url' => '/main/main/contact'],
           ];
           echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
@@ -36,7 +35,7 @@ $this->title = 'Камышинский хлебокомбинат';
 <div class="container">
   <!-- Header Starts -->
   <div class="header">
-    <a href="index.php" ><img src="/images/logo.png"  alt="OJSC Kamyshin breadfactory"></a>
+    <a href="/main" ><img src="/images/logo.png"  alt="OJSC Kamyshin breadfactory"></a>
     <?php
         $menuItems = [];
         $guest = Yii::$app->user->isGuest;
