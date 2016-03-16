@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
             'captchaAction' => \yii\helpers\Url::to(['main/captcha'])
         ]) ?>
-        <?=\yii\helpers\Html::submitButton('Send',['class' => 'btn btn-success']) ?>
+        <?=\yii\helpers\Html::submitButton('Отправить',['class' => 'btn btn-success']) ?>
         <?php
             \yii\bootstrap\ActiveForm::end();
         ?>

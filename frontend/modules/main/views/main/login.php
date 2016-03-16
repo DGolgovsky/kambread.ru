@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	<?=$form->field($model,'username') ?>
 	<?=$form->field($model,'password')->passwordInput() ?>
 	<?=$form->field($model,'rememberMe')->checkbox() ?>
-	<?=\yii\helpers\Html::submitButton('Login',['class' => 'btn btn-success']) ?>
+	<?=\yii\helpers\Html::submitButton('Войти',['class' => 'btn btn-success']) ?>
 	<?php \yii\bootstrap\ActiveForm::end(); ?>
 	</div>
 </div>

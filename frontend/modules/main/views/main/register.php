@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					echo $form->field($model, 'repassword')->passwordInput();
 				?>
 				<?php
-					echo \yii\helpers\Html::submitButton('Register', ['class' => 'btn btn-success']);
+					echo \yii\helpers\Html::submitButton('Отправить', ['class' => 'btn btn-success']);
 				?>
 				<?php
 					\yii\bootstrap\ActiveForm::end();
