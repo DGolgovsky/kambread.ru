@@ -1,6 +1,6 @@
 <?php
-    $this->beginContent('@app/views/layouts/bootstrap.php');
-    $this->title = 'Search';
+$this->beginContent('@app/views/layouts/bootstrap.php');
+$this->title = 'Search';
 ?>
 <div class="inside-banner">
     <div class="container">
@@ -8,8 +8,8 @@
         <h2><?=$this->title ?></h2>
     </div>
 </div>
-    <div class="container">
-        <?=$content ?>
-    </div>
+<div class="container">
+    <?=$content ?>
+</div>
 <?php $this->endContent(); ?>
 
