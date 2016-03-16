@@ -1,4 +1,7 @@
-<?php $this->beginContent('@app/views/layouts/bootstrap.php'); ?>
+<?php
+    $this->beginContent('@app/views/layouts/bootstrap.php');
+    $this->title = 'Search';
+?>
 <div class="inside-banner">
     <div class="container">
         <span class="pull-right"><a href="/">Home</a> / <?=$this->title ?></span>

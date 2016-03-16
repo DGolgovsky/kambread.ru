@@ -44,7 +44,7 @@ class MainController extends \yii\web\Controller
 		];
 	}
 
-	public function actionFind($propert='',$price='',$apartment = '')
+	public function actionFind($propert = '', $price = '', $apartment = '')
 	{
 		$this->layout = 'sell';
 
@@ -69,7 +69,7 @@ class MainController extends \yii\web\Controller
 
 		$model = $query->offset($pages->offset)->limit($pages->limit)->all();
 
-		$request = \Yii::$app->request;
+		$request = Yii::$app->request;
 		return $this->render("find", ['model' => $model, 'pages' => $pages, 'request' => $request]);
 	}
 

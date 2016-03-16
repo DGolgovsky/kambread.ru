@@ -1,5 +1,6 @@
 <?php
 use yii\bootstrap\Nav;
+$this->title = 'Камышинский хлебокомбинат';
 ?>
 <!-- Header Starts -->
 <div class="navbar-wrapper">
