@@ -22,10 +22,10 @@ if(Yii::$app->user->isGuest) {
             </div>
             <div class="col-lg-3 col-sm-3">
                 <h4>Follow us</h4>
-                <a href="facebook.com/kambread"><img src="/images/facebook.png"  alt="Facebook"></a>
-                <a href="ok.ru/group/52685470564514"><img src="/images/ok.png"  alt="Одноклассники"></a>
+                <a href="http://facebook.com/kambread"><img src="/images/facebook.png"  alt="Facebook"></a>
+                <a href="http://ok.ru/group/52685470564514"><img src="/images/ok.png"  alt="Одноклассники"></a>
                 <a href="#"><img src="/images/linkedin.png"  alt="linkedin"></a>
-                <a href="vk.com/kam.hleb"><img src="/images/vk.png"  alt="ВКонтакте"></a>
+                <a href="http://vk.com/kam.hleb"><img src="/images/vk.png"  alt="ВКонтакте"></a>
             </div>
             <div class="col-lg-3 col-sm-3">
                 <h4>Contact us</h4>
