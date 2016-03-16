@@ -31,7 +31,7 @@ use yii\helpers\Url;
                 <div class="col-sm-6">
                     <h4>New User Sign Up</h4>
                     <p>Join today and get updated with all the properties deal happening around.</p>
-                    <button type="submit" class="btn btn-info"  onclick="window.location.href='<?= Url::to('main/main/register/') ?>'">Join Now</button>
+                    <button type="submit" class="btn btn-info"  onclick="window.location.href='<?= Url::to('/main/main/register/') ?>'">Join Now</button>
                 </div>
 
             </div>
