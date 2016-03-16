@@ -40,13 +40,13 @@ class Common extends Component
 		$image = [];
 		$base = '/';
 		if($general) {
-			$image[] = $base.'uploads/adverts/'.$data['idadvert'].'/general/small_'.$data['general_image'];
+			$image[] = $base.'uploads/products/'.$data['idadvert'].'/general/small_'.$data['general_image'];
 		} else {
 			$path = Yii::getAlias("@frontend/web/uploads/products/".$data['idadvert']);
 			$files = BaseFileHelper::findFiles($path);
 			foreach($files as $file) {
 				if (strstr($file, "small_") && !strstr($file, "general")) {
-					$image[] = $base . 'uploads/adverts/' . $data['idadvert'] . '/' . basename($file);
+					$image[] = $base . 'uploads/products/' . $data['idadvert'] . '/' . basename($file);
 				}
 			}
 		}
