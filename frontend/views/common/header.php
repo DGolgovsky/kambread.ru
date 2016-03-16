@@ -38,7 +38,7 @@ use yii\bootstrap\Nav;
         <a href="/main" ><img src="/images/logo.png"  alt="Главная"></a>
         <?php
         $menuItems = [];
-        $guest = Yii::$app->user->isGuest;
+        $guest = \Yii::$app->user->isGuest;
         if($guest) {
             $menuItems[] =  ['label' => 'Login', 'url' => '#', 'linkOptions' => ['data-target' => '#loginpop', 'data-toggle' => "modal"]];
         } else {
