@@ -1,6 +1,9 @@
 <?php
+use frontend\widgets\Alert;
+use yii\widgets\Breadcrumbs;
+
 $this->beginContent('@app/views/layouts/bootstrap.php');
-$this->title = 'Search';
+$this->title = 'Поиск';
 ?>
 <div class="inside-banner">
     <div class="container">

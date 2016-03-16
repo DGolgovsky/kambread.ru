@@ -93,7 +93,7 @@ class MainController extends \yii\web\Controller
 
 		if($model->load(\Yii::$app->request->post()) && $model->signup()){
 
-			\Yii::$app->session->setFlash('success', 'Register Success');
+			\Yii::$app->session->setFlash('success', 'Регистрация прошла успешно');
 		}
 
 		return $this->render("register",['model' => $model]);

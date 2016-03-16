@@ -43,7 +43,7 @@ class Subscribe extends \yii\db\ActiveRecord
         return [
             'idsubscribe' => 'Idsubscribe',
             'email' => 'Email',
-            'date_subscribe' => 'Date Subscribe',
+            'date_subscribe' => 'Дата подписки',
         ];
     }
 

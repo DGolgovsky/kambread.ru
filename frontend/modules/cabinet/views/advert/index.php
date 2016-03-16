@@ -7,18 +7,17 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\Search\AdvertSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Adverts';
+$this->title = 'Объявления';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="advert-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 style="color: black; align-content: center;">
+        <?= Html::encode($this->title) ?>
+    </h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
     <p>
-        <?= Html::a('Create Advert', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать новое', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -46,5 +45,4 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-
 </div>

@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Register';
+$this->title = 'Регистрация';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="container">

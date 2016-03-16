@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Contact';
+$this->title = 'Отзыв';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

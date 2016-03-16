@@ -7,22 +7,16 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Advert */
 
 $this->title = $model->idadvert;
-$this->params['breadcrumbs'][] = ['label' => 'Adverts', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Объявления', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="advert-view">
-	<h1><?= Html::encode($this->title) ?></h1>
+	<h1 style="color: black; align-content: center;">
+		<?= Html::encode($this->title) ?>
+	</h1>
 	<p>
-		<?= Html::a('Update', ['update', 'id' => $model->idadvert], ['class' => 'btn btn-primary']) ?>
-		<?= Html::a('Delete', ['delete', 'id' => $model->idadvert], [
-			'class' => 'btn btn-danger',
-			'data' => [
-				'confirm' => 'Are you sure you want to delete this item?',
-				'method' => 'post',
-			],
-		]) ?>
+		<?= Html::a('Обновить', ['update', 'id' => $model->idadvert], ['class' => 'btn btn-primary']) ?>
 	</p>
-
 	<?= DetailView::widget([
 		'model' => $model,
 		'attributes' => [
@@ -41,8 +35,17 @@ $this->params['breadcrumbs'][] = $this->title;
 			'sold',
 			'type',
 			'recommend',
-			'created_at',
-			'updated_at',
+			'created_at:date',
+			'updated_at:date',
 		],
 	]) ?>
+	<p>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->idadvert], [
+            'class' => 'btn btn-danger',
+			'data' => [
+				'confirm' => 'Are you sure you want to delete this item?',
+				'method' => 'post',
+			],
+		]) ?>
+	</p>
 </div>

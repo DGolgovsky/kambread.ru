@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Login';
+$this->title = 'Вход';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row register">

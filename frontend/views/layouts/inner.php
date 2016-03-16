@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use frontend\assets\MainAsset;
 use yii\widgets\Breadcrumbs;
-use common\widgets\Alert;
+use frontend\widgets\Alert;
 
 MainAsset::register($this);
 ?>
@@ -42,7 +42,7 @@ MainAsset::register($this);
             ]) ?>
             <?= Alert::widget() ?>
         </span>
-        <h2><?=$this->title ?></h2>
+        <h2 style="color: black; align-content: center;"><?=$this->title ?></h2>
     </div>
 </div>
 <!-- banner -->

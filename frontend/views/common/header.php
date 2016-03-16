@@ -1,5 +1,6 @@
 <?php
 use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;
 ?>
 <!-- views/common/Header navbar Starts -->
 <div class="navbar-wrapper">
@@ -17,9 +18,9 @@ use yii\bootstrap\Nav;
             <div class="navbar-collapse  collapse">
                 <?php
                 $menuItems = [
-                    ['label' => 'Home', 'url' => '/main'],
-                    ['label' => 'About', 'url' => '#'],
-                    ['label' => 'Contact', 'url' => '/main/main/contact'],
+                    ['label' => 'ГЛАВНАЯ', 'url' => '/main'],
+                    ['label' => 'О КОМПАНИИ', 'url' => '#'],
+                    ['label' => 'КОНТАКТЫ', 'url' => '/main/main/contact'],
                 ];
                 echo Nav::widget([
                     'options' => ['class' => 'navbar-nav navbar-right'],
@@ -40,10 +41,10 @@ use yii\bootstrap\Nav;
         $menuItems = [];
         $guest = \Yii::$app->user->isGuest;
         if($guest) {
-            $menuItems[] =  ['label' => 'Login', 'url' => '#', 'linkOptions' => ['data-target' => '#loginpop', 'data-toggle' => "modal"]];
+            $menuItems[] =  ['label' => 'Войти', 'url' => '#', 'linkOptions' => ['data-target' => '#loginpop', 'data-toggle' => "modal"]];
         } else {
-            $menuItems[] =  ['label' => 'Manager adverts', 'url' => ['/cabinet/advert']];
-            $menuItems[] = ['label' => 'Logout',  'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']];
+            $menuItems[] =  ['label' => 'Менеджер объявлений', 'url' => ['/cabinet/advert']];
+            $menuItems[] = ['label' => 'Выйти',  'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']];
         }
         echo Nav::widget([
             'options' => ['class' => 'pull-right'],
