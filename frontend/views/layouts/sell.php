@@ -4,7 +4,13 @@ $this->title = 'Search';
 ?>
 <div class="inside-banner">
     <div class="container">
-        <span class="pull-right"><a href="/">Home</a> / <?=$this->title ?></span>
+        <span class="pull-right">
+            <?= Breadcrumbs::widget([
+                'homeLink' => ['label' => 'Главная', 'url' => '/main'],
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+            <?= Alert::widget() ?>
+        </span>
         <h2><?=$this->title ?></h2>
     </div>
 </div>

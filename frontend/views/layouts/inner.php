@@ -35,17 +35,18 @@ MainAsset::register($this);
 <!-- #views/common/Header Ends -->
 <div class="inside-banner">
     <div class="container">
-        <span class="pull-right"><a href="/">Главная</a> / <?=$this->title ?></span>
+        <span class="pull-right">
+            <?= Breadcrumbs::widget([
+                'homeLink' => ['label' => 'Главная', 'url' => '/main'],
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+            <?= Alert::widget() ?>
+        </span>
         <h2><?=$this->title ?></h2>
     </div>
 </div>
 <!-- banner -->
 <div class="container">
-    <?= Breadcrumbs::widget([
-        'homeLink' => ['label' => 'Главная', 'url' => '/main'],
-        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-    ]) ?>
-    <?= Alert::widget() ?>
     <div class="spacer">
         <?=$content ?>
     </div>
