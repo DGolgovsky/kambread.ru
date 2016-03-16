@@ -58,7 +58,7 @@ class Advert extends \yii\db\ActiveRecord
 	public function rules()
 	{
 		return [
-			[['price'], 'required'],
+			[['price', 'location'], 'required'],
 			[['price', 'fk_agent', 'bedroom', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'type', 'recommend'], 'integer'],
 			[['description'], 'string'],
 			[['address'], 'string', 'max' => 255],
