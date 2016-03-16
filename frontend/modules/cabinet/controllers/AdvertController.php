@@ -62,7 +62,7 @@ class AdvertController extends AuthController
 	{
 		if(Yii::$app->request->isPost) {
 			$id = Yii::$app->request->post("advert_id");
-			$path = Yii::getAlias("@frontend/web/uploads/adverts/".$id."/general");
+			$path = Yii::getAlias("@frontend/web/uploads/products/".$id."/general");
 			BaseFileHelper::createDirectory($path);
 			$model = Advert::findOne($id);
 			$model->scenario = 'step2';
@@ -94,7 +94,7 @@ class AdvertController extends AuthController
 	{
 		if(Yii::$app->request->isPost){
 			$id = Yii::$app->request->post("advert_id");
-			$path = Yii::getAlias("@frontend/web/uploads/adverts/".$id);
+			$path = Yii::getAlias("@frontend/web/uploads/products/".$id);
 			BaseFileHelper::createDirectory($path);
 			$file = UploadedFile::getInstanceByName('images');
 			$name = time().'.'.$file->extension;
@@ -161,14 +161,14 @@ class AdvertController extends AuthController
 		$model = Advert::findOne($id);
 		$image = [];
 		if($general_image = $model->general_image){
-			$image[] =  '<img src="/uploads/adverts/' . $model->idadvert . '/general/small_' . $general_image . '" width=250>';
+			$image[] =  '<img src="/uploads/products/' . $model->idadvert . '/general/small_' . $general_image . '" width=250>';
 		}
 
 		if(Yii::$app->request->isPost){
 			$this->redirect(Url::to(['advert/']));
 		}
 
-		$path = Yii::getAlias("@frontend/web/uploads/adverts/".$model->idadvert);
+		$path = Yii::getAlias("@frontend/web/uploads/products/".$model->idadvert);
 		$images_add = [];
 
 		try {
@@ -177,7 +177,7 @@ class AdvertController extends AuthController
 
 				foreach ($files as $file) {
 					if (strstr($file, "small_") && !strstr($file, "general")) {
-						$images_add[] = '<img src="/uploads/adverts/' . $model->idadvert . '/' . basename($file) . '" width=250>';
+						$images_add[] = '<img src="/uploads/products/' . $model->idadvert . '/' . basename($file) . '" width=250>';
 					}
 				}
 			}
