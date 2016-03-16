@@ -2,15 +2,16 @@
 $this->title = 'Регистрация';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="container">
-	<div class="spacer">
-		<div class="row register">
-			<div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
+<div class="row register">
+	<div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
 				<?php
 					$form = \yii\bootstrap\ActiveForm::begin([
 						'enableClientValidation' => true,
 						'enableAjaxValidation' => true,
 						]);
+				?>
+				<?php
+					echo $form->field($model, 'name');
 				?>
 				<?php
 					echo $form->field($model, 'username');
@@ -25,12 +26,10 @@ $this->params['breadcrumbs'][] = $this->title;
 					echo $form->field($model, 'repassword')->passwordInput();
 				?>
 				<?php
-					echo \yii\helpers\Html::submitButton('Отправить', ['class' => 'btn btn-success']);
+					echo \yii\helpers\Html::submitButton('Подтвердить', ['class' => 'btn btn-success']);
 				?>
 				<?php
 					\yii\bootstrap\ActiveForm::end();
 				?>
 			</div>
 		</div>
-	</div>
-</div>

@@ -17,7 +17,7 @@ class HotWidget extends  Widget
     public function run()
     {
         $query = $this->_query;
-        $result = $query->from('advert')->where('hot=1')->limit(5)->all();
+        $result = $query->from('product')->where('hot=1')->limit(5)->all();
 
         return $this->render('hot',['result' => $result]);
     }

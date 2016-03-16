@@ -2,19 +2,19 @@
 
 namespace frontend\filters;
 
-use common\models\Advert;
+use common\models\Product;
 use yii\base\ActionFilter;
 use yii\web\HttpException;
 
-class FilterAdvert extends ActionFilter
+class Filterproduct extends ActionFilter
 {
     public function beforeAction($action)
     {
         $id = \Yii::$app->request->get("id");
-        $model = Advert::findOne($id);
+        $model = Product::findOne($id);
 
         if($model == null) {
-            throw new  HttpException(404,'Unknown advert');
+            throw new  HttpException(404,'Unknown product');
             return false;
         }
 

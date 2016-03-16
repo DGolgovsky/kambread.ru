@@ -1,7 +1,7 @@
 <?php
 $this->title = 'Изображения';
 $this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->idadvert, 'url' => ['view', 'id' => $model->idadvert]];
+$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->idproduct]];
 $this->params['breadcrumbs'][] = ['label' => 'Обновление', 'url' => ['update']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'pluginOptions' => [
             'uploadUrl' => \yii\helpers\Url::to(['file-upload-general']),
             'uploadExtraData' => [
-                'advert_id' => $model->idadvert,
+                'product_id' => $model->idproduct,
             ],
             'allowedFileExtensions' =>  ['jpg', 'png','gif'],
             'initialPreview' => $image,
@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'pluginOptions' => [
                 'uploadUrl' => \yii\helpers\Url::to(['file-upload-images']),
                 'uploadExtraData' => [
-                    'advert_id' => $model->idadvert,
+                    'product_id' => $model->idproduct,
                 ],
                 'overwriteInitial' => false,
                 'allowedFileExtensions' =>  ['jpg', 'png','gif'],

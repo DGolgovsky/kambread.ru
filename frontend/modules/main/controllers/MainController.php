@@ -1,10 +1,10 @@
 <?php
 namespace app\modules\main\controllers;
 
-use common\models\Advert;
+use common\models\Product;
 use common\models\LoginForm;
 use frontend\components\Common;
-use frontend\filters\FilterAdvert;
+use frontend\filters\FilterProduct;
 use frontend\models\ContactForm;
 use frontend\models\Image;
 use frontend\models\SignupForm;
@@ -37,8 +37,8 @@ class MainController extends \yii\web\Controller
 	{
 		return [
 			[
-				'only' => ['view-advert'],
-				'class' => FilterAdvert::className(),
+				'only' => ['view-product'],
+				'class' => FilterProduct::className(),
 			]
 		];
 	}
@@ -47,7 +47,7 @@ class MainController extends \yii\web\Controller
 	{
 		$this->layout = 'sell';
 
-		$query = Advert::find();
+		$query = product::find();
 		$query->filterWhere(['like', 'address', $propert])
 			->orFilterWhere(['like', 'description', $propert])
 			->andFilterWhere(['type' => $apartment]);
@@ -135,9 +135,9 @@ class MainController extends \yii\web\Controller
 		return $this->render("contact", ['model' => $model]);
 	}
 
-	public function actionViewAdvert($id)
+	public function actionViewProduct($id)
 	{
-		$model = Advert::findOne($id);
+		$model = Product::findOne($id);
 
 		$data = ['name', 'email', 'text'];
 		$model_feedback = new DynamicModel($data);
@@ -148,12 +148,12 @@ class MainController extends \yii\web\Controller
 
 		if(\Yii::$app->request->isPost) {
 			if ($model_feedback->load(\Yii::$app->request->post()) && $model_feedback->validate()) {
-				\Yii::$app->common->sendMail('Detailed view',$model_feedback->name, $model_feedback->email, "По ".$model->idadvert,$model_feedback->text);
+				\Yii::$app->common->sendMail('Detailed view',$model_feedback->name, $model_feedback->email, "По ".$model->idproduct,$model_feedback->text);
 			}
 		}
 
 		$user = $model->user;
-		$images = \frontend\components\Common::getImageAdvert($model,false);
+		$images = \frontend\components\Common::getImageProduct($model,false);
 
 		$current_user = ['email' => '', 'username' => ''];
 
@@ -173,12 +173,12 @@ class MainController extends \yii\web\Controller
 
 		$marker = new Marker([
 			'position' => $coord,
-			'title' => Common::getTitleAdvert($model),
+			'title' => Common::getTitleProduct($model),
 		]);
 
 		$map->addOverlay($marker);
 
-		return $this->render('view_advert',[
+		return $this->render('view_product',[
 			'model' => $model,
 			'model_feedback' => $model_feedback,
 			'user' => $user,

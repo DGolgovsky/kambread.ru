@@ -4,8 +4,8 @@ namespace app\modules\cabinet\controllers;
 
 use common\controllers\AuthController;
 use Yii;
-use common\models\Advert;
-use common\models\search\AdvertSearch;
+use common\models\Product;
+use common\models\search\ProductSearch;
 use yii\helpers\BaseFileHelper;
 use yii\helpers\Url;
 use yii\web\Controller;
@@ -17,9 +17,9 @@ use yii\imagine\Image;
 use Imagine\Image\Box;
 
 /**
- * AdvertController implements the CRUD actions for Advert model.
+ * ProductController implements the CRUD actions for Product model.
  */
-class AdvertController extends AuthController
+class ProductController extends AuthController
 {
 
 	public $layout = "inner";
@@ -30,13 +30,13 @@ class AdvertController extends AuthController
 	}
 
 	/**
-	 * Lists all Advert models.
+	 * Lists all Product models.
 	 * @return mixed
 	 */
 
 	public function actionIndex()
 	{
-		$searchModel = new AdvertSearch();
+		$searchModel = new ProductSearch();
 		$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
 		return $this->render('index', [
@@ -46,7 +46,7 @@ class AdvertController extends AuthController
 	}
 
 	/**
-	 * Displays a single Advert model.
+	 * Displays a single Product model.
 	 * @param integer $id
 	 * @return mixed
 	 */
@@ -61,10 +61,10 @@ class AdvertController extends AuthController
 	public function actionFileUploadGeneral()
 	{
 		if(Yii::$app->request->isPost) {
-			$id = Yii::$app->request->post("advert_id");
+			$id = Yii::$app->request->post("product_id");
 			$path = Yii::getAlias("@frontend/web/uploads/products/".$id."/general");
 			BaseFileHelper::createDirectory($path);
-			$model = Advert::findOne($id);
+			$model = Product::findOne($id);
 			$model->scenario = 'step2';
 
 			$file = UploadedFile::getInstance($model,'general_image');
@@ -93,7 +93,7 @@ class AdvertController extends AuthController
 	public function actionFileUploadImages()
 	{
 		if(Yii::$app->request->isPost){
-			$id = Yii::$app->request->post("advert_id");
+			$id = Yii::$app->request->post("product_id");
 			$path = Yii::getAlias("@frontend/web/uploads/products/".$id);
 			BaseFileHelper::createDirectory($path);
 			$file = UploadedFile::getInstanceByName('images');
@@ -118,13 +118,13 @@ class AdvertController extends AuthController
 	}
 
 	/**
-	 * Creates a new Advert model.
+	 * Creates a new product model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 * @return mixed
 	 */
 	public function actionCreate()
 	{
-		$model = new Advert();
+		$model = new Product();
 
 		if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			return $this->redirect(['step2']);
@@ -136,7 +136,7 @@ class AdvertController extends AuthController
 	}
 
 	/**
-	 * Updates an existing Advert model.
+	 * Updates an existing product model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id
 	 * @return mixed
@@ -158,17 +158,17 @@ class AdvertController extends AuthController
 	public function actionStep2()
 	{
 		$id = Yii::$app->locator->cache->get('id');
-		$model = Advert::findOne($id);
+		$model = Product::findOne($id);
 		$image = [];
 		if($general_image = $model->general_image){
-			$image[] =  '<img src="/uploads/products/' . $model->idadvert . '/general/small_' . $general_image . '" width=250>';
+			$image[] =  '<img src="/uploads/products/' . $model->idproduct . '/general/small_' . $general_image . '" width=250>';
 		}
 
 		if(Yii::$app->request->isPost){
-			$this->redirect(Url::to(['advert/']));
+			$this->redirect(Url::to(['product/']));
 		}
 
-		$path = Yii::getAlias("@frontend/web/uploads/products/".$model->idadvert);
+		$path = Yii::getAlias("@frontend/web/uploads/products/".$model->idproduct);
 		$images_add = [];
 
 		try {
@@ -177,7 +177,7 @@ class AdvertController extends AuthController
 
 				foreach ($files as $file) {
 					if (strstr($file, "small_") && !strstr($file, "general")) {
-						$images_add[] = '<img src="/uploads/products/' . $model->idadvert . '/' . basename($file) . '" width=250>';
+						$images_add[] = '<img src="/uploads/products/' . $model->idproduct . '/' . basename($file) . '" width=250>';
 					}
 				}
 			}
@@ -189,7 +189,7 @@ class AdvertController extends AuthController
 	}
 
 	/**
-	 * Deletes an existing Advert model.
+	 * Deletes an existing product model.
 	 * If deletion is successful, the browser will be redirected to the 'index' page.
 	 * @param integer $id
 	 * @return mixed
@@ -203,16 +203,16 @@ class AdvertController extends AuthController
 	}
 
 	/**
-	 * Finds the Advert model based on its primary key value.
+	 * Finds the product model based on its primary key value.
 	 * If the model is not found, a 404 HTTP exception will be thrown.
 	 * @param integer $id
-	 * @return Advert the loaded model
+	 * @return product the loaded model
 	 * @throws NotFoundHttpException if the model cannot be found
 	 */
 
 	protected function findModel($id)
 	{
-		if (($model = Advert::findOne($id)) !== null) {
+		if (($model = Product::findOne($id)) !== null) {
 			return $model;
 		} else {
 			throw new NotFoundHttpException('The requested page does not exist.');

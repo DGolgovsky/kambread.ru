@@ -6,13 +6,13 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 
 /**
- * This is the model class for table "advert".
+ * This is the model class for table "product".
  *
- * @property integer $idadvert
+ * @property integer $idproduct
  * @property integer $price
  * @property string $address
  * @property integer $fk_agent
- * @property integer $bedroom
+ * @property string $name
  * @property integer $livingroom
  * @property integer $parking
  * @property integer $kitchen
@@ -27,14 +27,14 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $updated_at
 **/
 
-class Advert extends \yii\db\ActiveRecord
+class Product extends \yii\db\ActiveRecord
 {
 	/**
 	 * @inheritdoc
 	 */
 	public static function tableName()
 	{
-		return 'advert';
+		return 'product';
 	}
 
 	public function behaviors()
@@ -59,8 +59,8 @@ class Advert extends \yii\db\ActiveRecord
 	{
 		return [
 			[['price', 'location'], 'required'],
-			[['price', 'fk_agent', 'bedroom', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'type', 'recommend'], 'integer'],
-			[['description'], 'string'],
+			[['price', 'fk_agent', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'type', 'recommend'], 'integer'],
+			[['description', 'name'], 'string'],
 			[['address'], 'string', 'max' => 255],
 			[['location'], 'string', 'max' => 50],
 			//['general_image', 'file', 'extensions' => ['jpg','png','gif']]
@@ -73,11 +73,11 @@ class Advert extends \yii\db\ActiveRecord
 	public function attributeLabels()
 	{
 		return [
-			'idadvert' => 'Idadvert',
+			'idproduct' => 'ID продукта',
+			'name' => 'Наименование',
 			'price' => 'Цена',
 			'address' => 'Адрес',
 			'fk_agent' => 'ID пользователя',
-			'bedroom' => 'Спальни',
 			'livingroom' => 'Комнаты',
 			'parking' => 'Парковка',
 			'kitchen' => 'Кухни',
@@ -90,6 +90,7 @@ class Advert extends \yii\db\ActiveRecord
 			'recommend' => 'Рекомендация',
 			'created_at' => 'Создано',
 			'updated_at' => 'Изменено',
+			'user.name' => 'Добавлено',
 		];
 	}
 
@@ -112,15 +113,15 @@ class Advert extends \yii\db\ActiveRecord
 
 	public function afterSave($insert, $changedAttributes)
 	{
-		Yii::$app->locator->cache->set('id', $this->idadvert);
+		Yii::$app->locator->cache->set('id', $this->idproduct);
 	}
 
 	/**
 	 * @inheritdoc
-	 * @return AdvertQuery the active query used by this AR class.
+	 * @return ProductQuery the active query used by this AR class.
 	 */
 	public static function find()
 	{
-		return new AdvertQuery(get_called_class());
+		return new ProductQuery(get_called_class());
 	}
 }

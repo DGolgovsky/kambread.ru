@@ -3,16 +3,13 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Advert */
+/* @var $model common\models\product */
 
-$this->title = 'Новое объявление';
+$this->title = 'Новая продукция';
 $this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="advert-create">
-    <h1 style="color: black; align-content: center;">
-        <?= Html::encode($this->title) ?>
-    </h1>
+<div class="product-create">
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Просмотр';
+$this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['/main/main/find']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php echo \frontend\widgets\HotWidget::widget() ?>
     </div>
     <div class="col-lg-9 col-sm-8 ">
-        <h2><?=\frontend\components\Common::getTitleAdvert($model) ?></h2>
+        <h2><?=\frontend\components\Common::getTitleproduct($model) ?></h2>
         <div class="row">
             <div class="col-lg-8">
                 <div class="property-images">
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="carousel-inner">
                             <!-- Item 1 -->
                             <div class="item active">
-                                <img src="<?=\frontend\components\Common::getImageAdvert($model)[0] ?>"  class="properties" alt="properties" />
+                                <img src="<?=\frontend\components\Common::getImageproduct($model)[0] ?>"  class="properties" alt="properties" />
                             </div>
                             <?php
                                 foreach($images as $image):
@@ -57,18 +57,34 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-lg-4">
 				<div class="col-lg-12  col-sm-6">
 					<div class="property-info">
-						<p class="price">$ <?=$model->price ?></p>
+						<p class="price">₽ <?=$model->price ?></p>
 						<p class="area"><span class="glyphicon glyphicon-map-marker"></span> <?=$model->address ?></p>
 
 						<div class="profile">
 							<span class="glyphicon glyphicon-user"></span> Agent Details
-							<p><?=$model->user->email ?><br><?=$model->user->username ?></p>
+							<p>
+                                <?=$model->user->name ?>
+                                <br>
+                                <?=$model->user->email ?>
+                            </p>
 						</div>
 					</div>
 
-					<h6><span class="glyphicon glyphicon-home"></span> Availabilty</h6>
+					<h6><span class="glyphicon glyphicon-home"></span> Рецептура</h6>
 					<div class="listing-detail">
-						<span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?=$model->bedroom ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?=$model->livingroom ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking"><?=$model->parking ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen"><?=$model->kitchen ?></span> </div>
+						<span data-toggle="tooltip" data-placement="bottom" data-original-title="Содержание муки">
+                            Мука
+                        </span><br>
+                        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">
+                            <?=$model->livingroom ?>
+                        </span><br>
+                        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">
+                            <?=$model->parking ?>
+                        </span><br>
+                        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">
+                            <?=$model->kitchen ?>
+                        </span>
+                    </div>
 
 				</div>
 				<div class="col-lg-12 col-sm-6 ">

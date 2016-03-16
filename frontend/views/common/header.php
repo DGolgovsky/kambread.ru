@@ -3,6 +3,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 ?>
 <!-- views/common/Header navbar Starts -->
+
 <div class="navbar-wrapper">
     <div class="navbar-inverse" role="navigation">
         <div class="container">
@@ -15,13 +16,22 @@ use yii\bootstrap\NavBar;
                 </button>
             </div>
             <!-- Nav Starts -->
-            <div class="navbar-collapse  collapse">
+
+            <div class="navbar-collapse collapse">
+                <a href="/main" ><img src="/images/logo.png"  alt="Главная"></a>
                 <?php
                 $menuItems = [
                     ['label' => 'ГЛАВНАЯ', 'url' => '/main'],
                     ['label' => 'О КОМПАНИИ', 'url' => '#'],
-                    ['label' => 'КОНТАКТЫ', 'url' => '/main/main/contact'],
                 ];
+                $guest = \Yii::$app->user->isGuest;
+                if($guest) {
+                    $menuItems[] =  ['label' => 'Войти', 'url' => ['/main/main/login']];
+                    $menuItems[] =  ['label' => 'Регистрация', 'url' => ['/main/main/register/']];
+                } else {
+                    $menuItems[] =  ['label' => 'Кабинет', 'url' => ['/cabinet/product']];
+                    $menuItems[] = ['label' => 'Выйти',  'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']];
+                }
                 echo Nav::widget([
                     'options' => ['class' => 'navbar-nav navbar-right'],
                     'items' => $menuItems,
@@ -32,25 +42,4 @@ use yii\bootstrap\NavBar;
         </div>
     </div>
 </div>
-<!-- #views/common/Header navbar Ends -->
-<div class="container">
-    <!-- Header Starts -->
-    <div class="header">
-        <a href="/main" ><img src="/images/logo.png"  alt="Главная"></a>
-        <?php
-        $menuItems = [];
-        $guest = \Yii::$app->user->isGuest;
-        if($guest) {
-            $menuItems[] =  ['label' => 'Войти', 'url' => '#', 'linkOptions' => ['data-target' => '#loginpop', 'data-toggle' => "modal"]];
-        } else {
-            $menuItems[] =  ['label' => 'Менеджер объявлений', 'url' => ['/cabinet/advert']];
-            $menuItems[] = ['label' => 'Выйти',  'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']];
-        }
-        echo Nav::widget([
-            'options' => ['class' => 'pull-right'],
-            'items' => $menuItems,
-        ]);
-        ?>
-    </div>
-    <!-- #Header Endss -->
-</div>
+

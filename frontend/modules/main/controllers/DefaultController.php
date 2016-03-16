@@ -13,13 +13,13 @@ class DefaultController extends Controller
 		$this->layout = "bootstrap";
 
 		$query = new Query();
-		$query_advert = $query->from('advert')->groupBy('idadvert')->orderBy('idadvert desc');
-		$command = $query_advert->limit(5);
+		$query_product = $query->from('product')->groupBy('idproduct')->orderBy('idproduct desc');
+		$command = $query_product->limit(5);
 		$result_general = $command->all();
 		$count_general = $command->count();
 
-		$featured = $query_advert->limit(15)->all();
-		$recommend_query  = $query_advert->where("recommend= 1")->limit(5);
+		$featured = $query_product->limit(15)->all();
+		$recommend_query  = $query_product->where("recommend= 1")->limit(5);
 		$recommend = $recommend_query->all();
 		$recommend_count = $recommend_query->count();
 

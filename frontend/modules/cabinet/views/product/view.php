@@ -4,43 +4,41 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Advert */
+/* @var $model common\models\product */
 
-$this->title = $model->idadvert;
+$this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="advert-view">
-	<h1 style="color: black; align-content: center;">
-		<?= Html::encode($this->title) ?>
-	</h1>
+<div class="product-view">
 	<p>
-		<?= Html::a('Обновить', ['update', 'id' => $model->idadvert], ['class' => 'btn btn-primary']) ?>
+		<?= Html::a('Обновить', ['update', 'id' => $model->idproduct], ['class' => 'btn btn-primary']) ?>
 	</p>
 	<?= DetailView::widget([
 		'model' => $model,
 		'attributes' => [
-			'idadvert',
+			//'idproduct',
+			'name',
 			'price',
-			'address',
-			'fk_agent',
-			'bedroom',
-			'livingroom',
-			'parking',
-			'kitchen',
-			'general_image',
+			//'address',
+			//'fk_agent',
+			//'livingroom',
+			//'parking',
+			//'kitchen',
+			//'general_image',
 			'description:ntext',
-			'location',
+			//'location',
 			'hot',
 			'sold',
 			'type',
 			'recommend',
+			'user.name',
 			'created_at:date',
 			'updated_at:date',
 		],
 	]) ?>
 	<p>
-        <?= Html::a('Удалить', ['delete', 'id' => $model->idadvert], [
+        <?= Html::a('Удалить', ['delete', 'id' => $model->idproduct], [
             'class' => 'btn btn-danger',
 			'data' => [
 				'confirm' => 'Are you sure you want to delete this item?',

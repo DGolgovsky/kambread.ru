@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Advert */
+/* @var $model common\models\product */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="advert-form">
+<div class="product-form">
 
 	<?php $form = ActiveForm::begin(); ?>
 
@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
 
 	<div id="map_canvas" style="width:640px; height:380px"></div><br/>
 
-	<?= $form->field($model, 'bedroom')->textInput() ?>
+	<?= $form->field($model, 'name')->textInput() ?>
 
 	<?= $form->field($model, 'livingroom')->textInput() ?>
 
@@ -69,7 +69,7 @@ use yii\widgets\ActiveForm;
 		        map.setZoom(15)
 		        DeleteMarkers()
 
-		        $('#advert-location').val(location)
+		        $('#product-location').val(location)
 
 		        marker = new google.maps.Marker({
 		            map: map,
@@ -78,7 +78,7 @@ use yii\widgets\ActiveForm;
 		        });
 
 		        google.maps.event.addListener(marker, 'dragend', function() {
-		            $('#advert-location').val(marker.getPosition())
+		            $('#product-location').val(marker.getPosition())
 		        });
 
 		        markers.push(marker);
@@ -88,13 +88,13 @@ use yii\widgets\ActiveForm;
 		$(document).ready(function() {
 		    initialize();
 
-		    if( $('#advert-address').val()) {
-		        _location = $('#advert-address').val()
+		    if( $('#product-address').val()) {
+		        _location = $('#product-address').val()
 		        findLocation(_location)
 		    }
 
-		    $('#advert-address').bind('blur keyup',function() {
-		        _location = $('#advert-address').val()
+		    $('#product-address').bind('blur keyup',function() {
+		        _location = $('#product-address').val()
 		        findLocation(_location)
 		    })
 		});"

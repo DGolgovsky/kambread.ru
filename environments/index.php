@@ -46,7 +46,7 @@ return [
             'frontend/config/main-local.php',
         ],
     ],
-    'Production' => [
+    'production' => [
         'path' => 'prod',
         'setWritable' => [
             'backend/runtime',

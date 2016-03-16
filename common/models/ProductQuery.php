@@ -3,11 +3,11 @@
 namespace common\models;
 
 /**
- * This is the ActiveQuery class for [[Advert]].
+ * This is the ActiveQuery class for [[product]].
  *
- * @see Advert
+ * @see product
  */
-class AdvertQuery extends \yii\db\ActiveQuery
+class ProductQuery extends \yii\db\ActiveQuery
 {
     /*public function active()
     {
@@ -16,7 +16,7 @@ class AdvertQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return Advert[]|array
+     * @return product[]|array
      */
     public function all($db = null)
     {
@@ -25,7 +25,7 @@ class AdvertQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return Advert|array|null
+     * @return product|array|null
      */
     public function one($db = null)
     {

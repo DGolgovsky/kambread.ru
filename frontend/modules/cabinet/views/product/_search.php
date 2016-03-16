@@ -4,18 +4,18 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Search\AdvertSearch */
+/* @var $model common\models\Search\productSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="advert-search">
+<div class="product-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'idadvert') ?>
+    <?= $form->field($model, 'idproduct') ?>
 
     <?= $form->field($model, 'price') ?>
 
@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'fk_agent_detail') ?>
 
-    <?= $form->field($model, 'bedroom') ?>
+    <?= $form->field($model, 'name') ?>
 
     <?php // echo $form->field($model, 'livingroom') ?>
 

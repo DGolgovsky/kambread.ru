@@ -8,12 +8,11 @@ use yii\helpers\Html;
         ?>
         <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
             <div class="sl-slide-inner">
-                <div class="bg-img" style="background-image: url('<?=\frontend\components\Common::getImageAdvert($row)[0] ?>')")"></div>
-            <h2><a href="<?=\frontend\components\Common::getUrlAdvert($row) ?>"><?=\frontend\components\Common::getTitleAdvert($row) ?></a></h2>
+                <div class="bg-img" style="background-image: url('<?=\frontend\components\Common::getImageproduct($row)[0] ?>')")"></div>
+            <h2><a href="<?=\frontend\components\Common::getUrlproduct($row) ?>"><?=\frontend\components\Common::getTitleproduct($row) ?></a></h2>
             <blockquote>
-                <p class="location"><span class="glyphicon glyphicon-map-marker"></span> <?=$row['address'] ?></p>
                 <p><?=\frontend\components\Common::substr($row['description']) ?></p>
-                <cite>$ <?=$row['price'] ?></cite>
+                <cite>₽ <?=$row['price'] ?></cite>
             </blockquote>
         </div>
     </div>
@@ -41,79 +40,32 @@ use yii\helpers\Html;
     ?>
 </nav>
 </div><!-- /slider-wrapper -->
-</div>
 
-<div class="banner-search">
-    <div class="container">
-        <!-- banner -->
-        <h3>Поиск по каталогу продукции</h3>
-        <div class="searchbar">
-            <div class="row">
-                <?=Html::beginForm(\yii\helpers\Url::to('main/main/find/'),'get') ?>
-                <div class="col-lg-6 col-sm-6">
-                    <?=Html::textInput('propert', '', ['class' => 'form-control']) ?>
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-4">
-                            <?=Html::dropDownList('price', '',[
-                                '0-150' => '$0 - $150',
-                                '150-300' => '$150 - $300',
-                                '300-450' => '$300 - $450',
-                                '450' =>'$450 - above',
-                            ],['class' => 'form-control', 'prompt' => 'Price']) ?>
-                        </div>
-                        <div class="col-lg-3 col-sm-4">
-                            <?=Html::dropDownList('apartment', '',[
-                                'Хлеб',
-                                'Батон',
-                                'Булка',
-                            ],['class' => 'form-control', 'prompt' => 'Property']) ?>
-                        </div>
-                        <div class="col-lg-3 col-sm-4">
-                            <?=Html::submitButton('Найти', ['class' => 'btn btn-success']) ?>
-                        </div>
-                    </div>
-                    <?=Html::endForm() ?>
-                </div>
-                <?php
-                if(Yii::$app->user->isGuest):
-                    ?>
-                    <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
-                        <p>Присоединяйтесь</p>
-                        <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Войти</button>
-                    </div>
-                    <?php
-                endif;
-                ?>
-            </div>
-        </div>
-        <!-- banner -->
-    </div>
-</div>
+
+
 <div class="container">
     <div class="properties-listing spacer">
         <a href="/main/main/find"  class="pull-right viewall">Посмотреть все</a>
-        <h2>Новинки</h2>
+        <h2>Каталог продукции</h2>
         <div id="owl-example" class="owl-carousel">
             <?php
             foreach($featured as $row):
                 ?>
                 <div class="properties">
+                    <h4>
+                        <a href="<?=\frontend\components\Common::getUrlproduct($row) ?>" >
+                            <?=\frontend\components\Common::getTitleproduct($row) ?>
+                        </a>
+                    </h4>
                     <div class="image-holder">
-                        <img src="<?=\frontend\components\Common::getImageAdvert($row)[0] ?>"  class="img-responsive" alt="properties"/>
+                        <img src="<?=\frontend\components\Common::getImageProduct($row)[0] ?>"  class="img-responsive" alt="properties"/>
                         <div class="status <?=($row['sold']) ? 'sold' : 'new' ?>">
                             <?=\frontend\components\Common::getType($row) ?>
                         </div>
                     </div>
-                    <h4>
-                        <a href="<?=\frontend\components\Common::getUrlAdvert($row) ?>" >
-                            <?=\frontend\components\Common::getTitleAdvert($row) ?>
-                        </a>
-                    </h4>
-                    <p class="price">Цена: $<?=$row['price'] ?></p>
-                    <div class="listing-detail">
-                        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?=$row['bedroom'] ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?=$row['livingroom'] ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking"><?=$row['parking'] ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen"><?=$row['kitchen'] ?></span>
-                    </div>
-                    <a class="btn btn-primary" href="<?=\frontend\components\Common::getUrlAdvert($row) ?>">Подробнее</a>
+                    <h4></h4>
+
+                    <a class="btn btn-primary" href="<?=\frontend\components\Common::getUrlproduct($row) ?>">Подробнее</a>
                 </div>
                 <?php
             endforeach;
@@ -134,7 +86,7 @@ use yii\helpers\Html;
                 </p>
             </div>
             <div class="col-lg-5 col-lg-offset-1 col-sm-3 recommended">
-				<h3>Рекомендуем</h3>
+				<h3>Новости</h3>
                 <div id="myCarousel" class="carousel slide">
                     <ol class="carousel-indicators">
                         <?php
@@ -163,14 +115,14 @@ use yii\helpers\Html;
                             <div class="item <?=($i == 0) ? 'active' : '' ?>">
                                 <div class="row">
                                     <div class="col-lg-4">
-                                        <img src="<?=\frontend\components\Common::getImageAdvert($rec)[0] ?>"  class="img-responsive" alt="properties"/>
+                                        <img src="<?=\frontend\components\Common::getImageproduct($rec)[0] ?>"  class="img-responsive" alt="properties"/>
                                     </div>
                                     <div class="col-lg-8">
                                         <h5>
-                                            <a href="<?=\frontend\components\Common::getUrlAdvert($rec) ?>" ><?=\frontend\components\Common::getTitleAdvert($rec) ?></a>
+                                            <a href="<?=\frontend\components\Common::getUrlproduct($rec) ?>" ><?=\frontend\components\Common::getTitleproduct($rec) ?></a>
                                         </h5>
                                         <p class="price">$<?=$rec['price'] ?></p>
-                                        <a href="<?=\frontend\components\Common::getUrlAdvert($rec) ?>"  class="more">Подробнее</a>
+                                        <a href="<?=\frontend\components\Common::getUrlproduct($rec) ?>"  class="more">Подробнее</a>
                                     </div>
                                 </div>
                             </div>

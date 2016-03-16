@@ -3,7 +3,7 @@ use frontend\widgets\Alert;
 use yii\widgets\Breadcrumbs;
 
 $this->beginContent('@app/views/layouts/bootstrap.php');
-$this->title = 'Поиск';
+$this->title = 'Продукция';
 ?>
 <div class="inside-banner">
     <div class="container">

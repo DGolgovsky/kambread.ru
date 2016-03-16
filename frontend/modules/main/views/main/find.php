@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 ?>
 <?php
-$this->title = 'Поиск';
+$this->title = 'Каталог продукции';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="properties-listing spacer">
@@ -14,9 +14,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?=Html::textInput('propert', $request->get('propert'), ['class' => 'form-control', 'placeholder' => 'Что искать?']) ?>
                 <div class="row">
                     <div class="col-lg-12">
-                        <?=Html::dropDownList('price', $request->get('price'),[
-                            '0-150' => '$0 - $150',
-                            '150-300' => '$150 - $300',
+                        <?=Html::dropDownList('Цена', $request->get('price'),[
+                            '0-10' => '₽0 - ₽10',
+                            '10-15' => '₽10 - ₽15',
                             '300-450' => '$300 - $450',
                             '450' =>'$450 - above',
                         ],['class' => 'form-control', 'prompt' => 'Price']) ?>
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <?=Html::dropDownList('apartment', $request->get('apartment'),[
+                        <?=Html::dropDownList('Вид', $request->get('apartment'),[
                             'Хлеб',
                             'Батон',
                             'Булка',
@@ -42,22 +42,18 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="row">
                 <?php
                 foreach($model as $row):
-                    $url = \frontend\components\Common::getUrlAdvert($row);
+                    $url = \frontend\components\Common::getUrlproduct($row);
                     ?>
                     <!-- properties -->
                     <div class="col-lg-4 col-sm-6">
                         <div class="properties">
                             <div class="image-holder">
-                                <img src="<?=\frontend\components\Common::getImageAdvert($row)[0] ?>"  class="img-responsive" alt="properties">
+                                <img src="<?=\frontend\components\Common::getImageproduct($row)[0] ?>"  class="img-responsive" alt="properties">
                                 <div class="status <?=($row['sold']) ? 'sold' : 'new' ?>"><?=\frontend\components\Common::getType($row) ?>
                                 </div>
                             </div>
-                            <h4><a href="<?=$url ?>" ><?=\frontend\components\Common::getTitleAdvert($row) ?></a></h4>
-                            <p class="price">Price: $<?=$row['price'] ?></p>
-                            <div class="listing-detail">
-                                <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?=$row['bedroom'] ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?=$row['livingroom'] ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking"><?=$row['parking'] ?></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen"><?=$row['kitchen'] ?></span>
-                            </div>
-                            <a class="btn btn-primary" href="<?=$url ?>" >Посмотреть подробности</a>
+                            <h4><a href="<?=$url ?>" ><?=\frontend\components\Common::getTitleproduct($row) ?></a></h4>
+                            <a class="btn btn-primary" href="<?=$url ?>" >Детальнее</a>
                         </div>
                     </div>
                     <?php

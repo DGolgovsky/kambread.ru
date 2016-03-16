@@ -10,7 +10,7 @@ class Common extends Component
 {
 	const EVENT_NOTIFY = 'notify_admin';
 
-	public function sendMail($event, $name, $email, $subject, $body)
+	public function sendMail($event,$name, $email, $subject, $body)
 	{
 		$message = Yii::$app->mailer->compose();
         $message->setFrom(['web.notify@kambread.ru' => $name]);
@@ -30,23 +30,23 @@ class Common extends Component
 		return $this->refresh();
 	}
 
-	public static function getTitleAdvert($data)
+	public static function getTitleProduct($data)
 	{
-		return $data['bedroom'].' Заказов и '.$data['kitchen'].' счастливых хлебцов было продано';
+		return $data['name']; //.' Заказов и '.$data['kitchen'].' счастливых хлебцов было продано';
 	}
 
-	public static function getImageAdvert($data,$general = true,$original = false)
+	public static function getImageProduct($data,$general = true,$original = false)
 	{
 		$image = [];
 		$base = '/';
 		if($general) {
-			$image[] = $base.'uploads/products/'.$data['idadvert'].'/general/small_'.$data['general_image'];
+			$image[] = $base.'uploads/products/'.$data['idproduct'].'/general/small_'.$data['general_image'];
 		} else {
-			$path = Yii::getAlias("@frontend/web/uploads/products/".$data['idadvert']);
+			$path = Yii::getAlias("@frontend/web/uploads/products/".$data['idproduct']);
 			$files = BaseFileHelper::findFiles($path);
 			foreach($files as $file) {
 				if (strstr($file, "small_") && !strstr($file, "general")) {
-					$image[] = $base . 'uploads/products/' . $data['idadvert'] . '/' . basename($file);
+					$image[] = $base . 'uploads/products/' . $data['idproduct'] . '/' . basename($file);
 				}
 			}
 		}
@@ -64,8 +64,8 @@ class Common extends Component
 		return ($row['sold']) ? 'Рекомендуем' : 'Новинка'; // return title
 	}
 
-	public function getUrlAdvert($row)
+	public function getUrlProduct($row)
 	{
-		return Url::to(['/main/main/view-advert', 'id' => $row['idadvert']]);
+		return Url::to(['/main/main/view-product', 'id' => $row['idproduct']]);
 	}
 }

@@ -5,13 +5,13 @@ namespace common\models\search;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Advert;
+use common\models\Product;
 
 /**
- * AdvertSearch represents the model behind the search form about `common\models\Advert`.
+ * productSearch represents the model behind the search form about `common\models\product`.
  * @property mixed fk_agent
  */
-class AdvertSearch extends Advert
+class ProductSearch extends Product
 {
 	/**
 	 * @inheritdoc
@@ -19,7 +19,7 @@ class AdvertSearch extends Advert
 	public function rules()
 	{
 		return [
-			[['idadvert', 'price', 'fk_agent', 'bedroom', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'recommend', 'created_at', 'updated_at'], 'integer'],
+			[['idproduct', 'price', 'fk_agent', 'name', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'recommend', 'created_at', 'updated_at'], 'integer'],
 			[['address', 'general_image', 'description', 'location', 'type'], 'safe'],
 		];
 	}
@@ -42,7 +42,7 @@ class AdvertSearch extends Advert
 	 */
 	public function search($params)
 	{
-		$query = Advert::find();
+		$query = Product::find();
 
 		$dataProvider = new ActiveDataProvider([
 			'query' => $query,
@@ -57,10 +57,10 @@ class AdvertSearch extends Advert
 		}
 
 		$query->andFilterWhere([
-			'idadvert' => $this->idadvert,
+			'idproduct' => $this->idproduct,
 			'price' => $this->price,
 			'fk_agent' => $this->fk_agent,
-			'bedroom' => $this->bedroom,
+			'name' => $this->name,
 			'livingroom' => $this->livingroom,
 			'parking' => $this->parking,
 			'kitchen' => $this->kitchen,

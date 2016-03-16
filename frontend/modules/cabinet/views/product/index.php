@@ -4,19 +4,17 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\Search\AdvertSearch */
+/* @var $searchModel common\models\search\ProductSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Продукция';
+$this->title = 'Кабинет';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="advert-index">
-    <h1 style="color: black; align-content: center;">
-        <?= Html::encode($this->title) ?>
-    </h1>
+<div>
+
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     <p>
-        <?= Html::a('Создать новое', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,15 +22,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'idadvert',
-            'user.username',
+            'name',
+            //'idproduct',
+            'user.name',
             'price',
-            'address',
-            //'bedroom',
-            //'livingroom',
+            //'address',
+            ////'livingroom',
             //'parking',
             //'kitchen',
-            // 'general_image',
+            //'general_image',
             'description:ntext',
             // 'location',
             'hot',

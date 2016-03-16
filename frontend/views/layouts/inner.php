@@ -42,7 +42,7 @@ MainAsset::register($this);
             ]) ?>
             <?= Alert::widget() ?>
         </span>
-        <h2 style="color: black; align-content: center;"><?=$this->title ?></h2>
+        <h2><?=$this->title ?></h2>
     </div>
 </div>
 <!-- banner -->

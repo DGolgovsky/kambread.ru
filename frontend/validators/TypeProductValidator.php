@@ -2,7 +2,7 @@
 namespace frontend\validators;
 use yii\validators\Validator;
 
-class TypeAdvertValidator extends Validator
+class TypeproductValidator extends Validator
 {
     public function validateAttribute($model, $attribute)
     {

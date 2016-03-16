@@ -3,24 +3,24 @@
 use yii\db\Schema;
 use yii\db\Migration;
 
-class m160310_135133_tbl_advert extends Migration
+class m160310_135133_tbl_product extends Migration
 {
 	public function up()
 	{
 		$tableOptions = null;
-		$tableName = 'advert';
+		$tableName = 'product';
 		if ($this->db->driverName === 'pgsql') {
 			// http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
 			$tableOptions = '';
 		}
 		$tableSchema = Yii::$app->db->schema->getTableSchema($tableName);
 		if ($tableSchema === null) {
-		$this->createTable('{{%advert}}', [
-			'idadvert' => $this->primaryKey(),
-			'price' => $this->integer(),
+		$this->createTable('{{%product}}', [
+			'idproduct' => $this->primaryKey(),
+			'price' => $this->real(),
 			'address' => $this->string(255),
 			'fk_agent' => $this->integer()->notNull(),
-			'bedroom' => $this->smallInteger(),
+			'name' => $this->string(255),
 			'livingroom' => $this->smallInteger(),
 			'parking' => $this->smallInteger(),
 			'kitchen' => $this->smallInteger(),
@@ -38,7 +38,7 @@ class m160310_135133_tbl_advert extends Migration
 
 	public function down()
 	{
-		$this->dropTable('{{%advert}}');
+		$this->dropTable('{{%product}}');
 		return false;
 	}
 }

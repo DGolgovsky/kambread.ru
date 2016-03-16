@@ -10,6 +10,7 @@ use Yii;
  */
 class SignupForm extends Model
 {
+    public $name;
     public $username;
     public $email;
     public $password;
@@ -21,21 +22,22 @@ class SignupForm extends Model
     public function rules()
     {
         return [
+            ['name', 'string', 'min' => 2, 'max' => 255],
             ['username', 'filter', 'filter' => 'trim'],
             [['username', 'password'], 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
+            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Такой пользователь уже зарегистрирован.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Такой email уже зарегистрирован.'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
             ['repassword', 'compare', 'compareAttribute' => 'password'],
-            /*['type', 'frontend\validators\TypeAdvertValidator'],*/
+            /*['type', 'frontend\validators\TypeproductValidator'],*/
         ];
     }
 
@@ -57,6 +59,7 @@ class SignupForm extends Model
     {
         if ($this->validate()) {
             $user = new User();
+            $user->name = $this->name;
             $user->username = $this->username;
             $user->email = $this->email;
             $user->setPassword($this->password);
