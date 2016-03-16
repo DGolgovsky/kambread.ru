@@ -34,3 +34,4 @@ composer.lock
 phpunit.phar
 # local phpunit config
 /phpunit.xml
+permissions.sh
