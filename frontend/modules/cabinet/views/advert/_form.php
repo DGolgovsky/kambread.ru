@@ -46,7 +46,7 @@ use yii\widgets\ActiveForm;
 		var markers = [];
 
 		function initialize() {
-			var latlng = new google.maps.LatLng(50.10724887249932, 45.40393577765428);
+			var latlng = new google.maps.LatLng(59.9342802,30.335098600000038);
 			var options = {
 				zoom: 10,
 				center: latlng,

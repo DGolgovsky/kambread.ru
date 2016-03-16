@@ -2,10 +2,10 @@
 
 namespace app\modules\cabinet\controllers;
 
-use Yii;
 use common\controllers\AuthController;
+use Yii;
 use common\models\Advert;
-use common\models\search\AdvertSearch;
+use common\models\Search\AdvertSearch;
 use yii\helpers\BaseFileHelper;
 use yii\helpers\Url;
 use yii\web\Controller;
