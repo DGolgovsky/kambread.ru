@@ -1,6 +1,6 @@
 <?php
 $this->title = 'Просмотр';
-$this->params['breadcrumbs'][] = ['label' => 'Объявления', 'url' => ['/cabinet/advert/index']];
+$this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['/main/main/find']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">

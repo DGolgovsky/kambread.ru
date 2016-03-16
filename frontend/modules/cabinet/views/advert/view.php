@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Advert */
 
 $this->title = $model->idadvert;
-$this->params['breadcrumbs'][] = ['label' => 'Объявления', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="advert-view">

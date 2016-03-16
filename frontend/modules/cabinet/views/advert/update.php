@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model common\models\Advert */
 
 $this->title = 'Обновление: ' . ' ' . $model->idadvert;
-$this->params['breadcrumbs'][] = ['label' => 'Объявления', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->idadvert, 'url' => ['view', 'id' => $model->idadvert]];
 $this->params['breadcrumbs'][] = 'Обновление';
 ?>
