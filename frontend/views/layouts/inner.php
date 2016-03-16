@@ -1,7 +1,10 @@
 <?php
 use yii\helpers\Html;
-//use yii\bootstrap\Nav;
+use yii\bootstrap\Nav;
 use frontend\assets\MainAsset;
+use yii\widgets\Breadcrumbs;
+use common\widgets\Alert;
+
 MainAsset::register($this);
 ?>
 <?php $this->beginPage(); ?>
@@ -38,6 +41,11 @@ MainAsset::register($this);
 </div>
 <!-- banner -->
 <div class="container">
+    <?= Breadcrumbs::widget([
+        'homeLink' => ['label' => 'Главная', 'url' => '/main'],
+        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+    ]) ?>
+    <?= Alert::widget() ?>
     <div class="spacer">
         <?=$content ?>
     </div>

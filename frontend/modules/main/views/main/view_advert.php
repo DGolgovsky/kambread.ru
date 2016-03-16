@@ -1,6 +1,7 @@
 <?php
 $this->title = 'View';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => 'Adverts', 'url' => ['/main/main/view-advert']];
+$this->params['breadcrumbs'][] = Yii::$app->controller->substr_content($this->title, '10');
 ?>
 <div class="row">
     <div class="col-lg-3 col-sm-4 hidden-xs">
