@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <ol class="carousel-indicators hidden-xs">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                             <?php
-                                foreach(range(1,count($images) - 1) as $s):
+                                foreach(range(1,count($images)) as $s):
                             ?>
                             <li data-target="#myCarousel" data-slide-to="<?=$s ?>" class=""></li>
                             <?php
