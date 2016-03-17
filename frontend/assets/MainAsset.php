@@ -23,7 +23,8 @@ class MainAsset extends  AssetBundle{
         'source/slitslider/js/modernizr.custom.79639.js',
         'source/slitslider/js/jquery.ba-cond.min.js',
         'source/slitslider/js/jquery.slitslider.js',
-        'source/js/google_analytics_auto.js'
+        'source/js/google_analytics_auto.js',
+        'source/js/yandex_metrika.js'
     ];
 
     public $depends = [
