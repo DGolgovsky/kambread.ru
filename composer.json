@@ -27,7 +27,8 @@
 		"yiisoft/yii2-imagine": "*",
 		"2amigos/yii2-google-maps-library" : "*",
 		"demogorgorn/yii2-ajax-submit-button": "*",
-		"dmstr/yii2-adminlte-asset": "*"
+		"dmstr/yii2-adminlte-asset": "*",
+		"bower-asset/admin-lte": "*"
 	},
 	"require-dev": {
 		"yiisoft/yii2-codeception": "*",

@@ -7,12 +7,15 @@ use yii\widgets\DetailView;
 /* @var $model common\models\product */
 
 $this->title = $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabinet']];
 $this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-view">
 	<p>
-		<?= Html::a('Обновить', ['update', 'id' => $model->idproduct], ['class' => 'btn btn-primary']) ?>
+		<?= Html::a('Обновить', ['update', 'id' => $model->idproduct], [
+			'class' => 'btn btn-primary'
+		]) ?>
 	</p>
 	<?= DetailView::widget([
 		'model' => $model,

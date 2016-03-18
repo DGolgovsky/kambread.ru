@@ -34,7 +34,14 @@ use yii\widgets\ActiveForm;
 
 	<?= $form->field($model, 'sold')->radioList(['No', 'Yes']) ?>
 
-	<?= $form->field($model, 'type')->dropDownList(['Apartment','Building', 'Office Space']) ?>
+	<?= $form->field($model, 'type')->dropDownList([
+		'Баранки',
+		'Батоны',
+		'Булочки',
+		'Кексы',
+		'Сухари',
+		'Хлеб'
+	]) ?>
 
 	<?= $form->field($model, 'recommend')->radioList(['No', 'Yes']) ?>
 

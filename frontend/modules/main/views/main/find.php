@@ -11,24 +11,29 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= Html::beginForm(\yii\helpers\Url::to('/main/main/find/'),'get') ?>
             <div class="search-form">
                 <h4><span class="glyphicon glyphicon-search"></span> Параметры поиска</h4>
-                <?=Html::textInput('propert', $request->get('propert'), ['class' => 'form-control', 'placeholder' => 'Что искать?']) ?>
+                <?=Html::textInput('propert', $request->get('propert'), [
+                    'class' => 'form-control', 'placeholder' => 'Название'])
+                ?>
                 <div class="row">
                     <div class="col-lg-12">
-                        <?=Html::dropDownList('Цена', $request->get('price'),[
+                        <?=Html::dropDownList('price', $request->get('price'),[
                             '0-10' => '₽0 - ₽10',
-                            '10-15' => '₽10 - ₽15',
-                            '300-450' => '$300 - $450',
-                            '450' =>'$450 - above',
-                        ],['class' => 'form-control', 'prompt' => 'Price']) ?>
+                            '11-20' => '₽11 - ₽20',
+                            '21-30' => '₽21 - ₽30',
+                            '31' =>'₽31 - выше',
+                        ],['class' => 'form-control', 'prompt' => 'Цена']) ?>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <?=Html::dropDownList('Вид', $request->get('apartment'),[
+                        <?=Html::dropDownList('type', $request->get('type'),[
+                            'Баранки',
+                            'Батоны',
+                            'Булочки',
+                            'Кексы',
+                            'Сухари',
                             'Хлеб',
-                            'Батон',
-                            'Булка',
-                        ],['class' => 'form-control', 'prompt' => 'Property']) ?>
+                        ],['class' => 'form-control', 'prompt' => 'Вид']) ?>
                     </div>
                 </div>
                 <button class="btn btn-primary">Найти</button>

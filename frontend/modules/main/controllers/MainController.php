@@ -43,14 +43,14 @@ class MainController extends \yii\web\Controller
 		];
 	}
 
-	public function actionFind($propert = '', $price = '', $apartment = '')
+	public function actionFind($propert = '', $price = '', $type = '')
 	{
 		$this->layout = 'sell';
 
 		$query = product::find();
-		$query->filterWhere(['like', 'address', $propert])
+		$query->filterWhere(['like', 'name', $propert])
 			->orFilterWhere(['like', 'description', $propert])
-			->andFilterWhere(['type' => $apartment]);
+			->andFilterWhere(['type' => $type]);
 
 		if($price) {
 			$prices = explode("-",$price);

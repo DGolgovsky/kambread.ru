@@ -5,12 +5,9 @@
 $this->title = 'OJSC "Kambread"';
 ?>
 <div class="site-index">
-
     <div class="jumbotron">
         <h1>Service under construction.</h1>
-
         <p class="lead">Contact us support@kambread.ru</p>
-
         <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Powered by Yii</a></p>
     </div>
 

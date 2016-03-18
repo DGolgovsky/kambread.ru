@@ -22,14 +22,14 @@ use yii\bootstrap\NavBar;
                 <?php
                 $menuItems = [
                     ['label' => 'ГЛАВНАЯ', 'url' => '/main'],
-                    ['label' => 'О КОМПАНИИ', 'url' => '#'],
+                    ['label' => 'О КОМПАНИИ', 'url' => '/main/main/contact'],
                 ];
                 $guest = \Yii::$app->user->isGuest;
                 if($guest) {
                     $menuItems[] =  ['label' => 'Войти', 'url' => ['/main/main/login']];
                     $menuItems[] =  ['label' => 'Регистрация', 'url' => ['/main/main/register/']];
                 } else {
-                    $menuItems[] =  ['label' => 'Кабинет', 'url' => ['/cabinet/product']];
+                    $menuItems[] =  ['label' => 'Кабинет', 'url' => ['/cabinet']];
                     $menuItems[] = ['label' => 'Выйти',  'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']];
                 }
                 echo Nav::widget([

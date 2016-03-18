@@ -41,8 +41,6 @@ use yii\helpers\Html;
 </nav>
 </div><!-- /slider-wrapper -->
 
-
-
 <div class="container">
     <div class="properties-listing spacer">
         <a href="/main/main/find"  class="pull-right viewall">Посмотреть все</a>
@@ -82,7 +80,7 @@ use yii\helpers\Html;
                     - основное производство<br>
                     - бараночный участок<br>
                     - булочно-кондитерский участок<br>
-                    <a href="about.html" >Подробнее</a>
+                    <a href="/main/main/contact" >Подробнее</a>
                 </p>
             </div>
             <div class="col-lg-5 col-lg-offset-1 col-sm-3 recommended">

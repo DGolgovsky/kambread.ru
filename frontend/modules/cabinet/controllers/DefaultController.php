@@ -9,12 +9,14 @@ use yii\web\Controller;
  */
 class DefaultController extends Controller
 {
+    public $layout = "inner";
     /**
      * Renders the index view for the module
      * @return string
      */
     public function actionIndex()
     {
+        // return $this->redirect('/cabinet/product');
         return $this->render('index');
     }
 }

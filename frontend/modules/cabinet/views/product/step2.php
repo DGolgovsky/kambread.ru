@@ -1,8 +1,9 @@
 <?php
 $this->title = 'Изображения';
+$this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabinet']];
 $this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->idproduct]];
-$this->params['breadcrumbs'][] = ['label' => 'Обновление', 'url' => ['update']];
+$this->params['breadcrumbs'][] = ['label' => 'Обновление', 'url' => ['update', 'id' => $model->idproduct]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="container">

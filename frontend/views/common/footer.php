@@ -7,16 +7,6 @@ if(Yii::$app->user->isGuest) {
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-3">
-                <h4><span class="glyphicon glyphicon-info-sign"></span> Информация</h4>
-                <ul class="row">
-                    <li class="col-lg-12 col-sm-12 col-xs-2"><a href="about.html" >О компании</a></li>
-                    <li class="col-lg-12 col-sm-12 col-xs-2"><a href="agents.html" >Сотрудники</a></li>
-                    <li class="col-lg-12 col-sm-12 col-xs-2"><a href="/main/main/find" >Продукция</a></li>
-                    <li class="col-lg-12 col-sm-12 col-xs-2"><a href="/main/main/contact" >Отзыв</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-3 col-sm-3">
                 <h4><span class="glyphicon glyphicon-user"></span> Социальные сети</h4>
                 <a href="http://facebook.com/kambread"><img src="/images/facebook.png"  alt="Facebook"></a>
                 <a href="http://ok.ru/group/52685470564514"><img src="/images/ok.png"  alt="Одноклассники"></a>
@@ -36,6 +26,29 @@ if(Yii::$app->user->isGuest) {
                     (84457) 9 64 56 &nbsp; Отдел сбыта<br>
                     (84457) 9 64 05 &nbsp; Лаборатория<br>
                 </p>
+            </div>
+            <div class="col-lg-3 col-sm-3">
+                <h4><span class="glyphicon glyphicon-envelope"></span> E-mail</h4>
+                <ul class="row">
+                    <li class="col-lg-12 col-sm-12 col-xs-2">
+                            Отдел продаж&nbsp;
+                            <span style="text-decoration:underline;">
+                                <a href="mailto:market@kambread.ru" target="_self">market@kambread.ru</a>
+                            </span>
+                    </li>
+                    <li class="col-lg-12 col-sm-12 col-xs-2">
+                            Общий&nbsp;
+                            <span style="text-decoration:underline;">
+                                <a href="mailto:kam.khk@mail.ru" target="_self">market@kambread.ru</a>
+                            </span>
+                    </li>
+                    <li class="col-lg-12 col-sm-12 col-xs-2">
+                            Web-master&nbsp;
+                            <span style="text-decoration:underline;">
+                                <a href="mailto:support@kambread.ru" target="_self">market@kambread.ru</a>
+                            </span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
