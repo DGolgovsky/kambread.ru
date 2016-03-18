@@ -13,11 +13,11 @@ return [
             // Use pretty URLs
             'enablePrettyUrl' => true,
             'rules' => [
-//              '<alias:contact|about>' => 'site/<alias>',
-//              '<alias:product>/<id:\w+>' => 'site/<alias>',
-//              '<controller:\w+>/<id:\w+>' => '<controller>',
-//              '<controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>',
-//              '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+//                '<alias:contact|about>' => 'main/<alias>',
+//                '<alias:product>/<id:\w+>' => 'main/<alias>',
+//                '<controller:\w+>/<id:\w+>' => '<controller>',
+//                '<controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>',
+//                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ],
         ],
     ],

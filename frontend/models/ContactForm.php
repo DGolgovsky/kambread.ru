@@ -27,7 +27,7 @@ class ContactForm extends Model
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha', 'captchaAction' => \yii\helpers\Url::to(['main/captcha'])],  // site/captcha
+            ['verifyCode', 'captcha', 'captchaAction' => \yii\helpers\Url::to(['site/captcha'])],  // site/captcha
         ];
     }
 
@@ -49,6 +49,10 @@ class ContactForm extends Model
      */
     public function sendEmail($email)
     {
-        return Yii::$app->common->sendMail('Default contact form', $this->name, $email, $this->subject, $this->body);
+        $body = " <div>Сообщение от: <b> ".$this->name." </b></div>";
+        $body .= " <div>Email: <b> ".$this->email." </b></div>";
+        $body .= " <div>Текст: <b> ".$this->body." </b></div>";
+
+        return Yii::$app->common->sendMail('Отзыв', $this->name, $email, $this->subject, $body);
     }
 }

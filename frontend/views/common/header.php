@@ -23,6 +23,7 @@ use yii\bootstrap\NavBar;
                 $menuItems = [
                     ['label' => 'ГЛАВНАЯ', 'url' => '/main'],
                     ['label' => 'О КОМПАНИИ', 'url' => '/main/main/contact'],
+                    ['label' => 'Партнёрам', 'url' => '#'],
                 ];
                 $guest = \Yii::$app->user->isGuest;
                 if($guest) {

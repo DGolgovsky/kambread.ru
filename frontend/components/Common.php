@@ -10,14 +10,13 @@ class Common extends Component
 {
 	const EVENT_NOTIFY = 'notify_admin';
 
-	public function sendMail($event,$name, $email, $subject, $body)
+	public function sendMail($event = '', $name = '', $email = '', $subject = '', $body = '')
 	{
 		$message = Yii::$app->mailer->compose();
         $message->setFrom(['web.notify@kambread.ru' => $name]);
-		$message->setTo(Yii::$app->params['adminEmail'])
+		$message->setTo([Yii::$app->params['adminEmail'] => '['.$event.']'])
 			->setSubject($subject)
 			->setReplyTo($email)
-			->setTo([Yii::$app->params['adminEmail'] => '[event] '.$event])
 			->setHtmlBody($body)
 			->send();
 		$this->trigger(self::EVENT_NOTIFY);
