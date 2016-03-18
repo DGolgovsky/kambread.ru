@@ -35,3 +35,5 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 permissions.sh
+init.bat
+yii.bat
