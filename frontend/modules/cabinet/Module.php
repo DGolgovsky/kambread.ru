@@ -18,7 +18,7 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
-        $this->setLayoutPath('@frontend/views/layouts');
+        $this->setLayoutPath('@frontend/views/layouts'); // @theme_view/layouts
         // custom initialization code goes here
     }
 }

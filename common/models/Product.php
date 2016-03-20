@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use frontend\components\Common;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 
@@ -65,6 +66,11 @@ class Product extends \yii\db\ActiveRecord
 			[['location'], 'string', 'max' => 50],
 			//['general_image', 'file', 'extensions' => ['jpg','png','gif']]
 		];
+	}
+
+	public function getTitle()
+	{
+		return Common::getTitleProduct($this);
 	}
 
 	/**
