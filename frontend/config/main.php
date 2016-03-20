@@ -24,14 +24,14 @@ return [
                     'weight' => 60,
                 ],
             ],
-        ],*/
+        ],
         'view' => [
             'theme' => [
                 'class' => 'frontend\themes\product\Theme',
                 'basePath' => '@app/',
                 'baseUrl'  => '@web/',
             ],
-        ],
+        ],*/
         'common' => [
             'class' => 'frontend\components\Common',
         ],

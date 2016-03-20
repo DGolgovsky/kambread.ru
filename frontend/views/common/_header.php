@@ -19,16 +19,6 @@ use yii\bootstrap\NavBar;
             <!-- Nav Starts -->
             <div class="navbar-collapse collapse">
                 <a href="/" ><img src="/images/logo.png"  alt="Главная"></a>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active">
-                        <?= $menuItems[] =  ['label' => 'Главная', 'url' => ['/']]; ?>
-                    </li>
-                    <li>
-                        <?= $menuItems[] =  ['label' => 'О Компании', 'url' => ['/about']]; ?>
-                    </li>
-                    <li>
-                        <?= $menuItems[] =  ['label' => 'Партнёрам', 'url' => ['#']]; ?>
-                    </li>
                 <?php
                 $menuItems = [
                     ['label' => 'ГЛАВНАЯ', 'url' => '/'],
@@ -48,10 +38,8 @@ use yii\bootstrap\NavBar;
                     'items' => $menuItems,
                 ]);
                 ?>
-                    </ul>
             </div>
             <!-- #Nav Ends -->
         </div>
     </div>
 </div>
-

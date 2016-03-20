@@ -3,48 +3,52 @@ if(Yii::$app->user->isGuest) {
     echo \frontend\widgets\Login::widget();
 }
 ?>
-
 <div class="footer">
-
     <div class="container">
-
-
-
         <div class="row">
             <div class="col-lg-3 col-sm-3">
-                <h4>Information</h4>
+                <h4><span class="glyphicon glyphicon-user"></span> Социальные сети</h4>
+                <a href="http://facebook.com/kambread"><img src="/images/facebook.png"  alt="Facebook"></a>
+                <a href="http://ok.ru/group/52685470564514"><img src="/images/ok.png"  alt="Одноклассники"></a>
+                <a href="http://vk.com/kam.hleb"><img src="/images/vk.png"  alt="ВКонтакте"></a>
+            </div>
+            <div class="col-lg-3 col-sm-3">
+                <h4><span class="glyphicon glyphicon-map-marker"></span> Адрес</h4>
+                <p>
+                    403874, Россия, Волгоградская область,<br>г. Камышин, ул. Ленина, 4
+            </div>
+            <div class="col-lg-3 col-sm-3">
+                <h4><span class="glyphicon glyphicon-earphone"></span> Телефоны</h4>
+                <p>
+                    (84457) 9 64 64 &nbsp; Приемная<br>
+                    (84457) 9 39 84 &nbsp; Отдел маркетинга<br>
+                    (84457) 9 64 56 &nbsp; Отдел сбыта<br>
+                    (84457) 9 64 05 &nbsp; Лаборатория<br>
+                </p>
+            </div>
+            <div class="col-lg-3 col-sm-3">
+                <h4><span class="glyphicon glyphicon-envelope"></span> E-mail</h4>
                 <ul class="row">
-                    <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html" >About</a></li>
-                    <li class="col-lg-12 col-sm-12 col-xs-3"><a href="agents.html" >Agents</a></li>
-                    <li class="col-lg-12 col-sm-12 col-xs-3"><a href="blog.html" >Blog</a></li>
-                    <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.html" >Contact</a></li>
+                    <li class="col-lg-12 col-sm-12 col-xs-2">
+                            Отдел продаж&nbsp;
+                            <span style="text-decoration:underline;">
+                                <a href="mailto:market@kambread.ru" target="_self">market@kambread.ru</a>
+                            </span>
+                    </li>
+                    <li class="col-lg-12 col-sm-12 col-xs-2">
+                            Общий&nbsp;
+                            <span style="text-decoration:underline;">
+                                <a href="mailto:kam.khk@mail.ru" target="_self">market@kambread.ru</a>
+                            </span>
+                    </li>
+                    <li class="col-lg-12 col-sm-12 col-xs-2">
+                            Web-master&nbsp;
+                            <span style="text-decoration:underline;">
+                                <a href="mailto:support@kambread.ru" target="_self">market@kambread.ru</a>
+                            </span>
+                    </li>
                 </ul>
             </div>
-
-            <div class="col-lg-3 col-sm-3">
-                <h4>Newsletter</h4>
-                <p>Get notified about the latest properties in our marketplace.</p>
-
-                <?php echo \frontend\widgets\SubscribeWidget::widget() ?>
-            </div>
-
-            <div class="col-lg-3 col-sm-3">
-                <h4>Follow us</h4>
-                <a href="#"><img src="/images/facebook.png"  alt="facebook"></a>
-                <a href="#"><img src="/images/twitter.png"  alt="twitter"></a>
-                <a href="#"><img src="/images/linkedin.png"  alt="linkedin"></a>
-                <a href="#"><img src="/images/instagram.png"  alt="instagram"></a>
-            </div>
-
-            <div class="col-lg-3 col-sm-3">
-                <h4>Contact us</h4>
-                <p><b>Bootstrap Realestate Inc.</b><br>
-                    <span class="glyphicon glyphicon-map-marker"></span> 8290 Walk Street, Australia <br>
-                    <span class="glyphicon glyphicon-envelope"></span> hello@bootstrapreal.com<br>
-                    <span class="glyphicon glyphicon-earphone"></span> (123) 456-7890</p>
-            </div>
         </div>
-        <p class="copyright">Copyright 2013. All rights reserved.	</p>
-
-
-    </div></div>
+    </div>
+</div>

@@ -10,6 +10,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Вход';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="site-login">
     <div class="row">
         <div class="col-lg-5 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
