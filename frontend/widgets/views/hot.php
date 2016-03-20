@@ -9,7 +9,8 @@
             </div>
             <div class="col-lg-8 col-sm-7">
                 <h5><a href="<?=\frontend\components\Common::getUrlProduct($res) ?>" ><?=\frontend\components\Common::getTitleProduct($res) ?></a></h5>
-                <p class="price">$<?=$res['price'] ?></p> </div>
+                <p class="price">₽<?=$res['price'] ?></p>
+            </div>
         </div>
         <?php
     endforeach;

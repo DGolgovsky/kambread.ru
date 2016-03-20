@@ -11,6 +11,7 @@ use yii\web\IdentityInterface;
  * User model
  *
  * @property integer $id
+ * @property string $name
  * @property string $username
  * @property string $password_hash
  * @property string $password_reset_token
@@ -53,6 +54,14 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
+    }
+
+    public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+        $scenarios['setting'] = ['name', 'username', 'email'];
+
+        return $scenarios;
     }
 
     /**

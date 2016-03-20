@@ -22,21 +22,26 @@ class SignupForm extends Model
     public function rules()
     {
         return [
-            ['name', 'string', 'min' => 2, 'max' => 255],
+            ['name', 'filter', 'filter' => 'trim'],
+            ['name', 'required'],
+            ['name', 'string', 'min' => 2, 'max' => 32],
+
             ['username', 'filter', 'filter' => 'trim'],
-            [['username', 'password'], 'required'],
+            ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Такой пользователь уже зарегистрирован.'],
-            ['username', 'string', 'min' => 2, 'max' => 255],
+            ['username', 'string', 'min' => 2, 'max' => 16],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'string', 'max' => 255],
+            ['email', 'string', 'min' => 6, 'max' => 32],
             ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Такой email уже зарегистрирован.'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+
             ['repassword', 'compare', 'compareAttribute' => 'password'],
+
             /*['type', 'frontend\validators\TypeproductValidator'],*/
         ];
     }
@@ -45,7 +50,7 @@ class SignupForm extends Model
     {
         $scenarios = parent::scenarios();
         $scenarios['short_u_e'] = ['username', 'email'];
-        $scenarios['short_u_e_p'] = ['username', 'email', 'password'];
+        $scenarios['short_n_u_e_p'] = ['name', 'username', 'email', 'password'];
         $scenarios['short_e_p'] = ['email', 'password'];
         return $scenarios;
     }

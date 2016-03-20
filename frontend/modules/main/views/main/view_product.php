@@ -1,6 +1,6 @@
 <?php
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['/main/main/find']];
+$this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['catalog']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
@@ -45,14 +45,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                     <!-- #Slider Ends -->
                 </div>
-                <div class="spacer"><h4><span class="glyphicon glyphicon-th-list"></span> Properties Detail</h4>
+                <div class="spacer"><h4><span class="glyphicon glyphicon-th-list"></span> Описание</h4>
                     <p> <?=$model->description ?></p>
                 </div>
-                <div><h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
-                    <div class="well">
-                        <?php echo $map->display(); ?>
-                    </div>
-                </div>
+                
             </div>
             <div class="col-lg-4">
 				<div class="col-lg-12  col-sm-6">
@@ -94,7 +90,7 @@ $this->params['breadcrumbs'][] = $this->title;
 						$form = \yii\bootstrap\ActiveForm::begin();
 						?>
 						<?=$form->field($model_feedback,'email')->textInput(['value' => $current_user['email'], 'placeholder' => 'you@yourdomain.com'])->label(false) ?>
-						<?=$form->field($model_feedback,'name')->textInput(['value' => $current_user['username'], 'placeholder' => 'Username'])->label(false) ?>
+						<?=$form->field($model_feedback,'name')->textInput(['value' => $current_user['name'], 'placeholder' => 'Name'])->label(false) ?>
 						<?=$form->field($model_feedback,'text')->textarea(['rows' => 6, 'placeholder' => 'Whats on your mind?'])->label(false) ?>
 						<button type="submit" class="btn btn-primary" name="Submit">Send Message</button>
 

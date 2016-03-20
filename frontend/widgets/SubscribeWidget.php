@@ -13,8 +13,9 @@ class SubscribeWidget extends  Widget
         $model = new Subscribe();
 
         if($model->load(\Yii::$app->request->post()) && $model->save()) {
+            $model->trigger(Subscribe::EVENT_NOTIFICATION_ADMIN);
             \Yii::$app->session->setFlash('message','Success subscribe');
-            \Yii::$app->controller->redirect("/");
+            \Yii::$app->controller->redirect("/main");
         }
 
         return $this->render("subscribe", ['model' => $model]);

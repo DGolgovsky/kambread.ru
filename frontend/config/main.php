@@ -13,7 +13,7 @@ return [
     'bootstrap' => ['log'],
     'defaultRoute' => 'main',
     'components' => [
-        'cache' => [
+        /*'cache' => [
             'class' => 'yii\caching\MemCache',
             'servers' => [
                 [
@@ -22,13 +22,14 @@ return [
                     'weight' => 60,
                 ],
             ],
-        ],
+        ],*/
         'common' => [
             'class' => 'frontend\components\Common',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => '/site/login',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

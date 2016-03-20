@@ -12,6 +12,9 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use dosamigos\google\maps\LatLng;
+use dosamigos\google\maps\Map;
+use dosamigos\google\maps\overlays\Marker;
 
 /**
  * Site controller
@@ -73,7 +76,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->redirect('/main');
+        //return $this->render('index');
     }
 
     /**
@@ -140,6 +144,21 @@ class SiteController extends Controller
     public function actionAbout()
     {
         $model = new ContactForm();
+        $coords = '50.10725112018604, 45.40386139521479';
+
+        $coord = new LatLng(['lat' => $coords[0], 'lng' => $coords[1]]);
+        $map = new Map([
+            'center' => $coord,
+            'zoom' => 16,
+        ]);
+
+        $marker = new Marker([
+            'position' => $coord,
+            'title' => 'ОАО Камышинский хлебокомбинат',
+        ]);
+
+        $map->addOverlay($marker);
+
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
                 Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
@@ -151,6 +170,7 @@ class SiteController extends Controller
         } else {
             return $this->render('about', [
                 'model' => $model,
+                'map' => $map,
             ]);
         }
     }
@@ -186,11 +206,11 @@ class SiteController extends Controller
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+                \Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
 
-                return $this->goHome();
+                return $this->refresh();
             } else {
-                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
+                \Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
             }
         }
 

@@ -9,25 +9,43 @@ use yii\helpers\Html;
 $this->title = 'Кабинет';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
-    <div class="cabinet-default-index">
-        <h2>Добро пожаловать в личный кабинет</h2>
-        <p>
-            <span>
-            <?= Html::a('Продукция', ['/cabinet/product'], ['class' => 'btn btn-primary']) ?>
-        </span>
-
-        <span>
-            <?= Html::a('Документы', ['#'], ['class' => 'btn btn-primary']) ?>
-            </span>
-        </p>
-
-        <p>
-            <?= Html::a('Новости', ['#'], ['class' => 'btn btn-primary']) ?>
-        </p>
-
-        <p>
-            <?= Html::a('Профиль', ['#'], ['class' => 'btn btn-primary']) ?>
-        </p>
+<h2 style="align-content: center">Добро пожаловать в личный кабинет</h2>
+<div class="container">
+    <p>
+    <div class="row">
+    <div class="col-lg-4 col-sm-4 col-xs-4">
+        <?= Html::a('Продукция', ['/cabinet/product'], ['class' => 'btn btn-primary']) ?>
     </div>
+    <div class="col-lg-8 col-sm-8 col-xs-8">
+        <span>Редактирование списка продукции</span>
+    </div>
+    </div>
+    </p><p>
+    <div class="row">
+    <div class="col-lg-4 col-sm-4 col-xs-4">
+        <?= Html::a('Документы', ['#'], ['class' => 'btn btn-primary']) ?>
+    </div>
+    <div class="col-lg-8 col-sm-8 col-xs-8">
+        <span>Документы на ознакомление и подпись</span>
+    </div>
+    </div>
+    </p><p>
+    <div class="row">
+    <div class="col-lg-4 col-sm-4 col-xs-4">
+        <?= Html::a('Новости', ['#'], ['class' => 'btn btn-primary']) ?>
+    </div>
+    <div class="col-lg-8 col-sm-8 col-xs-8">
+        <span>Редактирование списка новостей</span>
+    </div>
+    </div>
+    </p><p>
+    <div class="row">
+    <div class="col-lg-4 col-sm-4 col-xs-4">
+        <?= Html::a('Профиль', ['/cabinet/default/settings'], ['class' => 'btn btn-primary']) ?>
+    </div>
+    <div class="col-lg-8 col-sm-8 col-xs-8">
+        <span>Редактирование параметров профиля пользователя</span>
+    </div>
+        </div>
+    </p>
 </div>

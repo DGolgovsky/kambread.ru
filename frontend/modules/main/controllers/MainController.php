@@ -29,6 +29,10 @@ class MainController extends \yii\web\Controller
 			],
 			'test' => [
 				'class' => 'frontend\actions\TestAction',
+			],
+			'page' => [
+				'class' => 'yii\web\ViewAction',
+				'layout' => 'inner',
 			]
 		];
 	}
@@ -43,7 +47,7 @@ class MainController extends \yii\web\Controller
 		];
 	}
 
-	public function actionFind($propert = '', $price = '', $type = '')
+	public function actionCatalog($propert = '', $price = '', $type = '')
 	{
 		$this->layout = 'sell';
 
@@ -64,12 +68,12 @@ class MainController extends \yii\web\Controller
 
 		$countQuery = clone $query;
 		$pages = new Pagination(['totalCount' => $countQuery->count()]);
-		$pages->setPageSize(10);
+		$pages->setPageSize(6);
 
 		$model = $query->offset($pages->offset)->limit($pages->limit)->all();
 
 		$request = \Yii::$app->request;
-		return $this->render("find", ['model' => $model, 'pages' => $pages, 'request' => $request]);
+		return $this->render("catalog", ['model' => $model, 'pages' => $pages, 'request' => $request]);
 	}
 
 	public function actionIndex()
@@ -155,28 +159,12 @@ class MainController extends \yii\web\Controller
 		$user = $model->user;
 		$images = \frontend\components\Common::getImageProduct($model,false);
 
-		$current_user = ['email' => '', 'username' => ''];
+		$current_user = ['email' => '', 'name' => ''];
 
 		if(!\Yii::$app->user->isGuest) {
 			$current_user['email'] = \Yii::$app->user->identity->email;
-			$current_user['username'] = \Yii::$app->user->identity->username;
+			$current_user['name'] = \Yii::$app->user->identity->name;
 		}
-
-		$coords = str_replace(['(',')'],'',$model->location);
-		$coords = explode(',',$coords);
-
-		$coord = new LatLng(['lat' => $coords[0], 'lng' => $coords[1]]);
-		$map = new Map([
-			'center' => $coord,
-			'zoom' => 16,
-		]);
-
-		$marker = new Marker([
-			'position' => $coord,
-			'title' => Common::getTitleProduct($model),
-		]);
-
-		$map->addOverlay($marker);
 
 		return $this->render('view_product',[
 			'model' => $model,
@@ -184,7 +172,6 @@ class MainController extends \yii\web\Controller
 			'user' => $user,
 			'images' =>$images,
 			'current_user' => $current_user,
-			'map' => $map
 		]);
 	}
 }

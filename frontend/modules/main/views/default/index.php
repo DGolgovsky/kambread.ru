@@ -3,67 +3,62 @@ use yii\helpers\Html;
 ?>
 <div id="slider" class="sl-slider-wrapper">
     <div class="sl-slider">
-        <?php
-        foreach($result_general as $row):
-        ?>
+        <?php foreach($result_general as $row): ?>
         <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
             <div class="sl-slide-inner">
                 <div class="bg-img" style="background-image: url('<?=\frontend\components\Common::getImageproduct($row)[0] ?>')")"></div>
-            <h2><a href="<?=\frontend\components\Common::getUrlproduct($row) ?>"><?=\frontend\components\Common::getTitleproduct($row) ?></a></h2>
+            <h2>
+                <a href="<?=\frontend\components\Common::getUrlproduct($row) ?>">
+                    <?=\frontend\components\Common::getTitleproduct($row) ?>
+                </a>
+            </h2>
             <blockquote>
-                <p><?=\frontend\components\Common::substr($row['description']) ?></p>
+                <p>
+                    <?=\frontend\components\Common::substr($row['description']) ?>
+                </p>
                 <cite>₽ <?=$row['price'] ?></cite>
             </blockquote>
         </div>
     </div>
-    <?php
-    endforeach;
-    ?>
+    <?php endforeach; ?>
 </div>
 <!-- /sl-slider -->
 <nav id="nav-dots" class="nav-dots">
-    <?php
-    if($count_general >= 1):
-        ?>
+    <?php if($count_general >= 1): ?>
         <span class="nav-dot-current"></span>
-        <?php
-    endif;
-    ?>
+    <?php endif; ?>
     <?php
     if($count_general > 1):
         foreach(range(2,$count_general) as $line):
-            ?>
-            <span></span>
-            <?php
+    ?>
+    <span></span>
+    <?php
         endforeach;
-    endif;
+        endif;
     ?>
 </nav>
 </div><!-- /slider-wrapper -->
 
 <div class="container">
     <div class="properties-listing spacer">
-        <a href="/main/main/find"  class="pull-right viewall">Посмотреть все</a>
+        <a href="catalog" class="pull-right viewall">Посмотреть все</a>
         <h2>Каталог продукции</h2>
         <div id="owl-example" class="owl-carousel">
-            <?php
-            foreach($featured as $row):
-                ?>
+            <?php foreach($featured as $row): ?>
                 <div class="properties">
-                    <h4>
-                        <a href="<?=\frontend\components\Common::getUrlproduct($row) ?>" >
-                            <?=\frontend\components\Common::getTitleproduct($row) ?>
-                        </a>
-                    </h4>
                     <div class="image-holder">
-                        <img src="<?=\frontend\components\Common::getImageProduct($row)[0] ?>"  class="img-responsive" alt="properties"/>
-                        <div class="status <?=($row['sold']) ? 'sold' : 'new' ?>">
+                        <img src="<?=\frontend\components\Common::getImageProduct($row)[0] ?>"  class="img-responsive" alt="<?=\frontend\components\Common::getTitleproduct($row) ?>"/>
+                        <div class="status <?=($row['recommend']) ? 'recommend' : 'new' ?>">
                             <?=\frontend\components\Common::getType($row) ?>
                         </div>
                     </div>
-                    <h4></h4>
-
-                    <a class="btn btn-primary" href="<?=\frontend\components\Common::getUrlproduct($row) ?>">Подробнее</a>
+                    <h4>
+                        <a href="<?=\frontend\components\Common::getUrlProduct($row) ?>" >
+                            <?=\frontend\components\Common::getTitleproduct($row) ?>
+                        </a>
+                    </h4>
+                    <h4><p class="price">Цена: ₽<?=$row['price'] ?></p></h4>
+                    <a class="btn btn-primary" href="<?=\frontend\components\Common::getUrlProduct($row) ?>">Подробнее</a>
                 </div>
                 <?php
             endforeach;
@@ -80,7 +75,7 @@ use yii\helpers\Html;
                     - основное производство<br>
                     - бараночный участок<br>
                     - булочно-кондитерский участок<br>
-                    <a href="/main/main/contact" >Подробнее</a>
+                    <a href="about" >Подробнее</a>
                 </p>
             </div>
             <div class="col-lg-5 col-lg-offset-1 col-sm-3 recommended">
@@ -119,7 +114,7 @@ use yii\helpers\Html;
                                         <h5>
                                             <a href="<?=\frontend\components\Common::getUrlproduct($rec) ?>" ><?=\frontend\components\Common::getTitleproduct($rec) ?></a>
                                         </h5>
-                                        <p class="price">$<?=$rec['price'] ?></p>
+                                        <p class="price">₽ <?=$rec['price'] ?></p>
                                         <a href="<?=\frontend\components\Common::getUrlproduct($rec) ?>"  class="more">Подробнее</a>
                                     </div>
                                 </div>

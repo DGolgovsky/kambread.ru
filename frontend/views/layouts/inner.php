@@ -1,9 +1,10 @@
 <?php
+
+use frontend\widgets\Alert;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use frontend\assets\MainAsset;
 use yii\widgets\Breadcrumbs;
-use frontend\widgets\Alert;
 
 MainAsset::register($this);
 ?>
@@ -19,17 +20,6 @@ MainAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody(); ?>
-<?php if(\Yii::$app->session->hasFlash('success')): ?>
-    <?php
-    $success = \Yii::$app->session->getFlash('success');
-    echo \yii\bootstrap\Alert::widget([
-        'options' => [
-            'class' => 'alert-info'
-        ],
-        'body' => $success
-    ])
-    ?>
-<?php endif; ?>
 <!-- views/common/Header Starts -->
 <?php echo $this->render("//common/header") ?>
 <!-- #views/common/Header Ends -->
@@ -37,10 +27,12 @@ MainAsset::register($this);
     <div class="container">
         <span class="pull-right">
             <?= Breadcrumbs::widget([
-                'homeLink' => ['label' => 'Главная', 'url' => '/main'],
+                'homeLink' => ['label' => 'Главная', 'url' => '/'],
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
-            <?= Alert::widget() ?>
+            <?php if(\Yii::$app->session->hasFlash('success')): ?>
+                <?= Alert::widget() ?>
+            <?php endif; ?>
         </span>
         <h2><?=$this->title ?></h2>
     </div>

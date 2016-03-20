@@ -9,7 +9,7 @@ $this->title = 'Продукция';
     <div class="container">
         <span class="pull-right">
             <?= Breadcrumbs::widget([
-                'homeLink' => ['label' => 'Главная', 'url' => '/main'],
+                'homeLink' => ['label' => 'Главная', 'url' => '/'],
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
             <?= Alert::widget() ?>

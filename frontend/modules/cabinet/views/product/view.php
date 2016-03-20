@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			//'location',
 			'hot',
 			'sold',
-			'type',
+			'type:ntext',
 			'recommend',
 			'user.name',
 			'created_at:date',
@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Удалить', ['delete', 'id' => $model->idproduct], [
             'class' => 'btn btn-danger',
 			'data' => [
-				'confirm' => 'Are you sure you want to delete this item?',
+				'confirm' => 'Вы действительно хотите удалить?',
 				'method' => 'post',
 			],
 		]) ?>

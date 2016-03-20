@@ -18,16 +18,16 @@ use yii\bootstrap\NavBar;
             <!-- Nav Starts -->
 
             <div class="navbar-collapse collapse">
-                <a href="/main" ><img src="/images/logo.png"  alt="Главная"></a>
+                <a href="/" ><img src="/images/logo.png"  alt="Главная"></a>
                 <?php
                 $menuItems = [
-                    ['label' => 'ГЛАВНАЯ', 'url' => '/main'],
-                    ['label' => 'О КОМПАНИИ', 'url' => '/main/main/contact'],
+                    ['label' => 'ГЛАВНАЯ', 'url' => '/'],
+                    ['label' => 'О КОМПАНИИ', 'url' => '/about'],
                     ['label' => 'Партнёрам', 'url' => '#'],
                 ];
                 $guest = \Yii::$app->user->isGuest;
                 if($guest) {
-                    $menuItems[] =  ['label' => 'Войти', 'url' => ['/main/main/login']];
+                    $menuItems[] =  ['label' => 'Войти', 'url' => ['/site/login']];
                     $menuItems[] =  ['label' => 'Регистрация', 'url' => ['/main/main/register/']];
                 } else {
                     $menuItems[] =  ['label' => 'Кабинет', 'url' => ['/cabinet']];

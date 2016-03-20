@@ -18,8 +18,12 @@ class DefaultController extends Controller
 		$result_general = $command->all();
 		$count_general = $command->count();
 
-		$featured = $query_product->limit(15)->all();
-		$recommend_query  = $query_product->where("recommend= 1")->limit(5);
+		$featured = $query_product
+			->Where("hot=1")
+			->orWhere("recommend=1")
+			->limit(15)->all();
+
+		$recommend_query  = $query_product->where("recommend=1")->limit(5);
 		$recommend = $recommend_query->all();
 		$recommend_count = $recommend_query->count();
 

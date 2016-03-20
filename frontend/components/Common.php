@@ -1,6 +1,7 @@
 <?php
 namespace frontend\components;
 
+use common\models\Subscribe;
 use Yii;
 use yii\base\Component;
 use yii\helpers\BaseFileHelper;
@@ -60,7 +61,11 @@ class Common extends Component
 
 	public static function getType($row)
 	{
-		return ($row['sold']) ? 'Рекомендуем' : 'Новинка'; // return title
+		if (($row['recommend'])) {
+			return 'Рекомендуем';
+		} else if (($row['hot'])) {
+			return 'Новинка';
+		} // return title
 	}
 
 	public function getUrlProduct($row)

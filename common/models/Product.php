@@ -59,8 +59,8 @@ class Product extends \yii\db\ActiveRecord
 	{
 		return [
 			[['price', 'location'], 'required'],
-			[['price', 'fk_agent', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'type', 'recommend'], 'integer'],
-			[['description', 'name'], 'string'],
+			[['price', 'fk_agent', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'recommend'], 'integer'],
+			[['description', 'name', 'type'], 'string'],
 			[['address'], 'string', 'max' => 255],
 			[['location'], 'string', 'max' => 50],
 			//['general_image', 'file', 'extensions' => ['jpg','png','gif']]
