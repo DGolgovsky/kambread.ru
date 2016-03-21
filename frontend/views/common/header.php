@@ -42,7 +42,8 @@ use yii\helpers\Html;
                         ['label' => 'Вакансии',
                             'url' => ['/site/vacancies']],
                         ['label' => 'Раскрытие информации',
-                            'url' => ['http://disclosure.1prime.ru/portal/default.aspx?emId=3436107766']],
+                            'url' => ['/site/disclosure'],							
+							'linkOptions' => ['target' => '_blank']],
                     ],
                 ];
 

@@ -110,7 +110,6 @@ class SiteController extends Controller
             'recommend_count' => $recommend_count
         ]);
         //return $this->redirect('/main');
-        //return $this->render('index');
     }
 
     public function actionPartners()
@@ -122,6 +121,11 @@ class SiteController extends Controller
     {
         return $this->render('vacancies');
     }
+
+	public function actionDisclosure()
+	{
+		return $this->redirect('http://disclosure.1prime.ru/portal/default.aspx?emId=3436107766');
+	}
 
     public function actionEvent()
     {
