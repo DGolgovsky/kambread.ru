@@ -19,7 +19,7 @@ if(Yii::$app->user->isGuest) {
             <div class="col-lg-3 col-sm-3 col-xs-12">
                 <h4><span class="glyphicon glyphicon-earphone"></span> Телефоны</h4>
                 <ul class="row">
-                    <li class="col-lg-12 col-sm-12 col-xs-12">(84457) 9 64 64&nbsp;
+                    <li class="col-lg-12 col-sm-12 col-xs-12">(84457) 9 64 64 &nbsp;
                         <span>Приемная</span>
                     </li>
                     <li class="col-lg-12 col-sm-12 col-xs-12">(84457) 9 39 84 &nbsp;
