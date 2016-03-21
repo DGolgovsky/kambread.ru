@@ -20,7 +20,7 @@ return [
 //                '<controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>',
 //               '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 //                '<view:[a-zA-Z0-9-]+>' => 'site/<view>',
-                '<alias:(about|contact|login|signup)>' => 'site/<alias>',
+                '<alias:(about|contact|login|signup|partners)>' => 'site/<alias>',
                 '<alias:register>' => 'main/main/<alias>',
                 'view-product/<id:\d+>' => 'main/main/view-product',
                 'catalog/<propert:\w+>&<price:\d+>&<type:\w+>' => 'catalog',

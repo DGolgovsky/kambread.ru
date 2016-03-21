@@ -2,34 +2,23 @@
 namespace app\modules\main\controllers;
 
 use common\models\Product;
-use common\models\LoginForm;
 use frontend\components\Common;
 use frontend\filters\FilterProduct;
-use frontend\models\ContactForm;
 use frontend\models\Image;
 use frontend\models\SignupForm;
 use yii\base\DynamicModel;
 use yii\data\Pagination;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
-use dosamigos\google\maps\LatLng;
-use dosamigos\google\maps\Map;
-use dosamigos\google\maps\overlays\Marker;
 
 class MainController extends \yii\web\Controller
 {
+	//TODO transfer MainController to ProductController
 	public $layout = "inner";
 
 	public function actions()
 	{
 		return [
-			'captcha' => [
-				'class' => 'yii\captcha\CaptchaAction',
-				'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-			],
-			'test' => [
-				'class' => 'frontend\actions\TestAction',
-			],
 			'page' => [
 				'class' => 'yii\web\ViewAction',
 				'layout' => 'inner',
@@ -81,64 +70,6 @@ class MainController extends \yii\web\Controller
 		return $this->render('index');
 	}
 
-	public function actionRegister()
-	{
-
-		$model = new SignupForm();
-		// 1st: $model = new SignupForm(['scenario' => 'short_u_e_p']);
-		// 2nd: $model->scenario = 'short_u_e_p'; // валидация по сценарию
-
-		if(\Yii::$app->request->isAjax && \Yii::$app->request->isPost){
-			if($model->load(\Yii::$app->request->post())) {
-				\Yii::$app->response->format = Response::FORMAT_JSON;
-				return ActiveForm::validate($model);
-			}
-		}
-
-		if($model->load(\Yii::$app->request->post()) && $model->signup()){
-
-			\Yii::$app->session->setFlash('success', 'Регистрация прошла успешно');
-		}
-
-		return $this->render("register",['model' => $model]);
-	}
-
-	public function actionLogin()
-	{
-		$model = new LoginForm;
-
-		if($model->load(\Yii::$app->request->post()) && $model->login()) {
-			$this->goBack();
-		}
-
-		return $this->render("login", ['model' => $model]);
-	}
-
-	public function actionLogout()
-	{
-		\Yii::$app->user->logout();
-		return $this->goHome();
-	}
-
-	public function actionContact()
-	{
-		$model = new ContactForm();
-		if($model->load(\Yii::$app->request->post()) && $model->validate()) {
-			$body = " <div>Сообщение от: <b> ".$model->name." </b></div>";
-			$body .= " <div>Email: <b> ".$model->email." </b></div>";
-			$body .= " <div>Текст: <b> ".$model->body." </b></div>";
-			\Yii::$app->common->sendMail(
-				'Feedback',
-				$model->name,
-				$model->email,
-				$model->subject,
-				$body
-			);
-			\Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-		}
-		return $this->render("contact", ['model' => $model]);
-	}
-
 	public function actionViewProduct($id)
 	{
 		$model = Product::findOne($id);
@@ -152,7 +83,7 @@ class MainController extends \yii\web\Controller
 
 		if(\Yii::$app->request->isPost) {
 			if ($model_feedback->load(\Yii::$app->request->post()) && $model_feedback->validate()) {
-				\Yii::$app->common->sendMail('Detailed view',$model_feedback->name, $model_feedback->email, "По ".$model->idproduct,$model_feedback->text);
+				\Yii::$app->common->sendMail('[Отзыв]',$model_feedback->name, $model_feedback->email, "По ".$model->idproduct,$model_feedback->text);
 			}
 		}
 

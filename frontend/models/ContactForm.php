@@ -53,6 +53,6 @@ class ContactForm extends Model
         $body .= " <div>Email: <b> ".$this->email." </b></div>";
         $body .= " <div>Текст: <b> ".$this->body." </b></div>";
 
-        return Yii::$app->common->sendMail('Отзыв', $this->name, $email, $this->subject, $body);
+        return Yii::$app->common->sendMail('[Отзыв]', $this->name, $email, $this->subject, $body);
     }
 }

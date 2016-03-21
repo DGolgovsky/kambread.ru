@@ -19,7 +19,7 @@ class DefaultController extends Controller
 		$count_general = $command->count();
 
 		$featured = $query_product
-			->Where("hot=1")
+			->Where("new=1")
 			->orWhere("recommend=1")
 			->limit(15)->all();
 

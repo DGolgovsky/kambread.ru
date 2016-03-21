@@ -9,7 +9,7 @@ use common\models\Product;
 
 /**
  * productSearch represents the model behind the search form about `common\models\product`.
- * @property mixed fk_agent
+ * @property mixed user_id
  */
 class ProductSearch extends Product
 {
@@ -19,8 +19,9 @@ class ProductSearch extends Product
 	public function rules()
 	{
 		return [
-			[['idproduct', 'price', 'fk_agent', 'name', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'recommend', 'created_at', 'updated_at'], 'integer'],
-			[['address', 'general_image', 'description', 'location', 'type'], 'safe'],
+			[['idproduct', 'user_id', 'new', 'recommend', 'created_at', 'updated_at'], 'integer'],
+			['price', 'double'],
+			[['name', 'general_image', 'description', 'type'], 'safe'],
 		];
 	}
 
@@ -59,22 +60,16 @@ class ProductSearch extends Product
 		$query->andFilterWhere([
 			'idproduct' => $this->idproduct,
 			'price' => $this->price,
-			'fk_agent' => $this->fk_agent,
+			'user_id' => $this->user_id,
 			'name' => $this->name,
-			'livingroom' => $this->livingroom,
-			'parking' => $this->parking,
-			'kitchen' => $this->kitchen,
-			'hot' => $this->hot,
-			'sold' => $this->sold,
+			'new' => $this->new,
 			'recommend' => $this->recommend,
 			'created_at' => $this->created_at,
 			'updated_at' => $this->updated_at,
 		]);
 
-		$query->andFilterWhere(['like', 'address', $this->address])
-			->andFilterWhere(['like', 'general_image', $this->general_image])
+		$query->andFilterWhere(['like', 'general_image', $this->general_image])
 			->andFilterWhere(['like', 'description', $this->description])
-			->andFilterWhere(['like', 'location', $this->location])
 			->andFilterWhere(['like', 'type', $this->type]);
 
 		return $dataProvider;

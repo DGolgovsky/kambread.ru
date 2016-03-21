@@ -10,18 +10,12 @@ use yii\behaviors\TimestampBehavior;
  * This is the model class for table "product".
  *
  * @property integer $idproduct
- * @property integer $price
- * @property string $address
- * @property integer $fk_agent
+ * @property double $price
+ * @property integer $user_id
  * @property string $name
- * @property integer $livingroom
- * @property integer $parking
- * @property integer $kitchen
  * @property string $general_image
  * @property string $description
- * @property string $location
- * @property integer $hot
- * @property integer $sold
+ * @property integer $new
  * @property string $type
  * @property integer $recommend
  * @property integer $created_at
@@ -59,11 +53,10 @@ class Product extends \yii\db\ActiveRecord
 	public function rules()
 	{
 		return [
-			[['price', 'location'], 'required'],
-			[['price', 'fk_agent', 'livingroom', 'parking', 'kitchen', 'hot', 'sold', 'recommend'], 'integer'],
+			[['price', 'name'], 'required'],
+			[['user_id', 'new', 'recommend'], 'integer'],
+			['price', 'double'],
 			[['description', 'name', 'type'], 'string'],
-			[['address'], 'string', 'max' => 255],
-			[['location'], 'string', 'max' => 50],
 			//['general_image', 'file', 'extensions' => ['jpg','png','gif']]
 		];
 	}
@@ -82,16 +75,10 @@ class Product extends \yii\db\ActiveRecord
 			'idproduct' => 'ID продукта',
 			'name' => 'Наименование',
 			'price' => 'Цена',
-			'address' => 'Адрес',
-			'fk_agent' => 'ID пользователя',
-			'livingroom' => 'Комнаты',
-			'parking' => 'Парковка',
-			'kitchen' => 'Кухни',
+			'user_id' => 'ID пользователя',
 			'general_image' => 'Главное изображение',
 			'description' => 'Описание',
-			'location' => 'Локация',
-			'hot' => 'Новинка',
-			'sold' => 'Старинка',
+			'new' => 'Новинка',
 			'type' => 'Тип',
 			'recommend' => 'Рекомендация',
 			'created_at' => 'Создано',
@@ -102,7 +89,7 @@ class Product extends \yii\db\ActiveRecord
 
 	public function getUser()
 	{
-		return $this->hasOne(User::className(),['id' => 'fk_agent']);
+		return $this->hasOne(User::className(),['id' => 'user_id']);
 	}
 
 	//beforeValidate
@@ -114,7 +101,7 @@ class Product extends \yii\db\ActiveRecord
 
 	public function afterValidate()
 	{
-		$this->fk_agent = Yii::$app->user->identity->id;
+		$this->user_id = Yii::$app->user->identity->id;
 	}
 
 	public function afterSave($insert, $changedAttributes)

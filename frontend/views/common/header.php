@@ -46,7 +46,7 @@ use yii\helpers\Html;
 
                 if (Yii::$app->user->isGuest) {
                     $menuItems[] =  ['label' => 'Вход', 'url' => ['/site/login']];
-                    $menuItems[] =  ['label' => 'Регистрация', 'url' => ['/main/main/register/']];
+                    $menuItems[] =  ['label' => 'Регистрация', 'url' => ['/site/signup/']];
                 } else {
                     $menuItems[] =  ['label' => 'Кабинет', 'url' => ['/cabinet']];
                     $menuItems[] = ['label' => 'Выход (' . Yii::$app->user->identity->username . ')',  'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']];

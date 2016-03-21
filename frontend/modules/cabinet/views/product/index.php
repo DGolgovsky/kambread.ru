@@ -12,7 +12,6 @@ $this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabin
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div>
-
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     <p>
         <?= Html::a('Добавить', ['create'], ['class' => 'btn btn-success']) ?>
@@ -22,25 +21,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
             'name',
             //'idproduct',
             'user.name',
             'price',
-            //'address',
-            ////'livingroom',
-            //'parking',
-            //'kitchen',
             //'general_image',
             'description:ntext',
-            // 'location',
-            'hot',
-            //'sold',
+            'new',
             'type:ntext',
             'recommend',
             //'created_at:date',
             'updated_at:date',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

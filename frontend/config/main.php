@@ -13,7 +13,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
-    'defaultRoute' => 'main',
+    //'defaultRoute' => 'main',
     'components' => [
         /*'cache' => [
             'class' => 'yii\caching\MemCache',

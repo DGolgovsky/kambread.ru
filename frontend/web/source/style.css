@@ -92,11 +92,11 @@ table{background-color: #fff;}
 .search-form h4{margin: 17px 0;}
 
 
-.hot-properties {margin-bottom: 50px;}
-.hot-properties img{width: 68px; height: 68px;}
-.hot-properties h4{margin-bottom: 20px;}
-.hot-properties .row{margin-bottom: 20px;}
-.hot-properties .row p{margin-bottom: 5px;}
+.new-properties {margin-bottom: 50px;}
+.new-properties img{width: 68px; height: 68px;}
+.new-properties h4{margin-bottom: 20px;}
+.new-properties .row{margin-bottom: 20px;}
+.new-properties .row p{margin-bottom: 5px;}
 
 .sortby .result{margin-top: 10px;}
 

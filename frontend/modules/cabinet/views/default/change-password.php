@@ -1,4 +1,4 @@
-<div class="advert-form">
+<div class="product-form">
     <?php $form = \yii\bootstrap\ActiveForm::begin(); ?>
 
     <?=$form->field($model,'password')->passwordInput() ?>

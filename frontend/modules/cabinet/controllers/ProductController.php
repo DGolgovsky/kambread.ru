@@ -23,12 +23,7 @@ class ProductController extends AuthController
 {
 
 	public $layout = "inner";
-
-	public function init()
-	{
-		Yii::$app->view->registerJsFile('https://maps.googleapis.com/maps/api/js?sensor=false',['position' => \yii\web\View::POS_HEAD]);
-	}
-
+	
 	/**
 	 * Lists all Product models.
 	 * @return mixed

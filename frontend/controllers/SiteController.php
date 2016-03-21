@@ -8,20 +8,29 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\base\InvalidParamException;
+use yii\widgets\ActiveForm;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
+use yii\web\Response;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use frontend\components\Common;
+use yii\db\Query;
 use dosamigos\google\maps\LatLng;
 use dosamigos\google\maps\Map;
 use dosamigos\google\maps\overlays\Marker;
-
 /**
  * Site controller
  */
 class SiteController extends Controller
 {
     public $layout = "inner";
+
+    public function init()
+    {
+        Yii::$app->view->registerJsFile('https://maps.googleapis.com/maps/api/js?sensor=false',['position' => \yii\web\View::POS_HEAD]);
+    }
+
     /**
      * @inheritdoc
      */
@@ -76,8 +85,45 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->redirect('/main');
+        $this->layout = "bootstrap";
+
+        $query = new Query();
+        $query_product = $query->from('product')->groupBy('idproduct')->orderBy('idproduct desc');
+        $command = $query_product->limit(5);
+        $result_general = $command->all();
+        $count_general = $command->count();
+
+        $featured = $query_product
+            ->Where("new=1")
+            ->orWhere("recommend=1")
+            ->limit(15)->all();
+
+        $recommend_query  = $query_product->where("recommend=1")->limit(5);
+        $recommend = $recommend_query->all();
+        $recommend_count = $recommend_query->count();
+
+        return $this->render('index',[
+            'result_general' => $result_general,
+            'count_general' => $count_general,
+            'featured' => $featured,
+            'recommend' => $recommend,
+            'recommend_count' => $recommend_count
+        ]);
+        //return $this->redirect('/main');
         //return $this->render('index');
+    }
+
+    public function actionPartners()
+    {
+        return $this->render('partners');
+    }
+
+    public function actionEvent()
+    {
+        $component = \Yii::$app->common; //new Common();
+        $component->on(Common::EVENT_NOTIFY,[$component,'notifyAdmin']);
+        $component->sendMail("Notify admin",$component->name,$component->subject,$component->body);
+        $component->off(Common::EVENT_NOTIFY,[$component,'notifyAdmin']);
     }
 
     /**
@@ -183,12 +229,18 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
-        if ($model->load(Yii::$app->request->post())) {
-            if ($user = $model->signup()) {
-                if (Yii::$app->getUser()->login($user)) {
-                    return $this->goHome();
-                }
+        // 1st: $model = new SignupForm(['scenario' => 'short_u_e_p']); // валидация по сценарию
+
+        if(Yii::$app->request->isAjax && \Yii::$app->request->isPost) {
+            if($model->load(\Yii::$app->request->post())) {
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                return ActiveForm::validate($model);
             }
+        }
+
+        if($model->load(\Yii::$app->request->post())) {
+            Yii::$app->session->setFlash('success', 'Регистрация прошла успешно');
+            return $this->refresh();
         }
 
         return $this->render('signup', [

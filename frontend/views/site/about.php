@@ -22,27 +22,69 @@ $this->params['breadcrumbs'][] = $this->title;
         <p>ОАО «Камышинский хлебокомбинат» выпускает широкий ассортимент хлебобулочных изделий из натурального сырья.
             Вся продукция предприятия сертифицирована и производится согласно существующей нормативно-технической документации.</p>
     </div>
-    <div><h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
-        <div class="well">
-            <?php echo $map->display(); ?>
-        </div>
-    </div>
-    <div class="col-lg-5">
-        <h2>Оставить отзыв</h2>
-        <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
-        <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
-        <?= $form->field($model, 'email') ?>
-        <?= $form->field($model, 'subject') ?>
-        <?= $form->field($model, 'body')->textArea(['rows' => 6]) ?>
-        <?= $form->field($model, 'verifyCode')->widget(\yii\captcha\Captcha::className(), [
-            'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-            'captchaAction' => \yii\helpers\Url::to(['/site/captcha'])
-        ]) ?>
-        <div class="form-group">
-            <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
-        </div>
-        <?php
-        \yii\bootstrap\ActiveForm::end();
-        ?>
-    </div>
+    <h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
+    <div id="map_canvas" style="width:640px; height:380px"></div>
+    <br/>
+    <?php
+    $this->registerJs("
+		var geocoder;
+		var map;
+		var marker;
+		var markers = [];
+
+		function initialize() {
+			var latlng = new google.maps.LatLng(50.10725112018604, 45.40386139521479);
+			var options = {
+				zoom: 10,
+				center: latlng,
+			};
+			map = new google.maps.Map(document.getElementById('map_canvas'), options);
+			geocoder = new google.maps.Geocoder();
+		}
+
+		function DeleteMarkers() {
+		    for (var i = 0; i < markers.length; i++) {
+		        markers[i].setMap(null);
+		    }
+		    markers = [];
+		}
+
+		function findLocation(val) {
+		    geocoder.geocode( {'address': val}, function(results, status) {
+		        var location = results[0].geometry.location
+		        map.setCenter(location)
+		        map.setZoom(15)
+		        DeleteMarkers()
+
+		        $('#product-location').val(location)
+
+		        marker = new google.maps.Marker({
+		            map: map,
+		            draggable: true,
+		            position: location
+		        });
+
+		        google.maps.event.addListener(marker, 'dragend', function() {
+		            $('#product-location').val(marker.getPosition())
+		        });
+
+		        markers.push(marker);
+		    })
+		}
+
+		$(document).ready(function() {
+		    initialize();
+
+		    if( $('#product-address').val()) {
+		        _location = $('#product-address').val()
+		        findLocation(_location)
+		    }
+
+		    $('#product-address').bind('blur keyup',function() {
+		        _location = $('#product-address').val()
+		        findLocation(_location)
+		    })
+		});"
+    );
+    ?>
 </div>

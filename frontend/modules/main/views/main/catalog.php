@@ -39,8 +39,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <button class="btn btn-primary">Найти</button>
                 <?= Html::endForm() ?>
             </div>
-            <div class="hot-properties hidden-xs">
-                <?php echo \frontend\widgets\HotWidget::widget() ?>
+            <div class="new-properties hidden-xs">
+                <?php echo \frontend\widgets\NewWidget::widget() ?>
             </div>
         </div>
         <div class="col-lg-9 col-sm-8">

@@ -32,10 +32,10 @@ class Common extends Component
 
 	public static function getTitleProduct($data)
 	{
-		return $data['name']; //.' Заказов и '.$data['kitchen'].' счастливых хлебцов было продано';
+		return $data['name'];
 	}
 
-	public static function getImageProduct($data,$general = true,$original = false)
+	public static function getImageProduct($data, $general = true, $original = false)
 	{
 		$image = [];
 		$base = '/';
@@ -54,18 +54,19 @@ class Common extends Component
 		return $image;
 	}
 
-	public static function substr($text,$start=0,$end=50)
+	public static function substr($text, $start=0, $end=50)
 	{
-		return mb_substr($text,$start,$end);
+		return mb_substr($text, $start, $end);
 	}
 
 	public static function getType($row)
 	{
 		if (($row['recommend'])) {
 			return 'Рекомендуем';
-		} else if (($row['hot'])) {
+		} else if (($row['new'])) {
 			return 'Новинка';
-		} // return title
+		}
+		return false;
 	}
 
 	public function getUrlProduct($row)

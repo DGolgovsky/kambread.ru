@@ -3,11 +3,12 @@ $this->title = 'Профиль пользователя:'.' '.$model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabinet']];
 $this->params['breadcrumbs'][] = $model->name;
 ?>
+
 <div class="user-form">
     <?php
-        $form = \yii\bootstrap\ActiveForm::begin([
-            'options' => ['enctype' => 'multipart/form-data']
-        ]);
+    $form = \yii\bootstrap\ActiveForm::begin([
+        'options' => ['enctype' => 'multipart/form-data']
+    ]);
     ?>
 
     <?=\yii\helpers\Html::img(\common\components\UserComponent::getUserImage(\Yii::$app->user->id), ['width' => 200]) ?>
@@ -15,6 +16,7 @@ $this->params['breadcrumbs'][] = $model->name;
     <?=$form->field($model,'name')->textInput(['autofocus' => true]) ?>
     <?=$form->field($model,'username') ?>
     <?=$form->field($model,'email') ?>
+    <?=$form->field($model,'phone') ?>
     <?=\yii\helpers\Html::label('Avatar') ?>
     <?=\yii\helpers\Html::fileInput('avatar') ?>
 

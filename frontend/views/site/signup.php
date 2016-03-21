@@ -21,12 +21,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     'enableAjaxValidation' => true,
                 ]);
             ?>
-
+            
             <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
             <?= $form->field($model, 'username') ?>
 
             <?= $form->field($model, 'email') ?>
+
+            <?= $form->field($model, 'phone') ?>
 
             <?= $form->field($model, 'password')->passwordInput() ?>
 
