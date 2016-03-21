@@ -1,11 +1,20 @@
 <?php
 
-namespace app\modules\main;
+namespace app\modules\news;
 
+/**
+ * news module definition class
+ */
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'app\modules\main\controllers';
+    /**
+     * @inheritdoc
+     */
+    public $controllerNamespace = 'app\modules\news\controllers';
 
+    /**
+     * @inheritdoc
+     */
     public function init()
     {
         parent::init();

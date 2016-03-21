@@ -1,19 +1,21 @@
 <?php
-namespace app\modules\main\controllers;
+namespace app\modules\products\controllers;
 
 use common\models\Product;
-//use frontend\components\Common;
+use frontend\components\Common;
 use frontend\filters\FilterProduct;
 //use frontend\models\Image;
 //use frontend\models\SignupForm;
 use yii\base\DynamicModel;
 use yii\data\Pagination;
+use yii\web\Controller;
+use yii\db\Query;
+
 //use yii\web\Response;
 //use yii\widgets\ActiveForm;
 
-class MainController extends \yii\web\Controller
+class DefaultController extends Controller
 {
-	//TODO transfer MainController to ProductController
 	public $layout = "inner";
 
 	public function actions()
@@ -36,11 +38,11 @@ class MainController extends \yii\web\Controller
 		];
 	}
 
-	public function actionCatalog($propert = '', $price = '', $type = '')
+	public function actionIndex($propert = '', $price = '', $type = '')
 	{
 		$this->layout = 'inner';
 
-		$query = product::find();
+		$query = Product::find();
 		$query->filterWhere(['like', 'name', $propert])
 			->orFilterWhere(['like', 'description', $propert])
 			->andFilterWhere(['type' => $type]);
@@ -62,12 +64,7 @@ class MainController extends \yii\web\Controller
 		$model = $query->offset($pages->offset)->limit($pages->limit)->all();
 
 		$request = \Yii::$app->request;
-		return $this->render("catalog", ['model' => $model, 'pages' => $pages, 'request' => $request]);
-	}
-
-	public function actionIndex()
-	{
-		return $this->render('index');
+		return $this->render("index", ['model' => $model, 'pages' => $pages, 'request' => $request]);
 	}
 
 	public function actionViewProduct($id)

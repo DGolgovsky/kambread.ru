@@ -21,16 +21,16 @@ use yii\helpers\Html;
             </div>
             <!-- Nav Starts -->
             <div class="navbar-collapse collapse">
-                <a href="/" ><img src="/images/logo.png"  alt="Главная"></a>
+                <a href="/index" ><img src="/images/logo.png"  alt="Главная"></a>
                 <?php
                 NavBar::begin([
-                    'brandLabel' => '<a href="/" ><img src="/images/logo.png"  alt="Главная"></a>',
+                    'brandLabel' => '<a href="/index" ><img src="/images/logo.png"  alt="Главная"></a>',
                     'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
                         'class' => 'navbar-inverse navbar-fixed-top',
                     ],
                 ]);
-                $menuItems[] = ['label' => 'Главная', 'url' => ['/']];
+                $menuItems[] = ['label' => 'Главная', 'url' => ['/site/index']];
                 $menuItems[] = ['label' => 'Информация',
                     'items' => [
                         ['label' => 'О Компании',
@@ -41,26 +41,29 @@ use yii\helpers\Html;
                             'url' => ['/site/partners']],
                         ['label' => 'Вакансии',
                             'url' => ['/site/vacancies']],
+                        ['label' => 'Новости',
+                            'url' => ['/news']],
                         ['label' => 'Раскрытие информации',
-                            'url' => ['/site/disclosure'],							
+                            'url' => ['/site/disclosure'],
 							'linkOptions' => ['target' => '_blank']],
                     ],
                 ];
-                $menuItems[] = ['label' => 'Продукция', 'url' => ['/catalog']];
+                $menuItems[] = ['label' => 'Продукция', 'url' => ['/products']];
 
                 if (Yii::$app->user->isGuest) {
                     $menuItems[] =  ['label' => 'Вход', 'url' => ['/site/login']];
-                    $menuItems[] =  ['label' => 'Регистрация', 'url' => ['/site/signup/']];
+                    $menuItems[] =  ['label' => 'Регистрация', 'url' => ['/site/signup']];
                 } else {
                     $menuItems[] =  ['label' => 'Кабинет', 'url' => ['/cabinet']];
                     $menuItems[] = ['label' => 'Выход (' . Yii::$app->user->identity->username . ')',  'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']];
                 }
                 echo Nav::widget([
-                    'options' => ['class' => 'navbar-nav navbar-right'],
+                    'options' => ['class' => 'navbar-inverse navbar-nav navbar-right'],
                     'items' => $menuItems,
                 ]);
                 NavBar::end();
                 ?>
+
             </div>
             <!-- #Nav Ends -->
         </div>

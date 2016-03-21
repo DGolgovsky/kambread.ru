@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="properties-listing spacer">
     <div class="row">
         <div class="col-lg-3 col-sm-4 ">
-            <?= Html::beginForm(\yii\helpers\Url::to('catalog'),'get') ?>
+            <?= Html::beginForm(\yii\helpers\Url::to('products'),'get') ?>
             <div class="search-form">
                 <h4><span class="glyphicon glyphicon-search"></span> Параметры поиска</h4>
                 <?=Html::textInput('propert', $request->get('propert'), [
@@ -54,10 +54,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="properties">
                             <div class="image-holder">
                                 <img src="<?=\frontend\components\Common::getImageProduct($row)[0] ?>"  class="img-responsive" alt="properties">
-                                <div class="status <?=($row['recommend']) ? 'recommend' : 'new' ?>"><?=\frontend\components\Common::getType($row) ?>
+                                <div class="status <?=($row['recommend']) ? 'recommend' : 'new' ?>"><?=\frontend\components\Common::getTypeProduct($row) ?>
                                 </div>
                             </div>
-                            <h4><a href="<?=$url ?>" ><?=\frontend\components\Common::getTitleProduct($row) ?></a></h4>
+                            <h4><a href="<?=$url ?>" ><?=\frontend\components\Common::getTitle($row) ?></a></h4>
                             <h4><p class="price">Цена: ₽<?=$row['price'] ?></p></h4>
                             <a class="btn btn-primary" href="<?=$url ?>" >Детальнее</a>
                         </div>

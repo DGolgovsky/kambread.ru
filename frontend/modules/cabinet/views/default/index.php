@@ -32,11 +32,20 @@ $this->params['breadcrumbs'][] = $this->title;
     </p><p>
     <div class="row">
     <div class="col-lg-4 col-sm-4 col-xs-4">
-        <?= Html::a('Новости', ['#'], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Новости', ['/cabinet/news'], ['class' => 'btn btn-primary']) ?>
     </div>
     <div class="col-lg-8 col-sm-8 col-xs-8">
         <span>Редактирование списка новостей</span>
     </div>
+    </div>
+    </p><p>
+    <div class="row">
+        <div class="col-lg-4 col-sm-4 col-xs-4">
+            <?= Html::a('Вакансии', ['/cabinet/vacancy'], ['class' => 'btn btn-primary']) ?>
+        </div>
+        <div class="col-lg-8 col-sm-8 col-xs-8">
+            <span>Редактирование списка вакантных позиций</span>
+        </div>
     </div>
     </p><p>
     <div class="row">

@@ -63,7 +63,7 @@ class Product extends \yii\db\ActiveRecord
 
 	public function getTitle()
 	{
-		return Common::getTitleProduct($this);
+		return Common::getTitle($this);
 	}
 
 	/**

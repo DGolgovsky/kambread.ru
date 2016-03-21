@@ -1,17 +1,17 @@
 <?php
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['catalog']];
+$this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['/products']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
     <div class="col-lg-3 col-sm-4 hidden-xs">
         <?php
         echo \frontend\widgets\NewWidget::widget();
-        $product_title = \frontend\components\Common::getTitleProduct($model);
+        $product_title = \frontend\components\Common::getTitle($model);
         ?>
     </div>
     <div class="col-lg-9 col-sm-8 ">
-        <h2><?=\frontend\components\Common::getTitleProduct($model) ?></h2>
+        <h2><?=\frontend\components\Common::getTitle($model) ?></h2>
         <div class="row">
             <div class="col-lg-8">
                 <div class="property-images">
@@ -83,7 +83,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?=$model->user->phone ?>
                             </p>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="col-lg-12 col-sm-6 ">
                     <div class="enquiry">
@@ -93,7 +93,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         ?>
                         <?=$form->field($model_feedback,'email')->textInput(['value' => $current_user['email'], 'placeholder' => 'Ваш e-mail'])->label(false) ?>
                         <?=$form->field($model_feedback,'name')->textInput(['value' => $current_user['name'], 'placeholder' => 'Имя'])->label(false) ?>
-						<?=$form->field($model_feedback,'text')->textarea(['rows' => 6, 'placeholder' => 'Что Вы думаете?'])->label(false) ?>
+                        <?=$form->field($model_feedback,'text')->textarea(['rows' => 6, 'placeholder' => 'Что Вы думаете?'])->label(false) ?>
                         <button type="submit" class="btn btn-primary" name="Submit">Отправить сообщение</button>
                         <?php
                         \yii\bootstrap\ActiveForm::end();

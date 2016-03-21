@@ -101,7 +101,7 @@ class SiteController extends Controller
         $recommend_query  = $query_product->where("recommend=1")->limit(5);
         $recommend = $recommend_query->all();
         $recommend_count = $recommend_query->count();
-
+        
         return $this->render('index',[
             'result_general' => $result_general,
             'count_general' => $count_general,

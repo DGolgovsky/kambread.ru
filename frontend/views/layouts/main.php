@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
 AppAsset::register($this);
+Yii::$app->language = 'ru-RU';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

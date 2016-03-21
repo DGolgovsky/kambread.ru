@@ -6,10 +6,10 @@ use yii\helpers\Html;
         <?php foreach($result_general as $row): ?>
         <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
             <div class="sl-slide-inner">
-                <div class="bg-img" style="background-image: url('<?=\frontend\components\Common::getImageproduct($row)[0] ?>')")"></div>
+                <div class="bg-img" style="background-image: url('<?=\frontend\components\Common::getImageProduct($row)[0] ?>')")"></div>
             <h2>
-                <a href="<?=\frontend\components\Common::getUrlproduct($row) ?>">
-                    <?=\frontend\components\Common::getTitleproduct($row) ?>
+                <a href="<?=\frontend\components\Common::getUrlProduct($row) ?>">
+                    <?=\frontend\components\Common::getTitle($row) ?>
                 </a>
             </h2>
             <blockquote>
@@ -47,14 +47,14 @@ use yii\helpers\Html;
             <?php foreach($featured as $row): ?>
                 <div class="properties">
                     <div class="image-holder">
-                        <img src="<?=\frontend\components\Common::getImageProduct($row)[0] ?>"  class="img-responsive" alt="<?=\frontend\components\Common::getTitleproduct($row) ?>"/>
+                        <img src="<?=\frontend\components\Common::getImageProduct($row)[0] ?>"  class="img-responsive" alt="<?=\frontend\components\Common::getTitle($row) ?>"/>
                         <div class="status <?=($row['recommend']) ? 'recommend' : 'new' ?>">
-                            <?=\frontend\components\Common::getType($row) ?>
+                            <?=\frontend\components\Common::getTypeProduct($row) ?>
                         </div>
                     </div>
                     <h4>
                         <a href="<?=\frontend\components\Common::getUrlProduct($row) ?>" >
-                            <?=\frontend\components\Common::getTitleproduct($row) ?>
+                            <?=\frontend\components\Common::getTitle($row) ?>
                         </a>
                     </h4>
                     <h4><p class="price">Цена: ₽<?=$row['price'] ?></p></h4>
@@ -78,54 +78,9 @@ use yii\helpers\Html;
                     <a href="about" >Подробнее</a>
                 </p>
             </div>
-            <div class="col-lg-5 col-lg-offset-1 col-sm-3 recommended">
-                <h3>Новости</h3>
-                <div id="myCarousel" class="carousel slide">
-                    <ol class="carousel-indicators">
-                        <?php
-                        if($recommend_count >= 1):
-                            ?>
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <?php
-                        endif;
-                        ?>
-                        <?php
-                        if($recommend_count > 1):
-                            foreach(range(1,$recommend_count-1) as $count):
-                                ?>
-                                <li data-target="#myCarousel" data-slide-to="<?=$count ?>"></li>
-                                <?php
-                            endforeach;
-                        endif;
-                        ?>
-                    </ol>
-                    <!-- Carousel items -->
-                    <div class="carousel-inner">
-                        <?php
-                        $i = 0;
-                        foreach($recommend as $rec):
-                            ?>
-                            <div class="item <?=($i == 0) ? 'active' : '' ?>">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <img src="<?=\frontend\components\Common::getImageproduct($rec)[0] ?>"  class="img-responsive" alt="properties"/>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <h5>
-                                            <a href="<?=\frontend\components\Common::getUrlproduct($rec) ?>" ><?=\frontend\components\Common::getTitleproduct($rec) ?></a>
-                                        </h5>
-                                        <p class="price">₽ <?=$rec['price'] ?></p>
-                                        <a href="<?=\frontend\components\Common::getUrlproduct($rec) ?>"  class="more">Подробнее</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php
-                            $i++;
-                        endforeach;
-                        ?>
-                    </div>
-                </div>
-            </div>
+            <?php
+            echo \frontend\widgets\NewsWidget::widget();
+            ?>
         </div>
     </div>
 </div>

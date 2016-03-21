@@ -19,7 +19,7 @@ use Imagine\Image\Box;
 /**
  * ProductController implements the CRUD actions for Product model.
  */
-class ProductController extends AuthController
+class ProductController extends Controller
 {
 
 	public $layout = "inner";

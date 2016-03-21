@@ -30,7 +30,7 @@ class Common extends Component
 		return $this->refresh();
 	}
 
-	public static function getTitleProduct($data)
+	public static function getTitle($data)
 	{
 		return $data['name'];
 	}
@@ -54,12 +54,31 @@ class Common extends Component
 		return $image;
 	}
 
+	public static function getImageNews($data, $general = true, $original = false)
+	{
+		$image = [];
+		$base = '/';
+		if($general) {
+			$image[] = $base.'uploads/news/'.$data['idnews'].'/general/small_'.$data['general_image'];
+		} else {
+			$path = Yii::getAlias("@frontend/web/uploads/news/".$data['idnews']);
+			$files = BaseFileHelper::findFiles($path);
+			foreach($files as $file) {
+				if (strstr($file, "small_") && !strstr($file, "general")) {
+					$image[] = $base . 'uploads/news/' . $data['idnews'] . '/' . basename($file);
+				}
+			}
+		}
+
+		return $image;
+	}
+
 	public static function substr($text, $start=0, $end=50)
 	{
 		return mb_substr($text, $start, $end);
 	}
 
-	public static function getType($row)
+	public static function getTypeProduct($row)
 	{
 		if (($row['recommend'])) {
 			return 'Рекомендуем';
@@ -71,6 +90,11 @@ class Common extends Component
 
 	public function getUrlProduct($row)
 	{
-		return Url::to(['/main/main/view-product', 'id' => $row['idproduct']]);
+		return Url::to(['/products/default/view-product', 'id' => $row['idproduct']]);
+	}
+
+	public function getUrlNews($row)
+	{
+		return Url::to(['/news/default/view-news', 'id' => $row['idnews']]);
 	}
 }
