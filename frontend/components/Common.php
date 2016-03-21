@@ -35,6 +35,11 @@ class Common extends Component
 		return $data['name'];
 	}
 
+	public static function getCreationDate($data)
+	{
+		return Yii::$app->formatter->asDate($data['created_at'], 'd MMMM yyyy');
+	}
+
 	public static function getImageProduct($data, $general = true, $original = false)
 	{
 		$image = [];

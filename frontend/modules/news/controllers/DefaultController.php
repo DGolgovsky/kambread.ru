@@ -3,6 +3,7 @@
 namespace app\modules\news\controllers;
 
 use common\models\News;
+use DateTime;
 use yii\data\Pagination;
 use yii\web\Controller;
 
@@ -19,11 +20,8 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = 'inner';
-
         $query = News::find();
-        $query->filterWhere(['like', 'name', ''])
-            ->orFilterWhere(['like', 'description', '']);
+        //$query->filterWhere(['like', 'name', ''])->orFilterWhere(['like', 'description', '']);
 
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count()]);

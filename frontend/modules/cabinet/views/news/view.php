@@ -12,6 +12,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/cabin
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="news-view">
+    //TODO add next/preview buttons
     <p>
         <?= Html::a('Обновить', ['update', 'id' => $model->idnews], [
             'class' => 'btn btn-primary'

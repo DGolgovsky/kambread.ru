@@ -34,7 +34,7 @@
                             <h5>
                                 <a href="<?=\frontend\components\Common::getUrlNews($rec) ?>" ><?=\frontend\components\Common::getTitle($rec) ?></a>
                             </h5>
-                            <p><?=$rec['description'] ?></p>
+                            <p><?= \frontend\components\Common::substr($rec['description'], 0, 70) ?></p>
                             <a href="<?=\frontend\components\Common::getUrlNews($rec) ?>"  class="more">Подробнее</a>
                         </div>
                     </div>

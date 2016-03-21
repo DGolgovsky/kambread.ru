@@ -1,8 +1,10 @@
 <?php
 use yii\helpers\Html;
 ?>
-<div id="slider" class="sl-slider-wrapper">
-    <div class="sl-slider">
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div id="slider" class="sl-slider-wrapper">
+            <div class="sl-slider">
         <?php foreach($result_general as $row): ?>
         <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
             <div class="sl-slide-inner">
@@ -13,15 +15,15 @@ use yii\helpers\Html;
                 </a>
             </h2>
             <blockquote>
-                <p>
-                    <?=\frontend\components\Common::substr($row['description']) ?>
-                </p>
+                <p><?=\frontend\components\Common::substr($row['description'], 0, 50) ?></p>
                 <cite>₽ <?=$row['price'] ?></cite>
             </blockquote>
         </div>
     </div>
     <?php endforeach; ?>
 </div>
+</div>
+
 <!-- /sl-slider -->
 <nav id="nav-dots" class="nav-dots">
     <?php if($count_general >= 1): ?>
@@ -38,6 +40,7 @@ use yii\helpers\Html;
     ?>
 </nav>
 </div><!-- /slider-wrapper -->
+
 
 <div class="container">
     <div class="properties-listing spacer">

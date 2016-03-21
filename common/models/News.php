@@ -20,6 +20,8 @@ use yii\behaviors\TimestampBehavior;
 
 class News extends \yii\db\ActiveRecord
 {
+    public static $dates = ['updated_at', 'created_at'];
+
     /**
      * @inheritdoc
      */
@@ -31,7 +33,7 @@ class News extends \yii\db\ActiveRecord
     public function behaviors()
     {
         return [
-            TimestampBehavior::className(),
+            TimestampBehavior::className()
         ];
     }
 
@@ -49,9 +51,14 @@ class News extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            ['name', 'filter', 'filter' => 'trim'],
             ['name', 'required'],
+            ['name', 'string', 'min' => 2, 'max' => 48],
+
             ['user_id', 'integer'],
-            [['description', 'name'], 'string'],
+
+            ['description', 'filter', 'filter' => 'trim'],
+            ['description', 'string'],
             //['general_image', 'file', 'extensions' => ['jpg','png','gif']]
         ];
     }

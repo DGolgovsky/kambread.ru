@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput()->textInput(['autofocus' => true]) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'description')->textarea(['rows' => 10]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Добавить изображение', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -23,6 +23,7 @@ return [
                 '<alias:(about|contact|login|signup|partners|index)>' => 'site/<alias>',
                 '<alias:(/site/index)>' => '/',
                 'products/view-product/<id:\d+>' => 'products/default/view-product',
+                'news/view/<id:\d+>' => 'news/default/view-news',
                 'products/<propert:\w+>&<price:\d+>&<type:\w+>' => 'products',
                 'cabinet/product/<action_cabinet:(view|update)>/<id:\d+>' => 'cabinet/product/<action_cabinet>',
                 '<action_products:(index)>' => 'products/<action_products>',

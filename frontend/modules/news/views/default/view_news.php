@@ -1,28 +1,54 @@
 <?php
-$this->title = $model->name;
+$this->title = 'Просмотр новости';
 $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/news']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = 'Просмотр';
 ?>
 <div class="container">
     <div class="spacer blog">
         <div class="row">
             <div class="col-lg-8">
-
-                <!-- blog detail -->
-                <h2>Creative business to takeover the market</h2>
-                <div class="info">Posted on: Jan 20, 2013</div>
-                <img src="images/blog/1.jpg"  class="thumbnail img-responsive"  alt="blog title">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <!-- blog detail -->
-
-
-
-
+                <!-- news detail -->
+                <h2><?=\frontend\components\Common::getTitle($model) ?></h2>
+                <div class="info">Создано: <?= \frontend\components\Common::getCreationDate($model) ?></div>
+                <div class="property-images">
+                    <!-- Slider Starts -->
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <?php
+                            foreach(range(1,count($images)) as $s):
+                                ?>
+                                <li data-target="#myCarousel" data-slide-to="<?=$s ?>" class=""></li>
+                                <?php
+                            endforeach;
+                            ?>
+                        </ol>
+                        <div class="carousel-inner">
+                            <!-- Item 1 -->
+                            <div class="item active">
+                                <img src="<?=\frontend\components\Common::getImageNews($model)[0] ?>"  class="thumbnail img-responsive" alt="<?=\frontend\components\Common::getTitle($model) ?>" />
+                            </div>
+                            <?php
+                            foreach($images as $image):
+                                ?>
+                                <div class="item">
+                                    <img src="<?=$image ?>"  class="thumbnail img-responsive" alt="<?=\frontend\components\Common::getTitle($model) ?>" />
+                                </div>
+                                <?php
+                            endforeach;
+                            ?>
+                        </div>
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                    <!-- #Slider Ends -->
+                </div>
+                <br>
+                <p><?php echo $model->description; ?></p>
+                <!-- news detail -->
             </div>
             <div class="col-lg-4 visible-lg">
-
                 <!-- tabs -->
                 <div class="tabbable">
                     <ul class="nav nav-tabs">
@@ -90,91 +116,3 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
-
-
-
-
-<div class="footer">
-
-    <div class="container">
-
-
-
-        <div class="row">
-            <div class="col-lg-3 col-sm-3">
-                <h4>Information</h4>
-                <ul class="row">
-                    <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html" >About</a></li>
-                    <li class="col-lg-12 col-sm-12 col-xs-3"><a href="agents.html" >Agents</a></li>
-                    <li class="col-lg-12 col-sm-12 col-xs-3"><a href="blog.html" >Blog</a></li>
-                    <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.html" >Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-3 col-sm-3">
-                <h4>Newsletter</h4>
-                <p>Get notified about the latest properties in our marketplace.</p>
-                <form class="form-inline" role="form">
-                    <input type="text" placeholder="Enter Your email address" class="form-control">
-                    <button class="btn btn-success" type="button">Notify Me!</button></form>
-            </div>
-
-            <div class="col-lg-3 col-sm-3">
-                <h4>Follow us</h4>
-                <a href="#"><img src="images/facebook.png"  alt="facebook"></a>
-                <a href="#"><img src="images/twitter.png"  alt="twitter"></a>
-                <a href="#"><img src="images/linkedin.png"  alt="linkedin"></a>
-                <a href="#"><img src="images/instagram.png"  alt="instagram"></a>
-            </div>
-
-            <div class="col-lg-3 col-sm-3">
-                <h4>Contact us</h4>
-                <p><b>Bootstrap Realestate Inc.</b><br>
-                    <span class="glyphicon glyphicon-map-marker"></span> 8290 Walk Street, Australia <br>
-                    <span class="glyphicon glyphicon-envelope"></span> hello@bootstrapreal.com<br>
-                    <span class="glyphicon glyphicon-earphone"></span> (123) 456-7890</p>
-            </div>
-        </div>
-        <p class="copyright">Copyright 2013. All rights reserved.	</p>
-
-
-    </div></div>
-
-
-
-
-<!-- Modal -->
-<div id="loginpop" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="row">
-                <div class="col-sm-6 login">
-                    <h4>Login</h4>
-                    <form class="" role="form">
-                        <div class="form-group">
-                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="exampleInputPassword2">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Remember me
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-success">Sign in</button>
-                    </form>
-                </div>
-                <div class="col-sm-6">
-                    <h4>New User Sign Up</h4>
-                    <p>Join today and get updated with all the properties deal happening around.</p>
-                    <button type="submit" class="btn btn-info"  onclick="window.location.href='register.html'">Join Now</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /.modal -->
