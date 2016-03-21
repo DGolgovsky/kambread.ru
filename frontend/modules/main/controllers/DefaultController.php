@@ -10,7 +10,7 @@ class DefaultController extends Controller
 {
 	public function actionIndex()
 	{
-		$this->layout = "bootstrap";
+		$this->layout = "main";
 
 		$query = new Query();
 		$query_product = $query->from('product')->groupBy('idproduct')->orderBy('idproduct desc');
@@ -19,7 +19,7 @@ class DefaultController extends Controller
 		$count_general = $command->count();
 
 		$featured = $query_product
-			->Where("new=1")
+			->where("new=1")
 			->orWhere("recommend=1")
 			->limit(15)->all();
 

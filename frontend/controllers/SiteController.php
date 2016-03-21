@@ -1,7 +1,7 @@
 <?php
 namespace frontend\controllers;
 
-use Yii;
+use yii;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
@@ -85,7 +85,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = "bootstrap";
+        $this->layout = "main";
 
         $query = new Query();
         $query_product = $query->from('product')->groupBy('idproduct')->orderBy('idproduct desc');
@@ -94,7 +94,7 @@ class SiteController extends Controller
         $count_general = $command->count();
 
         $featured = $query_product
-            ->Where("new=1")
+            ->where("new=1")
             ->orWhere("recommend=1")
             ->limit(15)->all();
 

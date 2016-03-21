@@ -1,19 +1,18 @@
 <?php
-
 use frontend\widgets\Alert;
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use frontend\assets\MainAsset;
 use yii\widgets\Breadcrumbs;
-
-MainAsset::register($this);
+use frontend\assets\AppAsset;
+AppAsset::register($this);
 ?>
+
 <?php $this->beginPage(); ?>
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="<?= \Yii::$app->language ?>">
 <head>
     <meta charset="<?= \Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="sZdpkUqsj_hA5kLMZRWTMHKezqWnJ9Ev3MaCziR9zN4" />
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode('Камышинский хлебокомбинат') ?></title>
     <?php $this->head() ?>
@@ -40,9 +39,10 @@ MainAsset::register($this);
 <!-- banner -->
 <div class="container">
     <div class="spacer">
-        <?=$content ?>
+        <?= $content ?>
     </div>
 </div>
+<!-- #banner -->
 <?php echo $this->render("//common/footer") ?>
 <?php $this->endBody(); ?>
 </body>

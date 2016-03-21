@@ -2,14 +2,14 @@
 namespace app\modules\main\controllers;
 
 use common\models\Product;
-use frontend\components\Common;
+//use frontend\components\Common;
 use frontend\filters\FilterProduct;
-use frontend\models\Image;
-use frontend\models\SignupForm;
+//use frontend\models\Image;
+//use frontend\models\SignupForm;
 use yii\base\DynamicModel;
 use yii\data\Pagination;
-use yii\web\Response;
-use yii\widgets\ActiveForm;
+//use yii\web\Response;
+//use yii\widgets\ActiveForm;
 
 class MainController extends \yii\web\Controller
 {
@@ -38,7 +38,7 @@ class MainController extends \yii\web\Controller
 
 	public function actionCatalog($propert = '', $price = '', $type = '')
 	{
-		$this->layout = 'sell';
+		$this->layout = 'inner';
 
 		$query = product::find();
 		$query->filterWhere(['like', 'name', $propert])
