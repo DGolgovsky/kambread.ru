@@ -252,6 +252,8 @@ class SiteController extends Controller
             return $this->refresh();
         }
 
+        //TODO add send email request
+        
         return $this->render('signup', [
             'model' => $model,
         ]);

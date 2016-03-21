@@ -46,6 +46,7 @@ use yii\helpers\Html;
 							'linkOptions' => ['target' => '_blank']],
                     ],
                 ];
+                $menuItems[] = ['label' => 'Продукция', 'url' => ['/catalog']];
 
                 if (Yii::$app->user->isGuest) {
                     $menuItems[] =  ['label' => 'Вход', 'url' => ['/site/login']];
