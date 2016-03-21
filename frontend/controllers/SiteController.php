@@ -118,6 +118,11 @@ class SiteController extends Controller
         return $this->render('partners');
     }
 
+	public function actionVacancies()
+    {
+        return $this->render('vacancies');
+    }
+
     public function actionEvent()
     {
         $component = \Yii::$app->common; //new Common();
