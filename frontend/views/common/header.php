@@ -39,6 +39,8 @@ use yii\helpers\Html;
                             'url' => ['/site/contact']],
                         ['label' => 'Партнёрам',
                             'url' => ['/site/partners']],
+                        ['label' => 'Вакансии',
+                            'url' => ['/site/vacancies']],
                         ['label' => 'Раскрытие информации',
                             'url' => ['http://disclosure.1prime.ru/portal/default.aspx?emId=3436107766']],
                     ],
