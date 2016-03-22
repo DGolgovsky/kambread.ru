@@ -141,6 +141,7 @@ class NewsController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $this->refresh();
             return $this->render('view', [
                 'model' => $this->findModel($id),
             ]);

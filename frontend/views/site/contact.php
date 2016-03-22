@@ -12,15 +12,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="row contact">
 	<div class="col-lg-6 col-sm-6 col-xs-12">
-		<h3>Get in Touch with Us</h3>
+		<h3><span class="glyphicon glyphicon-phone"></span> Связаться с нами</h3>
 		</hr>
 		<!-- Contact Info -->
-		<p class="contact-us-details">
-			<b>Address:</b> 403874 ул. Ленина 4, Камышин, Волгоградская область, Российская Федерация<br/>
-			<b>Phone:</b> +7 84457 9 39 84<br/>
-			<b>Fax:</b> +7 84457 9 64 64<br/>
-			<b>Email:</b> <a href="mailto:market@kambread.ru">market@kambread.ru</a>
-		</p>
+		<dl>
+			<dt>Address:</dt>
+			<dd>403874 ул. Ленина 4, Камышин, Волгоградская область, Российская Федерация</dd>
+			<dt>Phone:</dt>
+			<dd>+7 84457 9 39 84</dd>
+			<dt>Fax:</dt>
+			<dd>+7 84457 9 64 64</dd>
+			<dt>Email:</dt>
+			<dd><a href="mailto:market@kambread.ru">market@kambread.ru</a></dd>
+		</dl>
 		<!-- End Contact Info -->
 	</div>
 	<div class="col-lg-6 col-sm-6 col-xs-12">

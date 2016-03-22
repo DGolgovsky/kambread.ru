@@ -142,7 +142,10 @@ class ProductController extends Controller
 		$model = $this->findModel($id);
 
 		if ($model->load(Yii::$app->request->post()) && $model->save()) {
-			return $this->redirect(['addimg']);
+			$this->refresh();
+			return $this->render('view', [
+				'model' => $this->findModel($id),
+			]);
 		} else {
 			return $this->render('update', [
 				'model' => $model,

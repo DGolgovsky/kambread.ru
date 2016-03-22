@@ -43,12 +43,12 @@ if(Yii::$app->user->isGuest) {
                     </li>
                     <li class="col-lg-12 col-sm-12 col-xs-12">Общий&nbsp;
                         <span style="text-decoration:underline;">
-                            <a href="mailto:kam.khk@mail.ru" target="_self">market@kambread.ru</a>
+                            <a href="mailto:kam.khk@mail.ru" target="_self">kam.khk@mail.ru</a>
                         </span>
                     </li>
                     <li class="col-lg-12 col-sm-12 col-xs-12">Web-master&nbsp;
                         <span style="text-decoration:underline;">
-                            <a href="mailto:support@kambread.ru" target="_self">market@kambread.ru</a>
+                            <a href="mailto:support@kambread.ru" target="_self">support@kambread.ru</a>
                         </span>
                     </li>
                 </ul>
