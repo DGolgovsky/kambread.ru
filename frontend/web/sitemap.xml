@@ -2,45 +2,81 @@
 <!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.kambread.ru/main</loc>
-    <changefreq>always</changefreq>
+    <loc>https://www.kambread.ru/</loc>
+    <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://www.kambread.ru/main/main/login</loc>
-    <changefreq>always</changefreq>
+    <loc>https://www.kambread.ru/index</loc>
+    <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://www.kambread.ru/main/main/register</loc>
-    <changefreq>always</changefreq>
+    <loc>https://www.kambread.ru/about</loc>
+    <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://www.kambread.ru/main/main/view-product?id=4</loc>
-    <changefreq>always</changefreq>
+    <loc>https://www.kambread.ru/partners</loc>
+    <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://www.kambread.ru/main/main/view-product?id=5</loc>
-    <changefreq>always</changefreq>
+    <loc>https://www.kambread.ru/contact</loc>
+    <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://www.kambread.ru/main/main/view-product?id=3</loc>
-    <changefreq>always</changefreq>
+    <loc>https://www.kambread.ru/site/vacancies</loc>
+    <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://www.kambread.ru/main/main/view-product?id=2</loc>
-    <changefreq>always</changefreq>
+    <loc>https://www.kambread.ru/news</loc>
+    <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://www.kambread.ru/main/main/view-product?id=1</loc>
-    <changefreq>always</changefreq>
+    <loc>https://www.kambread.ru/login</loc>
+    <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://www.kambread.ru/main/main/find</loc>
-    <changefreq>always</changefreq>
+    <loc>https://www.kambread.ru/products</loc>
+    <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>https://www.kambread.ru/main/main/contact</loc>
-    <changefreq>always</changefreq>
+    <loc>https://www.kambread.ru/signup</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.kambread.ru/products/view-product/5</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.kambread.ru/products/view-product/4</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.kambread.ru/products/view-product/3</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.kambread.ru/news/view/3</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.kambread.ru/products/view-product/2</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.kambread.ru/products/view-product/1</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.kambread.ru/news/view/2</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.kambread.ru/news/view/1</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.kambread.ru/site/request-password-reset</loc>
+    <changefreq>daily</changefreq>
   </url>
 </urlset>
-<!--<guid value="80da7cd7-a8bb-4b35-8353-7fd8a1be55a7" />-->
+<!--<guid value="519b46ba-e4ed-4905-b8f6-e5d5f780eec1" />-->
 <!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
