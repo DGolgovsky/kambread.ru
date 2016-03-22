@@ -51,25 +51,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="spacer">
                     <h4><span class="glyphicon glyphicon-th-list"></span> Описание</h4>
                     <p><?=$model->description ?></p>
-                    <h4><span class="glyphicon glyphicon-tasks"></span> Рецептура</h4>
-                    <div class="listing-detail">
-                        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Содержание муки">
-                            Мука
-                        </span><br>
-                        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Соль">
-                            Соль
-                        </span><br>
-                        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Дрожжи">
-                            Дрожжи
-                        </span><br>
-                        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Масло">
-                            Масло
-                        </span>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="col-lg-12  col-sm-6">
+                <div class="col-lg-12 col-sm-6">
                     <div class="property-info">
                         <h6><span class="glyphicon glyphicon-ruble"></span> Стоимость</h6>
                         <p class="price">₽ <?=$model->price ?></p>

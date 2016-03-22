@@ -20,9 +20,9 @@ Yii::$app->language = 'ru-RU';
 <?php if(\Yii::$app->session->hasFlash('success')): ?>
     <?=\Yii::$app->session->getFlash('success') ?>
 <?php endif; ?>
-<?= $this->render("//common/header") ?>
-<?= $content ?>
-<?= $this->render("//common/footer") ?>
+<?=$this->render("//common/header") ?>
+<?=$content ?>
+<?=$this->render("//common/footer") ?>
 <?php $this->endBody() ?>
 </body>
 </html>
