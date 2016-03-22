@@ -46,7 +46,8 @@ $this->params['breadcrumbs'][] = 'Просмотр';
             <br>
             <p><?php echo $model->description; ?></p>
             <!-- news detail -->
-
+        </div>
+        <div class="col-lg-4 visible-lg">
             <div id="hypercomments_widget"></div>
             <script type="text/javascript">
                 _hcwp = window._hcwp || [];
@@ -62,64 +63,6 @@ $this->params['breadcrumbs'][] = 'Просмотр';
                 })();
             </script>
             <a href="http://hypercomments.com" class="hc-link" title="comments widget">comments powered by HyperComments</a>
-
-        </div>
-        <div class="col-lg-4 visible-lg">
-            <!-- tabs -->
-            <div class="tabbable">
-                <ul class="nav nav-tabs">
-                    <li class=""><a href="#tab1" data-toggle="tab">Recent Post</a></li>
-                    <li class=""><a href="#tab2" data-toggle="tab">Most Popular</a></li>
-                    <li class="active"><a href="#tab3" data-toggle="tab">Most Commented</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane" id="tab1">
-                        <ul class="list-unstyled">
-                            <li>
-                                <h5><a href="blogdetail.html" >Real estate marketing growing</a></h5>
-                                <div class="info">Posted on: Jan 20, 2013</div>
-                            </li>
-                            <li>
-                                <h5><a href="blogdetail.html" >Real estate marketing growing</a></h5>
-                                <div class="info">Posted on: Jan 20, 2013</div>
-                            </li>
-                            <li>
-                                <h5><a href="blogdetail.html" >Real estate marketing growing</a></h5>
-                                <div class="info">Posted on: Jan 20, 2013</div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane" id="tab2">
-                        <ul class="list-unstyled">
-                            <li>
-                                <h5><a href="blogdetail.html" >Market update on new apartments</a></h5>
-                                <div class="info">Posted on: Jan 20, 2013</div>
-                            </li>
-                            <li>
-                                <h5><a href="blogdetail.html" >Market update on new apartments</a></h5>
-                                <div class="info">Posted on: Jan 20, 2013</div>
-                            </li>
-                            <li>
-                                <h5><a href="blogdetail.html" >Market update on new apartments</a></h5>
-                                <div class="info">Posted on: Jan 20, 2013</div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane active" id="tab3">
-                        <ul class="list-unstyled">
-                            <li>
-                                <h5><a href="blogdetail.html" >Creative business to takeover the market</a></h5>
-                                <div class="info">Posted on: Jan 20, 2013</div>
-                            </li>
-                            <li>
-                                <h5><a href="blogdetail.html" >Creative business to takeover the market</a></h5>
-                                <div class="info">Posted on: Jan 20, 2013</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- tabs -->
         </div>
     </div>
 </div>
