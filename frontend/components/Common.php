@@ -15,7 +15,7 @@ class Common extends Component
 	{
 		$message = Yii::$app->mailer->compose();
         $message->setFrom(['web.notify@kambread.ru' => $name]);
-		$message->setTo([Yii::$app->params['adminEmail'] => '['.$event.']'])
+		$message->setTo([Yii::$app->params['adminEmail'] => $event])
 			->setSubject($subject)
 			->setReplyTo($email)
 			->setHtmlBody($body)

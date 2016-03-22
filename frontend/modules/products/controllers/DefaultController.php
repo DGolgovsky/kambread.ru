@@ -80,7 +80,9 @@ class DefaultController extends Controller
 
 		if(\Yii::$app->request->isPost) {
 			if ($model_feedback->load(\Yii::$app->request->post()) && $model_feedback->validate()) {
-				\Yii::$app->common->sendMail('[Отзыв]',$model_feedback->name, $model_feedback->email, "По ".$model->idproduct,$model_feedback->text);
+				\Yii::$app->common->sendMail('[Продукция]',$model_feedback->name, $model_feedback->email, "По ".$model->name,$model_feedback->text);
+				\Yii::$app->session->setFlash('success', 'Сообщение успешно отправлено');
+				return $this->refresh();
 			}
 		}
 

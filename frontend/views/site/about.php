@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		function initialize() {
 			var latlng = new google.maps.LatLng(50.10725112018604, 45.40386139521479);
 			var options = {
-				zoom: 10,
+				zoom: 20,
 				center: latlng,
 			};
 			map = new google.maps.Map(document.getElementById('map_canvas'), options);
@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		    geocoder.geocode( {'address': val}, function(results, status) {
 		        var location = results[0].geometry.location
 		        map.setCenter(location)
-		        map.setZoom(15)
+		        map.setZoom(20)
 		        DeleteMarkers()
 
 		        $('#product-location').val(location)

@@ -25,7 +25,6 @@
 		"yiisoft/yii2-swiftmailer": "*",
 		"kartik-v/yii2-widget-fileinput": "*",
 		"yiisoft/yii2-imagine": "*",
-		"2amigos/yii2-google-maps-library" : "*",
 		"demogorgorn/yii2-ajax-submit-button": "*",
 		"dmstr/yii2-adminlte-asset": "*"
 	},

@@ -1,8 +1,7 @@
 <?php
 use yii\helpers\Html;
 ?>
-<div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
+
         <div id="slider" class="sl-slider-wrapper">
             <div class="sl-slider">
         <?php foreach($result_general as $row): ?>
@@ -22,7 +21,7 @@ use yii\helpers\Html;
     </div>
     <?php endforeach; ?>
 </div>
-</div>
+
 
 <!-- /sl-slider -->
 <nav id="nav-dots" class="nav-dots">

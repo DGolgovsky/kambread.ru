@@ -16,9 +16,6 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use frontend\components\Common;
 use yii\db\Query;
-use dosamigos\google\maps\LatLng;
-use dosamigos\google\maps\Map;
-use dosamigos\google\maps\overlays\Marker;
 /**
  * Site controller
  */
@@ -176,13 +173,20 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending email.');
-            }
 
+        if(Yii::$app->request->isAjax && \Yii::$app->request->isPost) {
+            if($model->load(\Yii::$app->request->post())) {
+                Yii::$app->response->format = Response::FORMAT_JSON;
+                return ActiveForm::validate($model);
+            }
+        }
+
+        if ($model->load(Yii::$app->request->post())) {
+            if (Yii::$app->common->sendMail('[Отзыв]', $model->name, $model->email, $model->subject, $model->body)) {
+                Yii::$app->session->setFlash('success', 'Сообщение успешно отправлено');
+            } else {
+                Yii::$app->session->setFlash('error', 'Не удалось отправить. Попробуйте позже');
+            }
             return $this->refresh();
         } else {
             return $this->render('contact', [
@@ -198,36 +202,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        $model = new ContactForm();
-        $coords = '50.10725112018604, 45.40386139521479';
-
-        $coord = new LatLng(['lat' => $coords[0], 'lng' => $coords[1]]);
-        $map = new Map([
-            'center' => $coord,
-            'zoom' => 16,
-        ]);
-
-        $marker = new Marker([
-            'position' => $coord,
-            'title' => 'ОАО Камышинский хлебокомбинат',
-        ]);
-
-        $map->addOverlay($marker);
-
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending email.');
-            }
-
-            return $this->refresh();
-        } else {
-            return $this->render('about', [
-                'model' => $model,
-                'map' => $map,
-            ]);
-        }
+        return $this->render('about');
     }
 
     /**
