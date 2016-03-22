@@ -14,6 +14,13 @@ class PasswordResetRequestForm extends Model
     /**
      * @inheritdoc
      */
+    public function attributeLabels()
+    {
+        return [
+            'email' => 'Электронная почта',
+        ];
+    }
+
     public function rules()
     {
         return [

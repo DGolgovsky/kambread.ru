@@ -60,7 +60,7 @@ class ProductController extends Controller
 			$path = Yii::getAlias("@frontend/web/uploads/products/".$id."/general");
 			BaseFileHelper::createDirectory($path);
 			$model = Product::findOne($id);
-			$model->scenario = 'step2';
+			$model->scenario = 'addimg';
 
 			$file = UploadedFile::getInstance($model,'general_image');
 			$name = 'general.'.$file->extension;
@@ -122,7 +122,7 @@ class ProductController extends Controller
 		$model = new Product();
 
 		if ($model->load(Yii::$app->request->post()) && $model->save()) {
-			return $this->redirect(['step2']);
+			return $this->redirect(['addimg']);
 		} else {
 			return $this->render('create', [
 				'model' => $model,
@@ -142,7 +142,7 @@ class ProductController extends Controller
 		$model = $this->findModel($id);
 
 		if ($model->load(Yii::$app->request->post()) && $model->save()) {
-			return $this->redirect(['step2']);
+			return $this->redirect(['addimg']);
 		} else {
 			return $this->render('update', [
 				'model' => $model,
@@ -150,7 +150,7 @@ class ProductController extends Controller
 		}
 	}
 
-	public function actionStep2()
+	public function actionAddimg()
 	{
 		$id = Yii::$app->locator->cache->get('id');
 		$model = Product::findOne($id);
@@ -180,7 +180,7 @@ class ProductController extends Controller
 		catch(\yii\base\Exception $e){}
 
 
-		return $this->render("step2",['model' => $model,'image' => $image, 'images_add' => $images_add]);
+		return $this->render("addimg",['model' => $model,'image' => $image, 'images_add' => $images_add]);
 	}
 
 	/**

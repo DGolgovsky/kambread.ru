@@ -43,7 +43,7 @@ use yii\helpers\Html;
 
 <div class="container">
     <div class="properties-listing spacer">
-        <a href="catalog" class="pull-right viewall">Посмотреть все</a>
+        <a href="products" class="pull-right viewall">Посмотреть все</a>
         <h2>Каталог продукции</h2>
         <div id="owl-example" class="owl-carousel">
             <?php foreach($featured as $row): ?>
@@ -59,7 +59,12 @@ use yii\helpers\Html;
                             <?=\frontend\components\Common::getTitle($row) ?>
                         </a>
                     </h4>
-                    <h4><p class="price">Цена: ₽<?=$row['price'] ?></p></h4>
+                    <h4>
+                        <p class="price">
+                            Цена: ₽<?=$row['price'] ?>
+                            Вес: <?=$row['weight'] ?> г
+                        </p>
+                    </h4>
                     <a class="btn btn-primary" href="<?=\frontend\components\Common::getUrlProduct($row) ?>">Подробнее</a>
                 </div>
                 <?php

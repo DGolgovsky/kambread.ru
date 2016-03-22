@@ -136,13 +136,14 @@ class NewsController extends Controller
      * @param integer $id
      * @return mixed
      */
-
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['addimg']);
+            return $this->render('view', [
+                'model' => $this->findModel($id),
+            ]);
         } else {
             return $this->render('update', [
                 'model' => $model,

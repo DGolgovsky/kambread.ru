@@ -3,13 +3,11 @@ $this->title = 'Добавление изображения';
 $this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabinet']];
 $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/cabinet/news']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->idnews]];
-$this->params['breadcrumbs'][] = ['label' => 'Обновление', 'url' => ['update', 'id' => $model->idnews]];
 $this->params['breadcrumbs'][] = 'Изображения';
 ?>
 
-<p class="container">
+<div class="container">
     <?php $form = \yii\bootstrap\ActiveForm::begin(); ?>
-<div class="row">
     <?php
     echo $form->field($model, 'general_image')->widget(\kartik\file\FileInput::classname(),[
         'options' => [
@@ -26,10 +24,7 @@ $this->params['breadcrumbs'][] = 'Изображения';
             'showRemove' => false,
             'dropZoneEnabled' => false
         ]
-    ]);
-    ?>
-</div>
-<div class="row">
+    ]); ?>
     <?php
     echo \yii\helpers\Html::label('Images');
     echo \kartik\file\FileInput::widget([
@@ -50,13 +45,9 @@ $this->params['breadcrumbs'][] = 'Изображения';
             'showRemove' => false,
             'dropZoneEnabled' => false
         ]
-    ]);
-    ?>
-</div>
-<p>
-<div class="form-group">
-    <?= \yii\helpers\Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-</div>
-</p>
-<?php \yii\bootstrap\ActiveForm::end(); ?>
+    ]); ?>
+    <p><div class="form-group">
+        <?= \yii\helpers\Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    </div></p>
+    <?php \yii\bootstrap\ActiveForm::end(); ?>
 </div>

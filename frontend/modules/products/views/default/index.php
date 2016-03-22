@@ -58,7 +58,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                             </div>
                             <h4><a href="<?=$url ?>" ><?=\frontend\components\Common::getTitle($row) ?></a></h4>
-                            <h4><p class="price">Цена: ₽<?=$row['price'] ?></p></h4>
+                            <h4><p class="price">
+                                    Цена: ₽<?=$row['price'] ?>
+                                     Вес: <?=$row['weight'] ?> г
+                                </p>
+                            </h4>
                             <a class="btn btn-primary" href="<?=$url ?>" >Детальнее</a>
                         </div>
                     </div>

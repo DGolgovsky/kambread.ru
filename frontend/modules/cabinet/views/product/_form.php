@@ -12,11 +12,13 @@ use yii\widgets\ActiveForm;
 
 	<?php $form = ActiveForm::begin(); ?>
 
-	<?= $form->field($model, 'name')->textInput()->textInput(['autofocus' => true]) ?>
+	<?= $form->field($model, 'name')->textInput(['placeholder' => 'Наименование'])->textInput(['autofocus' => true]) ?>
 	
-	<?= $form->field($model, 'price')->textInput() ?>
+	<?= $form->field($model, 'price')->textInput(['placeholder' => 'Цена']) ?>
+	
+	<?= $form->field($model, 'weight')->textInput(['placeholder' => 'Вес в граммах']) ?>
 
-	<?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+	<?= $form->field($model, 'description')->textArea(['rows' => 6, ['placeholder' => 'Описание']]) ?>
 
 	<?= $form->field($model, 'new')->radioList(['No', 'Yes']) ?>
 
@@ -32,7 +34,11 @@ use yii\widgets\ActiveForm;
 	<?= $form->field($model, 'recommend')->radioList(['No', 'Yes']) ?>
 
 	<div class="form-group">
-        <?= Html::submitButton('Дальше', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+		<div class="row">
+			<div class="col-lg-3">
+				<?= Html::submitButton($model->isNewRecord ? 'Добавить изображение' : 'Сохранить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+			</div>
+		</div>
 	</div>
 
 	<?php ActiveForm::end(); ?>

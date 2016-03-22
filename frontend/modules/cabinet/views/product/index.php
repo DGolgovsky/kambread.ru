@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'idproduct',
             'user.name',
             'price',
+            'weight',
             //'general_image',
             'description:ntext',
             'new',

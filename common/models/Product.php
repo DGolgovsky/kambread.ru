@@ -11,6 +11,7 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property integer $idproduct
  * @property double $price
+ * @property double $weight
  * @property integer $user_id
  * @property string $name
  * @property string $general_image
@@ -42,7 +43,7 @@ class Product extends \yii\db\ActiveRecord
 	public function scenarios()
 	{
 		$scenarios = parent::scenarios();
-		$scenarios['step2'] = ['general_image'];
+		$scenarios['addimg'] = ['general_image'];
 
 		return $scenarios;
 	}
@@ -55,7 +56,7 @@ class Product extends \yii\db\ActiveRecord
 		return [
 			[['price', 'name'], 'required'],
 			[['user_id', 'new', 'recommend'], 'integer'],
-			['price', 'double'],
+			[['price', 'weight'], 'double'],
 			[['description', 'name', 'type'], 'string'],
 			//['general_image', 'file', 'extensions' => ['jpg','png','gif']]
 		];
@@ -75,6 +76,7 @@ class Product extends \yii\db\ActiveRecord
 			'idproduct' => 'ID продукта',
 			'name' => 'Наименование',
 			'price' => 'Цена',
+			'weight' => 'Вес',
 			'user_id' => 'ID пользователя',
 			'general_image' => 'Главное изображение',
 			'description' => 'Описание',

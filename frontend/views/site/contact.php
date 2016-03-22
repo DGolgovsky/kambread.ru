@@ -16,10 +16,10 @@ $this->params['breadcrumbs'][] = $this->title;
 		</hr>
 		<!-- Contact Info -->
 		<p class="contact-us-details">
-			<b>Address:</b> 123 Fake Street, LN1 2ST, London, United Kingdom<br/>
-			<b>Phone:</b> +44 123 654321<br/>
-			<b>Fax:</b> +44 123 654321<br/>
-			<b>Email:</b> <a href="mailto:getintoutch@yourcompanydomain.com">getintoutch@yourcompanydomain.com</a>
+			<b>Address:</b> 403874 ул. Ленина 4, Камышин, Волгоградская область, Российская Федерация<br/>
+			<b>Phone:</b> +7 84457 9 39 84<br/>
+			<b>Fax:</b> +7 84457 9 64 64<br/>
+			<b>Email:</b> <a href="mailto:market@kambread.ru">market@kambread.ru</a>
 		</p>
 		<!-- End Contact Info -->
 	</div>

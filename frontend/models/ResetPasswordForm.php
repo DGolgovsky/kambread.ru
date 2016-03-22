@@ -38,6 +38,13 @@ class ResetPasswordForm extends Model
         parent::__construct($config);
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'password' => 'Пароль',
+        ];
+    }
+
     /**
      * @inheritdoc
      */

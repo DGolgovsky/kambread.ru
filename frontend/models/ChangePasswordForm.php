@@ -10,6 +10,14 @@ class ChangePasswordForm extends Model
     public $password;
     public $repassword;
 
+    public function attributeLabels()
+    {
+        return [
+            'password' => 'Пароль',
+            'repassword' => 'Подтвердить пароль',
+        ];
+    }
+
     public function rules()
     {
         return [
