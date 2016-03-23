@@ -7,18 +7,23 @@
 
 use yii\helpers\Html;
 
-$this->title = $name;
+$this->title = nl2br(Html::encode($message));
+$this->params['breadcrumbs'][] = nl2br(Html::encode($name));
 ?>
+<?php \Yii::$app->session->setFlash('error', '<?= nl2br(Html::encode($message)) ?>');?>
 <div class="site-error">
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
-    </div>
+    <div class="grid">
+        <div class="row space-top space-bot">
+            <div style="text-align:center;">
+                <h2>ИЗВИНИТЕ, СТРАНИЦА НЕ НАЙДЕНА</h2>
+                <p>
+                    <img src="images/404.png">
+                </p>
+                <div class="actionbutton">
+                    <a href="/index"><i class=" icon-link"></i> ВЕРНУТЬСЯ НА ГЛАВНУЮ</a>
+                </div>
+            </div>
+        </div>
 
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
+    </div><!-- end grid -->
 </div>

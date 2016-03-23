@@ -12,6 +12,7 @@
 }
 
 body {
+    padding-top: 50px;
     color: #555;
     font: normal 14px/22px "Helvetica Neue, Helvetica, sans-serif";
     background: url(../images/bgmain.png)/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/images/bgmain.png*/

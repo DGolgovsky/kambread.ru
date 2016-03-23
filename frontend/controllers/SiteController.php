@@ -124,6 +124,11 @@ class SiteController extends Controller
 		return $this->redirect('http://disclosure.1prime.ru/portal/default.aspx?emId=3436107766');
 	}
 
+    public function actionMail()
+    {
+        return $this->redirect('http://mail.kambread.ru');
+    }
+
     public function actionEvent()
     {
         $component = \Yii::$app->common; //new Common();

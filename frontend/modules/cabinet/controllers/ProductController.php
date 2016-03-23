@@ -48,6 +48,7 @@ class ProductController extends Controller
 
 	public function actionView($id)
 	{
+		$this->refresh();
 		return $this->render('view', [
 			'model' => $this->findModel($id),
 		]);

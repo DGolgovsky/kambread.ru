@@ -26,7 +26,7 @@ AppAsset::register($this);
     <div class="container">
         <span class="pull-right">
             <?= Breadcrumbs::widget([
-                'homeLink' => ['label' => 'Главная', 'url' => '/'],
+                'homeLink' => ['label' => 'Главная', 'url' => '/index'],
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
             <?php if(\Yii::$app->session->hasFlash('success')): ?>

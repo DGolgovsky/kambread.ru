@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = 'Просмотр';
         <div class="col-lg-8">
             <!-- news detail -->
             <h2><?=\frontend\components\Common::getTitle($model) ?></h2>
-            <div class="info">Создано: <?= \frontend\components\Common::getCreationDate($model) ?></div>
+            <div class="info"><span class="glyphicon glyphicon-time"></span> Создано: <?= \frontend\components\Common::getCreationDate($model) ?></div>
             <div class="property-images">
                 <!-- Slider Starts -->
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -55,7 +55,7 @@ $this->params['breadcrumbs'][] = 'Просмотр';
                 (function() {
                     if("HC_LOAD_INIT" in window)return;
                     HC_LOAD_INIT = true;
-                    var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+                    var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "ru").substr(0, 2).toLowerCase();
                     var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
                     hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/72610/"+lang+"/widget.js";
                     var s = document.getElementsByTagName("script")[0];

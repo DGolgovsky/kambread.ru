@@ -68,7 +68,7 @@ class DefaultController extends Controller
     public function actionSettings()
     {
         $model = User::findOne(\Yii::$app->user->id);
-        $model->scenario = 'setting';
+        $model->scenario = 'settings';
 
         if($model->load(\Yii::$app->request->post()) && $model->save()) {
             $this->uploadAvatar();
@@ -76,6 +76,6 @@ class DefaultController extends Controller
             return $this->refresh();
         }
 
-        return $this->render('setting',['model' => $model]);
+        return $this->render('settings',['model' => $model]);
     }
 }

@@ -20,7 +20,7 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
 
     public $css = [
-        'source/style.css',
+        'source/style.min.css',
         'source/owl-carousel/owl.carousel.min.css',
         'source/owl-carousel/owl.theme.min.css',
         'source/slitslider/css/style.min.css',
@@ -34,7 +34,7 @@ class AppAsset extends AssetBundle
         'source/slitslider/js/jquery.ba-cond.min.min.js',
         'source/slitslider/js/jquery.slitslider.min.js',
         'source/js/google_analytics_auto.min.js',
-        'source/js/yandex_metrika.min.js'
+        'source/js/yandex_metrika.min.js',
     ];
 
     public $depends = [

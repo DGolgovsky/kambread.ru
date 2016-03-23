@@ -19,13 +19,13 @@ use yii\helpers\Html;
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <a class="navbar-brand" href="/index">Камышинский хлебокомбинат</a>
             </div>
             <!-- Nav Starts -->
             <div class="navbar-collapse collapse">
-                <a href="/index" ><img src="/images/logo.png"  alt="Главная"></a>
                 <?php
                 NavBar::begin([
-                    'brandLabel' => '<a href="/index" ><img src="/images/logo.png"  alt="Главная"></a>',
+                    'brandLabel' => '<a href="/index" ><img src="/images/logo.png" height="50px" alt="Главная"></a>',
                     'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
                         'class' => 'navbar-inverse navbar-fixed-top',
@@ -45,17 +45,35 @@ use yii\helpers\Html;
                         ['label' => 'Новости',
                             'url' => ['/news']],
                         ['label' => 'Раскрытие информации',
-                            'url' => ['/site/disclosure'],
+                            'url' => ['/disclosure'],
 							'linkOptions' => ['target' => '_blank']],
                     ],
                 ];
                 $menuItems[] = ['label' => 'Продукция', 'url' => ['/products']];
 
                 if (Yii::$app->user->isGuest) {
-                    $menuItems[] =  ['label' => 'Вход', 'url' => ['/site/login']];
-                    $menuItems[] =  ['label' => 'Регистрация', 'url' => ['/site/signup']];
+                    $menuItems[] =  ['label' => 'Вход', 'url' => ['/login']];
+                    $menuItems[] =  ['label' => 'Регистрация', 'url' => ['/signup']];
                 } else {
-                    $menuItems[] =  ['label' => 'Кабинет', 'url' => ['/cabinet']];
+                    $menuItems[] = ['label' => 'Кабинет',
+                        'items' => [
+                            ['label' => 'Главная',
+                                'url' => ['/cabinet']],
+                            ['label' => 'Продукция',
+                                'url' => ['/cabinet/product']],
+                            ['label' => 'Документы',
+                                'url' => ['/cabinet/#']],
+                            ['label' => 'Новости',
+                                'url' => ['/cabinet/news']],
+                            ['label' => 'Вакансии',
+                                'url' => ['/cabinet/vacancy']],
+                            ['label' => 'Профиль',
+                                'url' => ['/cabinet/settings']],
+                            ['label' => 'Почта',
+                                'url' => ['/site/mail'],
+                                'linkOptions' => ['target' => '_blank']],
+                        ],
+                    ];
                     $menuItems[] = ['label' => 'Выход (' . Yii::$app->user->identity->username . ')',  'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']];
                 }
                 echo Nav::widget([

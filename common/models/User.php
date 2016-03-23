@@ -61,7 +61,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios['setting'] = ['name', 'username', 'email'];
+        $scenarios['settings'] = ['name', 'username', 'email'];
 
         return $scenarios;
     }
