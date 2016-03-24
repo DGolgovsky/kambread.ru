@@ -16,13 +16,13 @@ $this->params['breadcrumbs'][] = $this->title;
 		</hr>
 		<!-- Contact Info -->
 		<dl>
-			<dt>Address:</dt>
+			<dt>Адрес:</dt>
 			<dd>403874 ул. Ленина 4, Камышин, Волгоградская область, Российская Федерация</dd>
-			<dt>Phone:</dt>
+			<dt>Отдел продаж:</dt>
 			<dd>+7 84457 9 39 84</dd>
-			<dt>Fax:</dt>
+			<dt>Факс:</dt>
 			<dd>+7 84457 9 64 64</dd>
-			<dt>Email:</dt>
+			<dt>E-mail:</dt>
 			<dd><a href="mailto:market@kambread.ru">market@kambread.ru</a></dd>
 		</dl>
 		<!-- End Contact Info -->

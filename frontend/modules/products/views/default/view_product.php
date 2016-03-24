@@ -74,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div class="col-lg-12 col-sm-6 ">
                     <div class="enquiry">
-                        <h6><span class="glyphicon glyphicon-envelope"></span> Отправить отзыв</h6>
+                        <h6><span class="glyphicon glyphicon-envelope"></span> Отправить заявку</h6>
                         <?php
                         $form = \yii\bootstrap\ActiveForm::begin();
                         ?>

@@ -52,7 +52,6 @@ use yii\helpers\Html;
                 ];
                 if (Yii::$app->user->isGuest) {
                     $menuItems[] =  ['label' => 'Вход', 'url' => ['/login']];
-                    $menuItems[] =  ['label' => 'Регистрация', 'url' => ['/signup']];
                 } else {
                     $menuItems[] = ['label' => 'Кабинет',
                         'items' => [
