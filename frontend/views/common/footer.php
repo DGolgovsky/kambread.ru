@@ -3,6 +3,50 @@ if(Yii::$app->user->isGuest) {
     echo \frontend\widgets\Login::widget();
 }
 ?>
+<style>
+    dl {
+        text-indent: 0px;;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    dt, dd {
+        line-height: 1.428571429;
+    }
+    dt {
+        font-weight: normal;
+    }
+    dd {
+        margin-left: 0;
+    }
+    .dl-horizontal dt {
+        float: left;
+        width: 120px;
+        overflow: hidden;
+        clear: left;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .dl-horizontal dd {
+        margin-left: 120px;
+    }
+    .dl-horizontal dd:before,
+    .dl-horizontal dd:after {
+        display: table;
+        content: " ";
+    }
+    .dl-horizontal dd:after {
+        clear: both;
+    }
+    .dl-horizontal dd:before,
+    .dl-horizontal dd:after {
+        display: table;
+        content: " ";
+    }
+    .dl-horizontal dd:after {
+        clear: both;
+    }
+</style>
 <div class="footer">
     <div class="container">
         <div class="row">
@@ -35,23 +79,14 @@ if(Yii::$app->user->isGuest) {
             </div>
             <div class="col-lg-3 col-sm-3 col-xs-12">
                 <h4><span class="glyphicon glyphicon-envelope"></span> E-mail</h4>
-                <ul class="row">
-                    <li class="col-lg-12 col-sm-12 col-xs-12">Отдел продаж&nbsp;
-                        <span style="text-decoration:underline;">
-                            <a href="mailto:market@kambread.ru" target="_self">market@kambread.ru</a>
-                        </span>
-                    </li>
-                    <li class="col-lg-12 col-sm-12 col-xs-12">Общий&nbsp;
-                        <span style="text-decoration:underline;">
-                            <a href="mailto:kam.khk@mail.ru" target="_self">kam.khk@mail.ru</a>
-                        </span>
-                    </li>
-                    <li class="col-lg-12 col-sm-12 col-xs-12">Web-master&nbsp;
-                        <span style="text-decoration:underline;">
-                            <a href="mailto:support@kambread.ru" target="_self">support@kambread.ru</a>
-                        </span>
-                    </li>
-                </ul>
+                <dl class="text-left dl-horizontal">
+                    <dt>Отдел продаж</dt>
+                    <dd><a href="mailto:market@kambread.ru" target="_self">market@kambread.ru</a></dd>
+                    <dt>Общий<dt>
+                    <dd><a href="mailto:kam.khk@mail.ru" target="_self">kam.khk@mail.ru</a></dd>
+                    <dt>Web-master</dt>
+                    <dd><a href="mailto:support@kambread.ru" target="_self">support@kambread.ru</a></dd>
+                </dl>
             </div>
         </div>
     </div>

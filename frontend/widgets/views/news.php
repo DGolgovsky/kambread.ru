@@ -1,6 +1,6 @@
-<div class="col-lg-5 col-lg-offset-1 col-sm-3 recommended">
+<div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 hidden-sm hidden-xs">
     <h3>Новости</h3>
-    <div id="myCarousel" class="carousel slide">
+    <div id="myCarousel" class="carousel slide" style="height: 350px;">
         <ol class="carousel-indicators">
             <?php
             if($result_count >= 1):
@@ -27,16 +27,13 @@
                 ?>
                 <div class="item <?=($i == 0) ? 'active' : '' ?>">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <h5 style="text-indent: 20px;"><a href="<?=\frontend\components\Common::getUrlNews($rec) ?>" ><?=\frontend\components\Common::getTitle($rec) ?></a></h5>
+                        <div class="pull-left bg-default" style="width: 20em; padding: 20px;">
                             <img src="<?=\frontend\components\Common::getImageNews($rec)[0] ?>"  class="img-responsive" alt="properties"/>
-                        </div>
-                        <div class="col-lg-8">
-                            <h5>
-                                <a href="<?=\frontend\components\Common::getUrlNews($rec) ?>" ><?=\frontend\components\Common::getTitle($rec) ?></a>
-                            </h5>
-                            <p><?= \frontend\components\Common::substr($rec['description'], 0, 70) ?></p>
                             <a href="<?=\frontend\components\Common::getUrlNews($rec) ?>"  class="more">Подробнее</a>
                         </div>
+
+                        <p><?= \frontend\components\Common::substr($rec['description'], 0, 70) ?></p>
                     </div>
                 </div>
                 <?php
@@ -45,5 +42,4 @@
             ?>
         </div>
     </div>
-</div>
 </div>
