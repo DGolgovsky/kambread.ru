@@ -39,6 +39,9 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'loginUrl' => '/site/login',
+            'as UpdateLastLoginDateBehavior' => [
+                'class' => 'common\components\behaviors\UpdateLastLoginDateBehavior',
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -51,6 +54,32 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
+        ],
+    ],
+    'as beforeRequest' => [
+        'class' => 'yii\filters\AccessControl',
+        'rules' => [
+            [
+                'controllers' => [
+                    'cabinet/default',
+                    'cabinet/news',
+                    'cabinet/product',
+                    'cabinet/vacancy'
+                ],
+                'allow' => false,
+                'roles' => ['?'],
+            ],
+            [
+                'allow' => true,
+            ],
+            [
+                'actions' => ['login', 'error'],
+                'allow' => true,
+            ],
+            [
+                'allow' => true,
+                'roles' => ['@'],
+            ],
         ],
     ],
     'params' => $params,

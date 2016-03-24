@@ -39,18 +39,21 @@ $this->params['breadcrumbs'][] = 'Просмотр';
 			</p>
 		</div>
 	</div>
-	<?=\yii\helpers\Html::img(\frontend\components\Common::getImageProduct($model, true), ['width' => 200]) ?>
-	<?=\yii\helpers\Html::img(\frontend\components\Common::getImageProduct($model, false), ['width' => 200]) ?>
+	<?php
+	if(file_exists('uploads/products/'.$model['idproduct'].'/general/small_general.jpg')):
+		?>
+		<?= \yii\helpers\Html::img(\frontend\components\Common::getImageProduct($model, true), ['width' => 200]) ?>
+		<?php
+	endif;
+	?>
 	<div class="spacer"></div>
 	<?= DetailView::widget([
 		'model' => $model,
 		'attributes' => [
-			//'idproduct',
+			'idproduct',
 			'name',
 			'weight',
 			'price',
-			//'user_id',
-			//'general_image',
 			'description:ntext',
 			'new',
 			'type:ntext',

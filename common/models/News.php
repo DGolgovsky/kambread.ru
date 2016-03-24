@@ -56,6 +56,7 @@ class News extends \yii\db\ActiveRecord
             ['name', 'string', 'min' => 2, 'max' => 48],
 
             ['user_id', 'integer'],
+            ['idnews', 'unique', 'targetClass' => '\common\models\News', 'message' => 'ID не уникален.'],
 
             ['description', 'filter', 'filter' => 'trim'],
             ['description', 'string'],

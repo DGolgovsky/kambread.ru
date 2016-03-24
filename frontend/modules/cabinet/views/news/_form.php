@@ -12,8 +12,8 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name')->textInput()->textInput(['autofocus' => true]) ?>
-
+    <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+    
     <?= $form->field($model, 'description')->textarea(['rows' => 10]) ?>
 
     <div class="form-group">

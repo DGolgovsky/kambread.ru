@@ -9,6 +9,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <p class="container">
     <?php $form = \yii\bootstrap\ActiveForm::begin(); ?>
     <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6"
         <?php
         echo $form->field($model, 'general_image')->widget(\kartik\file\FileInput::classname(),[
             'options' => [
@@ -22,11 +23,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'allowedFileExtensions' =>  ['jpg', 'png','gif'],
                 'initialPreview' => $image,
                 'showUpload' => true,
-                'showRemove' => false,
+                'showRemove' => true,
                 'dropZoneEnabled' => false
             ]
         ]);
         ?>
+</div>
     </div>
     <div class="row">
         <?php
@@ -46,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'allowedFileExtensions' =>  ['jpg', 'png','gif'],
                 'initialPreview' => $images_add,
                 'showUpload' => true,
-                'showRemove' => false,
+                'showRemove' => true,
                 'dropZoneEnabled' => false
             ]
         ]);

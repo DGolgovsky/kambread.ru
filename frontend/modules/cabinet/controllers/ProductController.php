@@ -48,7 +48,6 @@ class ProductController extends Controller
 
 	public function actionView($id)
 	{
-		$this->refresh();
 		return $this->render('view', [
 			'model' => $this->findModel($id),
 		]);
@@ -143,7 +142,7 @@ class ProductController extends Controller
 		$model = $this->findModel($id);
 
 		if ($model->load(Yii::$app->request->post()) && $model->save()) {
-			$this->refresh();
+			//$this->refresh();
 			return $this->render('view', [
 				'model' => $this->findModel($id),
 			]);

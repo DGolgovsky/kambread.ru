@@ -5,7 +5,7 @@ use yii\helpers\Html;
 ?>
 
 <!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<p class="chromeframe">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите Ваш браузер</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируйте Google Chrome Frame</a> для улучшения отображения.</p>
 <![endif]-->
 
 <!-- views/common/Header navbar Starts -->
@@ -32,6 +32,7 @@ use yii\helpers\Html;
                     ],
                 ]);
                 $menuItems[] = ['label' => 'Главная', 'url' => ['/site/index']];
+                $menuItems[] = ['label' => 'Продукция', 'url' => ['/products']];
                 $menuItems[] = ['label' => 'Информация',
                     'items' => [
                         ['label' => 'О Компании',
@@ -45,12 +46,10 @@ use yii\helpers\Html;
                         ['label' => 'Новости',
                             'url' => ['/news']],
                         ['label' => 'Раскрытие информации',
-                            'url' => ['/disclosure'],
+                            'url' => ['/site/disclosure'],
 							'linkOptions' => ['target' => '_blank']],
                     ],
                 ];
-                $menuItems[] = ['label' => 'Продукция', 'url' => ['/products']];
-
                 if (Yii::$app->user->isGuest) {
                     $menuItems[] =  ['label' => 'Вход', 'url' => ['/login']];
                     $menuItems[] =  ['label' => 'Регистрация', 'url' => ['/signup']];

@@ -1,7 +1,7 @@
 <?php
-$this->title = 'Профиль пользователя:'.' '.$model->name;
+$this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabinet']];
-$this->params['breadcrumbs'][] = $model->name;
+$this->params['breadcrumbs'][] = 'Профиль';
 ?>
 
 <div class="user-form">
@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $model->name;
 
     <div class="row">
         <div class="col-lg-4 col-sm-4 col-xs-4">
-            <?= \yii\helpers\Html::a('Изменить пароль', ['/cabinet/default/change-password'], ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <?= \yii\helpers\Html::a('Изменить пароль', ['/cabinet/change-password'], ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         </div>
         <div class="col-lg-4 col-lg-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
             <?= \yii\helpers\Html::submitButton('Сохранить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

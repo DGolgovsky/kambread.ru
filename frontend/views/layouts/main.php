@@ -10,7 +10,6 @@ Yii::$app->language = 'ru-RU';
 <head>
     <meta charset="<?= \Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="sZdpkUqsj_hA5kLMZRWTMHKezqWnJ9Ev3MaCziR9zN4" />
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode('Камышинский хлебокомбинат') ?></title>
     <?php $this->head() ?>

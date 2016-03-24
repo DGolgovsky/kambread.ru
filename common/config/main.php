@@ -20,13 +20,16 @@ return [
 //                '<controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>',
 //               '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 //                '<view:[a-zA-Z0-9-]+>' => 'site/<view>',
-                '<alias:(about|contact|login|signup|partners|index)>' => 'site/<alias>',
+                '<alias:(about|contact|login|signup|partners|index|disclosure|mail)>' => 'site/<alias>',
                 '<alias:(/site/index)>' => '/',
+
+                '<action_products:(index)>' => 'products/<action_products>',
                 'products/view-product/<id:\d+>' => 'products/default/view-product',
                 'news/view/<id:\d+>' => 'news/default/view-news',
                 'products/<propert:\w+>&<price:\d+>&<type:\w+>' => 'products',
+
                 'cabinet/product/<action_cabinet:(view|update)>/<id:\d+>' => 'cabinet/product/<action_cabinet>',
-                '<action_products:(index)>' => 'products/<action_products>',
+                'cabinet/news/<action_cabinet:(view|update)>/<id:\d+>' => 'cabinet/news/<action_cabinet>',
                 'cabinet/<action_cabinet:(settings|change-password)>' => 'cabinet/default/<action_cabinet>',
                 'cabinet/<action_cabinet:(news|vacancy)>' => 'cabinet/<action_cabinet>'
             ],

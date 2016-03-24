@@ -19,9 +19,10 @@ use yii\web\IdentityInterface;
  * @property string $phone
  * @property string $auth_key
  * @property integer $status
+ * @property integer $group
  * @property integer $created_at
  * @property integer $updated_at
- * @property integer $last_login
+ * @property integer $last_login_date
  * @property string $password write-only password
  */
 class User extends ActiveRecord implements IdentityInterface
@@ -58,10 +59,26 @@ class User extends ActiveRecord implements IdentityInterface
         ];
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID пользователя',
+            'name' => 'Имя и фамилия',
+            'username' => 'Имя пользователя',
+            'email' => 'Адрес электронной почты',
+            'phone' => 'Номер телефона',
+            'group' => 'Группа',
+            'created_at' => 'Создано',
+            'updated_at' => 'Обновлено',
+            'last_login_date' => 'Дата последнего входа',
+            'password' => 'Пароль',
+        ];
+    }
+
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios['settings'] = ['name', 'username', 'email'];
+        $scenarios['settings'] = ['name', 'username', 'email', 'phone'];
 
         return $scenarios;
     }

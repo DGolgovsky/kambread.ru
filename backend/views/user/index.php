@@ -5,9 +5,13 @@
                 'dataProvider' => $dataProvider,
                 'columns' => [
                     'id',
+                    'name',
                     'username',
                     'email',
+                    'phone',
+                    'group',
                     'created_at:datetime',
+                    'last_login_date:datetime',
                     [
                         'class' => 'yii\grid\ActionColumn',
                         'template' => '{delete}',

@@ -6,7 +6,7 @@
                 'columns' => [
                     'idproduct',
                     [
-                        'label' => 'Title',
+                        'label' => 'Наименование',
                         'value' => 'title'
                     ],
                     'user.name',
@@ -14,11 +14,14 @@
                     'updated_at:datetime',
                     [
                         'class' => 'yii\grid\ActionColumn',
-                        'template' => '{view}  {delete}',
+                        'template' => '{view} {edit} {delete}',
                         'buttons'=>[
                             'view'=>function ($url, $model, $key) {
-                                return \yii\helpers\Html::a("<span class=\"glyphicon glyphicon-eye-open\"></span>", Yii::$app->params['baseUrl']."/view-product/".$key,['target' => '_blank']);
-                            }
+                                return \yii\helpers\Html::a("<span class='glyphicon glyphicon-eye-open'></span>", Yii::$app->params['baseUrl']."/products/view-product/".$key,['target' => '_blank']);
+                            },
+                            'edit'=>function ($url, $model, $key) {
+                                return \yii\helpers\Html::a("<span class=\"glyphicon glyphicon-pencil\"></span>", Yii::$app->params['baseUrl']."/cabinet/product/update/".$key,['target' => '_blank']);
+            }
                         ],
                     ],
                 ],
