@@ -59,6 +59,7 @@ class News extends \yii\db\ActiveRecord
             ['idnews', 'unique', 'targetClass' => '\common\models\News', 'message' => 'ID не уникален.'],
 
             ['description', 'filter', 'filter' => 'trim'],
+            ['description', 'required'],
             ['description', 'string'],
             //['general_image', 'file', 'extensions' => ['jpg','png','gif']]
         ];

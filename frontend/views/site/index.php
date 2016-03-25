@@ -35,6 +35,7 @@ use yii\helpers\Html;
         </nav>
     </div><!-- /slider-wrapper -->
 </div>
+
 <div class="container">
     <div class="properties-listing spacer">
         <a href="products" class="pull-right viewall">Посмотреть все</a>
@@ -44,20 +45,16 @@ use yii\helpers\Html;
                 <div class="properties">
                     <div class="image-holder">
                         <img src="<?=\frontend\components\Common::getImageProduct($row)[0] ?>"  class="img-responsive" alt="<?=\frontend\components\Common::getTitle($row) ?>"/>
-                        <div class="status <?=($row['recommend']) ? 'recommend' : 'new' ?>">
-                            <?=\frontend\components\Common::getTypeProduct($row) ?>
-                        </div>
+                        <div class="status <?=($row['new']) ? 'new' : 'recommend' ?>"><?=\frontend\components\Common::getTypeProduct($row) ?></div>
                     </div>
                     <h4>
                         <a href="<?=\frontend\components\Common::getUrlProduct($row) ?>" >
                             <?=\frontend\components\Common::getTitle($row) ?>
                         </a>
                     </h4>
-                    <h4>
-                        <p class="price">
-                            Цена: ₽<?=$row['price'] ?>
-                            Вес: <?=$row['weight'] ?> г
-                        </p>
+                    <h4 class="text-center">
+                        <p style="text-indent: 0px;" class="price">Цена: ₽<?=$row['price'] ?></p>
+                        <p style="text-indent: 0px;" class="price">Вес: <?=$row['weight'] ?> г</p>
                     </h4>
                     <a class="btn btn-primary" href="<?=\frontend\components\Common::getUrlProduct($row) ?>">Подробнее</a>
                 </div>
@@ -70,20 +67,22 @@ use yii\helpers\Html;
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <h3>О компании</h3>
-            <p class="text-justify" style="text-indent: 30px;">
+            <p class="text-justify" style="text-indent: 30px; margin-bottom: 5px;">
                 Камышинский хлебокомбинат - ведущий производитель хлеба и хлебобулочных изделий в Камышинском районе.
             </p>
-            <p style="text-indent: 30px">
+            <p style="text-indent: 30px; margin-bottom: 5px;">
                 Предприятие выпускает 10 видов хлеба и более 65 видов хлебобулочных изделий (булочные, бараночные,
                 кондитерские, сухарные изделия), постоянно осуществляет усовершенствование технологии производства, качества продукции, улучшение ее внешнего вида.
             </p>
-            <h3><small>Компания состоит из трех производственных подразделений:</small></h3>
+            <h3 style="text-indent: 30px; margin-bottom: 5px;"><small>Наши преимущества:</small></h3>
             <ul>
-                <li>- основное производство</li>
-                <li>- бараночный участок</li>
-                <li>- булочно-кондитерский участок</li>
+                <li>новейшее высокотехнологичное оборудование</li>
+                <li>собственная лаборатория для контрля качества продукции</li>
+                <li>гибкая система скидок для покупателей</li>
+                <li>широкий ассортимент продукции</li>
+                <li>только натуральное экологически чистое сырье</li>
             </ul>
-            <a href="about" >Подробнее</a>
+            <a href="about" >Подробнее о нас</a>
         </div>
         <?php
         echo \frontend\widgets\NewsWidget::widget();

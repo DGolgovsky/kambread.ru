@@ -85,10 +85,10 @@ class Common extends Component
 
 	public static function getTypeProduct($row)
 	{
-		if (($row['recommend'])) {
-			return 'Рекомендуем';
-		} else if (($row['new'])) {
+		if (($row['new'])) {
 			return 'Новинка';
+		} else if (($row['recommend'])) {
+			return 'Рекомендуем';
 		}
 		return false;
 	}

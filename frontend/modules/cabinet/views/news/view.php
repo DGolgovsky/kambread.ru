@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/cabin
 $this->params['breadcrumbs'][] = 'Просмотр';
 ?>
 <div class="news-view">
-    <div class="row">
+    <div class="row text-center">
         <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
             <p>
                 <?= Html::a('Редактировать', ['update', 'id' => $model->idnews], [

@@ -11,11 +11,12 @@ $this->title = 'Продукция';
 $this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabinet']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    <p>
-        <?= Html::a('Добавить', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+<div class="container">
+    <?php //echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 text-center">
+        <?= Html::a('Добавить', ['create'], ['class' => 'btn btn-primary']) ?>
+    </div>
+    <hr>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -27,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'price',
             'weight',
             //'general_image',
-            'description:ntext',
+            //'description:ntext',
             'new',
             'type:ntext',
             'recommend',

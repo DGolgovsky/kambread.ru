@@ -12,13 +12,16 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <style>
     p {
-        text-indent: 40px; /* Отступ первой строки в пикселах */
+        text-indent: 30px; /* Отступ первой строки в пикселах */
+    }
+    dt {
+        font-weight: bold;
     }
 </style>
 
 <div class="container">
     <div class="row">
-        <h3 class="text-justify"><small>Дата основания предприятия - декабрь 1956 г.</small></h3>
+        <h3 class="text-left"><small>Камышинский хлебокомбинат основан в декабре 1956 г.</small></h3>
         <div class="pull-right bg-default" style="width: 20em; padding: 20px;">
             <img src="images/about/director.png" alt="Кутепов Ю. Н." class="img-rounded center-block img-responsive">
             <h4 class="text-center">Генеральный директор Кутепов Ю. Н.</h4>
@@ -29,21 +32,33 @@ $this->params['breadcrumbs'][] = $this->title;
             Учредителем ОАО «Камышинский хлебокомбинат» является комитет по управлению имуществом Администрации городского округа – город Камышин.
         </p>
         <p>
-            На предприятии проводится проверка поступающего сырья, контроль всех этапов технологического производства.
-            Контроль качества готовой продукции проводятся силами собственной лаборатории.
+            ОАО "Камышинский хлебокомбинат" - один из крупнейших производителей хлебобулочной продукции в Волгоградской области и лидер
+            хлебопечения в Камышинском районе.
         </p>
         <p>
-            ОАО «Камышинский хлебокомбинат» уже более 50 лет является ведущим производителем хлеба и хлебобулочных изделий на местном рынке.
-            Cпециализируется как на их выпечке, так и на реализации, выпускает широкий ассортимент изделий из натурального сырья.
-            Вся продукция предприятия сертифицирована и производится согласно существующей нормативно-технической документации.
+            Хлебокомбинат, благодаря большому ассортименту, ориентируется на самые разные категории потребителей и имеет своего постоянного покупателя.
+            Cпециализируется как на выпечке, так и на реализации выпускаемой продукции. Вся продукция предприятия сертифицирована и производится
+            согласно существующей нормативно-технической документации.
+        </p>
+        <p>
+            Проводится проверка поступающего сырья, контроль всех этапов технологического производства.
+            Контроль качества готовой продукции проводятся силами собственной лаборатории.
         </p>
         <b>Виды продукции:</b>
         <ul>
-            <li>хлеб пшеничный, ржано-пшеничный;</li>
-            <li>хлеб диетический, с пряностями, булочки простые и сдобные, бублики, баранки, сушки (все в евроупаковке);</li>
+            <li>хлеб пшеничный, ржано-пшеничный, диетический, с пряностями;</li>
+            <li>бублики, баранки, сушки (все в евроупаковке);</li>
             <li>булочки простые, сдобные, слоеные, с начинкой, батоны, рулеты, кексы, коржи;</li>
             <li>батончики, сдобы, сухарики.</li>
         </ul>
+        <p>
+            На предприятии производят 10 видов хлеба и более 60 видов хлебобулочных изделий, постоянно осуществляются усовершенствование технологии производства,
+            качества продукции, расширение ассортиментного перечня, улучшение её внешнего вида. Вся продукция предприятия декларирована в соответствии с требованиями
+            Технического Регламента Таможенного союза.
+        </p>
+        <p>
+            Руководство Камышинского хлебокомбината делает акцент на модернизацию оборудования, проводится постоянная работа над улучшением качества производимой продукции.
+        </p>
     </div>
     <div class="row">
         <div class="pull-left bg-default" style="width: 20em; padding: 20px;">
@@ -53,7 +68,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <p>
             Компания за счет собственных средств оказывает благотворительную помощь общественным,
             государственным и муниципальным организациям, участникам ВОВ, людям, оказавшимся в эпицентре боевых действий, техногенных ситуаций.
-            Перечисляет денежные средства на строительство памятников и памятных знаков в г.Камышине.
+            Перечисляет денежные средства на строительство памятников и памятных знаков в г. Камышине.
         </p>
         <p>
             На предприятии обеспечиваются все социальные гарантии, соблюдаются нормы трудового, административного, пенсионного, налогового законодательства.
@@ -68,7 +83,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
         <div class="col-md-8 col-sm-12 col-xs-12">
             <h3 class="text-center"><small>Достижения и результаты деятельности предприятия</small></h3>
-            <dl class="text-left dl-horizontal">
+            <dl class="dl-horizontal">
                 <dt>2002</dt>
                 <dd>Диплом Агропромышленной выставки – ярмарки «Волгоград АГРО-2002» за широкий ассортимент представляемой продукции;</dd>
                 <dt>2004</dt>
@@ -121,10 +136,21 @@ $this->params['breadcrumbs'][] = $this->title;
             <h3>С нами сотрудничают</h3>
         </div>
         <div class="clients-logo-wrapper text-center row">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6"><a href="http://magnit-info.ru/" target="_blank"><img src="images/logos/logo-1.png" class="img-responsive center-block" width="270px" alt="Магнит"></a></div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6"><a href="http://pokupochka.ru/" target="_blank"><img src="images/logos/logo-2.png" class="img-responsive center-block" width="270px" alt="Покупочка"></a></div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6"><a href="http://tkman.ru/" target="_blank"><img src="images/logos/logo-3.png" class="img-responsive center-block" width="270px" alt="МАН"></a></div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6"><a href="http://www.radezh.ru/" target="_blank"><img src="images/logos/logo-4.png" class="img-responsive center-block" width="270px" alt="Радеж"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://magnit-info.ru/" target="_blank"><img src="images/about/logos/logo-1.png" class="img-responsive center-block" width="270px" alt="Магнит"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://pokupochka.ru/" target="_blank"><img src="images/about/logos/logo-2.png" class="img-responsive center-block" width="270px" alt="Покупочка"></a></div>
+            <div class="col-lg-2 col-md-1 col-sm-2 col-xs-2"><a href="http://tkman.ru/" target="_blank"><img src="images/about/logos/logo-3.png" class="img-responsive center-block" width="270px" alt="МАН"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.radezh.ru/" target="_blank"><img src="images/about/logos/logo-4.png" class="img-responsive center-block" width="270px" alt="Радеж"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.lenta.com/" target="_blank"><img src="images/about/logos/logo-5.png" class="img-responsive center-block" width="270px" alt="Лента"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.okmarket.ru/" target="_blank"><img src="images/about/logos/logo-6.png" class="img-responsive center-block" width="270px" alt="О`КЕЙ"></a></div>
+        </div>
+        <hr>
+        <div class="clients-logo-wrapper text-center row">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://pyaterochka.ru/" target="_blank"><img src="images/about/logos/logo-7.png" class="img-responsive center-block" width="270px" alt="Пятёрочка"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
         </div>
     </div>
 </div>

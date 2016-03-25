@@ -30,6 +30,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?= $form->field($model, 'phone') ?>
 
+            <?= $form->field($model, 'group')->dropDownList([
+                'Руководство',
+                'Маркетинг',
+                'Кадры',
+                'Бухгалтерия',
+                'Производство',
+                'Остальные'
+            ]) ?>
+
             <?= $form->field($model, 'password')->passwordInput() ?>
 
             <?= $form->field($model, 'repassword')->passwordInput() ?>

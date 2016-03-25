@@ -32,7 +32,7 @@ use yii\widgets\ActiveForm;
 	]) ?>
 
 	<?= $form->field($model, 'recommend')->radioList(['No', 'Yes']) ?>
-
+	<p class="text-info">Внимание! Новинка имеет приоритет перед рекомендацией.</p>
 	<div class="form-group">
 		<div class="row">
 			<div class="col-lg-3">

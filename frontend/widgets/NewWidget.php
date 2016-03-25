@@ -17,7 +17,7 @@ class NewWidget extends  Widget
     public function run()
     {
         $query = $this->_query;
-        $result = $query->from('product')->where('new=1')->limit(5)->all();
+        $result = $query->from('product')->where('new=1')->limit(5)->all(); // ->FilterWhere(['<>', 'idproduct', $this->id])
 
         return $this->render('new',['result' => $result]);
     }

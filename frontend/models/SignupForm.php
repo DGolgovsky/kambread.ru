@@ -14,6 +14,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $phone;
+    public $group;
     public $password;
     public $repassword;
 
@@ -24,6 +25,7 @@ class SignupForm extends Model
             'username' => 'Логин',
             'email' => 'Электронная почта',
             'phone' => 'Номер телефона',
+            'group' => 'Группа',
             'password' => 'Пароль',
             'repassword' => 'Подтвердить пароль',
         ];
@@ -51,6 +53,8 @@ class SignupForm extends Model
 
             ['phone', 'filter', 'filter' => 'trim'],
             ['phone', 'string', 'min' => 2, 'max' => 16],
+
+            ['group', 'required'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
@@ -81,6 +85,7 @@ class SignupForm extends Model
             $user->username = $this->username;
             $user->email = $this->email;
             $user->phone = $this->phone;
+            $user->group = $this->group;
             $user->setPassword($this->password);
             $user->generateAuthKey();
             if ($user->save()) {

@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="col-lg-8 col-sm-8 ">
                             <h3><a href="<?= $url ?>" ><?= \frontend\components\Common::getTitle($row) ?></a></h3>
                             <div class="info"><span class="glyphicon glyphicon-time"></span> Создано: <?= \frontend\components\Common::getCreationDate($row) ?></div>
-                        <p><?=\frontend\components\Common::substr($row['description'], 0, 100) ?></p>
+                        <p><?=\frontend\components\Common::substr($row['description'], 0, 600) ?></p>
                         </div>
                 </div>
                 <!-- #news list -->

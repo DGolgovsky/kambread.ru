@@ -1,4 +1,4 @@
-<div class="new-properties hidden-xs">
+<div class="new-properties hidden-xs recommended">
     <h4>Горячие новинки</h4>
     <?php foreach($result as $res ): ?>
         <div class="row">

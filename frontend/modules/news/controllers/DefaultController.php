@@ -20,12 +20,12 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $query = News::find();
+        $query = News::find()->groupBy('idnews')->orderBy('created_at desc');
         //$query->filterWhere(['like', 'name', ''])->orFilterWhere(['like', 'description', '']);
 
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count()]);
-        $pages->setPageSize(6);
+        $pages->setPageSize(4);
 
         $model = $query->offset($pages->offset)->limit($pages->limit)->all();
 

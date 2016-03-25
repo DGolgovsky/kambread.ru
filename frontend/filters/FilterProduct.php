@@ -6,7 +6,7 @@ use common\models\Product;
 use yii\base\ActionFilter;
 use yii\web\HttpException;
 
-class Filterproduct extends ActionFilter
+class FilterProduct extends ActionFilter
 {
     public function beforeAction($action)
     {

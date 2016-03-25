@@ -4,7 +4,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <style>
     p {
-        text-indent: 40px; /* Отступ первой строки в пикселах */
+        text-indent: 30px; /* Отступ первой строки в пикселах */
     }
 </style>
 <div class="container">
@@ -42,6 +42,6 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="row">
-        <p class="lead text-center">Будем рады видеть Вас среди наших клиентов!</p>
+        <p class="lead text-center">Будем рады видеть Вас среди наших <a href="contact">клиентов!</a></p>
     </div>
 </div>

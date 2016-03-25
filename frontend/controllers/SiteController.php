@@ -25,7 +25,7 @@ class SiteController extends Controller
 
     public function init()
     {
-        Yii::$app->view->registerJsFile('https://maps.googleapis.com/maps/api/js?sensor=false',['position' => \yii\web\View::POS_HEAD]);
+        //Yii::$app->view->registerJsFile('https://maps.googleapis.com/maps/api/js?sensor=false',['position' => \yii\web\View::POS_HEAD]);
     }
 
     /**
@@ -150,7 +150,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect('/cabinet');//goBack();
         } else {
             return $this->render('login', [
                 'model' => $model,

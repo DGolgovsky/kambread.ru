@@ -8,9 +8,9 @@ $this->params['breadcrumbs'][] = $this->title;
     </small>
 </h2>
 <div class="container" style="width:100%; height:354px">
-<h2 class="text-center">
-    <small>
-        Вы можете обратиться в отдел кадров по телефону: (84457) 9-63-44
-    </small>
-</h2>
+    <h2 class="text-center">
+        <small>
+            Вы можете обратиться в отдел кадров по телефону: (84457) 9-63-44
+        </small>
+    </h2>
 </div>

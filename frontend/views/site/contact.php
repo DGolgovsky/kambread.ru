@@ -11,11 +11,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="row contact">
-	<div class="col-lg-6 col-sm-6 col-xs-12">
+	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 		<h3><span class="glyphicon glyphicon-phone"></span> Связаться с нами</h3>
 		</hr>
 		<!-- Contact Info -->
-		<dl>
+		<dl class="dl-horizontal">
 			<dt>Адрес:</dt>
 			<dd>403874 ул. Ленина 4, Камышин, Волгоградская область, Российская Федерация</dd>
 			<dt>Отдел продаж:</dt>
@@ -23,11 +23,15 @@ $this->params['breadcrumbs'][] = $this->title;
 			<dt>Факс:</dt>
 			<dd>+7 84457 9 64 64</dd>
 			<dt>E-mail:</dt>
-			<dd><a href="mailto:market@kambread.ru">market@kambread.ru</a></dd>
+			<dd>
+				<a href="mailto:market@kambread.ru">market@kambread.ru</a>
+				<br>
+				<a href="mailto:sales.department@kambread.ru">sales.department@kambread.ru</a>
+			</dd>
 		</dl>
 		<!-- End Contact Info -->
 	</div>
-	<div class="col-lg-6 col-sm-6 col-xs-12">
+	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 		<div class="enquiry">
 			<h3><span class="glyphicon glyphicon-envelope"></span> Отправить отзыв</h3>
 			<?php

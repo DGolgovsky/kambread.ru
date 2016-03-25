@@ -21,7 +21,7 @@ class NewsWidget extends  Widget
     public function run()
     {
         $query = $this->_query;
-        $query_news = $query->from('news')->groupBy('idnews')->orderBy('idnews desc');
+        $query_news = $query->from('news')->groupBy('idnews')->orderBy('created_at desc');
         $result_query  = $query_news->limit(5);
 
         $result = $result_query->all();

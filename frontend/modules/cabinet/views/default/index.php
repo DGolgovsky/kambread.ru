@@ -10,7 +10,7 @@ $this->title = 'Кабинет';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h2 style="align-content: center">Добро пожаловать в личный кабинет</h2>
-<div class="container">
+<div class="container" style="width:100%; height:354px">
     <p>
     <div class="row">
     <div class="col-lg-4 col-sm-4 col-xs-4">

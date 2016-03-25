@@ -5,7 +5,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/cabin
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->idnews]];
 $this->params['breadcrumbs'][] = 'Изображения';
 ?>
-
+<h2 ><small><p class="text-info">ВНИМАНИЕ! Не загружайте изображения большого размера!</p></small></h2>
 <div class="container">
     <?php $form = \yii\bootstrap\ActiveForm::begin(); ?>
     <?php
@@ -21,12 +21,12 @@ $this->params['breadcrumbs'][] = 'Изображения';
             'allowedFileExtensions' =>  ['jpg', 'png','gif'],
             'initialPreview' => $image,
             'showUpload' => true,
-            'showRemove' => false,
+            'showRemove' => true,
             'dropZoneEnabled' => false
         ]
     ]); ?>
     <?php
-    echo \yii\helpers\Html::label('Images');
+    echo \yii\helpers\Html::label('Дополнительные изображения');
     echo \kartik\file\FileInput::widget([
         'name' => 'images',
         'options' => [
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = 'Изображения';
             'allowedFileExtensions' =>  ['jpg', 'png','gif'],
             'initialPreview' => $images_add,
             'showUpload' => true,
-            'showRemove' => false,
+            'showRemove' => true,
             'dropZoneEnabled' => false
         ]
     ]); ?>

@@ -43,9 +43,6 @@ $this->params['breadcrumbs'][] = 'Просмотр';
                 </div>
                 <!-- #Slider Ends -->
             </div>
-            <br>
-            <p><?php echo $model->description; ?></p>
-            <!-- news detail -->
         </div>
         <div class="col-lg-4 visible-lg">
             <div id="hypercomments_widget"></div>
@@ -64,5 +61,10 @@ $this->params['breadcrumbs'][] = 'Просмотр';
             </script>
             <a href="http://hypercomments.com" class="hc-link" title="comments widget">comments powered by HyperComments</a>
         </div>
+    </div>
+    <hr>
+    <div class="row">
+        <p><?php echo $model->description; ?></p>
+        <!-- news detail -->
     </div>
 </div>
