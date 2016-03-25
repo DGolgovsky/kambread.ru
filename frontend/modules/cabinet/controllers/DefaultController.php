@@ -48,12 +48,12 @@ class DefaultController extends Controller
             }
         }
     }
-
+/*
     public function actionNews()
     {
         return $this->render('news');
     }
-
+*/
     public function actionChangePassword()
     {
         $model = new ChangePasswordForm();

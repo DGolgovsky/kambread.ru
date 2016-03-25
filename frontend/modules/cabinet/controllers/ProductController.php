@@ -21,7 +21,6 @@ use Imagine\Image\Box;
  */
 class ProductController extends Controller
 {
-
 	public $layout = "inner";
 	
 	/**
@@ -142,10 +141,7 @@ class ProductController extends Controller
 		$model = $this->findModel($id);
 
 		if ($model->load(Yii::$app->request->post()) && $model->save()) {
-			//$this->refresh();
-			return $this->render('view', [
-				'model' => $this->findModel($id),
-			]);
+			return $this->redirect(['view', 'id' => $model->idproduct]);
 		} else {
 			return $this->render('update', [
 				'model' => $model,

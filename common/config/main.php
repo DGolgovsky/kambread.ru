@@ -31,7 +31,7 @@ return [
                 'cabinet/product/<action_cabinet:(view|update|addimg)>/<id:\d+>' => 'cabinet/product/<action_cabinet>',
                 'cabinet/news/<action_cabinet:(view|update|addimg)>/<id:\d+>' => 'cabinet/news/<action_cabinet>',
                 'cabinet/<action_cabinet:(settings|change-password)>' => 'cabinet/default/<action_cabinet>',
-                'cabinet/<action_cabinet:(news|vacancy)>' => 'cabinet/<action_cabinet>'
+                'cabinet/<action_cabinet:(news|product|vacancy)>' => 'cabinet/<action_cabinet>'
             ],
         ],
     ],
