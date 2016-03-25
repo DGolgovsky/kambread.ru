@@ -18,15 +18,15 @@ class m160310_135133_tbl_product extends Migration
 		$this->createTable('{{%product}}', [
 			'idproduct' => $this->primaryKey(),
 			'price' => $this->double(),
-			'user_id' => $this->integer()->notNull(),
+			'user_id' => $this->integer()->unsigned()->notNull(),
 			'name' => $this->string(255),
 			'general_image' => $this->string(255),
 			'description' => $this->string(),
-			'new' => $this->smallInteger(),
+			'new' => $this->boolean()->notNull(),
 			'type' => $this->smallInteger(),
-			'recommend' => $this->smallInteger(),
-			'created_at' => $this->integer()->notNull(),
-			'updated_at' => $this->integer()->notNull(),
+			'recommend' => $this->boolean()->notNull(),
+			'created_at' => $this->integer()->unsigned()->notNull(),
+			'updated_at' => $this->integer()->unsigned()->notNull(),
 		], $tableOptions);
 	}}
 

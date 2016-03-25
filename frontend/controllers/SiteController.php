@@ -82,7 +82,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = "main";
+        $this->layout = "landing";
 
         $query = new Query();
         $query_product = $query->from('product')->groupBy('idproduct')->orderBy('idproduct desc');
@@ -91,11 +91,11 @@ class SiteController extends Controller
         $count_general = $command->count();
 
         $featured = $query_product
-            ->where("new=1")
-            ->orWhere("recommend=1")
+            ->where("new=true")
+            ->orWhere("recommend=true")
             ->limit(15)->all();
 
-        $recommend_query  = $query_product->where("recommend=1")->limit(5);
+        $recommend_query  = $query_product->where("recommend=true")->limit(5);
         $recommend = $recommend_query->all();
         $recommend_count = $recommend_query->count();
         

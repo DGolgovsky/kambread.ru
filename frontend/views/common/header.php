@@ -42,7 +42,7 @@ use yii\helpers\Html;
                         ['label' => 'Партнёрам',
                             'url' => ['/site/partners']],
                         ['label' => 'Вакансии',
-                            'url' => ['/site/vacancies']],
+                            'url' => ['/vacancy']],
                         ['label' => 'Новости',
                             'url' => ['/news']],
                         ['label' => 'Раскрытие информации',

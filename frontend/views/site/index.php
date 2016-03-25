@@ -11,6 +11,7 @@ use yii\helpers\Html;
                         <div class="bg-img" style="background-image: url('<?=\frontend\components\Common::getImageProduct($row)[0] ?>')")"></div>
                     <h2><a href="<?=\frontend\components\Common::getUrlProduct($row) ?>"><?=\frontend\components\Common::getTitle($row) ?></a></h2>
                     <blockquote>
+                        <?php $row['description'] = preg_replace("(\r\n|\n|\r)", "<BR/>", $row['description']); ?>
                         <p><?=\frontend\components\Common::substr($row['description'], 0, 50) ?></p>
                         <cite>₽ <?=$row['price'] ?></cite>
                     </blockquote>

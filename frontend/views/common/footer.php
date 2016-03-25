@@ -4,47 +4,24 @@ if(Yii::$app->user->isGuest) {
 }
 ?>
 <style>
-    dl {
+
+     .footer dl {
         text-indent: 0px;;
         margin-top: 0;
         margin-bottom: 10px;
     }
-    dt, dd {
-        line-height: 1.428571429;
-    }
-    dt {
+     .footer dt {
+        float: left;
+        width: 100px;
+        text-align: left;
         font-weight: normal;
     }
-    dd {
-        margin-left: 0;
+     .footer dd {
+        margin-left: 0px;
     }
-    .dl-horizontal dt {
-        float: left;
-        width: 120px;
-        overflow: hidden;
-        clear: left;
-        text-align: left;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    .dl-horizontal dd {
-        margin-left: 120px;
-    }
-    .dl-horizontal dd:before,
-    .dl-horizontal dd:after {
-        display: table;
-        content: " ";
-    }
-    .dl-horizontal dd:after {
-        clear: both;
-    }
-    .dl-horizontal dd:before,
-    .dl-horizontal dd:after {
-        display: table;
-        content: " ";
-    }
-    .dl-horizontal dd:after {
-        clear: both;
+    
+    .phones dt {
+        width: 130px;
     }
 </style>
 <div class="footer">
@@ -62,24 +39,20 @@ if(Yii::$app->user->isGuest) {
             </div>
             <div class="col-lg-3 col-sm-3 col-xs-12">
                 <h4><span class="glyphicon glyphicon-earphone"></span> Телефоны</h4>
-                <ul class="row">
-                    <li class="col-lg-12 col-sm-12 col-xs-12">(84457) 9 64 64 &nbsp;
-                        <span>Приемная</span>
-                    </li>
-                    <li class="col-lg-12 col-sm-12 col-xs-12">(84457) 9 39 84 &nbsp;
-                        <span>Отдел маркетинга</span>
-                    </li>
-                    <li class="col-lg-12 col-sm-12 col-xs-12">(84457) 9 64 56 &nbsp;
-                        <span>Отдел сбыта</span>
-                    </li>
-                    <li class="col-lg-12 col-sm-12 col-xs-12">(84457) 9 64 05 &nbsp;
-                        <span>Лаборатория</span>
-                    </li>
-                </ul>
+                <dl class="text-left dl-horizontal footer phones">
+                    <dt>Приемная</dt>
+                    <dd>(84457) 9 64 64</dd>
+                    <dt>Отдел маркетинга<dt>
+                    <dd>(84457) 9 39 84</dd>
+                    <dt>Отдел сбыта</dt>
+                    <dd>(84457) 9 64 56</dd>
+                    <dt>Лаборатория</dt>
+                    <dd>(84457) 9 64 05</dd>
+                </dl>
             </div>
             <div class="col-lg-3 col-sm-3 col-xs-12">
                 <h4><span class="glyphicon glyphicon-envelope"></span> E-mail</h4>
-                <dl class="text-left dl-horizontal">
+                <dl class="text-left dl-horizontal footer">
                     <dt>Отдел продаж</dt>
                     <dd><a href="mailto:market@kambread.ru" target="_self">market@kambread.ru</a></dd>
                     <dt>Общий<dt>

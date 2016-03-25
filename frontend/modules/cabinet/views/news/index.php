@@ -23,6 +23,7 @@ $this->params['breadcrumbs'][] = 'Новости';
             'name',
             //'idnews',
             'user.name',
+            'status:boolean',
             //'description:ntext',
             //'created_at:date',
             'updated_at:date',

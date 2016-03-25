@@ -14,6 +14,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $name
  * @property string $general_image
  * @property string $description
+ * @property boolean $status
  * @property integer $created_at
  * @property integer $updated_at
  **/
@@ -56,6 +57,7 @@ class News extends \yii\db\ActiveRecord
             ['name', 'string', 'min' => 2, 'max' => 48],
 
             ['user_id', 'integer'],
+            ['status', 'boolean'],
             ['idnews', 'unique', 'targetClass' => '\common\models\News', 'message' => 'ID не уникален.'],
 
             ['description', 'filter', 'filter' => 'trim'],
@@ -79,6 +81,7 @@ class News extends \yii\db\ActiveRecord
             'idnews' => 'ID новости',
             'name' => 'Наименование',            
             'user_id' => 'ID пользователя',
+            'status' => 'Закончена',
             'general_image' => 'Главное изображение',
             'description' => 'Описание',            
             'created_at' => 'Создано',

@@ -21,6 +21,7 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         $query = News::find()->groupBy('idnews')->orderBy('created_at desc');
+        $query->where('status=true');
         //$query->filterWhere(['like', 'name', ''])->orFilterWhere(['like', 'description', '']);
 
         $countQuery = clone $query;

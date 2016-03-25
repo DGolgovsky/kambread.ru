@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
     </div>
     <div class="col-lg-9 col-sm-8 ">
-        <h2><?=\frontend\components\Common::getTitle($model) ?></h2>
+        <h2><?=$product_title ?></h2>
         <div class="row">
             <div class="col-lg-8">
                 <div class="property-images">
@@ -50,6 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div class="spacer">
                     <h4><span class="glyphicon glyphicon-th-list"></span> Описание</h4>
+                    <?php $model->description = preg_replace("(\r\n|\n|\r)", "<BR/>", $model->description); ?>
                     <p><?=$model->description ?></p>
                 </div>
             </div>
@@ -60,16 +61,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         <p class="price">₽ <?=$model->price ?></p>
                         <h6><span class="glyphicon glyphicon-stats"></span> Вес</h6>
                         <p class="price">г <?=$model->weight ?></p>
-                        <div class="profile">
-                            <span class="glyphicon glyphicon-user"></span> Агент продаж
-                            <p>
-                                <?=$model->user->name ?>
-                                <br>
-                                <?=$model->user->email ?>
-                                <br>
-                                <?=$model->user->phone ?>
-                            </p>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-12 col-sm-6 ">
@@ -79,8 +70,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         $form = \yii\bootstrap\ActiveForm::begin();
                         ?>
                         <?=$form->field($model_feedback,'email')->textInput(['value' => $current_user['email'], 'placeholder' => 'Ваш e-mail'])->label(false) ?>
-                        <?=$form->field($model_feedback,'name')->textInput(['value' => $current_user['name'], 'placeholder' => 'Имя'])->label(false) ?>
-                        <?=$form->field($model_feedback,'text')->textarea(['rows' => 6, 'placeholder' => 'Что Вы думаете?'])->label(false) ?>
+                        <?=$form->field($model_feedback,'name')->textInput(['value' => $current_user['name'], 'placeholder' => 'Ваше имя'])->label(false) ?>
+                        <?=$form->field($model_feedback,'text')->textarea(['rows' => 6, 'placeholder' => 'Текст сообщения'])->label(false) ?>
                         <button type="submit" class="btn btn-primary" name="Submit">Отправить сообщение</button>
                         <?php
                         \yii\bootstrap\ActiveForm::end();

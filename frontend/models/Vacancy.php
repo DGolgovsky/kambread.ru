@@ -48,7 +48,7 @@ class Vacancy extends \yii\db\ActiveRecord
             [['open'], 'boolean'],
             [['name'], 'string', 'max' => 255],
             ['name', 'filter', 'filter' => 'trim'],
-            ['description', 'filter', 'filter' => 'trim'],
+            //['description', 'filter', 'filter' => 'trim'],
         ];
     }
 

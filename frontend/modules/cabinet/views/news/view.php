@@ -53,6 +53,7 @@ $this->params['breadcrumbs'][] = 'Просмотр';
             'name',
             'description:ntext',
             'user.name',
+            'status:boolean',
             'created_at:date',
             'updated_at:date',
         ],

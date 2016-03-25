@@ -28,8 +28,9 @@ return [
                 'news/view/<id:\d+>' => 'news/default/view-news',
                 'products/<propert:\w+>&<price:\d+>&<type:\w+>' => 'products',
 
-                'cabinet/product/<action_cabinet:(view|update|addimg)>/<id:\d+>' => 'cabinet/product/<action_cabinet>',
-                'cabinet/news/<action_cabinet:(view|update|addimg)>/<id:\d+>' => 'cabinet/news/<action_cabinet>',
+                'cabinet/product/<action_cabinet:(view|create|update|addimg)>/<id:\d+>' => 'cabinet/product/<action_cabinet>',
+                'cabinet/news/<action_cabinet:(view|create|update|addimg)>/<id:\d+>' => 'cabinet/news/<action_cabinet>',
+                'cabinet/vacancy/<action_cabinet:(view|update|create)>/<id:\d+>' => 'cabinet/vacancy/<action_cabinet>',
                 'cabinet/<action_cabinet:(settings|change-password)>' => 'cabinet/default/<action_cabinet>',
                 'cabinet/<action_cabinet:(news|product|vacancy)>' => 'cabinet/<action_cabinet>'
             ],

@@ -64,6 +64,7 @@ $this->params['breadcrumbs'][] = 'Просмотр';
     </div>
     <hr>
     <div class="row">
+        <?php $model->description = preg_replace("(\r\n|\n|\r)", "<BR/>", $model->description); ?>
         <p><?php echo $model->description; ?></p>
         <!-- news detail -->
     </div>

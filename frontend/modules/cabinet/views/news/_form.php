@@ -15,6 +15,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
     
     <?= $form->field($model, 'description')->textarea(['rows' => 10]) ?>
+    
+    <?= $form->field($model, 'status')->checkbox() ?>
 
     <div class="form-group">
         <div class="row">

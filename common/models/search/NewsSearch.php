@@ -20,6 +20,7 @@ class NewsSearch extends News
     {
         return [
             [['idnews', 'user_id', 'created_at', 'updated_at'], 'integer'],
+            ['status', 'boolean'],
             [['name', 'general_image', 'description'], 'safe'],
         ];
     }
@@ -60,6 +61,7 @@ class NewsSearch extends News
             'idnews' => $this->idnews,
             //'user_id' => $this->user_id,
             'name' => $this->name,
+            'status' => $this->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);

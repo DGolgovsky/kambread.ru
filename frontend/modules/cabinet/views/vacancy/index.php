@@ -20,15 +20,13 @@ $this->params['breadcrumbs'][] = 'Вакансии';
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'idvacancy',
-            'group_id',
-            'description:ntext',
-            'created_at',
             'name',
-            // 'updated_at',
+            'description:ntext',
             'open:boolean',
-
+            //'idvacancy',
+            //'group_id',            
+            'created_at:date',            
+            'updated_at:date',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

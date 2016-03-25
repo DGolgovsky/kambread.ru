@@ -5,7 +5,6 @@ use common\models\Product;
 use frontend\components\Common;
 use frontend\filters\FilterProduct;
 //use frontend\models\Image;
-//use frontend\models\SignupForm;
 use yii\base\DynamicModel;
 use yii\data\Pagination;
 use yii\web\Controller;
@@ -40,11 +39,9 @@ class DefaultController extends Controller
 
 	public function actionIndex($propert = '', $price = '', $type = '')
 	{
-		$this->layout = 'inner';
-
 		$query = Product::find();
-		$query->filterWhere(['like', 'name', $propert])
-			->orFilterWhere(['like', 'description', $propert])
+		$query->filterWhere(['ilike', 'name', $propert])
+			->orFilterWhere(['ilike', 'description', $propert])
 			->andFilterWhere(['type' => $type]);
 
 		if($price) {

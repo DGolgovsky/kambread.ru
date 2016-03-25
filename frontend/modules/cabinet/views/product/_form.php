@@ -18,9 +18,12 @@ use yii\widgets\ActiveForm;
 	
 	<?= $form->field($model, 'weight')->textInput(['placeholder' => 'Вес в граммах']) ?>
 
+	
 	<?= $form->field($model, 'description')->textArea(['rows' => 6, ['placeholder' => 'Описание']]) ?>
 
-	<?= $form->field($model, 'new')->radioList(['No', 'Yes']) ?>
+	<?= $form->field($model, 'new')->checkbox() ?>
+
+	<?= $form->field($model, 'recommend')->checkbox() ?>
 
 	<?= $form->field($model, 'type')->dropDownList([
 		'Баранки',
@@ -31,7 +34,6 @@ use yii\widgets\ActiveForm;
 		'Хлеб'
 	]) ?>
 
-	<?= $form->field($model, 'recommend')->radioList(['No', 'Yes']) ?>
 	<p class="text-info">Внимание! Новинка имеет приоритет перед рекомендацией.</p>
 	<div class="form-group">
 		<div class="row">
