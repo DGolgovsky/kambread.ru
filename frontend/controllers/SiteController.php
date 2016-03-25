@@ -227,7 +227,7 @@ class SiteController extends Controller
             }
         }
 
-        if($model->load(\Yii::$app->request->post())) {
+        if($model->load(\Yii::$app->request->post()) && $model->signup()) {
             Yii::$app->session->setFlash('success', 'Регистрация прошла успешно');
             return $this->refresh();
         }
