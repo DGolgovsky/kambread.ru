@@ -61,7 +61,7 @@ class ProductSearch extends Product
 			'idproduct' => $this->idproduct,
 			'price' => $this->price,
 			'weight' => $this->weight,
-			'user_id' => $this->user_id,
+			//'user_id' => $this->user_id,
 			'name' => $this->name,
 			'new' => $this->new,
 			'recommend' => $this->recommend,

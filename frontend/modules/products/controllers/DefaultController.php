@@ -67,6 +67,7 @@ class DefaultController extends Controller
 		return $this->render("index", ['model' => $model, 'pages' => $pages, 'request' => $request]);
 	}
 
+	//TODO add replacer '\n' -> <br>
 	public function actionViewProduct($id)
 	{
 		$model = Product::findOne($id);

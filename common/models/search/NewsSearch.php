@@ -58,7 +58,7 @@ class NewsSearch extends News
 
         $query->andFilterWhere([
             'idnews' => $this->idnews,
-            'user_id' => $this->user_id,
+            //'user_id' => $this->user_id,
             'name' => $this->name,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
