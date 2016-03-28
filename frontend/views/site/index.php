@@ -1,18 +1,18 @@
 <?php
+use frontend\components\Common;
 use yii\helpers\Html;
 ?>
-<div class="row">
-    <div class="col-lg-12 col-md-12 hidden-sm hidden-xs">
-        <div id="slider" class="sl-slider-wrapper">
-            <div class="sl-slider">
-                <?php foreach($result_general as $row): ?>
-                <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                    <div class="sl-slide-inner">
-                        <div class="bg-img" style="background-image: url('<?=\frontend\components\Common::getImageProduct($row)[0] ?>')")"></div>
-                    <h2><a href="<?=\frontend\components\Common::getUrlProduct($row) ?>"><?=\frontend\components\Common::getTitle($row) ?></a></h2>
+<div class="">
+    <div id="slider" class="sl-slider-wrapper">
+        <div class="sl-slider">
+            <?php foreach($result_general as $row): ?>
+            <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                <div class="sl-slide-inner">
+                    <div class="bg-img" style="background-image: url('<?= Common::getImageProduct($row)[0] ?>')"></div>
+                    <h2><a href="<?= Common::getUrlProduct($row) ?>"><?= Common::getTitle($row) ?></a></h2>
                     <blockquote>
                         <?php $row['description'] = preg_replace("(\r\n|\n|\r)", "<BR/>", $row['description']); ?>
-                        <p><?=\frontend\components\Common::substr($row['description'], 0, 50) ?></p>
+                        <p><?= Common::substr($row['description'], 0, 150) ?></p>
                         <cite>₽ <?=$row['price'] ?></cite>
                     </blockquote>
                 </div>
@@ -38,33 +38,30 @@ use yii\helpers\Html;
 </div>
 
 <div class="container">
-    <div class="properties-listing spacer">
-        <a href="products" class="pull-right viewall">Посмотреть все</a>
-        <h2>Каталог продукции</h2>
-        <div id="owl-example" class="owl-carousel">
-            <?php foreach($featured as $row): ?>
-                <div class="properties">
-                    <div class="image-holder">
-                        <img src="<?=\frontend\components\Common::getImageProduct($row)[0] ?>"  class="img-responsive" alt="<?=\frontend\components\Common::getTitle($row) ?>"/>
-                        <div class="status <?=($row['new']) ? 'new' : 'recommend' ?>"><?=\frontend\components\Common::getTypeProduct($row) ?></div>
+    <div class="row">
+        <div class="properties-listing spacer">
+            <a href="products" class="pull-right viewall">Посмотреть все</a>
+            <h2>Каталог продукции</h2>
+            <div id="owl-example" class="owl-carousel">
+                <?php foreach($featured as $row): ?>
+                    <div class="properties">
+                        <div class="image-holder">
+                            <img src="<?=Common::getImageProduct($row)[0] ?>" class="img-responsive" alt="<?=Common::getTitle($row) ?>">
+                            <div class="status <?=($row['new']) ? 'new' : 'recommend' ?>"><?= Common::getTypeProduct($row) ?></div>
+                        </div>
+                        <h4><a href="<?=Common::getUrlProduct($row) ?>"><?= Common::getTitle($row) ?></a></h4>
+                        <h4 class="text-center">
+                            <p style="text-indent: 0px;" class="price">Цена: ₽<?=$row['price'] ?></p>
+                            <p style="text-indent: 0px;" class="price">Вес: <?=$row['weight'] ?> г</p>
+                        </h4>
+                        <a class="btn btn-primary" href="<?= Common::getUrlProduct($row) ?>">Подробнее</a>
                     </div>
-                    <h4>
-                        <a href="<?=\frontend\components\Common::getUrlProduct($row) ?>" >
-                            <?=\frontend\components\Common::getTitle($row) ?>
-                        </a>
-                    </h4>
-                    <h4 class="text-center">
-                        <p style="text-indent: 0px;" class="price">Цена: ₽<?=$row['price'] ?></p>
-                        <p style="text-indent: 0px;" class="price">Вес: <?=$row['weight'] ?> г</p>
-                    </h4>
-                    <a class="btn btn-primary" href="<?=\frontend\components\Common::getUrlProduct($row) ?>">Подробнее</a>
-                </div>
-                <?php
-            endforeach;
-            ?>
+                    <?php
+                endforeach;
+                ?>
+            </div>
         </div>
     </div>
-    <div class="spacer"></div>
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <h3>О компании</h3>

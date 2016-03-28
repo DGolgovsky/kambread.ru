@@ -113,13 +113,8 @@ class SiteController extends Controller
     {
         return $this->render('partners');
     }
-
-	public function actionVacancies()
-    {
-        return $this->render('vacancies');
-    }
-
-	public function actionDisclosure()
+    
+    public function actionDisclosure()
 	{
 		return $this->redirect('http://disclosure.1prime.ru/portal/default.aspx?emId=3436107766');
 	}
@@ -133,7 +128,7 @@ class SiteController extends Controller
     {
         $component = \Yii::$app->common; //new Common();
         $component->on(Common::EVENT_NOTIFY,[$component,'notifyAdmin']);
-        $component->sendMail("Notify admin",$component->name,$component->subject,$component->body);
+        $component->sendMail("[Notify admin]",$component->name,$component->email,$component->subject,$component->body);
         $component->off(Common::EVENT_NOTIFY,[$component,'notifyAdmin']);
     }
 
@@ -249,11 +244,11 @@ class SiteController extends Controller
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
-                \Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+                \Yii::$app->session->setFlash('success', 'Проверьте свой email для получения дальнейших инструкций');
 
                 return $this->refresh();
             } else {
-                \Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
+                \Yii::$app->session->setFlash('error', 'Что-то пошло не так...');
             }
         }
 

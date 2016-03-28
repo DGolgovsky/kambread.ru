@@ -15,12 +15,12 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode('Камышинский хлебокомбинат') ?></title>
     <style>h2 {text-indent: 40px;}</style>
-    <?php $this->head() ?>
+    <?php $this->head(); ?>
 </head>
 <body>
 <?php $this->beginBody(); ?>
 <!-- views/common/Header Starts -->
-<?php echo $this->render("//common/header") ?>
+<?php echo $this->render("//common/header"); ?>
 <!-- #views/common/Header Ends -->
 <div class="inside-banner">
     <div class="container">
@@ -39,11 +39,11 @@ AppAsset::register($this);
 <!-- banner -->
 <div class="container">
     <div class="spacer">
-        <?= $content ?>
+        <?=$content ?>
     </div>
 </div>
 <!-- #banner -->
-<?php echo $this->render("//common/footer") ?>
+<?php echo $this->render("//common/footer"); ?>
 <?php $this->endBody(); ?>
 </body>
 </html>
