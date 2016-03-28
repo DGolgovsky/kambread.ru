@@ -64,6 +64,7 @@ class Vacancy extends \yii\db\ActiveRecord
             'created_at' => 'Создано',
             'name' => 'Наименование',
             'updated_at' => 'Обновлено',
+            'user.name' => 'Добавлено',
             'open' => 'Открыта',
         ];
     }

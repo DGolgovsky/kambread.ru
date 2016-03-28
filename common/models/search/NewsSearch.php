@@ -2,6 +2,7 @@
 
 namespace common\models\search;
 
+use common\models\User;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -57,9 +58,11 @@ class NewsSearch extends News
             return $dataProvider;
         }
 
+        $user_name = User::findOne($this->user_id);
+
         $query->andFilterWhere([
             'idnews' => $this->idnews,
-            //'user_id' => $this->user_id,
+            'user_id' => $this->user_id,
             'name' => $this->name,
             'status' => $this->status,
             'created_at' => $this->created_at,

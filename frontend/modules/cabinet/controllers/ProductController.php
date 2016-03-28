@@ -149,9 +149,9 @@ class ProductController extends Controller
 		}
 	}
 
-	public function actionAddimg()
+	public function actionAddimg($id)
 	{
-		$id = Yii::$app->locator->cache->get('id');
+		//$id = Yii::$app->locator->cache->get('id');
 		$model = Product::findOne($id);
 		$image = [];
 		if($general_image = $model->general_image){

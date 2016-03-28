@@ -55,7 +55,7 @@ class Product extends \yii\db\ActiveRecord
 	{
 		return [
 			[['price', 'name', 'weight'], 'required'],
-			[['user_id', 'new', 'recommend'], 'integer'],
+			[['idproduct', 'user_id', 'new', 'recommend'], 'integer'],
 			[['price', 'weight'], 'double'],
 			[['description', 'name', 'type'], 'string'],
 			['idproduct', 'unique', 'targetClass' => '\common\models\Product', 'message' => 'ID не уникален.'],

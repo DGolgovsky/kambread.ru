@@ -60,7 +60,7 @@ class NewsController extends Controller
             $path = Yii::getAlias("@frontend/web/uploads/news/".$id."/general");
             BaseFileHelper::createDirectory($path);
             $model = News::findOne($id);
-            $model->scenario = 'news';
+            $model->scenario = 'addimg';
 
             $file = UploadedFile::getInstance($model,'general_image');
             $name = 'general.'.$file->extension;
@@ -149,9 +149,10 @@ class NewsController extends Controller
         }
     }
 
-    public function actionAddimg()
+    public function actionAddimg($id)
     {
-        $id = Yii::$app->locator->cache->get('id');
+        //TODO Fix file cache locator service
+        //$id = Yii::$app->locator->cache->get('id');
         $model = News::findOne($id);
         $image = [];
         if($general_image = $model->general_image){

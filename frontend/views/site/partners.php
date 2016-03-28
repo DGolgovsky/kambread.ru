@@ -9,7 +9,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </style>
 <div class="container">
     <div class="row">
-        <div class="col-md-11 col-md-offset-1 col-sm-12 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="pull-right bg-default" style="width: 20em; padding: 20px;">
                 <img src="images/partners/delivery.png" alt="Своевременная доставка!" class="img-rounded center-block img-responsive">
                 <hr>

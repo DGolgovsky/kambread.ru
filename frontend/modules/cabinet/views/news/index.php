@@ -17,14 +17,15 @@ $this->params['breadcrumbs'][] = 'Новости';
     <hr>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        //'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             'name',
+            'description:ntext',
             //'idnews',
-            'user.name',
+            //'user_id',
             'status:boolean',
-            //'description:ntext',
+            'user.name',
             //'created_at:date',
             'updated_at:date',
             ['class' => 'yii\grid\ActionColumn'],

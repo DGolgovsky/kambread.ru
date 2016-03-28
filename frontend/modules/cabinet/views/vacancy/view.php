@@ -35,11 +35,12 @@ $this->params['breadcrumbs'][] = 'Просмотр';
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'idvacancy',
+            //'idvacancy',
             'name',
             'description:ntext',
             'open:boolean',
             //'group_id',
+            'user.name',
             'created_at:date',
             'updated_at:date',
         ],

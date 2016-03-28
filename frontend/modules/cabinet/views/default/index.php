@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p><p>
     <div class="row">
     <div class="col-lg-4 col-sm-4 col-xs-4">
-        <?= Html::a('Документы', ['#'], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Документы', ['#'], ['class' => 'btn btn-primary disabled']) ?>
     </div>
     <div class="col-lg-8 col-sm-8 col-xs-8">
         <span>Документы на ознакомление и подпись</span>

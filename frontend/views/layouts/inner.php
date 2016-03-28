@@ -24,7 +24,7 @@ AppAsset::register($this);
 <!-- #views/common/Header Ends -->
 <div class="inside-banner">
     <div class="container">
-        <span class="pull-right">
+        <span class="pull-left" style="margin-left: 40px;">
             <?= Breadcrumbs::widget([
                 'homeLink' => ['label' => 'Главная', 'url' => '/index'],
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -33,7 +33,7 @@ AppAsset::register($this);
                 <?= Alert::widget() ?>
             <?php endif; ?>
         </span>
-        <h2><?=$this->title ?></h2>
+        <h2 class="text-right" style="margin-right: 40px;"><?=$this->title ?></h2>
     </div>
 </div>
 <!-- banner -->

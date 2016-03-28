@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\product */
+/* @var $model common\models\News */
 
 $this->title = 'Обновление:'.' '.$model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabinet']];
@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Новости', 'url' => ['/cabin
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->idnews]];
 $this->params['breadcrumbs'][] = 'Обновление';
 ?>
-<div class="product-update">
+<div class="news-update">
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

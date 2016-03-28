@@ -41,7 +41,7 @@ class News extends \yii\db\ActiveRecord
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios['news'] = ['general_image'];
+        $scenarios['addimg'] = ['general_image'];
 
         return $scenarios;
     }
