@@ -4,22 +4,14 @@ if(Yii::$app->user->isGuest) {
 }
 ?>
 <style>
-
-     .footer dl {
-        text-indent: 0px;;
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-     .footer dt {
-        float: left;
+    .foot dt {
         width: 100px;
         text-align: left;
         font-weight: normal;
     }
-     .footer dd {
+    .foot dd {
         margin-left: 0px;
     }
-    
     .phones dt {
         width: 130px;
     }
@@ -39,26 +31,26 @@ if(Yii::$app->user->isGuest) {
             </div>
             <div class="col-lg-3 col-sm-3 col-xs-12">
                 <h4><span class="glyphicon glyphicon-earphone"></span> Телефоны</h4>
-                <dl class="text-left dl-horizontal footer phones">
+                <dl class="text-left dl-horizontal foot phones">
                     <dt>Приемная</dt>
-                    <dd>(84457) 9 64 64</dd>
+                    <dd style="text-align: right">(84457) 9 64 64</dd>
                     <dt>Отдел маркетинга<dt>
-                    <dd>(84457) 9 39 84</dd>
+                    <dd style="text-align: right">(84457) 9 39 84</dd>
                     <dt>Отдел сбыта</dt>
-                    <dd>(84457) 9 64 56</dd>
+                    <dd style="text-align: right">(84457) 9 64 56</dd>
                     <dt>Лаборатория</dt>
-                    <dd>(84457) 9 64 05</dd>
+                    <dd style="text-align: right">(84457) 9 64 05</dd>
                 </dl>
             </div>
             <div class="col-lg-3 col-sm-3 col-xs-12">
                 <h4><span class="glyphicon glyphicon-envelope"></span> E-mail</h4>
-                <dl class="text-left dl-horizontal footer">
+                <dl class="text-left dl-horizontal foot">
                     <dt>Отдел продаж</dt>
-                    <dd><a href="mailto:market@kambread.ru" target="_self">market@kambread.ru</a></dd>
-                    <dt>Общий<dt>
-                    <dd><a href="mailto:kam.khk@mail.ru" target="_self">kam.khk@mail.ru</a></dd>
+                    <dd style="text-align: right"><a href="mailto:marketing@kambread.ru" target="_self">marketing@kambread.ru</a></dd>
+                    <dt>Отдел сбыта<dt>
+                    <dd style="text-align: right"><a href="mailto:expedition@kambread.ru" target="_self">expedition@kambread.ru</a></dd>
                     <dt>Web-master</dt>
-                    <dd><a href="mailto:support@kambread.ru" target="_self">support@kambread.ru</a></dd>
+                    <dd style="text-align: right"><a href="mailto:support@kambread.ru" target="_self">support@kambread.ru</a></dd>
                 </dl>
             </div>
         </div>

@@ -1,5 +1,4 @@
 <?php
-
 namespace frontend\widgets;
 
 use common\models\LoginForm;
