@@ -65,7 +65,7 @@ use frontend\components\Common;
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <h3>О компании</h3>
-            <p class="text-justify" style="text-indent: 30px; margin-bottom: 5px;">
+            <p class="text-left" style="text-indent: 30px; margin-bottom: 5px;">
                 Камышинский хлебокомбинат - ведущий производитель хлеба и хлебобулочных изделий в Камышинском районе.
             </p>
             <p style="text-indent: 30px; margin-bottom: 5px;">
