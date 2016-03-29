@@ -58,7 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="col-lg-12 col-sm-6">
                     <div class="property-info">
                         <h6><span class="glyphicon glyphicon-ruble"></span> Стоимость</h6>
-                        <p class="price">₽ <?=$model->price ?></p>
+                        <p class="price"><?= $model->price ?> &#8381;</p>
                         <h6><span class="glyphicon glyphicon-stats"></span> Вес</h6>
                         <p class="price">г <?=$model->weight ?></p>
                     </div>

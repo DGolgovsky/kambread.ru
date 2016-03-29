@@ -1,6 +1,6 @@
 <?php
 use frontend\components\Common;
-use yii\helpers\Html;
+
 ?>
 <div class="">
     <div id="slider" class="sl-slider-wrapper">
@@ -13,7 +13,7 @@ use yii\helpers\Html;
                     <blockquote>
                         <?php $row['description'] = preg_replace("(\r\n|\n|\r)", "<BR/>", $row['description']); ?>
                         <p><?= Common::substr($row['description'], 0, 150) ?></p>
-                        <cite>₽ <?=$row['price'] ?></cite>
+                        <cite><?= $row['price'] ?> &#8381;</cite>
                     </blockquote>
                 </div>
             </div>
@@ -51,7 +51,7 @@ use yii\helpers\Html;
                         </div>
                         <h4><a href="<?=Common::getUrlProduct($row) ?>"><?= Common::getTitle($row) ?></a></h4>
                         <h4 class="text-center">
-                            <p style="text-indent: 0px;" class="price">Цена: ₽<?=$row['price'] ?></p>
+                            <p style="text-indent: 0px;" class="price">Цена: <?= $row['price'] ?> &#8381;</p>
                             <p style="text-indent: 0px;" class="price">Вес: <?=$row['weight'] ?> г</p>
                         </h4>
                         <a class="btn btn-primary" href="<?= Common::getUrlProduct($row) ?>">Подробнее</a>

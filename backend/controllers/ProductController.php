@@ -5,16 +5,13 @@ namespace backend\controllers;
 use common\controllers\AuthController;
 use common\models\Product;
 use common\models\search\ProductSearch;
-use common\models\User;
-use yii\data\ActiveDataProvider;
-use yii\filters\auth\HttpBasicAuth;
-use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 
 class ProductController extends AuthController
 {
     public function behaviors()
     {
+        /*
         return ArrayHelper::merge(parent::behaviors(), [
             'authenticator' => [
                 'class' => HttpBasicAuth::className(),
@@ -26,6 +23,7 @@ class ProductController extends AuthController
                 }
             ],
         ]);
+        */
     }
 
     public function actionIndex()

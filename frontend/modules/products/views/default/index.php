@@ -16,10 +16,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="row">
                     <div class="col-lg-12">
                         <?=Html::dropDownList('price', $request->get('price'),[
-                            '0-10' => '₽0 - ₽10',
-                            '11-20' => '₽11 - ₽20',
-                            '21-30' => '₽21 - ₽30',
-                            '31' =>'₽31 - выше',
+                            '0-10' => '0₽ - 10₽',
+                            '11-20' => '11₽ - 20₽',
+                            '21-30' => '21₽ - 30₽',
+                            '31' => '31₽ - выше',
                         ],['class' => 'form-control', 'prompt' => 'Цена']) ?>
                     </div>
                 </div>
@@ -58,7 +58,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
                             <h4><a href="<?=$url ?>" ><?=\frontend\components\Common::getTitle($row) ?></a></h4>
                             <h4 class="text-center"><p style="text-indent: 0px;" class="price text-center">
-                                    Цена: ₽<?=$row['price'] ?></p><p style="text-indent: 0px;">
+                                    Цена: <?= $row['price'] ?> &#8381;</p>
+                                <p style="text-indent: 0px;">
                                      Вес: <?=$row['weight'] ?> г
                                 </p>
                             </h4>
