@@ -20,7 +20,7 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
 
     public $css = [
-        'source/style.min.css',
+        'source/style.css',
         'source/owl-carousel/owl.carousel.min.css',
         'source/owl-carousel/owl.theme.min.css',
         'source/slitslider/css/style.min.css',

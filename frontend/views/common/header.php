@@ -10,7 +10,7 @@ use yii\helpers\Html;
 
 <!-- views/common/Header navbar Starts -->
 <div class="navbar-wrapper">
-    <div class="navbar-inverse" role="navigation">
+    <div class="navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -19,28 +19,29 @@ use yii\helpers\Html;
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/index">Камышинский хлебокомбинат</a>
+                <a class="navbar-brand " href="/">Камышинский хлебокомбинат</a>
             </div>
             <!-- Nav Starts -->
             <div class="navbar-collapse collapse">
                 <?php
                 NavBar::begin([
-                    'brandLabel' => '<a href="/index" ><img src="/images/bread_logo_new_gray.png" height="50px" alt="Главная"></a>',
+                    'brandLabel' => '<a href="/" ><img src="/images/bread_logo_new_circle.png" height="50px" alt="Главная"></a>',
                     'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
                         'class' => 'navbar-inverse navbar-fixed-top',
+                        'id' => 'header',
                     ],
                 ]);
-                $menuItems[] = ['label' => 'Главная', 'url' => ['/site/index']];
+                $menuItems[] = ['label' => 'Главная', 'url' => ['/']];
                 $menuItems[] = ['label' => 'Продукция', 'url' => ['/products']];
                 $menuItems[] = ['label' => 'Информация',
                     'items' => [
                         ['label' => 'О Компании',
                             'url' => ['/site/about']],
-                        ['label' => 'Контакты',
-                            'url' => ['/site/contact']],
                         ['label' => 'Партнёрам',
                             'url' => ['/site/partners']],
+                        ['label' => 'Контакты',
+                            'url' => ['/site/contact']],
                         ['label' => 'Вакансии',
                             'url' => ['/vacancy']],
                         ['label' => 'Новости',
@@ -75,7 +76,10 @@ use yii\helpers\Html;
                     $menuItems[] = ['label' => 'Выход (' . Yii::$app->user->identity->username . ')',  'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']];
                 }
                 echo Nav::widget([
-                    'options' => ['class' => 'navbar-inverse navbar-nav navbar-right'],
+                    'options' => [
+                        'class' => 'navbar-inverse navbar-nav navbar-right',
+                        'id' => 'header'
+                    ],
                     'items' => $menuItems,
                 ]);
                 NavBar::end();

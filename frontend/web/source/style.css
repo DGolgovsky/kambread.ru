@@ -1,3 +1,11 @@
+.advantages{line-height:1.3;padding-bottom:93px}.advantages .title{padding-top:85px;margin-bottom:20px}.advantages .row{margin-bottom:-17px;padding-top:49px;font-size:18px;color:#684f40}.advantages .row img{padding-bottom:14px}
+.advantages{padding-bottom:20px}.advantages .col-xs-12{padding-bottom:25px}.advantages .row{padding-top:20px}
+.advantages .title{padding-top:0}
+
+#header {
+    background: url('../images/header_bg.jpg') repeat-x top;
+}
+
 @font-face {
     font-family: 'din';
     src: url('fonts/din.eot')/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/assets/fonts/din.eot*/
@@ -15,8 +23,9 @@ body {
     padding-top: 50px;
     color: #555;
     font: normal 14px/22px "Helvetica Neue, Helvetica, sans-serif";
-    background: url(../images/bgmain.png)/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/images/bgmain.png*/
-    #eee;
+    background: url(../images/body_bg.jpg) #eee;/* bgmain.png)/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/images/bgmain.png*/
+
+    /*background: url('../images/main_bg.jpg') 50% top no-repeat #fcf5d9;*/
 }
 
 h1,
@@ -37,10 +46,55 @@ h1 {
     color: #fff;
 }
 
+
+h1.lined span{
+    position: relative;
+}
+h1.lined span i{
+    position: absolute;
+    top: 19px;
+    right: -312px;
+    display: block;
+    width: 285px;
+    height: 5px;
+    font-size: 0;
+    background: url('../images/h_r.png') no-repeat;
+}
+h1.lined span i:first-child{
+    right: auto;
+    left: -312px;
+    background: url('../images/h_l.png') no-repeat;
+}
 h2 {
     font-size: 35px;
     letter-spacing: -1px;
     margin-bottom: 20px;
+}
+
+h2.lined{
+    text-align: center;
+    font-size: 30px;
+    line-height: 30px;
+    font-family: 'Appetite','Philosopher','Arial';
+}
+
+h2.lined span{
+    position: relative;
+}
+h2.lined span i{
+    position: absolute;
+    top: 19px;
+    right: -302px;
+    display: block;
+    width: 285px;
+    height: 5px;
+    font-size: 0;
+    background: url('../images/h_r.png') no-repeat;
+}
+h2.lined span i:first-child{
+    right: auto;
+    left: -302px;
+    background: url('../images/h_l.png') no-repeat;
 }
 
 h3 {
@@ -346,8 +400,7 @@ ul li.active li.active a  {
 /*inside*/
 
 .inside-banner {
-    background: url(../images/bginside.jpg)/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/images/bginside.jpg*/
-    #222;
+    background: url(../images/bginside.jpg) #222;/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/images/bginside.jpg*/
     color: #fff;
     padding: 30px 0;
 }
