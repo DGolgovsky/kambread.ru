@@ -1,6 +1,6 @@
 <?php
 return [
-    'name' => 'ОАО Камышинский хлебокомбинат',
+    'name' => 'АО Камышинский хлебокомбинат',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
         'cache' => [
