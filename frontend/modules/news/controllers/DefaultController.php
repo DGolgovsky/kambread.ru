@@ -26,7 +26,7 @@ class DefaultController extends Controller
 
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount' => $countQuery->count()]);
-        $pages->setPageSize(4);
+        $pages->setPageSize(3);
 
         $model = $query->offset($pages->offset)->limit($pages->limit)->all();
 

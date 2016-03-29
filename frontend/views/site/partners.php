@@ -3,7 +3,7 @@ $this->title = 'Партнёрам';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <style>
-    p {
+    .partners p {
         text-indent: 30px; /* Отступ первой строки в пикселах */
     }
 </style>
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <small>Для начала сотрудничества с нами и заключения договора поставки продукции, сырья или материалов необходимо обратиться в отдел продаж<br>
                 по телефону (84457) 9-39-84 или по e-mail: <a href="mailto:market@kambread.ru" target="_self">market@kambread.ru</a></small>
             </h2>
-            <p class="lead"><small>Необходимо предоставить заверенные копии и оригиналы следующих документов:</small></p>
+            <p class="lead partners"><small>Необходимо предоставить заверенные копии и оригиналы следующих документов:</small></p>
             <h3 class="text-justify"><small>Юридическим лицам:</small></h3>
             <ul>
                 <li>Свидетельство ИНН</li>

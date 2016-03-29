@@ -4,8 +4,8 @@ use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 AppAsset::register($this);
+Yii::$app->language = 'ru-RU';
 ?>
-
 <?php $this->beginPage(); ?>
 <!DOCTYPE html>
 <html lang="<?= \Yii::$app->language ?>">
@@ -48,4 +48,3 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage(); ?>
-
