@@ -1,7 +1,7 @@
 <?php
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
-use yii\helpers\Html;
+
 ?>
 
 <!--[if lt IE 7]>
@@ -19,13 +19,13 @@ use yii\helpers\Html;
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/index">Камышинский хлебокомбинат</a>
+                <a class="navbar-brand" href="/">Камышинский хлебокомбинат</a>
             </div>
             <!-- Nav Starts -->
             <div class="navbar-collapse collapse">
                 <?php
                 NavBar::begin([
-                    'brandLabel' => '<a href="/index" ><img src="/images/bread_logo_new_gray.png" height="50px" alt="Главная"></a>',
+                    'brandLabel' => '<a href="/" ><img src="/images/bread_logo_new_gray.png" height="50px" alt="Главная"></a>',
                     'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
                         'class' => 'navbar-inverse navbar-fixed-top',
