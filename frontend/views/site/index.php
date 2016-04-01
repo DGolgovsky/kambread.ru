@@ -16,6 +16,50 @@ use frontend\components\Common;
     </div>
 </div>
 
+
+    <h2 class="title" style="margin-left: 50px;">
+        <div id="bl-new-production">
+            <h2 class="lined" style="color: #964812; margin-bottom: 30px;">
+                <span>АО "Камышинский хлебокомбинат"
+                    <i></i><i></i>
+                </span>
+            </h2>
+        </div>
+    </h2>
+    <div class="">
+        <div id="slider" class="sl-slider-wrapper">
+            <div class="sl-slider">
+                <?php foreach($result_general as $row): ?>
+                    <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                        <div class="sl-slide-inner">
+                            <div class="bg-img" style="background-image: url('<?= Common::getImageProduct($row)[0] ?>')"></div>
+                            <h2><a href="<?= Common::getUrlProduct($row) ?>"><?= Common::getTitle($row) ?></a></h2>
+                            <blockquote>
+                                <?php $row['description'] = preg_replace("(\r\n|\n|\r)", "<BR/>", $row['description']); ?>
+                                <p><?= Common::substr($row['description'], 0, 150) ?></p>
+                                <cite><?= $row['price'] ?> &#8381;</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <!-- /sl-slider -->
+            <nav id="nav-dots" class="nav-dots">
+                <?php if($count_general >= 1): ?>
+                    <span class="nav-dot-current"></span>
+                <?php endif; ?>
+                <?php
+                if($count_general > 1):
+                    foreach(range(2,$count_general) as $line):
+                        ?>
+                        <span></span>
+                        <?php
+                    endforeach;
+                endif;
+                ?>
+            </nav>
+        </div><!-- /slider-wrapper -->
+    </div>
 <div class="container">
     <section class="advantages container text-center">
         <header>
