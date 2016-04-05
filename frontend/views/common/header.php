@@ -1,7 +1,7 @@
 <?php
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
-use yii\helpers\Html;
+
 ?>
 
 <!--[if lt IE 7]>
@@ -11,8 +11,7 @@ use yii\helpers\Html;
 <!-- views/common/Header navbar Starts -->
 <div class="navbar-wrapper">
     <div class="navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
+        <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -28,7 +27,7 @@ use yii\helpers\Html;
                     'brandLabel' => '<a href="/" ><img src="/images/bread_logo_new_circle.png" height="50px" alt="Главная"></a>',
                     'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
-                        'class' => 'navbar-inverse navbar-fixed-top',
+                        'class' => 'navbar-inverse navbar-nav navbar-fixed-top',
                         'id' => 'header',
                     ],
                 ]);
@@ -77,8 +76,8 @@ use yii\helpers\Html;
                 }
                 echo Nav::widget([
                     'options' => [
-                        'class' => 'navbar-inverse navbar-nav navbar-right',
-                        'id' => 'header'
+                        'class' => 'nav navbar-nav navbar-right',
+                        /*'id' => 'header'*/
                     ],
                     'items' => $menuItems,
                 ]);
@@ -86,7 +85,6 @@ use yii\helpers\Html;
                 ?>
 
             </div>
-            <!-- #Nav Ends -->
-        </div>
+        <!-- #Nav Ends -->
     </div>
 </div>

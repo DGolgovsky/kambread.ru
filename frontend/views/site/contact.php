@@ -4,13 +4,11 @@
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\ContactForm */
 
-use yii\helpers\Html;
-
 $this->title = 'Контакты';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="row contact">
+<div class="row">
 	<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
 		<h3><span class="glyphicon glyphicon-phone"></span> Связаться с нами</h3>
 		</hr>
@@ -50,13 +48,12 @@ $this->params['breadcrumbs'][] = $this->title;
 			<?=$form->field($model,'name')->textInput(['placeholder' => 'Ваше имя'])->label(false) ?>
 			<?=$form->field($model,'email')->textInput(['placeholder' => 'Ваш e-mail'])->label(false) ?>
 			<?=$form->field($model,'subject')->textInput(['placeholder' => 'Тема'])->label(false) ?>
-			<?=$form->field($model,'body')->textArea(['rows' => 3, 'placeholder' => 'Что Вы думаете?'])->label(false) ?>
+			<?=$form->field($model,'body')->textArea(['rows' => 5, 'placeholder' => 'Что Вы думаете?'])->label(false) ?>
 			<?=\yii\helpers\Html::submitButton('Отправить',['class' => 'btn btn-success']) ?>
 			<?php \yii\bootstrap\ActiveForm::end(); ?>
 		</div>
 	</div>
 </div>
-
-<div class="well">
+<div class="row well">
 	<iframe width="100%" height="350" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2558.8943616045126!2d45.4038037114014!3d50.10698423255289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1458632244816" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 </div>
