@@ -1,7 +1,6 @@
 <?php
 namespace frontend\components;
 
-use common\models\Subscribe;
 use Yii;
 use yii\base\Component;
 use yii\helpers\BaseFileHelper;
@@ -11,11 +10,12 @@ class Common extends Component
 {
 	const EVENT_NOTIFY = 'notify_admin';
 
-	public function sendMail($event = '', $name = '', $email = '', $subject = '', $body = '')
+	public function sendMail($event = '', $name = '', $email = '', $emailTo = '', $subject = '', $body = '')
 	{
+		$body = preg_replace("(\r\n|\n|\r)", "<br/>", $body);
 		$message = Yii::$app->mailer->compose();
         $message->setFrom(['web.notify@kambread.ru' => $name]);
-		$message->setTo([Yii::$app->params['adminEmail'] => $event])
+		$message->setTo([$emailTo => $event])
 			->setSubject($subject)
 			->setReplyTo($email)
 			->setHtmlBody($body)

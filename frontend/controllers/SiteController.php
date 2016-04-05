@@ -1,21 +1,22 @@
 <?php
 namespace frontend\controllers;
 
-use yii;
 use common\models\LoginForm;
+use frontend\components\Common;
+use frontend\models\ContactForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
-use frontend\models\ContactForm;
+use yii;
 use yii\base\InvalidParamException;
-use yii\widgets\ActiveForm;
+use yii\db\Query;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\Response;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use frontend\components\Common;
-use yii\db\Query;
+use yii\widgets\ActiveForm;
+
 /**
  * Site controller
  */
@@ -126,9 +127,9 @@ class SiteController extends Controller
 
     public function actionEvent()
     {
-        $component = \Yii::$app->common; //new Common();
+        $component = Yii::$app->common; //new Common();
         $component->on(Common::EVENT_NOTIFY,[$component,'notifyAdmin']);
-        $component->sendMail("[Notify admin]",$component->name,$component->email,$component->subject,$component->body);
+        $component->sendMail("[Notify admin]",$component->name,$component->email, Yii::$app->params['adminEmail'],$component->subject,$component->body);
         $component->off(Common::EVENT_NOTIFY,[$component,'notifyAdmin']);
     }
 
@@ -139,7 +140,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!\Yii::$app->user->isGuest) {
+        if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
@@ -182,7 +183,7 @@ class SiteController extends Controller
         }
 
         if ($model->load(Yii::$app->request->post())) {
-            if (Yii::$app->common->sendMail('[Отзыв]', $model->name, $model->email, $model->subject, $model->body)) {
+            if (Yii::$app->common->sendMail('[Отзыв]', $model->name, $model->email, Yii::$app->params['marketEmail'], $model->subject, $model->body)) {
                 Yii::$app->session->setFlash('success', 'Сообщение успешно отправлено');
             } else {
                 Yii::$app->session->setFlash('error', 'Не удалось отправить. Попробуйте позже');

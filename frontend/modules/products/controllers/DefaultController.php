@@ -2,13 +2,12 @@
 namespace app\modules\products\controllers;
 
 use common\models\Product;
-use frontend\components\Common;
 use frontend\filters\FilterProduct;
-//use frontend\models\Image;
 use yii\base\DynamicModel;
 use yii\data\Pagination;
 use yii\web\Controller;
-use yii\db\Query;
+
+//use frontend\models\Image;
 
 //use yii\web\Response;
 //use yii\widgets\ActiveForm;
@@ -64,7 +63,6 @@ class DefaultController extends Controller
 		return $this->render("index", ['model' => $model, 'pages' => $pages, 'request' => $request]);
 	}
 
-	//TODO add replacer '\n' -> <br>
 	public function actionViewProduct($id)
 	{
 		$model = Product::findOne($id);
@@ -78,7 +76,7 @@ class DefaultController extends Controller
 
 		if(\Yii::$app->request->isPost) {
 			if ($model_feedback->load(\Yii::$app->request->post()) && $model_feedback->validate()) {
-				\Yii::$app->common->sendMail('[Продукция]',$model_feedback->name, $model_feedback->email, "По ".$model->name,$model_feedback->text);
+				\Yii::$app->common->sendMail('[Продукция]',$model_feedback->name, $model_feedback->email, \Yii::$app->params['marketEmail'], "По ".$model->name,$model_feedback->text);
 				\Yii::$app->session->setFlash('success', 'Сообщение успешно отправлено');
 				return $this->refresh();
 			}
