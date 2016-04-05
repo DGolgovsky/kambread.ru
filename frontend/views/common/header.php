@@ -27,8 +27,8 @@ use yii\bootstrap\NavBar;
                     'brandLabel' => '<a href="/" ><img src="/images/bread_logo_new_circle.png" height="50px" alt="Главная"></a>',
                     'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
-                        'class' => 'navbar-inverse navbar-nav navbar-fixed-top',
-                        'id' => 'header',
+                        'class' => 'navbar-inverse navbar-fixed-top',
+                        /*'id' => 'header',*/
                     ],
                 ]);
                 $menuItems[] = ['label' => 'Главная', 'url' => ['/']];
@@ -76,7 +76,7 @@ use yii\bootstrap\NavBar;
                 }
                 echo Nav::widget([
                     'options' => [
-                        'class' => 'nav navbar-nav navbar-right',
+                        'class' => 'navbar-nav navbar-right',
                         /*'id' => 'header'*/
                     ],
                     'items' => $menuItems,

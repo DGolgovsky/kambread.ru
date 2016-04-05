@@ -44,12 +44,22 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'appetite_new';
+    src: url('fonts/appetite_new.eot')/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/assets/fonts/din.eot*/
+;
+    format('embedded-opentype'), url('fonts/appetite_new.woff')/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/assets/fonts/din.woff*/
+    format('woff'), url('fonts/appetite_new.ttf')/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/assets/fonts/din.ttf*/
+    format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    padding-top: 50px;
+    padding-top: 49px;
     color: #555;
     font: normal 14px/22px "Helvetica Neue, Helvetica, sans-serif";
-    background: url(../images/body_bg.jpg) #eee;/* bgmain.png)/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/images/bgmain.png*/
-
+    background: url(../images/bgmain.png) #eee; /*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/images/bgmain.png*/
     /*background: url('../images/main_bg.jpg') 50% top no-repeat #fcf5d9;*/
 }
 
@@ -59,7 +69,7 @@ h3,
 h4,
 h5 {
     font-weight: normal;
-    font-family: din;
+    font-family: appetite_new;
     margin: 0;
     padding: 0;
     color: #000
@@ -71,25 +81,6 @@ h1 {
     color: #fff;
 }
 
-
-h1.lined span{
-    position: relative;
-}
-h1.lined span i{
-    position: absolute;
-    top: 19px;
-    right: -312px;
-    display: block;
-    width: 285px;
-    height: 5px;
-    font-size: 0;
-    background: url('../images/h_r.png') no-repeat;
-}
-h1.lined span i:first-child{
-    right: auto;
-    left: -312px;
-    background: url('../images/h_l.png') no-repeat;
-}
 h2 {
     font-size: 35px;
     letter-spacing: -1px;
@@ -98,9 +89,10 @@ h2 {
 
 h2.lined{
     text-align: center;
-    font-size: 30px;
+    vertical-align: middle;
+    font-size: 32px;
     line-height: 30px;
-    font-family: 'Appetite','Philosopher','Arial';
+    font-family: appetite_new, din, 'Philosopher','Arial';
 }
 
 h2.lined span{
@@ -194,7 +186,7 @@ a.more {
 }
 
 a.more:hover {
-    background: #64a30a;
+    background: #72b70f;
     text-decoration: none;
 }
 
@@ -204,7 +196,7 @@ table {
 
 .btn {
     border-radius: 5px;
-    font-family: din;
+    font-family: appetite_new;
     outline: none;
 }
 
@@ -253,7 +245,7 @@ table {
 
 .header ul li a {
     font-size: 19px;
-    font-family: din;
+    font-family: appetite_new;
     text-transform: uppercase;
 }
 
@@ -266,11 +258,14 @@ table {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-family: din;
+    font-family: appetite_new, din, 'Philosopher','Arial';
+    color: #c0a16b;
     text-transform: uppercase;
+
 }
 
 .navbar-inverse .navbar-nav > .active > a,
@@ -518,7 +513,7 @@ ul li.active li.active a  {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-    background-color: #72b70f;
+    background-color: #b79e1d;
     border-radius: 0;
     color: #fff;
     border: none;
