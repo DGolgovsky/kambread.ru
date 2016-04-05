@@ -25,7 +25,7 @@ use yii\bootstrap\NavBar;
             <div class="navbar-collapse collapse">
                 <?php
                 NavBar::begin([
-                    'brandLabel' => '<a href="/" ><img src="/images/bread_logo_new_gray.png" height="50px" alt="Главная"></a>',
+                    'brandLabel' => '<a href="/" ><img src="/images/bread_logo_new_circle.png" height="50px" alt="Главная"></a>',
                     'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
                         'class' => 'navbar-inverse navbar-fixed-top',
