@@ -15,7 +15,6 @@ if (Yii::$app->controller->action->id === 'login') {
         ['content' => $content]
     );
 } else {
-
     if (class_exists('backend\assets\AppAsset')) {
         backend\assets\AppAsset::register($this);
     } else {
@@ -39,7 +38,6 @@ if (Yii::$app->controller->action->id === 'login') {
     <body class="hold-transition skin-blue sidebar-mini">
     <?php $this->beginBody() ?>
     <div class="wrapper">
-
         <?= $this->render(
             'header.php',
             ['directoryAsset' => $directoryAsset]
@@ -53,9 +51,9 @@ if (Yii::$app->controller->action->id === 'login') {
 
         <?= $this->render(
             'content.php',
-            ['content' => $content, 'directoryAsset' => $directoryAsset]
+            ['content' => $content,
+                'directoryAsset' => $directoryAsset]
         ) ?>
-
     </div>
 
     <?php $this->endBody() ?>
