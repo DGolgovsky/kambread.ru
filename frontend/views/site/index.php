@@ -49,7 +49,7 @@ use frontend\components\Common;
                             <img src="<?=Common::getImageProduct($row)[0] ?>" class="img-responsive" alt="<?=Common::getTitle($row) ?>">
                             <div class="status <?=($row['new']) ? 'new' : 'recommend' ?>"><?= Common::getTypeProduct($row) ?></div>
                         </div>
-                        <h4><a href="<?=Common::getUrlProduct($row) ?>"><?= Common::getTitle($row) ?></a></h4>
+                        <h4><a href="<?=Common::getUrlProduct($row) ?>"><?= \frontend\components\Common::substr(Common::getTitle($row), 0 ,26) ?></a></h4>
                         <h4 class="text-center">
                             <p style="text-indent: 0px;" class="price">Цена: <?= $row['price'] ?> &#8381;</p>
                             <p style="text-indent: 0px;" class="price">Вес: <?=$row['weight'] ?> г</p>

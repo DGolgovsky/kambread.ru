@@ -86,7 +86,7 @@ class Product extends \yii\db\ActiveRecord
 			'recommend' => 'Рекомендация',
 			'created_at' => 'Создано',
 			'updated_at' => 'Изменено',
-			'user.name' => 'Добавлено',
+			'user.name' => 'Пользователь',
 		];
 	}
 
