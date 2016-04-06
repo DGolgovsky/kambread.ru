@@ -35,9 +35,9 @@ use yii\bootstrap\Nav;
                 'items' => [
                     '<li class="header">Меню</li>',
                     '<li class="active treeview">',
-                    ['label' => '<i class="fa fa-pie-chart"></i> <span>Пользователи</span>', 'url' => ['/user']],
-                    ['label' => '<i class="fa fa-table"></i> <span>Продукция</span>', 'url' => ['/product']],
-                    ['label' => '<i class="fa fa-edit"></i> <span>Новости</span>', 'url' => ['/news']],
+                    ['label' => '<i class="fa fa-pie-chart"></i> <span>Пользователи</span>', 'url' => ['/user/index?sort=id']],
+                    ['label' => '<i class="fa fa-table"></i> <span>Продукция</span>', 'url' => ['/product/index?sort=idproduct']],
+                    ['label' => '<i class="fa fa-edit"></i> <span>Новости</span>', 'url' => ['/news/index?sort=idnews']],
                     ['label' => '<i class="fa fa-file-code-o"></i> <span>Gii</span>', 'url' => ['/gii']],
                     ['label' => '<i class="fa fa-dashboard"></i> <span>Debug</span>', 'url' => ['/debug']],
                     '</li>',
