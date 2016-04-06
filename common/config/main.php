@@ -14,12 +14,6 @@ return [
             'enablePrettyUrl' => true,
 //            'suffix' => '.do',
             'rules' => [
-//                '<alias:contact|about>' => '/site/<alias>',
-//                '<alias:product>/<id:\w+>' => 'main/<alias>',
-//                '<controller:\w+>/<id:\w+>' => '<controller>',
-//                '<controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>',
-//               '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-//                '<view:[a-zA-Z0-9-]+>' => 'site/<view>',
                 '<alias:(about|contact|login|signup|partners|index|disclosure|mail)>' => 'site/<alias>',
                 '<alias:(/site/index)>' => '/',
 
