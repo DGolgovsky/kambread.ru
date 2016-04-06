@@ -6,8 +6,6 @@ $params = array_merge(
     require(__DIR__ . '/params-local.php')
 );
 
-\Yii::setAlias('theme_view', '@frontend/themes/product/views');
-
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
@@ -25,13 +23,7 @@ return [
                 ],
             ],
         ],
-        'view' => [
-            'theme' => [
-                'class' => 'frontend\themes\product\Theme',
-                'basePath' => '@app/',
-                'baseUrl'  => '@web/',
-            ],
-        ],*/
+        */
         'common' => [
             'class' => 'frontend\components\Common',
         ],
@@ -64,7 +56,7 @@ return [
                     'cabinet/default',
                     'cabinet/news',
                     'cabinet/product',
-                    'cabinet/vacancy'
+                    'cabinet/vacancy',
                 ],
                 'allow' => false,
                 'roles' => ['?'],
