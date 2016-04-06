@@ -1,4 +1,5 @@
 # server logs
+/admin
 /logs
 /frontend/web/index.html
 
