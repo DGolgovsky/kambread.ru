@@ -11,7 +11,7 @@ Yii::$app->language = 'ru-RU';
     <meta charset="<?= \Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode('Камышинский хлебокомбинат') ?></title>
+    <title><?= Html::encode('АО "Камышинский хлебокомбинат" - официальный сайт компании') ?></title>
     <?php $this->head(); ?>
 </head>
 <body>
