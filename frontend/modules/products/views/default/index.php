@@ -53,15 +53,12 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="properties">
                             <div class="image-holder">
                                 <img src="<?=\frontend\components\Common::getImageProduct($row)[0] ?>"  class="img-responsive" alt='properties'>
-                                <div class="status <?=($row['new']) ? 'new' : 'recommend' ?>"><?=\frontend\components\Common::getTypeProduct($row) ?>
-                                </div>
+                                <div class="status <?=($row['new']) ? 'new' : 'recommend' ?>"><?=\frontend\components\Common::getTypeProduct($row) ?></div>
                             </div>
-                            <h4><a href="<?=$url ?>" ><?=\frontend\components\Common::getS_Title($row) ?></a></h4>
-                            <h4 class="text-center"><p style="text-indent: 0px;" class="price text-center">
-                                    Цена: <?= $row['price'] ?> &#8381;</p>
-                                <p style="text-indent: 0px;">
-                                     Вес: <?=$row['weight'] ?> г
-                                </p>
+                            <h4 style="height: 42px;"><a href="<?=$url ?>" ><?=\frontend\components\Common::getS_Title($row) ?></a></h4>
+                            <h4 class="text-center">
+                                <p style="text-indent: 0px;" class="price text-center">Цена: <?= $row['price'] ?> &#8381;</p>
+                                <p style="text-indent: 0px;">Вес: <?=$row['weight'] ?> г</p>
                             </h4>
                             <a class="btn btn-primary" href="<?=$url ?>" >Детальнее</a>
                         </div>
