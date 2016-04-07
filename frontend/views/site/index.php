@@ -120,8 +120,8 @@ use frontend\components\Common;
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <h3>О компании</h3>
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+            <h3 class="lined" style="color: #964812; margin-bottom: 30px;">О компании</h3>
             <p class="text-left" style="text-indent: 30px; margin-bottom: 5px;">
                 Камышинский хлебокомбинат - ведущий производитель хлеба и хлебобулочных изделий в Камышинском районе.
             </p>
@@ -139,8 +139,32 @@ use frontend\components\Common;
             </ul>
             <a href="about" >Подробнее о нас</a>
         </div>
-        <?php
-        echo \frontend\widgets\NewsWidget::widget();
-        ?>
+        <?php echo \frontend\widgets\NewsWidget::widget(); ?>
     </div>
+    <!-- Our Clients -->
+    <div class="section">
+        <div class="section-title">
+            <h3 class="lined text-center" style="color: #964812; margin-bottom: 30px;">С нами сотрудничают</h3>
+        </div>
+        <div class="clients-logo-wrapper text-center row">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://magnit-info.ru/" target="_blank"><img src="images/about/logos/logo-1.png" class="img-responsive center-block" width="270px" alt="Магнит"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://pokupochka.ru/" target="_blank"><img src="images/about/logos/logo-2.png" class="img-responsive center-block" width="270px" alt="Покупочка"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.radezh.ru/" target="_blank"><img src="images/about/logos/logo-4.png" class="img-responsive center-block" width="270px" alt="Радеж"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.okmarket.ru/" target="_blank"><img src="images/about/logos/logo-6.png" class="img-responsive center-block" width="270px" alt="О`КЕЙ"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://pyaterochka.ru/" target="_blank"><img src="images/about/logos/logo-7.png" class="img-responsive center-block" width="270px" alt="Пятёрочка"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.lenta.com/" target="_blank"><img src="images/about/logos/logo-5.png" class="img-responsive center-block" width="270px" alt="Лента"></a></div>
+
+        </div>
+        <br>
+        <div class="clients-logo-wrapper text-center row">
+            <div class="col-lg-2 col-md-1 col-sm-2 col-xs-2"><a href="http://tkman.ru/" target="_blank"><img src="images/about/logos/logo-3.png" class="img-responsive center-block" width="270px" alt="МАН"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+        </div>
+    </div>
+    <!-- End Our Clients -->
 </div>
+<div class="spacer"></div>
