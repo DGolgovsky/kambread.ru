@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
     </div>
     <div class="col-lg-9 col-sm-8 ">
-        <h2><?=$product_title ?></h2>
+        <h3><?=$product_title ?></h3>
         <div class="row">
             <div class="col-lg-8">
                 <div class="property-images">
@@ -31,13 +31,13 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="carousel-inner">
                             <!-- Item 1 -->
                             <div class="item active">
-                                <img src="<?=\frontend\components\Common::getImageProduct($model)[0] ?>"  class="properties" alt="<?=$product_title ?>" />
+                                <img src="<?=\frontend\components\Common::getImageProduct($model)[0] ?>"  class="properties" alt='<?=$product_title ?>' />
                             </div>
                             <?php
                             foreach($images as $image):
                                 ?>
                                 <div class="item">
-                                    <img src="<?=$image ?>"  class="properties" alt="<?=$product_title ?>" />
+                                    <img src="<?=$image ?>" class="properties" alt='<?=$product_title ?>' />
                                 </div>
                                 <?php
                             endforeach;

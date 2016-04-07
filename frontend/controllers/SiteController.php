@@ -86,7 +86,7 @@ class SiteController extends Controller
         $this->layout = "landing";
 
         $query = new Query();
-        $query_product = $query->from('product')->groupBy('idproduct')->orderBy('idproduct desc');
+        $query_product = $query->from('product')->groupBy('idproduct')->orderBy('idproduct desc')->where('status=true');
         $command = $query_product->limit(5);
         $result_general = $command->all();
         $count_general = $command->count();
@@ -94,18 +94,19 @@ class SiteController extends Controller
         $featured = $query_product
             ->where("new=true")
             ->orWhere("recommend=true")
+            ->andWhere('status=true')
             ->limit(15)->all();
 
-        $recommend_query  = $query_product->where("recommend=true")->limit(5);
+        /*$recommend_query  = $query_product->where("recommend=true")->limit(5);
         $recommend = $recommend_query->all();
-        $recommend_count = $recommend_query->count();
+        $recommend_count = $recommend_query->count();*/
         
         return $this->render('index',[
             'result_general' => $result_general,
             'count_general' => $count_general,
-            'featured' => $featured,
+            'featured' => $featured/*,
             'recommend' => $recommend,
-            'recommend_count' => $recommend_count
+            'recommend_count' => $recommend_count*/
         ]);
         //return $this->redirect('/main');
     }

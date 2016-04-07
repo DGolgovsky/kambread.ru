@@ -1,9 +1,9 @@
 <?php
-$this->title = 'Изображения';
+$this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabinet']];
 $this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->idproduct]];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => 'Просмотр', 'url' => ['view', 'id' => $model->idproduct]];
+$this->params['breadcrumbs'][] = 'Изображения';
 ?>
 <h2 ><small><p class="text-info">ВНИМАНИЕ! Не загружайте изображения большого размера!</p></small></h2>
 <div class="container">

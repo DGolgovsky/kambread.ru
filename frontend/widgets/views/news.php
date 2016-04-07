@@ -27,9 +27,11 @@
                 ?>
                 <div class="item <?=($i == 0) ? 'active' : '' ?>">
                     <div class="row">
-                        <h5 style="text-indent: 20px;"><a href="<?=\frontend\components\Common::getUrlNews($rec) ?>" ><?=\frontend\components\Common::getTitle($rec) ?></a></h5>
+                        <h5 style="text-indent: 20px;">
+                            <a href="<?=\frontend\components\Common::getUrlNews($rec) ?>" ><?=\frontend\components\Common::getTitle($rec) ?></a>
+                        </h5>
                         <div class="pull-left bg-default" style="width: 20em; padding: 20px;">
-                            <img src="<?=\frontend\components\Common::getImageNews($rec)[0] ?>" class="img-responsive" alt="properties" />
+                            <img src="<?=\frontend\components\Common::getImageNews($rec)[0] ?>" class="img-responsive news" alt="properties" />
                             <a href="<?=\frontend\components\Common::getUrlNews($rec) ?>" class="more">Подробнее</a>
                         </div>
 

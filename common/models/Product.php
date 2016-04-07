@@ -14,11 +14,13 @@ use yii\behaviors\TimestampBehavior;
  * @property double $weight
  * @property integer $user_id
  * @property string $name
+ * @property string $s_name
  * @property string $general_image
  * @property string $description
- * @property integer $new
+ * @property boolean $new
  * @property string $type
- * @property integer $recommend
+ * @property boolean $recommend
+ * @property boolean $status
  * @property integer $created_at
  * @property integer $updated_at
 **/
@@ -54,10 +56,12 @@ class Product extends \yii\db\ActiveRecord
 	public function rules()
 	{
 		return [
-			[['price', 'name', 'weight'], 'required'],
-			[['idproduct', 'user_id', 'new', 'recommend'], 'integer'],
+			[['price', 's_name', 'name', 'weight'], 'required'],
+			[['idproduct', 'user_id'], 'integer'],
 			[['price', 'weight'], 'double'],
+			[['status', 'new', 'recommend'], 'boolean'],
 			[['description', 'name', 'type'], 'string'],
+			[['s_name'], 'string', 'max' => 30],
 			['idproduct', 'unique', 'targetClass' => '\common\models\Product', 'message' => 'ID не уникален.'],
 			//['general_image', 'file', 'extensions' => ['jpg','png','gif']]
 		];
@@ -76,6 +80,7 @@ class Product extends \yii\db\ActiveRecord
 		return [
 			'idproduct' => 'ID продукта',
 			'name' => 'Наименование',
+			's_name' => 'Кратко',
 			'price' => 'Цена',
 			'weight' => 'Вес',
 			'user_id' => 'ID пользователя',
@@ -84,6 +89,7 @@ class Product extends \yii\db\ActiveRecord
 			'new' => 'Новинка',
 			'type' => 'Тип',
 			'recommend' => 'Рекомендация',
+			'status' => 'Опубликовано',
 			'created_at' => 'Создано',
 			'updated_at' => 'Изменено',
 			'user.name' => 'Добавлено',

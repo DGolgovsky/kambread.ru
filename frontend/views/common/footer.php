@@ -21,9 +21,9 @@ if(Yii::$app->user->isGuest) {
         <div class="row">
             <div class="col-lg-3 col-sm-3 col-xs-12">
                 <h4><span class="glyphicon glyphicon-user"></span> Социальные сети</h4>
-                <a href="http://facebook.com/kambread"><img src="/images/facebook.png"  alt="Facebook"></a>
-                <a href="http://ok.ru/group/52685470564514"><img src="/images/ok.png"  alt="Одноклассники"></a>
-                <a href="http://vk.com/kam.hleb"><img src="/images/vk.png"  alt="ВКонтакте"></a>
+                <a href="http://facebook.com/kambread"><img src="/images/facebook.png" alt='Facebook'></a>
+                <a href="http://ok.ru/group/52685470564514"><img src="/images/ok.png" alt='Одноклассники'></a>
+                <a href="http://vk.com/kam.hleb"><img src="/images/vk.png" alt='ВКонтакте'></a>
             </div>
             <div class="col-lg-3 col-sm-3 col-xs-12">
                 <h4><span class="glyphicon glyphicon-map-marker"></span> Адрес</h4>

@@ -55,14 +55,49 @@
     font-style: normal;
 }
 
+.price {
+    font-family: 'PT Sans', serif;
+}
+
 body {
     padding-top: 49px;
     color: #555;
-    font: normal 14px/22px "Helvetica Neue, Helvetica, sans-serif";
+    font: normal 14px/22px appetite_new, "Helvetica Neue, Helvetica, sans-serif";
     background: url(../images/bgmain.png) #eee; /*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/images/bgmain.png*/
     /*background: url('../images/main_bg.jpg') 50% top no-repeat #fcf5d9;*/
 }
 
+/*240x155*/
+img:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: calc(100% + 10px);
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    border: 2px dotted rgb(200, 200, 200);
+    border-radius: 5px;
+}
+
+img:after {
+    content: "\f127" "Нет изображения";
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    font-family: FontAwesome;
+    color: rgb(100, 100, 100);
+
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+.news img:before {
+    width: auto;
+}
 h1,
 h2,
 h3,
@@ -244,7 +279,7 @@ table {
 }
 
 .header ul li a {
-    font-size: 19px;
+    font-size: 16px;
     font-family: appetite_new;
     text-transform: uppercase;
 }
@@ -258,11 +293,11 @@ table {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-family: appetite_new, din, 'Philosopher','Arial';
+    font-family: 'Helvetica Neue', sans-serif, 'Philosopher','Arial';
     color: #c0a16b;
     text-transform: uppercase;
 

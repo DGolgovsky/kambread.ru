@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
     
     <?php // echo $form->field($model, 'general_image') ?>
 
-    <?php // echo $form->field($model, 'description') ?>
+    <?= $form->field($model, 'description') ?>
     
     <?php // echo $form->field($model, 'new') ?>
     

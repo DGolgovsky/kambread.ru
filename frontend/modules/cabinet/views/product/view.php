@@ -51,11 +51,13 @@ $this->params['breadcrumbs'][] = 'Просмотр';
 		'attributes' => [
 			'idproduct',
 			'name',
+			's_name',
 			'weight',
 			'price',
 			'description:ntext',
 			'new:boolean',
 			'recommend:boolean',
+			'status:boolean',
 			'type:ntext',
 			'user.name',
 			'created_at:date',

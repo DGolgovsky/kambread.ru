@@ -3,27 +3,17 @@ use frontend\components\Common;
 ?>
 <div class="container">
     <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contacts">
-        <h3 class="text-right">
-            <small>
-                <span class="contacts__info"><a href="contact" title="Контакты">Контакты</a></span> <span class="divider">|</span>
-                <span class="contacts__info">Приемная:</span>
-                <span class="contacts__info">(84457) 9-64-64</span> <span class="divider">|</span>
-                <span class="contacts__info">Отдел продаж: (84457) 9-39-84</span>
-            </small>
-        </h3>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contacts">
+            <h3 class="text-right">
+                <small>
+                    <span class="contacts__info"><a href="contact" title="Контакты">Контакты</a></span> <span class="divider">|</span>
+                    <span class="contacts__info">Приемная:</span>
+                    <span class="contacts__info">(84457) 9-64-64</span> <span class="divider">|</span>
+                    <span class="contacts__info">Отдел продаж: (84457) 9-39-84</span>
+                </small>
+            </h3>
+        </div>
     </div>
-    <div class="col-lg-12 col-md-12 col-sm-10 col-xs-10">
-        <h2 class="title" style="margin-left: 50px;">
-            <div id="bl-new-production">
-                <h2 class="lined" style="color: #964812; margin-bottom: 30px;">
-                    <span>АО "Камышинский хлебокомбинат"
-                        <i></i><i></i>
-                    </span>
-                </h2>
-            </div>
-        </h2>
-    </div></div>
 </div>
 <!-- slider-wrapper -->
 <div id="slider" class="sl-slider-wrapper">
@@ -69,51 +59,43 @@ use frontend\components\Common;
         <h2 class="title" style="margin-left: 50px;">
             <div id="bl-new-production">
                 <h2 class="lined" style="color: #964812; margin-bottom: 30px;">
-                    <span>Наши преимущества
-                        <i></i><i></i>
-                    </span>
+                    <span>Наши преимущества<i></i><i></i></span>
                 </h2>
             </div>
         </h2>
         <div class="row">
             <div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
-                        <img src="/images/advantages/advantages-1.png" alt="" class="img-responsive center-block">
-                        C 1956 года<br>на рынке
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
-                        <img src="/images/advantages/advantages-2.png" alt="" class="img-responsive center-block">
-                        Работает<br>более 300 чел
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-                        <img src="/images/advantages/advantages-3.png" alt="" class="img-responsive center-block">
-                        Используем только<br>российское сырье
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-                        <img src="/images/advantages/advantages-4.png" alt="" class="img-responsive center-block">
-                        Всегда свежий<br>хлеб и выпечка
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-                        <img src="/images/advantages/advantages-5.png" alt="" class="img-responsive center-block">
-                        Лидер региона<br>по продажам
-                    </div>
-                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
-                        <img src="/images/advantages/advantages-6.png" alt="" class="img-responsive center-block">
-                        Строго соблюдаем<br>график доставки
-                    </div>
-                </div>
-
-            </section>
-
+                <img src="/images/advantages/advantages-1.png" alt="" class="img-responsive center-block">
+                C 1956 года<br>на рынке
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
+                <img src="/images/advantages/advantages-2.png" alt="" class="img-responsive center-block">
+                Работает<br>более 300 чел
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                <img src="/images/advantages/advantages-3.png" alt="" class="img-responsive center-block">
+                Используем только<br>российское сырье
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                <img src="/images/advantages/advantages-4.png" alt="" class="img-responsive center-block">
+                Всегда свежий<br>хлеб и выпечка
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                <img src="/images/advantages/advantages-5.png" alt="" class="img-responsive center-block">
+                Лидер региона<br>по продажам
+            </div>
+            <div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
+                <img src="/images/advantages/advantages-6.png" alt="" class="img-responsive center-block">
+                Строго соблюдаем<br>график доставки
+            </div>
+        </div>
+    </section>
     <div class="row">
         <div class="properties-listing spacer">
             <h2 style="margin-left: 50px;">
                 <div id="bl-new-production">
                     <h2 class="lined" style="color: #964812; margin-bottom: 30px;">
-                        <span>
-                            Наша продукция
-                            <i></i>
-                            <i></i>
-                        </span>
+                        <span>Наша продукция<i></i><i></i></span>
                     </h2>
                 </div>
             </h2>
@@ -121,10 +103,10 @@ use frontend\components\Common;
                 <?php foreach($featured as $row): ?>
                     <div class="properties">
                         <div class="image-holder">
-                            <img src="<?=Common::getImageProduct($row)[0] ?>" class="img-responsive" alt="<?=Common::getTitle($row) ?>">
+                            <img src="<?=Common::getImageProduct($row)[0] ?>" class="img-responsive" alt='<?=Common::getS_Title($row) ?>' style="height: 131.;">
                             <div class="status <?=($row['new']) ? 'new' : 'recommend' ?>"><?= Common::getTypeProduct($row) ?></div>
                         </div>
-                        <h4><a href="<?=Common::getUrlProduct($row) ?>"><?= Common::getTitle($row) ?></a></h4>
+                        <h4 style="height: 42px;;"><a href="<?=Common::getUrlProduct($row) ?>"><?= Common::getS_Title($row) ?></a></h4>
                         <h4 class="text-center">
                             <p style="text-indent: 0px;" class="price">Цена: <?= $row['price'] ?> &#8381;</p>
                             <p style="text-indent: 0px;" class="price">Вес: <?=$row['weight'] ?> г</p>

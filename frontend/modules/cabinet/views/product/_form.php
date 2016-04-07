@@ -13,17 +13,20 @@ use yii\widgets\ActiveForm;
 	<?php $form = ActiveForm::begin(); ?>
 
 	<?= $form->field($model, 'name')->textInput(['placeholder' => 'Наименование'])->textInput(['autofocus' => true]) ?>
+
+	<?= $form->field($model, 's_name')->textInput(['placeholder' => 'Краткое наименование (30 символов)'])->textInput(['maxlength' => 30]) ?>
 	
 	<?= $form->field($model, 'price')->textInput(['placeholder' => 'Цена']) ?>
 	
 	<?= $form->field($model, 'weight')->textInput(['placeholder' => 'Вес в граммах']) ?>
-
 	
 	<?= $form->field($model, 'description')->textArea(['rows' => 6, ['placeholder' => 'Описание']]) ?>
 
 	<?= $form->field($model, 'new')->checkbox() ?>
 
 	<?= $form->field($model, 'recommend')->checkbox() ?>
+	
+	<?= $form->field($model, 'status')->checkbox() ?>
 
 	<?= $form->field($model, 'type')->dropDownList([
 		'Баранки',
