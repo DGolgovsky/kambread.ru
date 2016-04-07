@@ -1,3 +1,6 @@
+# unused files/dir
+/admin
+
 # server logs
 /admin
 /logs

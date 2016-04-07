@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = 'Профиль';
         ?>
         <?=$form->field($model,'name')->textInput(['autofocus' => true]) ?>
         <?=$form->field($model,'username') ?>
-        <?=$form->field($model,'email') ?>
+        <?=$form->field($model,'email')->input('email'); ?>
         <?=$form->field($model,'phone') ?>
         <?=\yii\helpers\Html::label('Фото профиля') ?>
         <?=\yii\helpers\Html::fileInput('avatar') ?>

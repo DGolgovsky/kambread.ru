@@ -1,5 +1,3 @@
 *.html
-/services
-/bootstrap
-/uploads
 /index-test.php
+

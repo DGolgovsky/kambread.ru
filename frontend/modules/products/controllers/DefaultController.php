@@ -39,6 +39,7 @@ class DefaultController extends Controller
 	public function actionIndex($propert = '', $price = '', $type = '')
 	{
 		$query = Product::find();
+		$query->where('status=true');
 		$query->filterWhere(['ilike', 'name', $propert])
 			->orFilterWhere(['ilike', 'description', $propert])
 			->andFilterWhere(['type' => $type]);

@@ -26,13 +26,13 @@ $this->params['breadcrumbs'][] = 'Просмотр';
                     <div class="carousel-inner">
                         <!-- Item 1 -->
                         <div class="item active">
-                            <img src="<?=\frontend\components\Common::getImageNews($model)[0] ?>"  class="thumbnail img-responsive" alt="<?=\frontend\components\Common::getTitle($model) ?>" />
+                            <img src="<?=\frontend\components\Common::getImageNews($model)[0] ?>"  class="thumbnail img-responsive" alt='<?=\frontend\components\Common::getTitle($model) ?>' />
                         </div>
                         <?php
                         foreach($images as $image):
                             ?>
                             <div class="item">
-                                <img src="<?=$image ?>"  class="thumbnail img-responsive" alt="<?=\frontend\components\Common::getTitle($model) ?>" />
+                                <img src="<?=$image ?>"  class="thumbnail img-responsive" alt='<?=\frontend\components\Common::getTitle($model) ?>' />
                             </div>
                             <?php
                         endforeach;

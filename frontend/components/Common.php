@@ -3,6 +3,7 @@ namespace frontend\components;
 
 use Yii;
 use yii\base\Component;
+use yii\db\Exception;
 use yii\helpers\BaseFileHelper;
 use yii\helpers\Url;
 
@@ -33,6 +34,11 @@ class Common extends Component
 	public static function getTitle($data)
 	{
 		return $data['name'];
+	}
+
+	public static function getS_Title($data)
+	{
+		return $data['s_name'];
 	}
 
 	public static function getCreationDate($data)

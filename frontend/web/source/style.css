@@ -11,21 +11,68 @@
     font-style: normal;
 }
 
-body {
-    padding-top: 50px;
-    color: #555;
-    font: normal 14px/22px "Helvetica Neue, Helvetica, sans-serif";
-    background: url(../images/bgmain.png)/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/images/bgmain.png*/
-    #eee;
+@font-face {
+    font-family: 'appetite_new';
+    src: url('fonts/appetite_new.eot')/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/assets/fonts/din.eot*/
+;
+    format('embedded-opentype'), url('fonts/appetite_new.woff')/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/assets/fonts/din.woff*/
+    format('woff'), url('fonts/appetite_new.ttf')/*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/assets/fonts/din.ttf*/
+    format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
+.price {
+    font-family: 'PT Sans', serif;
+}
+
+body {
+    padding-top: 49px;
+    color: #555;
+
+    font: normal 14px/22px appetite_new, "Helvetica Neue, Helvetica, sans-serif";
+    background: url(../images/bgmain.png) #eee; /*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/images/bgmain.png*/
+    /*background: url('../images/main_bg.jpg') 50% top no-repeat #fcf5d9;*/
+}
+
+/*240x155*/
+img:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: calc(100% + 10px);
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    border: 2px dotted rgb(200, 200, 200);
+    border-radius: 5px;
+}
+
+img:after {
+    content: "\f127" "Нет изображения";
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    font-family: FontAwesome;
+    color: rgb(100, 100, 100);
+
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+.news img:before {
+    width: auto;
+}
 h1,
 h2,
 h3,
 h4,
 h5 {
     font-weight: normal;
-    font-family: din;
+    font-family: appetite_new;
     margin: 0;
     padding: 0;
     color: #000
@@ -41,6 +88,33 @@ h2 {
     font-size: 35px;
     letter-spacing: -1px;
     margin-bottom: 20px;
+}
+
+h2.lined{
+    text-align: center;
+    vertical-align: middle;
+    font-size: 32px;
+    line-height: 30px;
+    font-family: appetite_new, din, 'Philosopher','Arial';
+}
+
+h2.lined span{
+    position: relative;
+}
+h2.lined span i{
+    position: absolute;
+    top: 19px;
+    right: -302px;
+    display: block;
+    width: 285px;
+    height: 5px;
+    font-size: 0;
+    background: url('../images/h_r.png') no-repeat;
+}
+h2.lined span i:first-child{
+    right: auto;
+    left: -302px;
+    background: url('../images/h_l.png') no-repeat;
 }
 
 h3 {
@@ -115,7 +189,7 @@ a.more {
 }
 
 a.more:hover {
-    background: #64a30a;
+    background: #72b70f;
     text-decoration: none;
 }
 
@@ -125,7 +199,7 @@ table {
 
 .btn {
     border-radius: 5px;
-    font-family: din;
+    font-family: appetite_new;
     outline: none;
 }
 
@@ -173,8 +247,8 @@ table {
 }
 
 .header ul li a {
-    font-size: 19px;
-    font-family: din;
+    font-size: 16px;
+    font-family: appetite_new;
     text-transform: uppercase;
 }
 
@@ -187,11 +261,14 @@ table {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: bold;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-family: din;
+    font-family: 'Helvetica Neue', sans-serif, 'Philosopher','Arial';
+    color: #c0a16b;
     text-transform: uppercase;
+
 }
 
 .navbar-inverse .navbar-nav > .active > a,
@@ -440,7 +517,7 @@ ul li.active li.active a  {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-    background-color: #72b70f;
+    background-color: #b79e1d;
     border-radius: 0;
     color: #fff;
     border: none;
@@ -461,7 +538,6 @@ ul li.active li.active a  {
 .agents .row h4 {
     margin: 0;
 }
-
 
 /*footer*/
 

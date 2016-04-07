@@ -75,7 +75,9 @@ use yii\bootstrap\NavBar;
                     $menuItems[] = ['label' => 'Выход (' . Yii::$app->user->identity->username . ')',  'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']];
                 }
                 echo Nav::widget([
-                    'options' => ['class' => 'navbar-inverse navbar-nav navbar-right'],
+                        'options' => [
+                        'class' => 'navbar-nav navbar-right',
+                        ],
                     'items' => $menuItems,
                 ]);
                 NavBar::end();
