@@ -125,30 +125,3 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </div>
 <div class="spacer"></div>
-<!-- Our Clients -->
-<div class="section">
-    <div class="container">
-        <div class="section-title">
-            <h3>С нами сотрудничают</h3>
-        </div>
-        <div class="clients-logo-wrapper text-center row">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://magnit-info.ru/" target="_blank"><img src="images/about/logos/logo-1.png" class="img-responsive center-block" width="270px" alt="Магнит"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://pokupochka.ru/" target="_blank"><img src="images/about/logos/logo-2.png" class="img-responsive center-block" width="270px" alt="Покупочка"></a></div>
-            <div class="col-lg-2 col-md-1 col-sm-2 col-xs-2"><a href="http://tkman.ru/" target="_blank"><img src="images/about/logos/logo-3.png" class="img-responsive center-block" width="270px" alt="МАН"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.radezh.ru/" target="_blank"><img src="images/about/logos/logo-4.png" class="img-responsive center-block" width="270px" alt="Радеж"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.lenta.com/" target="_blank"><img src="images/about/logos/logo-5.png" class="img-responsive center-block" width="270px" alt="Лента"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.okmarket.ru/" target="_blank"><img src="images/about/logos/logo-6.png" class="img-responsive center-block" width="270px" alt="О`КЕЙ"></a></div>
-        </div>
-        <hr>
-        <div class="clients-logo-wrapper text-center row">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://pyaterochka.ru/" target="_blank"><img src="images/about/logos/logo-7.png" class="img-responsive center-block" width="270px" alt="Пятёрочка"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
-        </div>
-    </div>
-</div>
-<!-- End Our Clients -->
-
