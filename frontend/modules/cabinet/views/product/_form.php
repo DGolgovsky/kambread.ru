@@ -19,8 +19,8 @@ use yii\widgets\ActiveForm;
 	<?= $form->field($model, 'price')->textInput(['placeholder' => 'Цена']) ?>
 	
 	<?= $form->field($model, 'weight')->textInput(['placeholder' => 'Вес в граммах']) ?>
-	
-	<?= $form->field($model, 'description')->textArea(['rows' => 6, ['placeholder' => 'Описание']]) ?>
+
+	<?= $form->field($model, 'description')->widget(\yii\redactor\widgets\Redactor::className()) ?>
 
 	<?= $form->field($model, 'new')->checkbox() ?>
 
@@ -34,7 +34,8 @@ use yii\widgets\ActiveForm;
 		'Булочки',
 		'Кексы',
 		'Сухари',
-		'Хлеб'
+		'Хлеб',
+		'Эксклюзивная'
 	]) ?>
 
 	<p class="text-info">Внимание! Новинка имеет приоритет перед рекомендацией.</p>

@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true, 'autofocus' => true]) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'description')->widget(\yii\redactor\widgets\Redactor::className()) ?>
 
     <?= $form->field($model, 'open')->checkbox() ?>
 
