@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'new:boolean',
             'recommend:boolean',
             'status:boolean',
-            //'type:ntext',
+            'type:ntext',
             //'user.name',
             //'created_at:date',
             'updated_at:date',

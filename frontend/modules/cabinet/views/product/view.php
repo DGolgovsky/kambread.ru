@@ -58,7 +58,7 @@ $this->params['breadcrumbs'][] = 'Просмотр';
 			'new:boolean',
 			'recommend:boolean',
 			'status:boolean',
-//			'type:ntext',
+			'type:ntext',
 			'user.name',
 			'created_at:date',
 			'updated_at:date',
@@ -66,13 +66,13 @@ $this->params['breadcrumbs'][] = 'Просмотр';
 	]) ?>
 	<div class="row">
 		<div class="col-lg-2 col-lg-offset-2 col-sm-2 col-sm-offset-1 col-xs-3">
-			<?=Html::a('< туда', ['view', 'id' => ($model->findOne($id = $model->idproduct - 1) !== null) ? $id : $model->idproduct], [
+			<?=Html::a('<- сюда', ['view', 'id' => ($model->findOne($id = $model->idproduct - 1) !== null) ? $id : $model->idproduct], [
 				'class' => ($id) ? 'btn btn-default' : 'btn btn-default disabled',
 			]);
 			?>
 		</div>
 		<div class="col-lg-2 col-lg-offset-4 col-sm-2 col-sm-offset-6 col-xs-3">
-			<?= Html::a('сюда >', ['view', 'id' => ($model->findOne($model->idproduct + 1) !== null) ? $id = $model->idproduct + 1: $id = $model->idproduct], [
+			<?= Html::a('туда ->', ['view', 'id' => ($model->findOne($model->idproduct + 1) !== null) ? $id = $model->idproduct + 1: $id = $model->idproduct], [
 				'class' => ($id - $model->idproduct) ? 'btn btn-default' : 'btn btn-default disabled',
 			]) ?>
 		</div>
