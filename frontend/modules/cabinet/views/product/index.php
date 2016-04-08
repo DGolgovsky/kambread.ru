@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'price',
             'weight',
             //'general_image',
-
             'new:boolean',
             'recommend:boolean',
             'status:boolean',

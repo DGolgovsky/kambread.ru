@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Product */
-$this->title = $model->name;
+$this->title = $model->s_name;
 $this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabinet']];
 $this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['index']];
 $this->params['breadcrumbs'][] = 'Просмотр';
@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = 'Просмотр';
 			'recommend:boolean',
 			'status:boolean',
 //			'type:ntext',
-//			'user.name',
+			'user.name',
 			'created_at:date',
 			'updated_at:date',
 		],

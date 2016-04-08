@@ -20,9 +20,9 @@ class ProductSearch extends Product
 	{
 		return [
 			[['idproduct', 'user_id', 'created_at', 'updated_at'], 'integer'],
-			[['new', 'recommend'], 'boolean'],
+			[['new', 'recommend', 'status'], 'boolean'],
 			[['price', 'weight'], 'double'],
-			[['name', 'general_image', 'description', 'type'], 'safe'],
+			[['name', 's_name', 'general_image', 'description', 'type'], 'safe'],
 		];
 	}
 
@@ -64,8 +64,10 @@ class ProductSearch extends Product
 			'weight' => $this->weight,
 			//'user_id' => $this->user_id,
 			'name' => $this->name,
+			's_name' => $this->s_name,
 			'new' => $this->new,
 			'recommend' => $this->recommend,
+			'status' => $this->status,
 			'created_at' => $this->created_at,
 			'updated_at' => $this->updated_at,
 		]);

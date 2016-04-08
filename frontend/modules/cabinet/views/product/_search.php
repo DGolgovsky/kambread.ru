@@ -22,6 +22,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'user_id') ?>
 
     <?= $form->field($model, 'name') ?>
+
+    <?= $form->field($model, 's_name') ?>
     
     <?php // echo $form->field($model, 'general_image') ?>
 

@@ -1,5 +1,5 @@
 <?php
-$this->title = \frontend\components\Common::substr($model->name, 0, 30);
+$this->title = $model->s_name;
 $this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabinet']];
 $this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => 'Просмотр', 'url' => ['view', 'id' => $model->idproduct]];
