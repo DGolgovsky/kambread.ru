@@ -13,7 +13,7 @@ Yii::$app->language = 'ru-RU';
     <meta charset="<?= \Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode('Камышинский хлебокомбинат') ?></title>
+    <title><?= Html::encode('Камышинский хлебокомбинат|'.$this->title) ?></title>
     <style>h2 {text-indent: 40px;}</style>
     <?php $this->head(); ?>
 </head>
