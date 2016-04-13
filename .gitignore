@@ -2,9 +2,7 @@
 /admin
 
 # server logs
-/admin
 /logs
-/frontend/web/index.html
 
 # yii console command
 /yii
@@ -36,6 +34,7 @@ composer.lock
 
 # phpunit itself is not needed
 phpunit.phar
+
 # local phpunit config
 /phpunit.xml
 permissions.sh
