@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     }
 </style>
 
-<div class="container">
+<div class="container" itemscope itemtype="http://schema.org/AboutPage">
     <div class="row">
         <h3 class="text-left"><small>Камышинский хлебокомбинат основан в декабре 1956 г.</small></h3>
         <div class="pull-right bg-default" style="width: 20em; padding: 20px;">
