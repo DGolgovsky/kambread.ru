@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Product */
-$this->title = $model->name;
+$this->title = $model->s_name;
 $this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabinet']];
 $this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['index']];
 $this->params['breadcrumbs'][] = 'Просмотр';
@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = 'Просмотр';
 	<?= DetailView::widget([
 		'model' => $model,
 		'attributes' => [
-			'idproduct',
+			//'idproduct',
 			'name',
 			's_name',
 			'weight',
@@ -66,13 +66,13 @@ $this->params['breadcrumbs'][] = 'Просмотр';
 	]) ?>
 	<div class="row">
 		<div class="col-lg-2 col-lg-offset-2 col-sm-2 col-sm-offset-1 col-xs-3">
-			<?=Html::a('< туда', ['view', 'id' => ($model->findOne($id = $model->idproduct - 1) !== null) ? $id : $model->idproduct], [
+			<?=Html::a('<- сюда', ['view', 'id' => ($model->findOne($id = $model->idproduct - 1) !== null) ? $id : $model->idproduct], [
 				'class' => ($id) ? 'btn btn-default' : 'btn btn-default disabled',
 			]);
 			?>
 		</div>
 		<div class="col-lg-2 col-lg-offset-4 col-sm-2 col-sm-offset-6 col-xs-3">
-			<?= Html::a('сюда >', ['view', 'id' => ($model->findOne($model->idproduct + 1) !== null) ? $id = $model->idproduct + 1: $id = $model->idproduct], [
+			<?= Html::a('туда ->', ['view', 'id' => ($model->findOne($model->idproduct + 1) !== null) ? $id = $model->idproduct + 1: $id = $model->idproduct], [
 				'class' => ($id - $model->idproduct) ? 'btn btn-default' : 'btn btn-default disabled',
 			]) ?>
 		</div>

@@ -80,7 +80,7 @@ class Product extends \yii\db\ActiveRecord
 		return [
 			'idproduct' => 'ID продукта',
 			'name' => 'Наименование',
-			's_name' => 'Кратко',
+			's_name' => 'Краткое наименование',
 			'price' => 'Цена',
 			'weight' => 'Вес',
 			'user_id' => 'ID пользователя',
@@ -92,7 +92,7 @@ class Product extends \yii\db\ActiveRecord
 			'status' => 'Опубликовано',
 			'created_at' => 'Создано',
 			'updated_at' => 'Изменено',
-			'user.name' => 'Добавлено',
+			'user.name' => 'Пользователь',
 		];
 	}
 

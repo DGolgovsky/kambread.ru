@@ -28,11 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'price',
             'weight',
             //'general_image',
-
             'new:boolean',
             'recommend:boolean',
             'status:boolean',
-            //'type:ntext',
+            'type:ntext',
             //'user.name',
             //'created_at:date',
             'updated_at:date',

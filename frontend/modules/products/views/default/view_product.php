@@ -1,7 +1,7 @@
 <?php
-$this->title = $model->name;
+$this->title = \frontend\components\Common::substr($model->name, 0 ,26);
 $this->params['breadcrumbs'][] = ['label' => 'Продукция', 'url' => ['/products']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = 'Просмотр';
 ?>
 <div class="row">
     <div class="col-lg-3 col-sm-4 hidden-xs">

@@ -17,10 +17,11 @@ return [
                 '<alias:(about|contact|login|signup|partners|index|disclosure|mail)>' => 'site/<alias>',
                 '<alias:(/site/index)>' => '/',
 
-                '<action_products:(index)>' => 'products/<action_products>',
+                'products/<action_products:(index|default)>' => 'products/<action_products>',
                 'products/view-product/<id:\d+>' => 'products/default/view-product',
+                'products/' => 'products/default/index',
+                '<propert:\w+>&<price:\d+>&<type:\w+>' => '/',
                 'news/view/<id:\d+>' => 'news/default/view-news',
-                'products/<propert:\w+>&<price:\d+>&<type:\w+>' => 'products',
 
                 'cabinet/product/<action_cabinet:(view|create|update|addimg)>/<id:\d+>' => 'cabinet/product/<action_cabinet>',
                 'cabinet/news/<action_cabinet:(view|create|update|addimg)>/<id:\d+>' => 'cabinet/news/<action_cabinet>',

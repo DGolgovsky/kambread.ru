@@ -13,8 +13,8 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
-    
-    <?= $form->field($model, 'description')->textarea(['rows' => 10]) ?>
+
+    <?= $form->field($model, 'description')->widget(\yii\redactor\widgets\Redactor::className()) ?>
     
     <?= $form->field($model, 'status')->checkbox() ?>
 

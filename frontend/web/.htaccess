@@ -16,7 +16,7 @@
   # В противном случае перенаправляем на index.php
   RewriteRule . index.php
   
-  RewriteCond %{HTTPS} off
-  RewriteCond %{HTTP_USER_AGENT} !(Windows\ NT\ 5.1|Windows\ NT\ 5.2) [NC]
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI}
+#  RewriteCond %{HTTPS} off
+#  RewriteCond %{HTTP_USER_AGENT} !(Windows\ NT\ 5.1|Windows\ NT\ 5.2) [NC]
+#  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI}
 </IfModule>                           
