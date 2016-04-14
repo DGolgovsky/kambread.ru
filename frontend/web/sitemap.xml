@@ -1,82 +1,314 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.kambread.ru/</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/index</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/about</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/partners</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/contact</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/site/vacancies</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/news</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/login</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/products</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/signup</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/products/view-product/5</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/products/view-product/4</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/products/view-product/3</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/news/view/3</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/products/view-product/2</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/products/view-product/1</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/news/view/2</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/news/view/1</loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>https://www.kambread.ru/site/request-password-reset</loc>
-    <changefreq>daily</changefreq>
-  </url>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+	<loc>https://kambread.ru/</loc>
+	<lastmod>2016-04-13T11:47:45+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products</loc>
+	<lastmod>2016-04-13T11:47:48+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/about</loc>
+	<lastmod>2016-04-13T11:47:49+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/partners</loc>
+	<lastmod>2016-04-13T11:47:48+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/contact</loc>
+	<lastmod>2016-04-13T11:47:50+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/vacancy</loc>
+	<lastmod>2016-04-13T11:47:50+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/news</loc>
+	<lastmod>2016-04-13T11:47:51+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/login</loc>
+	<lastmod>2016-04-13T11:47:52+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/46</loc>
+	<lastmod>2016-04-13T11:47:53+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/45</loc>
+	<lastmod>2016-04-13T11:47:53+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/44</loc>
+	<lastmod>2016-04-13T11:47:55+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/43</loc>
+	<lastmod>2016-04-13T11:47:55+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/42</loc>
+	<lastmod>2016-04-13T11:47:55+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/40</loc>
+	<lastmod>2016-04-13T11:47:57+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/39</loc>
+	<lastmod>2016-04-13T11:47:57+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/38</loc>
+	<lastmod>2016-04-13T11:47:58+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/37</loc>
+	<lastmod>2016-04-13T11:47:59+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/36</loc>
+	<lastmod>2016-04-13T11:47:59+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/33</loc>
+	<lastmod>2016-04-13T11:48:00+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/32</loc>
+	<lastmod>2016-04-13T11:48:02+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/31</loc>
+	<lastmod>2016-04-13T11:48:02+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/30</loc>
+	<lastmod>2016-04-13T11:48:02+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/29</loc>
+	<lastmod>2016-04-13T11:48:04+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/28</loc>
+	<lastmod>2016-04-13T11:48:04+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/18</loc>
+	<lastmod>2016-04-13T11:48:05+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/17</loc>
+	<lastmod>2016-04-13T11:48:07+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/news/view/3</loc>
+	<lastmod>2016-04-13T11:48:07+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/news/view/1</loc>
+	<lastmod>2016-04-13T11:48:07+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/index</loc>
+	<lastmod>2016-04-13T11:48:09+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/5</loc>
+	<lastmod>2016-04-13T11:48:09+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/9</loc>
+	<lastmod>2016-04-13T11:48:09+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/12</loc>
+	<lastmod>2016-04-13T11:48:11+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/4</loc>
+	<lastmod>2016-04-13T11:48:12+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/1</loc>
+	<lastmod>2016-04-13T11:48:13+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/8</loc>
+	<lastmod>2016-04-13T11:48:17+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/6</loc>
+	<lastmod>2016-04-13T11:48:16+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/7</loc>
+	<lastmod>2016-04-13T11:48:16+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products?page=1&amp;per-page=6</loc>
+	<lastmod>2016-04-13T11:48:18+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products?page=2&amp;per-page=6</loc>
+	<lastmod>2016-04-13T11:48:19+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products?page=3&amp;per-page=6</loc>
+	<lastmod>2016-04-13T11:48:19+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products?page=4&amp;per-page=6</loc>
+	<lastmod>2016-04-13T11:48:21+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products?page=5&amp;per-page=6</loc>
+	<lastmod>2016-04-13T11:48:21+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products?page=6&amp;per-page=6</loc>
+	<lastmod>2016-04-13T11:48:21+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products?page=7&amp;per-page=6</loc>
+	<lastmod>2016-04-13T11:48:23+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products?page=8&amp;per-page=6</loc>
+	<lastmod>2016-04-13T11:48:23+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/site/request-password-reset</loc>
+	<lastmod>2016-04-13T11:48:23+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/14</loc>
+	<lastmod>2016-04-13T11:48:25+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/15</loc>
+	<lastmod>2016-04-13T11:48:26+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/20</loc>
+	<lastmod>2016-04-13T11:48:26+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/23</loc>
+	<lastmod>2016-04-13T11:48:28+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/21</loc>
+	<lastmod>2016-04-13T11:48:28+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/22</loc>
+	<lastmod>2016-04-13T11:48:28+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/24</loc>
+	<lastmod>2016-04-13T11:48:30+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/27</loc>
+	<lastmod>2016-04-13T11:48:31+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/26</loc>
+	<lastmod>2016-04-13T11:48:32+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/35</loc>
+	<lastmod>2016-04-13T11:48:34+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/34</loc>
+	<lastmod>2016-04-13T11:48:33+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/2</loc>
+	<lastmod>2016-04-13T11:48:34+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/3</loc>
+	<lastmod>2016-04-13T11:48:37+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/11</loc>
+	<lastmod>2016-04-13T11:48:37+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/16</loc>
+	<lastmod>2016-04-13T11:48:39+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://kambread.ru/products/view-product/19</loc>
+	<lastmod>2016-04-13T11:48:39+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
 </urlset>
-<!--<guid value="519b46ba-e4ed-4905-b8f6-e5d5f780eec1" />-->
-<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
