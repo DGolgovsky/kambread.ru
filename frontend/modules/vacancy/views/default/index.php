@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <h3 style="text-indent: 0px;"><?php if($index < 9): echo '0'; endif; ?><?=$index++ ?>.</h3>
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                    <h3><small><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><?=$row->name ?></a></small></h3>
+                                    <h3><small><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href=<?="#collapse".$index?>><?=$row->name ?></a></small></h3>
                                 </div>
                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-right">
                                     <h3><small><span>Создано: <?= \frontend\components\Common::getCreationDate($row, 'updated_at') ?></span></small></h3>
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
                         </h4>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse">
+                    <div id=<?="collapse".$index?> class="panel-collapse collapse">
                         <div class="panel-body">
                             <?php $row->description = preg_replace("(\r\n|\n|\r)", "<BR/>", $row->description); ?>
                             <p style="text-indent: 20px;"><?= $row->description ?></p>
