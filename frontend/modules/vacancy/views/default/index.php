@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <h4 class="panel-title">
                             <div class="row">
                                 <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center">
-                                    <h3 style="text-indent: 0px;"><?php if($index < 9): echo '0'; endif; ?><?=$index++ ?>.</h3>
+                                    <h3 style="text-indent: 0px;"><?php if($index < 10): echo '0'; endif; ?><?=$index++ ?>.</h3>
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                     <h3><small><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href=<?="#collapse".$index?>><?=$row->name ?></a></small></h3>
