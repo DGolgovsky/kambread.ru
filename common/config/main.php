@@ -20,6 +20,7 @@ return [
                 'products/<action_products:(index|default)>' => 'products/<action_products>',
                 'products/view-product/<id:\d+>' => 'products/default/view-product',
                 'products/' => 'products/default/index',
+                'vacancy/' => 'vacancy/default/index',
                 '<propert:\w+>&<price:\d+>&<type:\w+>' => '/',
                 'news/view/<id:\d+>' => 'news/default/view-news',
 
