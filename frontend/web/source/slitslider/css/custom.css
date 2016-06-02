@@ -60,7 +60,7 @@
 	background-size: cover;
 	background-position: center center;
 	background-color: #000;
-	opacity: 0.5; /*cange opacity for slider*/
+	opacity:.9; /*change opacity for slider*/
 }
 
 /* Custom navigation arrows */

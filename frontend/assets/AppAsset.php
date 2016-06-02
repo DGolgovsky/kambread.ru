@@ -24,8 +24,7 @@ class AppAsset extends AssetBundle
         'source/owl-carousel/owl.carousel.css',
         'source/owl-carousel/owl.theme.css',
         'source/slitslider/css/style.css',
-        'source/slitslider/css/custom.css',
-        'http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic',
+        'source/slitslider/css/custom.css',        
     ];
 
     public $js = [

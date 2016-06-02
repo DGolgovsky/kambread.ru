@@ -54,5 +54,6 @@ if(Yii::$app->user->isGuest) {
                 </dl>
             </div>
         </div>
+        <p style="text-align: center">Полный ассортимент продукции и цены Вы можете уточнить у менеджеров <a href="/contact">отдела маркетинга</a></p>
     </div>
 </div>

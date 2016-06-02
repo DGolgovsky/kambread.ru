@@ -1,25 +1,11 @@
 <?php
 use frontend\components\Common;
 ?>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contacts">
-            <h3 class="text-right">
-                <small>
-                    <span class="contacts__info"><a href="contact" title="Контакты">Контакты</a></span> <span class="divider">|</span>
-                    <span class="contacts__info">Приемная:</span>
-                    <span class="contacts__info">(84457) 9-64-64</span> <span class="divider">|</span>
-                    <span class="contacts__info">Отдел продаж: (84457) 9-39-84</span>
-                </small>
-            </h3>
-        </div>
-    </div>
-</div>
 <!-- slider-wrapper -->
 <div id="slider" class="sl-slider-wrapper">
     <div class="sl-slider">
         <?php foreach($result_general as $row): ?>
-            <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+            <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="1" data-slice2-scale="1">
                 <div class="sl-slide-inner">
                     <div class="bg-img" style="background-image: url('<?= Common::getImageProduct($row)[0] ?>')"></div>
                     <h2>
@@ -58,7 +44,7 @@ use frontend\components\Common;
     <section class="advantages container text-center">
         <h2 class="title" style="margin-left: 50px;">
             <div id="bl-new-production">
-                <h2 class="lined" style="color: #964812; margin-bottom: 30px;">
+                <h2 class="lined" style="font: appetite_new; color: #964812; margin-bottom: 30px;">
                     <span>Наши преимущества<i></i><i></i></span>
                 </h2>
             </div>

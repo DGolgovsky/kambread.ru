@@ -1487,7 +1487,7 @@ if (typeof Object.create !== "function") {
         lazyFollow : true,
         lazyEffect : "fade",
 
-        autoHeight : false,
+        autoHeight : true,
 
         jsonPath : false,
         jsonSuccess : false,

@@ -7,10 +7,24 @@ use yii\bootstrap\NavBar;
 <!--[if lt IE 7]>
 <p class="chromeframe">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите Ваш браузер</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируйте Google Chrome Frame</a> для улучшения отображения.</p>
 <![endif]-->
-
 <!-- views/common/Header navbar Starts -->
 <div class="navbar-wrapper">
-    <div class="navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-fixed-top" role="navigation">
+        <div style="background: url(images/bgmain.png);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contacts">
+                    <h3 class="text-right">
+                        <small>
+                            <span class="contacts__info"><a href="contact" title="Контакты">Контакты</a></span> <span class="divider">|</span>
+                            <span class="contacts__info">Приемная:</span>
+                            <span class="contacts__info">(84457) 9-64-64</span> <span class="divider">|</span>
+                            <span class="contacts__info">Отдел продаж: (84457) 9-39-84; +7-937-535-11-14</span>
+                        </small>
+                    </h3>
+                </div>
+            </div>
+        </div></div>
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -24,10 +38,10 @@ use yii\bootstrap\NavBar;
         <div class="navbar-collapse collapse">
             <?php
             NavBar::begin([
-                'brandLabel' => '<a href="/" ><img src="/images/bread_logo_new_circle.png" height="50px" alt="Главная"></a>',
+                'brandLabel' => '<a href="/" ><img src="/images/bread_logo_stupid.png" height="50px" alt="Главная"></a>',/*bread_logo_new_circle.png*/
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => 'navbar navbar-inverse',
                     /*'id' => 'header',*/
                 ],
             ]);
