@@ -59,11 +59,9 @@
 }
 
 body {
-    padding-top: 94px;
     color: #555;
     font: normal 14px/22px Helvetica Neue, Helvetica, sans-serif;
-    background: url(../images/bgmain.png) #eee; /*tpa=http://thebootstrapthemes.com/live/thebootstrapthemes-realestate/images/bgmain.png*/
-    /*background: url('../images/main_bg.jpg') 50% top no-repeat #fcf5d9;*/
+    background: url(../images/bgmain.png) #eee;
 }
 
 .appetite {
@@ -186,7 +184,7 @@ p {
 }
 
 a {
-    color: #72b70f;
+    color: #ff1206;
     text-decoration: none;
     outline: none;
 }
