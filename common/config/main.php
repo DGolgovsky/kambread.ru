@@ -26,9 +26,10 @@ return [
 
                 'cabinet/product/<action_cabinet:(view|create|update|addimg)>/<id:\d+>' => 'cabinet/product/<action_cabinet>',
                 'cabinet/news/<action_cabinet:(view|create|update|addimg)>/<id:\d+>' => 'cabinet/news/<action_cabinet>',
+                'cabinet/awards/<action_cabinet:(view|create|update|addimg)>/<id:\d+>' => 'cabinet/awards/<action_cabinet>',
                 'cabinet/vacancy/<action_cabinet:(view|update|create)>/<id:\d+>' => 'cabinet/vacancy/<action_cabinet>',
                 'cabinet/<action_cabinet:(settings|change-password)>' => 'cabinet/default/<action_cabinet>',
-                'cabinet/<action_cabinet:(news|product|vacancy)>' => 'cabinet/<action_cabinet>'
+                'cabinet/<action_cabinet:(news|product|vacancy|awards)>' => 'cabinet/<action_cabinet>'
             ],
         ],
     ],

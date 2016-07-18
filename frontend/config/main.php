@@ -57,6 +57,7 @@ return [
                     'cabinet/news',
                     'cabinet/product',
                     'cabinet/vacancy',
+                    'cabinet/awards',
                 ],
                 'allow' => false,
                 'roles' => ['?'],

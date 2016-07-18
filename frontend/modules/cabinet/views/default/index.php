@@ -48,6 +48,16 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     </p><p>
+    </p><p>
+    <div class="row">
+        <div class="col-lg-4 col-sm-4 col-xs-4">
+            <?= Html::a('Награды', ['/cabinet/awards'], ['class' => 'btn btn-primary']) ?>
+        </div>
+        <div class="col-lg-8 col-sm-8 col-xs-8">
+            <span>Редактирование списка наград и сертификатов</span>
+        </div>
+    </div>
+    </p><p>
     <div class="row">
     <div class="col-lg-4 col-sm-4 col-xs-4">
         <?= Html::a('Профиль', ['/cabinet/default/settings'], ['class' => 'btn btn-primary']) ?>

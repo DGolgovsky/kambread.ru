@@ -221,7 +221,7 @@ a.more {
 }
 
 a.more:hover {
-    background: #72b70f;
+    background: #ff1206;
     text-decoration: none;
 }
 
@@ -236,15 +236,15 @@ table {
 }
 
 .btn-success {
-    background: #72b70f;
-    border: 1px solid #72b70f;
+    background: #ff1206;
+    border: 1px solid #ff1206;
     padding: 6px 20px;
     font-size: 16px;
     width: 100%;
 }
 
 .btn-primary {
-    background: #64a30a;
+    background: #ff1206;
     border: none;
     width: 100%;
     border-radius: 20px;
@@ -306,11 +306,11 @@ table {
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-    background-color: #72b70f;
+    background-color: #ff1206;
 }
 
 ul li.active li.active a  {
-    background-color: #72b70f;
+    background-color: #ff1206;
 }
 
 .banner-search {
@@ -383,15 +383,15 @@ ul li.active li.active a  {
 }
 
 .listing-detail span:hover {
-    background: #72b70f;
+    background: #ff1206;
 }
 
 .status.recommend {
-    background: rgba(104, 167, 13, 0.8);
+    background: rgba(255, 18, 6, 1);
 }
 
 .status.new {
-    background: rgba(190, 7, 46, 0.8);
+    background: rgba(255, 125, 0, 1);
 }
 
 .recommended {
@@ -516,7 +516,7 @@ ul li.active li.active a  {
 
 .property-info p.price {
     font-size: 28px;
-    color: #72b70f;
+    color: #ff1206;
     padding: 0;
     border-radius: 5px;
 }

@@ -62,6 +62,8 @@ use yii\bootstrap\NavBar;
                     'url' => ['/cabinet/news']],
                 ['label' => 'Вакансии',
                     'url' => ['/cabinet/vacancy']],
+                ['label' => 'Награды',
+                    'url' => ['/cabinet/awards']],
                 ['label' => 'Профиль',
                     'url' => ['/cabinet/settings']],
                 ['label' => 'Почта',
