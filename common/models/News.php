@@ -114,10 +114,10 @@ class News extends \yii\db\ActiveRecord
 
     /**
      * @inheritdoc
-     * @return ProductQuery the active query used by this AR class.
+     * @return NewsQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new ProductQuery(get_called_class());
+        return new NewsQuery(get_called_class());
     }
 }

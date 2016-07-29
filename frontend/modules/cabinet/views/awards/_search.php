@@ -19,8 +19,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description') ?>
 
-    <?= $form->field($model, 'general_image') ?>
-
     <?= $form->field($model, 'idawards') ?>
 
     <div class="form-group">

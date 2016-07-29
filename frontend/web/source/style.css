@@ -184,7 +184,7 @@ p {
 }
 
 a {
-    color: #ff1206;
+    color: #bf2d26;
     text-decoration: none;
     outline: none;
 }
@@ -221,7 +221,7 @@ a.more {
 }
 
 a.more:hover {
-    background: #ff1206;
+    background: #bf2d26;
     text-decoration: none;
 }
 
@@ -236,15 +236,15 @@ table {
 }
 
 .btn-success {
-    background: #ff1206;
-    border: 1px solid #ff1206;
+    background: #bf2d26;
+    border: 1px solid #bf2d26;
     padding: 6px 20px;
     font-size: 16px;
     width: 100%;
 }
 
 .btn-primary {
-    background: #ff1206;
+    background: #bf2d26;
     border: none;
     width: 100%;
     border-radius: 20px;
@@ -306,11 +306,11 @@ table {
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-    background-color: #ff1206;
+    background-color: #bf2d26;
 }
 
 ul li.active li.active a  {
-    background-color: #ff1206;
+    background-color: #bf2d26;
 }
 
 .banner-search {
@@ -383,7 +383,7 @@ ul li.active li.active a  {
 }
 
 .listing-detail span:hover {
-    background: #ff1206;
+    background: #bf2d26;
 }
 
 .status.recommend {
@@ -516,7 +516,7 @@ ul li.active li.active a  {
 
 .property-info p.price {
     font-size: 28px;
-    color: #ff1206;
+    color: #bf2d26;
     padding: 0;
     border-radius: 5px;
 }

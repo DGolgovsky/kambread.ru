@@ -22,7 +22,7 @@
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
 }
 .sl-slider h2 a{color: #fff;}
-.sl-slider h2 a:hover{color: #ff1206; text-decoration: none;}
+.sl-slider h2 a:hover{color: #bf2d26; text-decoration: none;}
 
 
 .sl-slider blockquote {
@@ -41,7 +41,7 @@
 	text-transform: uppercase;
 	padding:15px;
 	display: inline-block;
-	background-color: #ff1206;
+	background-color: #bf2d26;
 	border-radius: 5px;
 }
 

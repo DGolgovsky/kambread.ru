@@ -2,7 +2,6 @@
 
 namespace app\modules\cabinet\controllers;
 
-use common\controllers\AuthController;
 use Yii;
 use common\models\Awards;
 use common\models\search\AwardsSearch;
@@ -10,7 +9,6 @@ use yii\helpers\BaseFileHelper;
 use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use Imagine\Image\Point;
 use yii\imagine\Image;
@@ -21,7 +19,6 @@ use Imagine\Image\Box;
  */
 class AwardsController extends Controller
 {
-
     public $layout = "inner";
 
     /**
@@ -77,42 +74,15 @@ class AwardsController extends Controller
             $height = $size[1];
 
             Image::frame($image, 0, '666', 0)
-                ->crop(new Point(0, 0), new Box($width, $height))
-                ->resize(new Box(1000,644))
-                ->save($new_name, ['quality' => 100]);
+                ->crop(new Point($width/2 - 250, $height/2 - 225), new Box($width/2 + 250, $height/2 + 225))
+                ->resize(new Box(500, 450))
+                ->save($new_name, ['quality' => 85]);
 
             return true;
         }
     }
 
-    public function actionFileUploadImages()
-    {
-        if(Yii::$app->request->isPost){
-            $id = Yii::$app->request->post("awards_id");
-            $path = Yii::getAlias("@frontend/web/uploads/awards/".$id);
-            BaseFileHelper::createDirectory($path);
-            $file = UploadedFile::getInstanceByName('images');
-            $name = time().'.'.$file->extension;
-            $file->saveAs($path .DIRECTORY_SEPARATOR .$name);
-
-            $image = $path .DIRECTORY_SEPARATOR .$name;
-            $new_name = $path .DIRECTORY_SEPARATOR."small_".$name;
-
-            $size = getimagesize($image);
-            $width = $size[0];
-            $height = $size[1];
-
-            Image::frame($image, 0, '666', 0)
-                ->crop(new Point(0, 0), new Box($width, $height))
-                ->resize(new Box(1000,644))
-                ->save($new_name, ['quality' => 100]);
-
-            sleep(1);
-            return true;
-        }
-    }
-
-    /**
+        /**
      * Creates a new Awards model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
@@ -122,7 +92,7 @@ class AwardsController extends Controller
         $model = new Awards();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['addimg']);
+            return $this->redirect(['addimg', 'id' => $model->idawards]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -163,24 +133,7 @@ class AwardsController extends Controller
             $this->redirect(Url::to(['awards/']));
         }
 
-        $path = Yii::getAlias("@frontend/web/uploads/awards/".$model->idawards);
-        $images_add = [];
-
-        try {
-            if(is_dir($path)) {
-                $files = \yii\helpers\FileHelper::findFiles($path);
-
-                foreach ($files as $file) {
-                    if (strstr($file, "small_") && !strstr($file, "general")) {
-                        $images_add[] = '<img src="/uploads/awards/' . $model->idawards . '/' . basename($file) . '" width=250>';
-                    }
-                }
-            }
-        }
-        catch(\yii\base\Exception $e){}
-
-
-        return $this->render("addimg",['model' => $model,'image' => $image, 'images_add' => $images_add]);
+        return $this->render("addimg",['model' => $model,'image' => $image]);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use frontend\components\Common;
 
 /**
  * This is the model class for table "awards".
@@ -22,15 +23,27 @@ class Awards extends \yii\db\ActiveRecord
         return 'awards';
     }
 
+    public function scenarios()
+    {
+        $scenarios = parent::scenarios();
+        $scenarios['addimg'] = ['general_image'];
+
+        return $scenarios;
+    }
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['date'], 'integer'],
+            [['date', 'idawards'], 'integer'],
             [['description'], 'string'],
             [['general_image'], 'string', 'max' => 255],
+            ['idawards', 'unique', 'targetClass' => '\common\models\Awards', 'message' => 'ID не уникален.'],
+
+            ['description', 'filter', 'filter' => 'trim'],
+            ['description', 'required'],
         ];
     }
 
@@ -42,8 +55,18 @@ class Awards extends \yii\db\ActiveRecord
         return [
             'date' => 'Дата',
             'description' => 'Описание',
-            'general_image' => 'Описание',
+            'general_image' => 'Изображение',
             'idawards' => 'ID',
         ];
+    }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        Yii::$app->locator->cache->set('id', $this->idawards);
+    }
+
+    public static function find()
+    {
+        return new AwardsQuery(get_called_class());
     }
 }

@@ -46,6 +46,25 @@ class Common extends Component
 		return Yii::$app->formatter->asDate($data['created_at'], 'd MMMM yyyy');
 	}
 
+    public static function getImageAward($data, $general = true, $original = false)
+    {
+        $image = [];
+        $base = '/';
+        if($general) {
+            $image[] = $base.'uploads/awards/'.$data['idawards'].'/general/small_'.$data['general_image'];
+        } else {
+            $path = Yii::getAlias("@frontend/web/uploads/awards/".$data['idawards']);
+            $files = BaseFileHelper::findFiles($path);
+            foreach($files as $file) {
+                if (strstr($file, "small_") && !strstr($file, "general")) {
+                    $image[] = $base . 'uploads/awards/' . $data['idawards'] . '/' . basename($file);
+                }
+            }
+        }
+
+        return $image;
+    }
+
 	public static function getImageProduct($data, $general = true, $original = false)
 	{
 		$image = [];

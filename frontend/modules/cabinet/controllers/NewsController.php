@@ -78,8 +78,8 @@ class NewsController extends Controller
 
             Image::frame($image, 0, '666', 0)
                 ->crop(new Point(0, 0), new Box($width, $height))
-                ->resize(new Box(1000,644))
-                ->save($new_name, ['quality' => 100]);
+                ->resize(new Box(1280,720))
+                ->save($new_name, ['quality' => 85]);
 
             return true;
         }
@@ -104,8 +104,8 @@ class NewsController extends Controller
 
             Image::frame($image, 0, '666', 0)
                 ->crop(new Point(0, 0), new Box($width, $height))
-                ->resize(new Box(1000,644))
-                ->save($new_name, ['quality' => 100]);
+                ->resize(new Box(1280,720))
+                ->save($new_name, ['quality' => 85]);
 
             sleep(1);
             return true;
@@ -122,7 +122,7 @@ class NewsController extends Controller
         $model = new News();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['addimg']);
+            return $this->redirect(['addimg', 'id' => $model->idnews]);
         } else {
             return $this->render('create', [
                 'model' => $model,

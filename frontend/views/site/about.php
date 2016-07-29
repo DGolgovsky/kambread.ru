@@ -76,52 +76,6 @@ $this->params['breadcrumbs'][] = $this->title;
             Представители коллектива АО "Камышинский хлебокомбинат" были неоднократными участниками и победителями ежегодного Камышинского арбузного фестиваля:
         </p>
     </div>
-    <div class="row">
-        <div class="col-md-8 col-sm-12 col-xs-12">
-            <h3 class="text-center"><small>Достижения и результаты деятельности предприятия</small></h3>
-            <dl class="dl-horizontal">
-                <dt class="about-page">2002</dt>
-                <dd>Диплом Агропромышленной выставки – ярмарки «Волгоград АГРО-2002» за широкий ассортимент представляемой продукции;</dd>
-                <dt class="about-page">2004</dt>
-                <dd>Диплом победителя конкурса народного признания и качества «ЕвроКласс-2004»;</dd>
-                <dt class="about-page">2007</dt>
-                <dd>Диплом I  степени в номинации «Предприятия производители продовольственных  товаров»;</dd>
-                <dt class="about-page">2009</dt>
-                <dd>Предприятие включено в национальный реестр ведущих организаций  потребительского рынка;</dd>
-                <dt class="about-page">2011</dt>
-                <dd>Почетный диплом (Москва, Манеж) за участие в Национальной программе продвижения лучших российских товаров и услуг для детей «Лучшее - детям»;</dd>
-                <dt class="about-page">2014</dt>
-                <dd>Почетный диплом  Правительства Волгоградской области - победители Всероссийской   программы - конкурса «100 лучших товаров России» на региональном этапе;</dd>
-                <dt class="about-page">2014</dt>
-                <dd>Лауреат Всероссийского конкурса программы «100 лучших товаров России», золотая медаль на продукцию:</dd>
-                <dd>Хлеб из смеси ржаной и пшеничной муки формовой «Пеклеванный новый» и подовый «Ельшанский», коржи молочные из пшеничной муки высшего сорта;</dd>
-                <dt class="about-page">2014</dt>
-                <dd>Дипломант Всероссийского конкурса программы «100 лучших товаров России, серебряная медаль на продукцию:</dd>
-                <dd>хлеб белый, батон с пшеничными отрубями, батон нарезной, круассаны с начинкой из пшеничной муки первого и высшего сорта.</dd>
-            </dl>
-        </div>
-        <div class="col-md-4 hidden-sm hidden-xs">
-            <!-- Slider Starts -->
-            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:100%; height:450px">
-                <!-- Indicators -->
-                <ol class="carousel-indicators hidden-xs">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-                    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-                    <li data-target="#myCarousel" data-slide-to="3" class=""></li>
-                    <li data-target="#myCarousel" data-slide-to="4" class=""></li>
-                </ol>
-                <div class="carousel-inner">
-                    <!-- Item 1 -->
-                    <div class="item active"><img src="/images/about/awards/award_01.png" class="img-responsive center-block" alt="" /></div>
-                    <div class="item"><img src="/images/about/awards/award_02.png" class="img-responsive center-block" alt="" /></div>
-                    <div class="item"><img src="/images/about/awards/award_03.png" class="img-responsive center-block" alt="" /></div>
-                    <div class="item"><img src="/images/about/awards/award_04.jpg" class="img-responsive center-block" alt="" /></div>
-                    <div class="item"><img src="/images/about/awards/award_05.jpg" class="img-responsive center-block" alt="" /></div>
-                </div>
-            </div>
-            <!-- #Slider Ends -->
-        </div>
-    </div>
+    <?php echo \frontend\widgets\AwardsWidget::widget(); ?>
 </div>
 <div class="spacer"></div>

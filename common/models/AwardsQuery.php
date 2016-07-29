@@ -5,18 +5,13 @@ namespace common\models;
 /**
  * This is the ActiveQuery class for [[Awards]].
  *
- * @see Awards
+ * @see awards
  */
 class AwardsQuery extends \yii\db\ActiveQuery
 {
-    /*public function active()
-    {
-        return $this->andWhere('[[status]]=1');
-    }*/
-
     /**
      * @inheritdoc
-     * @return Awards[]|array
+     * @return awards[]|array
      */
     public function all($db = null)
     {
@@ -25,7 +20,7 @@ class AwardsQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return Awards|array|null
+     * @return awards|array|null
      */
     public function one($db = null)
     {

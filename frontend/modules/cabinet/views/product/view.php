@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = 'Просмотр';
 		</div>
 	</div>
 	<?php
-	if(file_exists('uploads/products/'.$model['idproduct'].'/general/small_general.jpg')):
+	if(file_exists('uploads/products/'.$model['idproduct'].'/general/small_'.$model['general_image'])):
 		?>
 		<?= \yii\helpers\Html::img(\frontend\components\Common::getImageProduct($model, true), ['width' => 200]) ?>
 		<?php

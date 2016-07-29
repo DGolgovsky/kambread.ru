@@ -39,9 +39,9 @@ $this->params['breadcrumbs'][] = 'Просмотр';
         </div>
     </div>
     <?php
-    if(file_exists('uploads/awards/'.$model['idawards'].'/general/small_general.jpg')):
+    if(file_exists('uploads/awards/'.$model['idawards'].'/general/small_'.$model['general_image'])):
         ?>
-        <?= \yii\helpers\Html::img(\frontend\components\Common::getImageawards($model, true), ['width' => 200]) ?>
+        <?= \yii\helpers\Html::img(\frontend\components\Common::getImageAward($model, true), ['width' => 200]) ?>
         <?php
     endif;
     ?>

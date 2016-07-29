@@ -5,7 +5,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Награды', 'url' => ['/cabin
 $this->params['breadcrumbs'][] = ['label' => $model->date, 'url' => ['view', 'id' => $model->idawards]];
 $this->params['breadcrumbs'][] = 'Изображения';
 ?>
-<h2 ><small><p class="text-info">ВНИМАНИЕ! Не загружайте изображения большого размера!</p></small></h2>
+<h2><small><p class="text-info">ВНИМАНИЕ! Не загружайте изображения большого размера!</p></small></h2>
 <div class="container">
     <?php $form = \yii\bootstrap\ActiveForm::begin(); ?>
     <?php
@@ -25,27 +25,7 @@ $this->params['breadcrumbs'][] = 'Изображения';
             'dropZoneEnabled' => false
         ]
     ]); ?>
-    <?php
-    echo \yii\helpers\Html::label('Дополнительные изображения');
-    echo \kartik\file\FileInput::widget([
-        'name' => 'images',
-        'options' => [
-            'accept' => 'image/*',
-            'multiple'=>true
-        ],
-        'pluginOptions' => [
-            'uploadUrl' => \yii\helpers\Url::to(['file-upload-images']),
-            'uploadExtraData' => [
-                'awards_id' => $model->idawards,
-            ],
-            'overwriteInitial' => false,
-            'allowedFileExtensions' =>  ['jpg', 'png','gif'],
-            'initialPreview' => $images_add,
-            'showUpload' => true,
-            'showRemove' => true,
-            'dropZoneEnabled' => false
-        ]
-    ]); ?>
+
     <p><div class="form-group">
         <?= \yii\helpers\Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div></p>
