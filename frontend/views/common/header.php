@@ -12,10 +12,9 @@ use yii\bootstrap\NavBar;
         <a href="/" ><img src="/images/logo_color_rectangle_h100.png" height="100px" alt="Главная" style="position: absolute"></a>
         <h3 class="text-right">
             <small>
-                <span class="contacts__info"><a href="contact" title="Контакты">Контакты</a></span> <span class="divider">|</span>
-                <span class="contacts__info">Приемная:</span>
-                <span class="contacts__info">(84457) 9-64-64</span> <span class="divider">|</span>
-                <span class="contacts__info">Отдел продаж: (84457) 9-39-84; +7-937-535-11-14</span>
+                <span class="contacts__info">г. Камышин, ул. Ленина, 4</span> <span class="divider">|</span>
+                <span class="contacts__info">Приемная: (84457) 9-64-64</span> <span class="divider">|</span>
+                <span class="contacts__info">Отдел маркетинга: (84457) 9-39-84; +7-937-535-11-14</span>
             </small>
         </h3>
     </div>
