@@ -1,4 +1,5 @@
 index.php
 *.html
 index-test.php
-/uploads/
+uploads
+assets
