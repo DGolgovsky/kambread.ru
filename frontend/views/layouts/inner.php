@@ -14,7 +14,6 @@ Yii::$app->language = 'ru-RU';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode('Камышинский хлебокомбинат|'.$this->title) ?></title>
-    <style>h2 {text-indent: 40px;}</style>
     <?php $this->head(); ?>
 </head>
 <body>
@@ -22,20 +21,19 @@ Yii::$app->language = 'ru-RU';
 <!-- views/common/Header Starts -->
 <?php echo $this->render("//common/header"); ?>
 <!-- #views/common/Header Ends -->
-<div class="inside-banner">
-    <div class="container">
-        <span class="pull-left" style="margin-left: 40px;">
-            <?= Breadcrumbs::widget([
-                'homeLink' => ['label' => 'Главная', 'url' => '/index'],
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ]) ?>
-            <?php if(\Yii::$app->session->hasFlash('success')): ?>
-                <?= Alert::widget() ?>
-            <?php endif; ?>
-        </span>
-        <h2 class="text-right" style="margin-right: 40px;"><?=$this->title ?></h2>
+<div class="inside-banner container">
+    <span class="pull-left" style="margin-left: 40px;">
+        <?= Breadcrumbs::widget([
+            'homeLink' => ['label' => 'Главная', 'url' => '/'],
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
+        <?php if(\Yii::$app->session->hasFlash('success')): ?>
+            <?= Alert::widget() ?>
+        <?php endif; ?>
+    </span>
+    <h2 class="text-right" style="margin-right: 40px;margin-top: 13px;"><?=$this->title ?></h2>
     </div>
-</div>
+
 <!-- banner -->
 <div class="container">
     <div class="spacer">

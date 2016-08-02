@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = 'Новости';
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             'name',
-            'description:ntext',
+            'description:boolean',
             //'idnews',
             //'user_id',
             'status:boolean',

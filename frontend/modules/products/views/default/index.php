@@ -4,14 +4,16 @@ use yii\helpers\Html;
 $this->title = 'Каталог продукции';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="properties-listing spacer">
+<div class="properties-listing">
     <div class="row">
         <div class="col-lg-3 col-sm-4 ">
             <?= Html::beginForm(\yii\helpers\Url::to('products'),'get') ?>
             <div class="search-form">
                 <h4><span class="glyphicon glyphicon-search"></span> Параметры поиска</h4>
                 <?=Html::textInput('propert', $request->get('propert'), [
-                    'class' => 'form-control', 'placeholder' => 'Название'])
+                    'class' => 'form-control',
+                    'placeholder' => 'Название'
+                ])
                 ?>
                 <div class="row">
                     <div class="col-lg-12">
@@ -36,6 +38,12 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],['class' => 'form-control', 'prompt' => 'Вид']) ?>
                     </div>
                 </div>
+                <?=Html::checkbox('new', $request->get('new'), [
+                    'unchecked',
+                    'label' => 'Новинка'
+                ])
+                ?>
+                <hr>
                 <button class="btn btn-primary">Найти</button>
                 <?= Html::endForm() ?>
             </div>

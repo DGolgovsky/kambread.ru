@@ -1,3 +1,7 @@
+
+
+
+
 <div class="row">
     <div class="col-md-8 col-sm-12 col-xs-12">
         <h3 class="text-center"><small>Достижения и результаты деятельности предприятия</small></h3>
@@ -14,23 +18,15 @@
         <!-- Slider Starts -->
         <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:100%; height:450px">
             <!-- Indicators -->
-            <ol class="carousel-indicators">
-            <?php
-            if($result_count >= 1):
-                ?>
+            <ol class="carousel-indicators hidden-xs">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <?php
-            endif;
-            ?>
-            <?php
-            if($result_count > 1):
-                foreach(range(1, $result_count-1) as $count):
+                foreach(range(1, count($result_img) - 1) as $s):
                     ?>
-                    <li data-target="#myCarousel" data-slide-to="<?=$count ?>"></li>
+                    <li data-target="#myCarousel" data-slide-to="<?=$s ?>" class=""></li>
                     <?php
                 endforeach;
-            endif;
-            ?>
+                ?>
             </ol>
             <div class="carousel-inner">
                 <?php

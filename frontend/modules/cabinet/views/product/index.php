@@ -12,7 +12,6 @@ $this->params['breadcrumbs'][] = ['label' => 'Кабинет', 'url' => ['/cabin
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="container">
-    <?php //echo $this->render('_search', ['model' => $searchModel]); ?>
     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 text-center">
         <?= Html::a('Добавить', ['create'], ['class' => 'btn btn-primary']) ?>
     </div>

@@ -78,7 +78,7 @@ class NewsController extends Controller
 
             Image::frame($image, 0, '666', 0)
                 ->crop(new Point(0, 0), new Box($width, $height))
-                ->resize(new Box(1280,720))
+                ->resize(new Box(1280, 720))
                 ->save($new_name, ['quality' => 85]);
 
             return true;
@@ -104,7 +104,7 @@ class NewsController extends Controller
 
             Image::frame($image, 0, '666', 0)
                 ->crop(new Point(0, 0), new Box($width, $height))
-                ->resize(new Box(1280,720))
+                ->resize(new Box(1280, 720))
                 ->save($new_name, ['quality' => 85]);
 
             sleep(1);

@@ -30,12 +30,12 @@
                         <h5 style="text-indent: 20px;">
                             <a href="<?=\frontend\components\Common::getUrlNews($rec) ?>" ><?=\frontend\components\Common::getTitle($rec) ?></a>
                         </h5>
-                        <div class="pull-left bg-default" style="width: 20em; padding: 20px;">
+                        <div class="pull-left bg-default" style="width: 20em; padding: 15px;">
                             <img src="<?=\frontend\components\Common::getImageNews($rec)[0] ?>" class="img-responsive news" alt="properties" />
                             <a href="<?=\frontend\components\Common::getUrlNews($rec) ?>" class="more">Подробнее</a>
                         </div>
 
-                        <p><?= \frontend\components\Common::substr($rec['description'], 0, 70) ?></p>
+                        <p><?= \frontend\components\Common::substr($rec['description'], 0, 470) ?></p>
                     </div>
                 </div>
                 <?php

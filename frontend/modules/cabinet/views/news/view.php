@@ -61,13 +61,13 @@ $this->params['breadcrumbs'][] = 'Просмотр';
 
     <div class="row">
         <div class="col-lg-2 col-lg-offset-2 col-sm-2 col-sm-offset-1 col-xs-3">
-            <?=Html::a('< туда', ['view', 'id' => ($model->findOne($id = $model->idnews - 1) !== null) ? $id : $model->idnews], [
+            <?=Html::a('<- сюда', ['view', 'id' => ($model->findOne($id = $model->idnews - 1) !== null) ? $id : $model->idnews], [
                 'class' => ($id) ? 'btn btn-default' : 'btn btn-default disabled',
             ]);
             ?>
         </div>
         <div class="col-lg-2 col-lg-offset-4 col-sm-2 col-sm-offset-6 col-xs-3">
-            <?= Html::a('сюда >', ['view', 'id' => ($model->findOne($model->idnews + 1) !== null) ? $id = $model->idnews + 1: $id = $model->idnews], [
+            <?= Html::a('туда ->', ['view', 'id' => ($model->findOne($model->idnews + 1) !== null) ? $id = $model->idnews + 1: $id = $model->idnews], [
                 'class' => ($id - $model->idnews) ? 'btn btn-default' : 'btn btn-default disabled',
             ]) ?>
         </div>

@@ -17,17 +17,6 @@ $this->params['breadcrumbs'][] = 'Просмотр';
                 <div class="property-images">
                     <!-- Slider Starts -->
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators hidden-xs">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <?php
-                            foreach(range(1,count($images)) as $s):
-                                ?>
-                                <li data-target="#myCarousel" data-slide-to="<?=$s ?>" class=""></li>
-                                <?php
-                            endforeach;
-                            ?>
-                        </ol>
                         <div class="carousel-inner">
                             <!-- Item 1 -->
                             <div class="item active">
@@ -43,8 +32,6 @@ $this->params['breadcrumbs'][] = 'Просмотр';
                             endforeach;
                             ?>
                         </div>
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
                     </div>
                     <!-- #Slider Ends -->
                 </div>

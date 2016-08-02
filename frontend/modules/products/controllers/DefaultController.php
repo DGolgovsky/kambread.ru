@@ -7,11 +7,6 @@ use yii\base\DynamicModel;
 use yii\data\Pagination;
 use yii\web\Controller;
 
-//use frontend\models\Image;
-
-//use yii\web\Response;
-//use yii\widgets\ActiveForm;
-
 class DefaultController extends Controller
 {
 	public $layout = "inner";
@@ -36,13 +31,14 @@ class DefaultController extends Controller
 		];
 	}
 
-	public function actionIndex($propert = '', $price = '', $type = '')
+	public function actionIndex($propert = '', $price = '', $type = '', $new = 0)
 	{
 		$query = Product::find();
 		$query->where('status=true');
 		$query->filterWhere(['ilike', 'name', $propert])
 			->orFilterWhere(['ilike', 'description', $propert])
-			->andFilterWhere(['type' => $type]);
+			->andFilterWhere(['type' => $type])
+            ->andFilterWhere(['new' => $new]);
 
 		if($price) {
 			$prices = explode("-",$price);

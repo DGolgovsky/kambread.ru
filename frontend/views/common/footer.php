@@ -16,7 +16,7 @@ if(Yii::$app->user->isGuest) {
         width: 130px;
     }
 </style>
-<div class="footer">
+<hr>
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-3 col-xs-12">
@@ -56,4 +56,4 @@ if(Yii::$app->user->isGuest) {
         </div>
         <p style="text-align: center">Полный ассортимент продукции и цены Вы можете уточнить у менеджеров <a href="/contact">отдела маркетинга</a></p>
     </div>
-</div>
+

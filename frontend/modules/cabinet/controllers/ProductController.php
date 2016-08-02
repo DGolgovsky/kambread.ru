@@ -30,8 +30,12 @@ class ProductController extends Controller
 	{
 		$searchModel = new ProductSearch();
 		$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->sort = [
+            'defaultOrder' => [
+                'updated_at' => SORT_DESC,
+            ]];
 
-		return $this->render('index', [
+        return $this->render('index', [
 			'searchModel' => $searchModel,
 			'dataProvider' => $dataProvider,
 		]);
@@ -75,36 +79,9 @@ class ProductController extends Controller
 
 			Image::frame($image, 0, '666', 0)
 				->crop(new Point(0, 0), new Box($width, $height))
-				->resize(new Box(1280,720))
+				->resize(new Box(1280,824))
 				->save($new_name, ['quality' => 85]);
 
-			return true;
-		}
-	}
-
-	public function actionFileUploadImages()
-	{
-		if(Yii::$app->request->isPost){
-			$id = Yii::$app->request->post("product_id");
-			$path = Yii::getAlias("@frontend/web/uploads/products/".$id);
-			BaseFileHelper::createDirectory($path);
-			$file = UploadedFile::getInstanceByName('images');
-			$name = time().'.'.$file->extension;
-			$file->saveAs($path .DIRECTORY_SEPARATOR .$name);
-
-			$image = $path .DIRECTORY_SEPARATOR .$name;
-			$new_name = $path .DIRECTORY_SEPARATOR."small_".$name;
-
-			$size = getimagesize($image);
-			$width = $size[0];
-			$height = $size[1];
-
-			Image::frame($image, 0, '666', 0)
-				->crop(new Point(0, 0), new Box($width, $height))
-				->resize(new Box(1280,720))
-				->save($new_name, ['quality' => 85]);
-
-			sleep(1);
 			return true;
 		}
 	}
