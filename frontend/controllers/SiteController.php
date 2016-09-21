@@ -86,7 +86,12 @@ class SiteController extends Controller
         $this->layout = "landing";
 
         $query = new Query();
-        $query_product = $query->from('product')->groupBy('idproduct')->orderBy('idproduct desc')->where('status=true');
+        $query_product = $query
+            ->from('product')
+            ->groupBy('idproduct')
+            ->orderBy('idproduct desc')
+            ->where('status=true');
+
         $command = $query_product->limit(5);
         $result_general = $command->all();
         $count_general = $command->count();
@@ -100,11 +105,18 @@ class SiteController extends Controller
         /*$recommend_query  = $query_product->where("recommend=true")->limit(5);
         $recommend = $recommend_query->all();
         $recommend_count = $recommend_query->count();*/
-        
+        $slider_img = [
+            '/images/slider/1.jpg',
+            '/images/slider/2.jpg',
+            '/images/slider/3.jpg',
+            '/images/slider/4.jpg',
+            '/images/slider/5.jpg',
+        ];
         return $this->render('index',[
             'result_general' => $result_general,
             'count_general' => $count_general,
-            'featured' => $featured/*,
+            'featured' => $featured,
+            'slider_img' => $slider_img/*,
             'recommend' => $recommend,
             'recommend_count' => $recommend_count*/
         ]);

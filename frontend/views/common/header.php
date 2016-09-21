@@ -3,12 +3,13 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 ?>
 
-<!--[if lt IE 7]>
+<!--[if lt IE 9]>
 <p class="chromeframe">Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browsehappy.com/">обновите Ваш браузер</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируйте Google Chrome Frame</a> для улучшения отображения.</p>
 <![endif]-->
 <!-- views/common/Header navbar Starts -->
 <div class="container" style="background: url(images/bgmain.png);">
     <div class="row">
+        <div class="hidden-sm hidden-xs hidden-md">
         <a href="/" ><img src="/images/logo_color_rectangle_h100.png" height="100px" alt="Главная" style="position: absolute"></a>
         <h3 class="text-right">
             <small>
@@ -18,15 +19,12 @@ use yii\bootstrap\NavBar;
             </small>
         </h3>
     </div>
+    </div>
 </div>
+    </header>
 <!-- Nav Starts -->
 
     <?php
-    NavBar::begin([
-        'options' => [
-            'class' => 'nav navbar-inner',
-        ],
-    ]);
     $menuItems[] = ['label' => 'ГЛАВНАЯ', 'url' => ['/']];
     $menuItems[] = ['label' => 'ПРОДУКЦИЯ', 'url' => ['/products']];
     $menuItems[] = ['label' => 'ИНФОРМАЦИЯ',
@@ -72,6 +70,12 @@ use yii\bootstrap\NavBar;
         ];
         $menuItems[] = ['label' => 'ВЫХОД (' . Yii::$app->user->identity->username . ')',  'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']];
     }
+
+    NavBar::begin([
+        'options' => [
+            'class' => 'navbar navbar-inner',
+        ],
+    ]);
     echo Nav::widget([
         'options' => [
             'class' => 'navbar navbar-nav navbar-right',

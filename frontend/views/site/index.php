@@ -2,22 +2,18 @@
 use frontend\components\Common;
 ?>
 <!-- slider-wrapper -->
+<div class="container">
 <div id="slider" class="sl-slider-wrapper">
     <div class="sl-slider">
         <?php foreach($result_general as $row): ?>
-            <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="1" data-slice2-scale="1">
+            <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="1" data-slice2-scale="1">
                 <div class="sl-slide-inner">
-                    <div class="bg-img" style="background-image: url('<?= Common::getImageProduct($row)[0] ?>')"></div>
+                    <div class="bg-img" style="background-image: url('<?= Common::getImageProduct($row, 1)[0] ?>')"></div>
                     <h2>
                         <a href="<?= Common::getUrlProduct($row) ?>">
                             <?= Common::getTitle($row) ?>
                         </a>
                     </h2>
-                    <blockquote>
-                        <?php $row['description'] = preg_replace("(\r\n|\n|\r)", "<BR/>", $row['description']); ?>
-                        <p><?= Common::substr($row['description'], 0, 150) ?></p>
-                        <cite><?= $row['price'] ?> &#8381;</cite>
-                    </blockquote>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -37,6 +33,7 @@ use frontend\components\Common;
         endif;
         ?>
     </nav>
+</div>
 </div>
 <!-- /slider-wrapper -->
 <div class="spacer"></div>
@@ -89,7 +86,7 @@ use frontend\components\Common;
                 <?php foreach($featured as $row): ?>
                     <div class="properties">
                         <div class="image-holder">
-                            <img src="<?=Common::getImageProduct($row)[0] ?>" class="img-responsive" alt='<?=Common::getS_Title($row) ?>' style="height: 131.;">
+                            <img src="<?=Common::getImageProduct($row, 0)[0] ?>" class="img-responsive" alt='<?=Common::getS_Title($row) ?>' style="height: 131.;">
                             <div class="status <?=($row['new']) ? 'new' : 'recommend' ?>"><?= Common::getTypeProduct($row) ?></div>
                         </div>
                         <h4 style="height: 42px;;"><a href="<?=Common::getUrlProduct($row) ?>"><?= Common::getS_Title($row) ?></a></h4>

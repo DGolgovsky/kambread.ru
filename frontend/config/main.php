@@ -10,20 +10,20 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language' => 'ru-RU',
     'controllerNamespace' => 'frontend\controllers',
     //'defaultRoute' => 'main',
     'components' => [
-        /*'cache' => [
+        'cache' => [
             'class' => 'yii\caching\MemCache',
             'servers' => [
                 [
-                    'host' => '85.174.63.230',
+                    'host' => 'localhost',
                     'port' => 11211,
                     'weight' => 60,
                 ],
             ],
         ],
-        */
         'common' => [
             'class' => 'frontend\components\Common',
         ],

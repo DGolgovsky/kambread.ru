@@ -65,13 +65,17 @@ class Common extends Component
         return $image;
     }
 
-	public static function getImageProduct($data, $general = true, $original = false)
+	public static function getImageProduct($data, $original = false)
 	{
 		$image = [];
 		$base = '/';
-		if($general) {
-			$image[] = $base.'uploads/products/'.$data['idproduct'].'/general/small_'.$data['general_image'];
-		} else {
+
+        if ($original) {
+            $image[] = $base.'uploads/products/'.$data['idproduct'].'/general/'.$data['general_image'];
+        } else {
+            $image[] = $base.'uploads/products/'.$data['idproduct'].'/general/small_'.$data['general_image'];
+        }
+		/*
 			$path = Yii::getAlias("@frontend/web/uploads/products/".$data['idproduct']);
 			$files = BaseFileHelper::findFiles($path);
 			foreach($files as $file) {
@@ -79,8 +83,7 @@ class Common extends Component
 					$image[] = $base . 'uploads/products/' . $data['idproduct'] . '/' . basename($file);
 				}
 			}
-		}
-
+		*/
 		return $image;
 	}
 

@@ -1,13 +1,13 @@
  .sl-slider-wrapper {
 	width: 100%;
-	height: 500px;
+	height: 350px;
 	overflow: hidden;
 	position: relative;
 }
 
  .sl-slider h2,
  .sl-slider blockquote {
-	padding: 50px 650px 10px 0;
+	padding: 5% 10% 10px 5%;
 	width: 100%;
 	max-width: 1140px;
 	color: #fff;
@@ -57,7 +57,7 @@
 	height: 100%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
-	background-size: cover;
+	background-size: 75%;
 	background-position: center center;
 	background-color: #000;
 	opacity:.9; /*change opacity for slider*/
@@ -76,7 +76,7 @@
 	text-indent: -90000px;
 	margin-top: -40px;
 	cursor: pointer;
-	
+
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
@@ -122,8 +122,8 @@
 	background: #ddd;
 	background: rgba(150,150,150,0.4);
 	cursor: pointer;
-	box-shadow: 
-		0 1px 1px rgba(255,255,255,0.4), 
+	box-shadow:
+		0 1px 1px rgba(255,255,255,0.4),
 		inset 0 1px 1px rgba(0,0,0,0.1);
 }
 
@@ -135,16 +135,16 @@
 	-ms-transition: all 0.2s;
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
-	box-shadow: 
-		0 1px 1px rgba(255,255,255,0.4), 
+	box-shadow:
+		0 1px 1px rgba(255,255,255,0.4),
 		inset 0 1px 1px rgba(0,0,0,0.1),
 		0 0 0 2px rgba(255,255,255,0.5);
 }
 
  .nav-dots span.nav-dot-current,
  .nav-dots span:hover {
-	box-shadow: 
-		0 1px 1px rgba(255,255,255,0.4), 
+	box-shadow:
+		0 1px 1px rgba(255,255,255,0.4),
 		inset 0 1px 1px rgba(0,0,0,0.1),
 		0 0 0 5px rgba(255,255,255,0.5);
 }
@@ -329,7 +329,7 @@
 /* Media Queries for custom slider */
 
 @media screen and (max-width: 1100px) {
-	
+
 	 .sl-slider-wrapper {
 		height: 400px;
 

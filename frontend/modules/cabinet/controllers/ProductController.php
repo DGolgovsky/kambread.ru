@@ -65,9 +65,9 @@ class ProductController extends Controller
 
 			$file = UploadedFile::getInstance($model,'general_image');
 			$name = 'general.'.$file->extension;
-			$file->saveAs($path .DIRECTORY_SEPARATOR .$name);
+			$file->saveAs($path .DIRECTORY_SEPARATOR.$name);
 
-			$image  = $path .DIRECTORY_SEPARATOR .$name;
+			$image  = $path .DIRECTORY_SEPARATOR.$name;
 			$new_name = $path .DIRECTORY_SEPARATOR."small_".$name;
 
 			$model->general_image = $name;
@@ -77,9 +77,10 @@ class ProductController extends Controller
 			$width = $size[0];
 			$height = $size[1];
 
+/* frame ( $filename, $margin = 20, $color = '666', $alpha = 100 ) */
 			Image::frame($image, 0, '666', 0)
 				->crop(new Point(0, 0), new Box($width, $height))
-				->resize(new Box(1280,824))
+				->resize(new Box(1000, 644))
 				->save($new_name, ['quality' => 85]);
 
 			return true;

@@ -61,7 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="col-lg-4 col-sm-6">
                         <div class="properties">
                             <div class="image-holder">
-                                <img src="<?=\frontend\components\Common::getImageProduct($row)[0] ?>"  class="img-responsive" alt='properties'>
+                                <img src="<?=\frontend\components\Common::getImageProduct($row, 0)[0] ?>"  class="img-responsive" alt='properties'>
                                 <div class="status <?=($row['new']) ? 'new' : 'recommend' ?>"><?=\frontend\components\Common::getTypeProduct($row) ?></div>
                             </div>
                             <h4 style="height: 42px;"><a href="<?=$url ?>" ><?=\frontend\components\Common::getS_Title($row) ?></a></h4>
