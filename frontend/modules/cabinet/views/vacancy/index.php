@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = 'Вакансии';
             //'idvacancy',
             //'group_id',
             'user.name',
-            'created_at:date',            
+            'created_at:date',
             'updated_at:date',
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -43,19 +43,19 @@ class ContactForm extends Model
             'body' => 'Содержание',
             'verifyCode' => 'Верификация',
         ];
-    }    
+    }
 
     /**
      * Sends an email to the specified email address using the information collected by this model.
      *
-     * @param  string  $email the target email address
+     * @param  string $email the target email address
      * @return boolean whether the email was sent
      */
     public function sendEmail($email)
     {
-        $body = " <div>Сообщение от: <b> ".$this->name." </b></div>";
-        $body .= " <div>Email: <b> ".$this->email." </b></div>";
-        $body .= " <div>Текст: <b> ".$this->body." </b></div>";
+        $body = " <div>Сообщение от: <b> " . $this->name . " </b></div>";
+        $body .= " <div>Email: <b> " . $this->email . " </b></div>";
+        $body .= " <div>Текст: <b> " . $this->body . " </b></div>";
 
         return Yii::$app->common->sendMail('[Отзыв]', $this->name, $email, Yii::$app->params['marketEmail'], $this->subject, $body);
     }

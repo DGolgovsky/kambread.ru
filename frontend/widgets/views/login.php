@@ -2,6 +2,7 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
+
 ?>
 <div id="loginpop" class="modal fade">
     <div class="modal-dialog">
@@ -16,11 +17,11 @@ use yii\helpers\Url;
                     ]);
                     ?>
 
-                    <?=$form->field($model,'username') ?>
-                    <?=$form->field($model,'password')->passwordInput() ?>
-                    <?=$form->field($model,'rememberMe')->checkbox() ?>
+                    <?= $form->field($model, 'username') ?>
+                    <?= $form->field($model, 'password')->passwordInput() ?>
+                    <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
-                    <?= Html::submitButton('Вход',['class' => 'btn btn-success']) ?>
+                    <?= Html::submitButton('Вход', ['class' => 'btn btn-success']) ?>
 
                     <?php
                     ActiveForm::end();

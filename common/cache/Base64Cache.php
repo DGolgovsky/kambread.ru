@@ -17,6 +17,6 @@ class Base64Cache extends FileCache
     protected function setValue($key, $value, $duration)
     {
         $value = base64_encode($value);
-        parent::setValue($key,$value,$duration);
+        parent::setValue($key, $value, $duration);
     }
 }

@@ -15,13 +15,13 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-11 col-xs-offset-1">
             <p>Please fill out the following fields to signup:</p>
             <?php
-                $form = ActiveForm::begin([
-                    'id' => 'form-signup',
-                    'enableClientValidation' => true,
-                    'enableAjaxValidation' => true,
-                ]);
+            $form = ActiveForm::begin([
+                'id' => 'form-signup',
+                'enableClientValidation' => true,
+                'enableAjaxValidation' => true,
+            ]);
             ?>
-            
+
             <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
             <?= $form->field($model, 'username') ?>

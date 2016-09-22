@@ -10,19 +10,22 @@ $this->params['breadcrumbs'][] = 'Профиль';
             'options' => ['enctype' => 'multipart/form-data']
         ]);
         ?>
-        <?=$form->field($model,'name')->textInput(['autofocus' => true]) ?>
-        <?=$form->field($model,'username') ?>
-        <?=$form->field($model,'email')->input('email'); ?>
-        <?=$form->field($model,'phone') ?>
-        <?=\yii\helpers\Html::label('Фото профиля') ?>
-        <?=\yii\helpers\Html::fileInput('avatar') ?>
+        <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'username') ?>
+        <?= $form->field($model, 'email')->input('email'); ?>
+        <?= $form->field($model, 'phone') ?>
+        <?= \yii\helpers\Html::label('Фото профиля') ?>
+        <?= \yii\helpers\Html::fileInput('avatar') ?>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4">
-        <?=\yii\helpers\Html::img(\common\components\UserComponent::getUserImage(\Yii::$app->user->id), ['width' => 200, 'class' => 'img-circle center-block img-responsive']) ?>
+        <?= \yii\helpers\Html::img(\common\components\UserComponent::getUserImage(\Yii::$app->user->id), ['width' => 200, 'class' => 'img-circle center-block img-responsive']) ?>
         <hr>
         <div class="bg-info center-block" style="width: 20em; padding: 10px;">
-            <h3><small>Внимание!</small></h3>
-            <p>На текущий момент пароль от сайта и от почтового ящика различаются. Для уточнения пароля от email свяжитесь с <a href="mailto:support@kambread.ru" target="_self">поддержкой</a> сайта.</p>
+            <h3>
+                <small>Внимание!</small>
+            </h3>
+            <p>На текущий момент пароль от сайта и от почтового ящика различаются. Для уточнения пароля от email
+                свяжитесь с <a href="mailto:support@kambread.ru" target="_self">поддержкой</a> сайта.</p>
         </div>
     </div>
 </div>

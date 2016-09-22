@@ -1,14 +1,12 @@
-
-
-
-
 <div class="row">
     <div class="col-md-8 col-sm-12 col-xs-12">
-        <h3 class="text-center"><small>Достижения и результаты деятельности предприятия</small></h3>
+        <h3 class="text-center">
+            <small>Достижения и результаты деятельности предприятия</small>
+        </h3>
         <dl class="dl-horizontal">
             <?php use frontend\components\Common;
 
-            foreach($result as $res ): ?>
+            foreach ($result as $res): ?>
                 <dt class="about-page"><?= $res['date'] ?></dt>
                 <dd><?= $res['description'] ?></dd>
             <?php endforeach; ?>
@@ -21,9 +19,9 @@
             <ol class="carousel-indicators hidden-xs">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <?php
-                foreach(range(1, count($result_img) - 1) as $s):
+                foreach (range(1, count($result_img) - 1) as $s):
                     ?>
-                    <li data-target="#myCarousel" data-slide-to="<?=$s ?>" class=""></li>
+                    <li data-target="#myCarousel" data-slide-to="<?= $s ?>" class=""></li>
                     <?php
                 endforeach;
                 ?>
@@ -31,10 +29,11 @@
             <div class="carousel-inner">
                 <?php
                 $i = 0;
-                foreach($result_img as $row):
+                foreach ($result_img as $row):
                     ?>
-                    <div class="item <?=($i == 0) ? 'active' : '' ?>">
-                        <img src="<?= \frontend\components\Common::getImageAward($row)[0] ?>" class="img-responsive center-block" alt="" />
+                    <div class="item <?= ($i == 0) ? 'active' : '' ?>">
+                        <img src="<?= \frontend\components\Common::getImageAward($row)[0] ?>"
+                             class="img-responsive center-block" alt=""/>
                     </div>
                     <?php
                     $i++;

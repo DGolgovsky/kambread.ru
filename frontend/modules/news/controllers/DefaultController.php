@@ -13,7 +13,7 @@ use yii\web\Controller;
 class DefaultController extends Controller
 {
     public $layout = "inner";
-    
+
     /**
      * Renders the index view for the module
      * @return string
@@ -40,9 +40,9 @@ class DefaultController extends Controller
 
         $images = \frontend\components\Common::getImageNews($model, false);
 
-        return $this->render('view_news',[
+        return $this->render('view_news', [
             'model' => $model,
-            'images' =>$images,
+            'images' => $images,
         ]);
     }
 }

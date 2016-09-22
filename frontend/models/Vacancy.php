@@ -21,6 +21,7 @@ use yii\behaviors\TimestampBehavior;
 class Vacancy extends \yii\db\ActiveRecord
 {
     public static $dates = ['updated_at', 'created_at'];
+
     /**
      * @inheritdoc
      */
@@ -85,7 +86,7 @@ class Vacancy extends \yii\db\ActiveRecord
 
     public function getUser()
     {
-        return $this->hasOne(User::className(),['id' => 'group_id']);
+        return $this->hasOne(User::className(), ['id' => 'group_id']);
     }
 
     public function afterValidate()

@@ -17,6 +17,7 @@ use yii\imagine\Image;
 class DefaultController extends Controller
 {
     public $layout = "inner";
+
     /**
      * Renders the index view for the module
      * @return string
@@ -29,11 +30,11 @@ class DefaultController extends Controller
 
     public function uploadAvatar()
     {
-        if(Yii::$app->request->isPost) {
+        if (Yii::$app->request->isPost) {
             $id = Yii::$app->user->id;
             $path = Yii::getAlias("@frontend/web/uploads/users");
             $file = UploadedFile::getInstanceByName('avatar');
-            if($file) {
+            if ($file) {
                 $name = $id . '.jpg';
                 $file->saveAs($path . DIRECTORY_SEPARATOR . $name);
 
@@ -48,21 +49,22 @@ class DefaultController extends Controller
             }
         }
     }
-/*
-    public function actionNews()
-    {
-        return $this->render('news');
-    }
-*/
+
+    /*
+        public function actionNews()
+        {
+            return $this->render('news');
+        }
+    */
     public function actionChangePassword()
     {
         $model = new ChangePasswordForm();
 
-        if($model->load(\Yii::$app->request->post()) && $model->changePassword()) {
+        if ($model->load(\Yii::$app->request->post()) && $model->changePassword()) {
             return $this->refresh();
         }
 
-        return $this->render('change-password',['model' => $model]);
+        return $this->render('change-password', ['model' => $model]);
     }
 
     public function actionSettings()
@@ -70,12 +72,12 @@ class DefaultController extends Controller
         $model = User::findOne(\Yii::$app->user->id);
         $model->scenario = 'settings';
 
-        if($model->load(\Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(\Yii::$app->request->post()) && $model->save()) {
             $this->uploadAvatar();
             Yii::$app->session->setFlash('success', 'Ваш профиль обновлён');
             return $this->refresh();
         }
 
-        return $this->render('settings',['model' => $model]);
+        return $this->render('settings', ['model' => $model]);
     }
 }

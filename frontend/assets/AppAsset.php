@@ -24,7 +24,7 @@ class AppAsset extends AssetBundle
         'source/owl-carousel/owl.carousel.css',
         'source/owl-carousel/owl.theme.css',
         'source/slitslider/css/style.css',
-        'source/slitslider/css/custom.css',        
+        'source/slitslider/css/custom.css',
     ];
 
     public $js = [
@@ -44,6 +44,6 @@ class AppAsset extends AssetBundle
     ];
 
     public $jsOptions = [
-        'position' =>  View::POS_END,
+        'position' => View::POS_END,
     ];
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 $I = new _support\AcceptanceTester\CRMOperatorSteps($scenario);
 $I->wantTo('Add two different customers to database');
 

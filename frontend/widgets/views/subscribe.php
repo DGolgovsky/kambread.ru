@@ -5,9 +5,9 @@ $form = \yii\bootstrap\ActiveForm::begin([
     'options' => ['class' => 'form-inline']
 ]);
 ?>
-<?=$form->field($model,'email')->textInput(['placeholder' => 'Enter Your email address'])->label(false) ?>
+<?= $form->field($model, 'email')->textInput(['placeholder' => 'Enter Your email address'])->label(false) ?>
 
-<?=\yii\helpers\Html::submitButton('Notify Me!', ['class' => 'btn btn-success']) ?>
+<?= \yii\helpers\Html::submitButton('Notify Me!', ['class' => 'btn btn-success']) ?>
 
 <?php
 \yii\bootstrap\ActiveForm::end();

@@ -5,11 +5,13 @@ $this->params['breadcrumbs'][] = ['label' => 'Награды', 'url' => ['/cabin
 $this->params['breadcrumbs'][] = ['label' => $model->date, 'url' => ['view', 'id' => $model->idawards]];
 $this->params['breadcrumbs'][] = 'Изображения';
 ?>
-<h2><small><p class="text-info">ВНИМАНИЕ! Не загружайте изображения большого размера!</p></small></h2>
+<h2>
+    <small><p class="text-info">ВНИМАНИЕ! Не загружайте изображения большого размера!</p></small>
+</h2>
 <div class="container">
     <?php $form = \yii\bootstrap\ActiveForm::begin(); ?>
     <?php
-    echo $form->field($model, 'general_image')->widget(\kartik\file\FileInput::classname(),[
+    echo $form->field($model, 'general_image')->widget(\kartik\file\FileInput::classname(), [
         'options' => [
             'accept' => 'image/*',
         ],
@@ -18,7 +20,7 @@ $this->params['breadcrumbs'][] = 'Изображения';
             'uploadExtraData' => [
                 'awards_id' => $model->idawards,
             ],
-            'allowedFileExtensions' =>  ['jpg', 'png','gif'],
+            'allowedFileExtensions' => ['jpg', 'png', 'gif'],
             'initialPreview' => $image,
             'showUpload' => true,
             'showRemove' => true,
@@ -26,8 +28,10 @@ $this->params['breadcrumbs'][] = 'Изображения';
         ]
     ]); ?>
 
-    <p><div class="form-group">
+    <p>
+    <div class="form-group">
         <?= \yii\helpers\Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    </div></p>
+    </div>
+    </p>
     <?php \yii\bootstrap\ActiveForm::end(); ?>
 </div>

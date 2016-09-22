@@ -13,21 +13,21 @@ use yii\web\NotFoundHttpException;
 
 class ProductController extends AuthController
 {
-/*    public function behaviors()
-    {
-        return ArrayHelper::merge(parent::behaviors(), [
-            'authenticator' => [
-                'class' => HttpBasicAuth::className(),
-                'auth'=>function ($username, $password) {
-                    $model = User::findOne(['username' => $username]);
-                    if($model->validatePassword($password)) {
-                        return $model;
+    /*    public function behaviors()
+        {
+            return ArrayHelper::merge(parent::behaviors(), [
+                'authenticator' => [
+                    'class' => HttpBasicAuth::className(),
+                    'auth'=>function ($username, $password) {
+                        $model = User::findOne(['username' => $username]);
+                        if($model->validatePassword($password)) {
+                            return $model;
+                        }
                     }
-                }
-            ],
-        ]);
-    }
-*/
+                ],
+            ]);
+        }
+    */
     public function actionIndex()
     {
         \Yii::$app->view->title = "Product Manager";

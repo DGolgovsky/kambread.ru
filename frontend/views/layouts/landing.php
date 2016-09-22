@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
+
 AppAsset::register($this);
 Yii::$app->language = 'ru-RU';
 ?>
@@ -16,12 +17,12 @@ Yii::$app->language = 'ru-RU';
 </head>
 <body>
 <?php $this->beginBody(); ?>
-<?php if(\Yii::$app->session->hasFlash('success')): ?>
-    <?=\Yii::$app->session->getFlash('success') ?>
+<?php if (\Yii::$app->session->hasFlash('success')): ?>
+    <?= \Yii::$app->session->getFlash('success') ?>
 <?php endif; ?>
-<?=$this->render("//common/header") ?>
-<?=$content ?>
-<?=$this->render("//common/footer") ?>
+<?= $this->render("//common/header") ?>
+<?= $content ?>
+<?= $this->render("//common/footer") ?>
 <?php $this->endBody(); ?>
 </body>
 </html>

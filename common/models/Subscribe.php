@@ -15,6 +15,7 @@ use Yii;
 class Subscribe extends \yii\db\ActiveRecord
 {
     const EVENT_NOTIFICATION_ADMIN = 'new-notification-admin';
+
     /**
      * @inheritdoc
      */
@@ -46,9 +47,8 @@ class Subscribe extends \yii\db\ActiveRecord
     {
         $model = User::find()->where(['roles' => 'admin'])->all();
 
-        foreach($model as $r)
-        {
-            Common::sendMail('[New subscribe]',$r['name'], $r['email'],'New subscriber', '');
+        foreach ($model as $r) {
+            Common::sendMail('[New subscribe]', $r['name'], $r['email'], 'New subscriber', '');
         }
 
         Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');

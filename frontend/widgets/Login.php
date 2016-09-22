@@ -14,11 +14,11 @@ class Login extends Widget
     {
         $model = new LoginForm();
 
-        if($model->load(\Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(\Yii::$app->request->post()) && $model->login()) {
             $controller = \Yii::$app->controller;
             $controller->redirect($controller->goBack());
         }
 
-        return $this->render("login",['model' => $model]);
+        return $this->render("login", ['model' => $model]);
     }
 }

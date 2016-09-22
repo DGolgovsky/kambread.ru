@@ -9,7 +9,7 @@ use yii\web\Response;
 use frontend\components\Common;
 
 
-class NewsWidget extends  Widget
+class NewsWidget extends Widget
 {
     private $_query;
 
@@ -22,13 +22,13 @@ class NewsWidget extends  Widget
     {
         $query = $this->_query;
         $query_news = $query->from('news')->groupBy('idnews')->orderBy('created_at desc')->where('status=true');
-        $result_query  = $query_news->limit(5);
+        $result_query = $query_news->limit(5);
 
         $result = $result_query->all();
 
         $result_count = $result_query->count();
 
-        return $this->render('news',[
+        return $this->render('news', [
             'result' => $result,
             'result_count' => $result_count,
         ]);

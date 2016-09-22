@@ -18,19 +18,19 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'idproduct') ?>
 
     <?= $form->field($model, 'price') ?>
-    
+
     <?= $form->field($model, 'user_id') ?>
 
     <?= $form->field($model, 'name') ?>
 
     <?= $form->field($model, 's_name') ?>
-    
+
     <?php // echo $form->field($model, 'general_image') ?>
 
     <?= $form->field($model, 'description') ?>
-    
+
     <?php // echo $form->field($model, 'new') ?>
-    
+
     <?php // echo $form->field($model, 'type') ?>
 
     <?php // echo $form->field($model, 'recommend') ?>

@@ -5,7 +5,7 @@ namespace frontend\widgets;
 use yii\base\Widget;
 use yii\db\Query;
 
-class AwardsWidget extends  Widget
+class AwardsWidget extends Widget
 {
     private $_query;
 
@@ -28,7 +28,7 @@ class AwardsWidget extends  Widget
             ->where(['not', ['general_image' => null]])
             ->all();
 
-        return $this->render('awards',[
+        return $this->render('awards', [
             'result' => $result,
             'result_count' => $result_count,
             'result_img' => $result_img]);

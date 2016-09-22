@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
     <?= $form->field($model, 'description')->widget(\yii\redactor\widgets\Redactor::className()) ?>
-    
+
     <?= $form->field($model, 'status')->checkbox() ?>
 
     <div class="form-group">

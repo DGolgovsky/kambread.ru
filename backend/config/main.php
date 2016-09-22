@@ -19,7 +19,7 @@ return [
         'assetManager' => [
             'bundles' => [
                 'dmstr\web\AdminLteAsset' => [
-                    
+
                 ],
             ],
         ],

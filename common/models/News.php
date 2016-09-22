@@ -18,7 +18,6 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $created_at
  * @property integer $updated_at
  **/
-
 class News extends \yii\db\ActiveRecord
 {
     public static $dates = ['updated_at', 'created_at'];
@@ -79,11 +78,11 @@ class News extends \yii\db\ActiveRecord
     {
         return [
             'idnews' => 'ID новости',
-            'name' => 'Наименование',            
+            'name' => 'Наименование',
             'user_id' => 'ID пользователя',
             'status' => 'Закончена',
             'general_image' => 'Главное изображение',
-            'description' => 'Описание',            
+            'description' => 'Описание',
             'created_at' => 'Создано',
             'updated_at' => 'Обновлено',
             'user.name' => 'Добавлено',
@@ -92,7 +91,7 @@ class News extends \yii\db\ActiveRecord
 
     public function getUser()
     {
-        return $this->hasOne(User::className(),['id' => 'user_id']);
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
     //beforeValidate

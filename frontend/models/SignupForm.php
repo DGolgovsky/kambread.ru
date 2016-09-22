@@ -30,6 +30,7 @@ class SignupForm extends Model
             'repassword' => 'Подтвердить пароль',
         ];
     }
+
     /**
      * @inheritdoc
      */

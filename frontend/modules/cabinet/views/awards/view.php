@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = 'Просмотр';
         </div>
     </div>
     <?php
-    if(file_exists('uploads/awards/'.$model['idawards'].'/general/small_'.$model['general_image'])):
+    if (file_exists('uploads/awards/' . $model['idawards'] . '/general/small_' . $model['general_image'])):
         ?>
         <?= \yii\helpers\Html::img(\frontend\components\Common::getImageAward($model, true), ['width' => 200]) ?>
         <?php
@@ -57,13 +57,13 @@ $this->params['breadcrumbs'][] = 'Просмотр';
 
     <div class="row">
         <div class="col-lg-2 col-lg-offset-2 col-sm-2 col-sm-offset-1 col-xs-3">
-            <?=Html::a('< туда', ['view', 'id' => ($model->findOne($id = $model->idawards - 1) !== null) ? $id : $model->idawards], [
+            <?= Html::a('< туда', ['view', 'id' => ($model->findOne($id = $model->idawards - 1) !== null) ? $id : $model->idawards], [
                 'class' => ($id) ? 'btn btn-default' : 'btn btn-default disabled',
             ]);
             ?>
         </div>
         <div class="col-lg-2 col-lg-offset-4 col-sm-2 col-sm-offset-6 col-xs-3">
-            <?= Html::a('сюда >', ['view', 'id' => ($model->findOne($model->idawards + 1) !== null) ? $id = $model->idawards + 1: $id = $model->idawards], [
+            <?= Html::a('сюда >', ['view', 'id' => ($model->findOne($model->idawards + 1) !== null) ? $id = $model->idawards + 1 : $id = $model->idawards], [
                 'class' => ($id - $model->idawards) ? 'btn btn-default' : 'btn btn-default disabled',
             ]) ?>
         </div>

@@ -9,6 +9,6 @@ class TestAction extends Action
 
     public function run()
     {
-        return $this->controller->render("@frontend/actions/views/".$this->viewName);
+        return $this->controller->render("@frontend/actions/views/" . $this->viewName);
     }
 }

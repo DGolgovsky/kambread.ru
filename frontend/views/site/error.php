@@ -10,7 +10,7 @@ use yii\helpers\Html;
 $this->title = nl2br(Html::encode($message));
 $this->params['breadcrumbs'][] = nl2br(Html::encode($name));
 ?>
-<?php \Yii::$app->session->setFlash('error', '<?= nl2br(Html::encode($message)) ?>');?>
+<?php \Yii::$app->session->setFlash('error', '<?= nl2br(Html::encode($message)) ?>'); ?>
 <div class="site-error">
     <div class="grid">
         <div class="row space-top space-bot">

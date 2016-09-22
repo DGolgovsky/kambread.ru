@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = 'Просмотр';
         </div>
     </div>
     <?php
-    if(file_exists('uploads/news/'.$model['idnews'].'/general/small_'.$model['general_image'])):
+    if (file_exists('uploads/news/' . $model['idnews'] . '/general/small_' . $model['general_image'])):
         ?>
         <?= \yii\helpers\Html::img(\frontend\components\Common::getImageNews($model, true), ['width' => 200]) ?>
         <?php
@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = 'Просмотр';
         'attributes' => [
             //'idnews',
             'name',
-            'description:ntext',            
+            'description:ntext',
             'status:boolean',
             'user.name',
             'created_at:date',
@@ -61,13 +61,13 @@ $this->params['breadcrumbs'][] = 'Просмотр';
 
     <div class="row">
         <div class="col-lg-2 col-lg-offset-2 col-sm-2 col-sm-offset-1 col-xs-3">
-            <?=Html::a('<- сюда', ['view', 'id' => ($model->findOne($id = $model->idnews - 1) !== null) ? $id : $model->idnews], [
+            <?= Html::a('<- сюда', ['view', 'id' => ($model->findOne($id = $model->idnews - 1) !== null) ? $id : $model->idnews], [
                 'class' => ($id) ? 'btn btn-default' : 'btn btn-default disabled',
             ]);
             ?>
         </div>
         <div class="col-lg-2 col-lg-offset-4 col-sm-2 col-sm-offset-6 col-xs-3">
-            <?= Html::a('туда ->', ['view', 'id' => ($model->findOne($model->idnews + 1) !== null) ? $id = $model->idnews + 1: $id = $model->idnews], [
+            <?= Html::a('туда ->', ['view', 'id' => ($model->findOne($model->idnews + 1) !== null) ? $id = $model->idnews + 1 : $id = $model->idnews], [
                 'class' => ($id - $model->idnews) ? 'btn btn-default' : 'btn btn-default disabled',
             ]) ?>
         </div>

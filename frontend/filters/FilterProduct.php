@@ -13,16 +13,16 @@ class FilterProduct extends ActionFilter
         $id = \Yii::$app->request->get("id");
         $model = Product::findOne($id);
 
-        if($model == null) {
-            throw new  HttpException(404,'Unknown product');
+        if ($model == null) {
+            throw new  HttpException(404, 'Unknown product');
             return false;
         }
 
         return parent::beforeAction($action);
     }
 
-    public function afterAction($action,$result)
+    public function afterAction($action, $result)
     {
-        return parent::afterAction($action,$result);
+        return parent::afterAction($action, $result);
     }
 }

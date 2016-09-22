@@ -8,7 +8,7 @@ use yii\bootstrap\NavBar;
 ?>
 
 <header class="main-header">
-    <a href="<?=Yii::$app->homeUrl ?>" class="logo">
+    <a href="<?= Yii::$app->homeUrl ?>" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>К</b>ХК</span>
         <!-- logo for regular state and mobile devices -->
@@ -25,16 +25,19 @@ use yii\bootstrap\NavBar;
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?=\common\components\UserComponent::getUserImage(Yii::$app->user->id) ?>" class="user-image" alt="User Image"/>
-                        <span class="hidden-xs"><?=Yii::$app->user->identity->name ?></span>
+                        <img src="<?= \common\components\UserComponent::getUserImage(Yii::$app->user->id) ?>"
+                             class="user-image" alt="User Image"/>
+                        <span class="hidden-xs"><?= Yii::$app->user->identity->name ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<?=\common\components\UserComponent::getUserImage(Yii::$app->user->id) ?>" class="img-circle" alt="User Image">
+                            <img src="<?= \common\components\UserComponent::getUserImage(Yii::$app->user->id) ?>"
+                                 class="img-circle" alt="User Image">
                             <p>
-                                <?=Yii::$app->user->identity->name ?>
-                                <small>Зарегистрирован <?=Yii::$app->formatter->asDate(Yii::$app->user->identity->created_at, 'd MMMM yyyy') ?></small>
+                                <?= Yii::$app->user->identity->name ?>
+                                <small>
+                                    Зарегистрирован <?= Yii::$app->formatter->asDate(Yii::$app->user->identity->created_at, 'd MMMM yyyy') ?></small>
                             </p>
                         </li>
                         <!-- Menu Footer-->

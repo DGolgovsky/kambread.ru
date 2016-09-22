@@ -13,30 +13,30 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="container" style="width:100%; height:354px">
     <p>
     <div class="row">
-    <div class="col-lg-4 col-sm-4 col-xs-4">
-        <?= Html::a('Продукция', ['/cabinet/product'], ['class' => 'btn btn-primary']) ?>
-    </div>
-    <div class="col-lg-8 col-sm-8 col-xs-8">
-        <span>Редактирование списка продукции</span>
-    </div>
-    </div>
-    </p><p>
-    <div class="row">
-    <div class="col-lg-4 col-sm-4 col-xs-4">
-        <?= Html::a('Документы', ['#'], ['class' => 'btn btn-primary disabled']) ?>
-    </div>
-    <div class="col-lg-8 col-sm-8 col-xs-8">
-        <span>Документы на ознакомление и подпись</span>
-    </div>
+        <div class="col-lg-4 col-sm-4 col-xs-4">
+            <?= Html::a('Продукция', ['/cabinet/product'], ['class' => 'btn btn-primary']) ?>
+        </div>
+        <div class="col-lg-8 col-sm-8 col-xs-8">
+            <span>Редактирование списка продукции</span>
+        </div>
     </div>
     </p><p>
     <div class="row">
-    <div class="col-lg-4 col-sm-4 col-xs-4">
-        <?= Html::a('Новости', ['/cabinet/news'], ['class' => 'btn btn-primary']) ?>
+        <div class="col-lg-4 col-sm-4 col-xs-4">
+            <?= Html::a('Документы', ['#'], ['class' => 'btn btn-primary disabled']) ?>
+        </div>
+        <div class="col-lg-8 col-sm-8 col-xs-8">
+            <span>Документы на ознакомление и подпись</span>
+        </div>
     </div>
-    <div class="col-lg-8 col-sm-8 col-xs-8">
-        <span>Редактирование списка новостей</span>
-    </div>
+    </p><p>
+    <div class="row">
+        <div class="col-lg-4 col-sm-4 col-xs-4">
+            <?= Html::a('Новости', ['/cabinet/news'], ['class' => 'btn btn-primary']) ?>
+        </div>
+        <div class="col-lg-8 col-sm-8 col-xs-8">
+            <span>Редактирование списка новостей</span>
+        </div>
     </div>
     </p><p>
     <div class="row">
@@ -48,7 +48,8 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     </p><p>
-    </p><p>
+    </p>
+    <p>
     <div class="row">
         <div class="col-lg-4 col-sm-4 col-xs-4">
             <?= Html::a('Награды', ['/cabinet/awards'], ['class' => 'btn btn-primary']) ?>
@@ -59,12 +60,12 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     </p><p>
     <div class="row">
-    <div class="col-lg-4 col-sm-4 col-xs-4">
-        <?= Html::a('Профиль', ['/cabinet/default/settings'], ['class' => 'btn btn-primary']) ?>
-    </div>
-    <div class="col-lg-8 col-sm-8 col-xs-8">
-        <span>Редактирование параметров профиля пользователя</span>
-    </div>
+        <div class="col-lg-4 col-sm-4 col-xs-4">
+            <?= Html::a('Профиль', ['/cabinet/default/settings'], ['class' => 'btn btn-primary']) ?>
         </div>
+        <div class="col-lg-8 col-sm-8 col-xs-8">
+            <span>Редактирование параметров профиля пользователя</span>
+        </div>
+    </div>
     </p>
 </div>

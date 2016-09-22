@@ -112,7 +112,7 @@ class SiteController extends Controller
             '/images/slider/4.jpg',
             '/images/slider/5.jpg',
         ];
-        return $this->render('index',[
+        return $this->render('index', [
             'result_general' => $result_general,
             'count_general' => $count_general,
             'featured' => $featured,
@@ -127,11 +127,11 @@ class SiteController extends Controller
     {
         return $this->render('partners');
     }
-    
+
     public function actionDisclosure()
-	{
-		return $this->redirect('http://disclosure.1prime.ru/portal/default.aspx?emId=3436107766');
-	}
+    {
+        return $this->redirect('http://disclosure.1prime.ru/portal/default.aspx?emId=3436107766');
+    }
 
     public function actionMail()
     {
@@ -141,9 +141,9 @@ class SiteController extends Controller
     public function actionEvent()
     {
         $component = Yii::$app->common; //new Common();
-        $component->on(Common::EVENT_NOTIFY,[$component,'notifyAdmin']);
-        $component->sendMail("[Notify admin]",$component->name,$component->email, Yii::$app->params['adminEmail'],$component->subject,$component->body);
-        $component->off(Common::EVENT_NOTIFY,[$component,'notifyAdmin']);
+        $component->on(Common::EVENT_NOTIFY, [$component, 'notifyAdmin']);
+        $component->sendMail("[Notify admin]", $component->name, $component->email, Yii::$app->params['adminEmail'], $component->subject, $component->body);
+        $component->off(Common::EVENT_NOTIFY, [$component, 'notifyAdmin']);
     }
 
     /**
@@ -188,8 +188,8 @@ class SiteController extends Controller
     {
         $model = new ContactForm();
 
-        if(Yii::$app->request->isAjax && \Yii::$app->request->isPost) {
-            if($model->load(\Yii::$app->request->post())) {
+        if (Yii::$app->request->isAjax && \Yii::$app->request->isPost) {
+            if ($model->load(\Yii::$app->request->post())) {
                 Yii::$app->response->format = Response::FORMAT_JSON;
                 return ActiveForm::validate($model);
             }
@@ -229,20 +229,20 @@ class SiteController extends Controller
         $model = new SignupForm();
         // 1st: $model = new SignupForm(['scenario' => 'short_u_e_p']); // валидация по сценарию
 
-        if(Yii::$app->request->isAjax && \Yii::$app->request->isPost) {
-            if($model->load(\Yii::$app->request->post())) {
+        if (Yii::$app->request->isAjax && \Yii::$app->request->isPost) {
+            if ($model->load(\Yii::$app->request->post())) {
                 Yii::$app->response->format = Response::FORMAT_JSON;
                 return ActiveForm::validate($model);
             }
         }
 
-        if($model->load(\Yii::$app->request->post()) && $model->signup()) {
+        if ($model->load(\Yii::$app->request->post()) && $model->signup()) {
             Yii::$app->session->setFlash('success', 'Регистрация прошла успешно');
             return $this->refresh();
         }
 
         //TODO add send email request
-        
+
         return $this->render('signup', [
             'model' => $model,
         ]);

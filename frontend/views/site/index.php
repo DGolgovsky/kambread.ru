@@ -1,39 +1,42 @@
 <?php
 use frontend\components\Common;
+
 ?>
 <!-- slider-wrapper -->
 <div class="container">
-<div id="slider" class="sl-slider-wrapper">
-    <div class="sl-slider">
-        <?php foreach($result_general as $row): ?>
-            <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="1" data-slice2-scale="1">
-                <div class="sl-slide-inner">
-                    <div class="bg-img" style="background-image: url('<?= Common::getImageProduct($row, 1)[0] ?>')"></div>
-                    <h2>
-                        <a href="<?= Common::getUrlProduct($row) ?>">
-                            <?= Common::getTitle($row) ?>
-                        </a>
-                    </h2>
+    <div id="slider" class="sl-slider-wrapper">
+        <div class="sl-slider">
+            <?php foreach ($result_general as $row): ?>
+                <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-25" data-slice2-rotation="-25"
+                     data-slice1-scale="1" data-slice2-scale="1">
+                    <div class="sl-slide-inner">
+                        <div class="bg-img"
+                             style="background-image: url('<?= Common::getImageProduct($row, 1)[0] ?>')"></div>
+                        <h2>
+                            <a href="<?= Common::getUrlProduct($row) ?>">
+                                <?= Common::getTitle($row) ?>
+                            </a>
+                        </h2>
+                    </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
+        <!-- /sl-slider -->
+        <nav id="nav-dots" class="nav-dots">
+            <?php if ($count_general >= 1): ?>
+                <span class="nav-dot-current"></span>
+            <?php endif; ?>
+            <?php
+            if ($count_general > 1):
+                foreach (range(2, $count_general) as $line):
+                    ?>
+                    <span></span>
+                    <?php
+                endforeach;
+            endif;
+            ?>
+        </nav>
     </div>
-    <!-- /sl-slider -->
-    <nav id="nav-dots" class="nav-dots">
-        <?php if($count_general >= 1): ?>
-            <span class="nav-dot-current"></span>
-        <?php endif; ?>
-        <?php
-        if($count_general > 1):
-            foreach(range(2,$count_general) as $line):
-                ?>
-                <span></span>
-                <?php
-            endforeach;
-        endif;
-        ?>
-    </nav>
-</div>
 </div>
 <!-- /slider-wrapper -->
 <div class="spacer"></div>
@@ -83,16 +86,19 @@ use frontend\components\Common;
                 </div>
             </h2>
             <div id="owl-example" class="owl-carousel">
-                <?php foreach($featured as $row): ?>
+                <?php foreach ($featured as $row): ?>
                     <div class="properties">
                         <div class="image-holder">
-                            <img src="<?=Common::getImageProduct($row, 0)[0] ?>" class="img-responsive" alt='<?=Common::getS_Title($row) ?>' style="height: 131.;">
-                            <div class="status <?=($row['new']) ? 'new' : 'recommend' ?>"><?= Common::getTypeProduct($row) ?></div>
+                            <img src="<?= Common::getImageProduct($row, 0)[0] ?>" class="img-responsive"
+                                 alt='<?= Common::getS_Title($row) ?>' style="height: 131.;">
+                            <div
+                                class="status <?= ($row['new']) ? 'new' : 'recommend' ?>"><?= Common::getTypeProduct($row) ?></div>
                         </div>
-                        <h4 style="height: 42px;;"><a href="<?=Common::getUrlProduct($row) ?>"><?= Common::getS_Title($row) ?></a></h4>
+                        <h4 style="height: 42px;;"><a
+                                href="<?= Common::getUrlProduct($row) ?>"><?= Common::getS_Title($row) ?></a></h4>
                         <h4 class="text-center">
                             <p style="text-indent: 0px;" class="price">Цена: <?= $row['price'] ?> &#8381;</p>
-                            <p style="text-indent: 0px;" class="price">Вес: <?=$row['weight'] ?> г</p>
+                            <p style="text-indent: 0px;" class="price">Вес: <?= $row['weight'] ?> г</p>
                         </h4>
                         <a class="btn btn-primary" href="<?= Common::getUrlProduct($row) ?>">Подробнее</a>
                     </div>
@@ -110,9 +116,12 @@ use frontend\components\Common;
             </p>
             <p style="text-indent: 30px; margin-bottom: 5px;">
                 Предприятие выпускает 10 видов хлеба и более 65 видов хлебобулочных изделий (булочные, бараночные,
-                кондитерские, сухарные изделия), постоянно осуществляет усовершенствование технологии производства, качества продукции, улучшение ее внешнего вида.
+                кондитерские, сухарные изделия), постоянно осуществляет усовершенствование технологии производства,
+                качества продукции, улучшение ее внешнего вида.
             </p>
-            <h3 style="text-indent: 30px; margin-bottom: 5px;"><small>Наши преимущества:</small></h3>
+            <h3 style="text-indent: 30px; margin-bottom: 5px;">
+                <small>Наши преимущества:</small>
+            </h3>
             <ul>
                 <li>новейшее высокотехнологичное оборудование</li>
                 <li>собственная лаборатория для контроля качества продукции</li>
@@ -120,7 +129,7 @@ use frontend\components\Common;
                 <li>широкий ассортимент продукции</li>
                 <li>только натуральное экологически чистое сырье</li>
             </ul>
-            <a href="about" >Подробнее о нас</a>
+            <a href="about">Подробнее о нас</a>
         </div>
         <?php echo \frontend\widgets\NewsWidget::widget(); ?>
     </div>
@@ -130,17 +139,31 @@ use frontend\components\Common;
             <h3 class="lined text-center" style="color: #964812; margin-bottom: 30px;">С нами сотрудничают</h3>
         </div>
         <div class="clients-logo-wrapper text-center row">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://magnit-info.ru/" target="_blank"><img src="images/about/logos/logo-1.png" class="img-responsive center-block" width="270px" alt="Магнит"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://pokupochka.ru/" target="_blank"><img src="images/about/logos/logo-2.png" class="img-responsive center-block" width="270px" alt="Покупочка"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.radezh.ru/" target="_blank"><img src="images/about/logos/logo-4.png" class="img-responsive center-block" width="270px" alt="Радеж"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.okmarket.ru/" target="_blank"><img src="images/about/logos/logo-6.png" class="img-responsive center-block" width="270px" alt="О`КЕЙ"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://pyaterochka.ru/" target="_blank"><img src="images/about/logos/logo-7.png" class="img-responsive center-block" width="270px" alt="Пятёрочка"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.lenta.com/" target="_blank"><img src="images/about/logos/logo-5.png" class="img-responsive center-block" width="270px" alt="Лента"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://magnit-info.ru/" target="_blank"><img
+                        src="images/about/logos/logo-1.png" class="img-responsive center-block" width="270px"
+                        alt="Магнит"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://pokupochka.ru/" target="_blank"><img
+                        src="images/about/logos/logo-2.png" class="img-responsive center-block" width="270px"
+                        alt="Покупочка"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.radezh.ru/" target="_blank"><img
+                        src="images/about/logos/logo-4.png" class="img-responsive center-block" width="270px"
+                        alt="Радеж"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.okmarket.ru/" target="_blank"><img
+                        src="images/about/logos/logo-6.png" class="img-responsive center-block" width="270px"
+                        alt="О`КЕЙ"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://pyaterochka.ru/" target="_blank"><img
+                        src="images/about/logos/logo-7.png" class="img-responsive center-block" width="270px"
+                        alt="Пятёрочка"></a></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="http://www.lenta.com/" target="_blank"><img
+                        src="images/about/logos/logo-5.png" class="img-responsive center-block" width="270px"
+                        alt="Лента"></a></div>
 
         </div>
         <br>
         <div class="clients-logo-wrapper text-center row">
-            <div class="col-lg-2 col-md-1 col-sm-2 col-xs-2"><a href="http://tkman.ru/" target="_blank"><img src="images/about/logos/logo-3.png" class="img-responsive center-block" width="270px" alt="МАН"></a></div>
+            <div class="col-lg-2 col-md-1 col-sm-2 col-xs-2"><a href="http://tkman.ru/" target="_blank"><img
+                        src="images/about/logos/logo-3.png" class="img-responsive center-block" width="270px" alt="МАН"></a>
+            </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>

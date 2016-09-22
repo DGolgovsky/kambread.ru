@@ -22,6 +22,7 @@ class LoginForm extends Model
             'password' => 'Пароль',
         ];
     }
+
     /**
      * @inheritdoc
      */

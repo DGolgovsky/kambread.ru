@@ -15,7 +15,7 @@ use yii\filters\VerbFilter;
 class VacancyController extends Controller
 {
     public $layout = "inner";
-    
+
     /**
      * @inheritdoc
      */

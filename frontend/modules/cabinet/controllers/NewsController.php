@@ -55,19 +55,19 @@ class NewsController extends Controller
 
     public function actionFileUploadGeneral()
     {
-        if(Yii::$app->request->isPost) {
+        if (Yii::$app->request->isPost) {
             $id = Yii::$app->request->post("news_id");
-            $path = Yii::getAlias("@frontend/web/uploads/news/".$id."/general");
+            $path = Yii::getAlias("@frontend/web/uploads/news/" . $id . "/general");
             BaseFileHelper::createDirectory($path);
             $model = News::findOne($id);
             $model->scenario = 'addimg';
 
-            $file = UploadedFile::getInstance($model,'general_image');
-            $name = 'general.'.$file->extension;
-            $file->saveAs($path .DIRECTORY_SEPARATOR .$name);
+            $file = UploadedFile::getInstance($model, 'general_image');
+            $name = 'general.' . $file->extension;
+            $file->saveAs($path . DIRECTORY_SEPARATOR . $name);
 
-            $image  = $path .DIRECTORY_SEPARATOR .$name;
-            $new_name = $path .DIRECTORY_SEPARATOR."small_".$name;
+            $image = $path . DIRECTORY_SEPARATOR . $name;
+            $new_name = $path . DIRECTORY_SEPARATOR . "small_" . $name;
 
             $model->general_image = $name;
             $model->save();
@@ -87,16 +87,16 @@ class NewsController extends Controller
 
     public function actionFileUploadImages()
     {
-        if(Yii::$app->request->isPost){
+        if (Yii::$app->request->isPost) {
             $id = Yii::$app->request->post("news_id");
-            $path = Yii::getAlias("@frontend/web/uploads/news/".$id);
+            $path = Yii::getAlias("@frontend/web/uploads/news/" . $id);
             BaseFileHelper::createDirectory($path);
             $file = UploadedFile::getInstanceByName('images');
-            $name = time().'.'.$file->extension;
-            $file->saveAs($path .DIRECTORY_SEPARATOR .$name);
+            $name = time() . '.' . $file->extension;
+            $file->saveAs($path . DIRECTORY_SEPARATOR . $name);
 
-            $image = $path .DIRECTORY_SEPARATOR .$name;
-            $new_name = $path .DIRECTORY_SEPARATOR."small_".$name;
+            $image = $path . DIRECTORY_SEPARATOR . $name;
+            $new_name = $path . DIRECTORY_SEPARATOR . "small_" . $name;
 
             $size = getimagesize($image);
             $width = $size[0];
@@ -155,19 +155,19 @@ class NewsController extends Controller
         //$id = Yii::$app->locator->cache->get('id');
         $model = News::findOne($id);
         $image = [];
-        if($general_image = $model->general_image){
-            $image[] =  '<img src="/uploads/news/' . $model->idnews . '/general/small_' . $general_image . '" width=250>';
+        if ($general_image = $model->general_image) {
+            $image[] = '<img src="/uploads/news/' . $model->idnews . '/general/small_' . $general_image . '" width=250>';
         }
 
-        if(Yii::$app->request->isPost){
+        if (Yii::$app->request->isPost) {
             $this->redirect(Url::to(['news/']));
         }
 
-        $path = Yii::getAlias("@frontend/web/uploads/news/".$model->idnews);
+        $path = Yii::getAlias("@frontend/web/uploads/news/" . $model->idnews);
         $images_add = [];
 
         try {
-            if(is_dir($path)) {
+            if (is_dir($path)) {
                 $files = \yii\helpers\FileHelper::findFiles($path);
 
                 foreach ($files as $file) {
@@ -176,11 +176,11 @@ class NewsController extends Controller
                     }
                 }
             }
+        } catch (\yii\base\Exception $e) {
         }
-        catch(\yii\base\Exception $e){}
 
 
-        return $this->render("addimg",['model' => $model,'image' => $image, 'images_add' => $images_add]);
+        return $this->render("addimg", ['model' => $model, 'image' => $image, 'images_add' => $images_add]);
     }
 
     /**

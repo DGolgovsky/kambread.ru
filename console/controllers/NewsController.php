@@ -17,7 +17,7 @@ class NewsController extends \yii\console\Controller
         $i = 1;
         foreach ($model as $r) {
             usleep(1000);
-            print "Send Email: ".$r['email']."\n";
+            print "Send Email: " . $r['email'] . "\n";
             Console::updateProgress($i, $count);
             $i++;
         }
@@ -26,7 +26,7 @@ class NewsController extends \yii\console\Controller
 
         return 0;
     }
-    
+
     public function actionAdd(array $ar)
     {
         print_r($ar);

@@ -5,15 +5,18 @@ $this->params['breadcrumbs'][] = ['label' => 'Профиль', 'url' => ['settin
 $this->params['breadcrumbs'][] = 'Пароль';
 ?>
 <div class="product-form">
-    <h2 style="text-align: center"><small>Здесь Вы можете поменять пароль пользователя для входа. Просто введите его ниже.</small></h2>
+    <h2 style="text-align: center">
+        <small>Здесь Вы можете поменять пароль пользователя для входа. Просто введите его ниже.</small>
+    </h2>
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2"
-    <?php $form = \yii\bootstrap\ActiveForm::begin(); ?>
+        <?php $form = \yii\bootstrap\ActiveForm::begin(); ?>
 
-    <?=$form->field($model,'password')->passwordInput() ?>
-    <?=$form->field($model,'repassword')->passwordInput() ?>
+        <?= $form->field($model, 'password')->passwordInput() ?>
+        <?= $form->field($model, 'repassword')->passwordInput() ?>
 
-    <?= \yii\helpers\Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
-    <?php \yii\bootstrap\ActiveForm::end() ?>
-    </div></div>
+        <?= \yii\helpers\Html::submitButton('Сохранить', ['class' => 'btn btn-primary']) ?>
+        <?php \yii\bootstrap\ActiveForm::end() ?>
+    </div>
+</div>
 </div>

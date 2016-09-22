@@ -52,19 +52,19 @@ class AwardsController extends Controller
 
     public function actionFileUploadGeneral()
     {
-        if(Yii::$app->request->isPost) {
+        if (Yii::$app->request->isPost) {
             $id = Yii::$app->request->post("awards_id");
-            $path = Yii::getAlias("@frontend/web/uploads/awards/".$id."/general");
+            $path = Yii::getAlias("@frontend/web/uploads/awards/" . $id . "/general");
             BaseFileHelper::createDirectory($path);
             $model = Awards::findOne($id);
             $model->scenario = 'addimg';
 
-            $file = UploadedFile::getInstance($model,'general_image');
-            $name = 'general.'.$file->extension;
-            $file->saveAs($path .DIRECTORY_SEPARATOR .$name);
+            $file = UploadedFile::getInstance($model, 'general_image');
+            $name = 'general.' . $file->extension;
+            $file->saveAs($path . DIRECTORY_SEPARATOR . $name);
 
-            $image  = $path .DIRECTORY_SEPARATOR .$name;
-            $new_name = $path .DIRECTORY_SEPARATOR."small_".$name;
+            $image = $path . DIRECTORY_SEPARATOR . $name;
+            $new_name = $path . DIRECTORY_SEPARATOR . "small_" . $name;
 
             $model->general_image = $name;
             $model->save();
@@ -74,7 +74,7 @@ class AwardsController extends Controller
             $height = $size[1];
 
             Image::frame($image, 0, '666', 0)
-                ->crop(new Point($width/2 - 250, $height/2 - 225), new Box($width/2 + 250, $height/2 + 225))
+                ->crop(new Point($width / 2 - 250, $height / 2 - 225), new Box($width / 2 + 250, $height / 2 + 225))
                 ->resize(new Box(500, 450))
                 ->save($new_name, ['quality' => 85]);
 
@@ -82,7 +82,7 @@ class AwardsController extends Controller
         }
     }
 
-        /**
+    /**
      * Creates a new Awards model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
@@ -125,15 +125,15 @@ class AwardsController extends Controller
         //$id = Yii::$app->locator->cache->get('id');
         $model = Awards::findOne($id);
         $image = [];
-        if($general_image = $model->general_image){
-            $image[] =  '<img src="/uploads/awards/' . $model->idawards . '/general/small_' . $general_image . '" width=250>';
+        if ($general_image = $model->general_image) {
+            $image[] = '<img src="/uploads/awards/' . $model->idawards . '/general/small_' . $general_image . '" width=250>';
         }
 
-        if(Yii::$app->request->isPost){
+        if (Yii::$app->request->isPost) {
             $this->redirect(Url::to(['awards/']));
         }
 
-        return $this->render("addimg",['model' => $model,'image' => $image]);
+        return $this->render("addimg", ['model' => $model, 'image' => $image]);
     }
 
     /**

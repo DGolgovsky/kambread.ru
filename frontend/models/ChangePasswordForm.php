@@ -28,10 +28,10 @@ class ChangePasswordForm extends Model
 
     public function changePassword()
     {
-        if($this->validate()) {
+        if ($this->validate()) {
             $user = User::findOne(\Yii::$app->user->id);
             $user->setPassword($this->password);
-            $user->save(true,['password_hash']);
+            $user->save(true, ['password_hash']);
         }
     }
 }
