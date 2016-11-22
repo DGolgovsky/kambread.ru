@@ -31,7 +31,7 @@
     "yiidoc/yii2-redactor": "*"
   },
   "require-dev": {
-    "yiisoft/yii2-codeception": "*",
+    "codeception/codeception": "*",
     "yiisoft/yii2-debug": "*",
     "yiisoft/yii2-gii": "*",
     "yiisoft/yii2-faker": "*"
