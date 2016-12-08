@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <h2>
                 <small>Для начала сотрудничества с нами и заключения договора поставки продукции, сырья или материалов
                     необходимо обратиться в отдел продаж<br>
-                    по телефону (84457) 9-39-84 или по e-mail: <a href="mailto:market@kambread.ru" target="_self">market@kambread.ru</a>
+                    по телефону (84457) 9-39-84 или по e-mail: <a href="mailto:market@kambread.ru" target="_self">marketing@kambread.ru</a>
                 </small>
             </h2>
             <p class="lead partners">
