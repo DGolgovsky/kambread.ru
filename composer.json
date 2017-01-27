@@ -7,6 +7,12 @@
     "advanced",
     "project template"
   ],
+  "repositoties": [
+      {
+          "type": "composer",
+          "url": "https://asset-packagist.org"
+      }
+  ],
   "homepage": "http://www.yiiframework.com/",
   "type": "project",
   "license": "BSD-3-Clause",
@@ -27,7 +33,7 @@
     "yiisoft/yii2-imagine": "*",
     "demogorgorn/yii2-ajax-submit-button": "*",
     "dmstr/yii2-adminlte-asset": "*",
-    "fxp/composer-asset-plugin": "^1.1",
+    "fxp/composer-asset-plugin": "^1.2.0",
     "yiidoc/yii2-redactor": "*"
   },
   "require-dev": {
