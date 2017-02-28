@@ -1,6 +1,6 @@
 {
   "name": "yiisoft/yii2-app-advanced",
-  "description": "Yii 2 Advanced Project Template",
+  "description": "JSC Kamyshin breadfactory Yii2 Project",
   "keywords": [
     "yii2",
     "framework",
@@ -26,7 +26,7 @@
   "minimum-stability": "dev",
   "require": {
     "php": ">=5.4.0",
-    "yiisoft/yii2": "*",
+    "yiisoft/yii2": "^2.0",
     "yiisoft/yii2-bootstrap": "*",
     "yiisoft/yii2-swiftmailer": "*",
     "kartik-v/yii2-widget-fileinput": "*",
@@ -43,7 +43,13 @@
     "yiisoft/yii2-faker": "*"
   },
   "config": {
-    "process-timeout": 1800
+    "process-timeout": 1800,
+    "fxp-asset": {
+        "installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
   },
   "extra": {
     "asset-installer-paths": {

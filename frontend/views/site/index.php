@@ -1,42 +1,34 @@
 <?php
 use frontend\components\Common;
-
 ?>
 <!-- slider-wrapper -->
 <div class="container">
-    <div id="slider" class="sl-slider-wrapper">
-        <div class="sl-slider">
-            <?php foreach ($result_general as $row): ?>
-                <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-25" data-slice2-rotation="-25"
-                     data-slice1-scale="1" data-slice2-scale="1">
-                    <div class="sl-slide-inner">
-                        <div class="bg-img"
-                             style="background-image: url('<?= Common::getImageProduct($row, 1)[0] ?>')"></div>
-                        <h2>
-                            <a href="<?= Common::getUrlProduct($row) ?>">
-                                <?= Common::getTitle($row) ?>
-                            </a>
-                        </h2>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-        <!-- /sl-slider -->
-        <nav id="nav-dots" class="nav-dots">
-            <?php if ($count_general >= 1): ?>
-                <span class="nav-dot-current"></span>
-            <?php endif; ?>
-            <?php
-            if ($count_general > 1):
-                foreach (range(2, $count_general) as $line):
-                    ?>
-                    <span></span>
-                    <?php
-                endforeach;
-            endif;
-            ?>
-        </nav>
+  <div id="slider" class="sl-slider-wrapper">
+    <div class="sl-slider">
+      <?php foreach ($result_general as $row): ?>
+      <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-25" data-slice2-rotation="-25"
+			    data-slice1-scale="1" data-slice2-scale="1">
+      <div class="sl-slide-inner">
+        <div class="bg-img" style="background-image: url('<?= Common::getImageProduct($row, 1)[0] ?>')"></div>
+        <h2><a href="<?= Common::getUrlProduct($row) ?>"><?= Common::getTitle($row) ?></a></h2>
+      </div>
+      </div>
+      <?php endforeach; ?>
     </div>
+    <!-- /sl-slider -->
+    <nav id="nav-dots" class="nav-dots">
+    <?php if ($count_general >= 1): ?>
+        <span class="nav-dot-current"></span>
+    <?php endif; ?>
+    <?php
+        if ($count_general > 1):
+            foreach (range(2, $count_general) as $line): ?>
+                <span></span>
+        <?php
+            endforeach;
+        endif; ?>
+    </nav>
+</div>
 </div>
 <!-- /slider-wrapper -->
 <div class="spacer"></div>
@@ -56,7 +48,7 @@ use frontend\components\Common;
             </div>
             <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
                 <img src="/images/advantages/advantages-2.png" alt="" class="img-responsive center-block">
-                Работает<br>более 300 чел
+                Более<br>300 сотрудников
             </div>
             <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
                 <img src="/images/advantages/advantages-3.png" alt="" class="img-responsive center-block">
