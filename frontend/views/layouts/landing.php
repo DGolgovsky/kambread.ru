@@ -14,6 +14,13 @@ Yii::$app->language = 'ru-RU';
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode('АО "Камышинский хлебокомбинат" - официальный сайт компании') ?></title>
     <?php $this->head(); ?>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1294568316727012",
+    enable_page_level_ads: true
+  });
+</script>
 </head>
 <body>
 <?php $this->beginBody(); ?>

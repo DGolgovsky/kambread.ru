@@ -1,34 +1,42 @@
 <?php
 use frontend\components\Common;
+
 ?>
 <!-- slider-wrapper -->
 <div class="container">
-  <div id="slider" class="sl-slider-wrapper">
-    <div class="sl-slider">
-      <?php foreach ($result_general as $row): ?>
-      <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-25" data-slice2-rotation="-25"
-			    data-slice1-scale="1" data-slice2-scale="1">
-      <div class="sl-slide-inner">
-        <div class="bg-img" style="background-image: url('<?= Common::getImageProduct($row, 1)[0] ?>')"></div>
-        <h2><a href="<?= Common::getUrlProduct($row) ?>"><?= Common::getTitle($row) ?></a></h2>
-      </div>
-      </div>
-      <?php endforeach; ?>
+    <div id="slider" class="sl-slider-wrapper">
+        <div class="sl-slider">
+            <?php foreach ($result_general as $row): ?>
+                <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-25" data-slice2-rotation="-25"
+                     data-slice1-scale="1" data-slice2-scale="1">
+                    <div class="sl-slide-inner">
+                        <div class="bg-img"
+                             style="background-image: url('<?= Common::getImageProduct($row, 1)[0] ?>')"></div>
+                        <h2>
+                            <a href="<?= Common::getUrlProduct($row) ?>">
+                                <?= Common::getTitle($row) ?>
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <!-- /sl-slider -->
+        <nav id="nav-dots" class="nav-dots">
+            <?php if ($count_general >= 1): ?>
+                <span class="nav-dot-current"></span>
+            <?php endif; ?>
+            <?php
+            if ($count_general > 1):
+                foreach (range(2, $count_general) as $line):
+                    ?>
+                    <span></span>
+                    <?php
+                endforeach;
+            endif;
+            ?>
+        </nav>
     </div>
-    <!-- /sl-slider -->
-    <nav id="nav-dots" class="nav-dots">
-    <?php if ($count_general >= 1): ?>
-        <span class="nav-dot-current"></span>
-    <?php endif; ?>
-    <?php
-        if ($count_general > 1):
-            foreach (range(2, $count_general) as $line): ?>
-                <span></span>
-        <?php
-            endforeach;
-        endif; ?>
-    </nav>
-</div>
 </div>
 <!-- /slider-wrapper -->
 <div class="spacer"></div>
@@ -48,7 +56,7 @@ use frontend\components\Common;
             </div>
             <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
                 <img src="/images/advantages/advantages-2.png" alt="" class="img-responsive center-block">
-                Более<br>300 сотрудников
+                Работает<br>более 300 чел
             </div>
             <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
                 <img src="/images/advantages/advantages-3.png" alt="" class="img-responsive center-block">
@@ -151,17 +159,19 @@ use frontend\components\Common;
                         alt="Лента"></a></div>
 
         </div>
-        <br>
+	<br>
+	<!--
         <div class="clients-logo-wrapper text-center row">
-            <div class="col-lg-2 col-md-1 col-sm-2 col-xs-2"><a href="http://tkman.ru/" target="_blank"><img
-                        src="images/about/logos/logo-3.png" class="img-responsive center-block" width="270px" alt="МАН"></a>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
-        </div>
+	<div class="col-lg-2 col-md-1 col-sm-2 col-xs-2">
+		<a href="http://tkman.ru/" target="_blank"><img src="images/about/logos/logo-3.png" class="img-responsive center-block" width="270px" alt="МАН"></a>
+	</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><a href="#" target="_blank"></a></div>
+      </div>
+	-->
     </div>
     <!-- End Our Clients -->
 </div>

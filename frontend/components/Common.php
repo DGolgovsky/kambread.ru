@@ -43,7 +43,7 @@ class Common extends Component
 
     public static function getCreationDate($data)
     {
-        return Yii::$app->formatter->asDate($data['updated_at'], 'd MMMM yyyy');
+        return Yii::$app->formatter->asDate($data['created_at'], 'd MMMM yyyy');
     }
 
     public static function getImageAward($data, $general = true, $original = false)
